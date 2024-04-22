@@ -5,8 +5,7 @@ FROM php:5.6-fpm
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 
+# https://github.com/mlocati/docker-php-extension-installer
+ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-# checkout https://stackoverflow.com/questions/39657058/installing-gd-in-docker
-RUN apt-get install -y libwebp-dev libjpeg62-turbo-dev libpng-dev libxpm-dev RUN docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir \
-  --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir \
-  --enable-gd-native-ttf RUN docker-php-ext-install gd
+RUN install-php-extensions gd xdebug mysqli pdo pdo_mysql
