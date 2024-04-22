@@ -2,7 +2,7 @@
 FROM php:5.6-fpm
 # Install your extensions
 # To connect to MySQL add mysqli
-RUN docker-php-ext-install mysqli pdo pdo_mysql php5-mysql
+RUN docker-php-ext-install mysqli pdo pdo_mysql php-mysql
 
 
 # https://github.com/mlocati/docker-php-extension-installer
