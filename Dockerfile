@@ -4,14 +4,9 @@ FROM php:5.6-fpm
 # To connect to MySQL add mysqli
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-RUN apt-get update -y && apt-get install -y sendmail libpng-dev
 
-RUN apt-get update && \
-    apt-get install -y \
-        zlib1g-dev
 
-RUN docker-php-ext-install mbstring
-
-RUN docker-php-ext-install zip
-
-RUN docker-php-ext-install gd
+# checkout https://stackoverflow.com/questions/39657058/installing-gd-in-docker
+RUN apt-get install -y libwebp-dev libjpeg62-turbo-dev libpng-dev libxpm-dev RUN docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir \
+  --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir \
+  --enable-gd-native-ttf RUN docker-php-ext-install gd
