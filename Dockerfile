@@ -9,4 +9,4 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql php-mysql
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 # https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/SystemRequirements/Index.html
-RUN install-php-extensions gd mysqli pdo pdo_mysql zip pdo session xml filter SPL standard tokenizer mbstring intl fileinfo zlib openssl
+RUN install-php-extensions gd zip pdo session xml filter SPL standard tokenizer mbstring intl fileinfo zlib openssl
