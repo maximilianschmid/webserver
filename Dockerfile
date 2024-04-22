@@ -10,4 +10,4 @@ ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/relea
 
 # https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/SystemRequirements/Index.html
 
-RUN install-php-extensions php5.6-mysql gd zip tokenizer mbstring intl fileinfo zlib openssl
+RUN install-php-extensions php-mysql gd zip tokenizer mbstring intl fileinfo zlib openssl
