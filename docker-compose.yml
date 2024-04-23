@@ -1,25 +1,33 @@
 version: '3.9'
 services:
-  php-fpm:
+  typo3-php56:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./docker-typo3/Dockerfile.php56
     volumes:
       - ./app:/var/www/html
-    depends_on:
-      - mysql-db
+#    depends_on:
+#      - mysql-db
+#  php-fpm:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ./app:/var/www/html
+#    depends_on:
+#      - mysql-db
 
-  apache-httpd:
-    build:
-      context: .
-      dockerfile: ./apache/Dockerfile
-    volumes:
-      - ./app:/var/www/html
-    ports:
-      - "8888:80"
-    depends_on:
-      - php-fpm
-      - mysql-db
+#  apache-httpd:
+#    build:
+#      context: .
+#      dockerfile: ./apache/Dockerfile
+#    volumes:
+#      - ./app:/var/www/html
+#    ports:
+#      - "8888:80"
+#    depends_on:
+#      - php-fpm
+#      - mysql-db
   mysql-db:
     image: mysql:5.7
     environment:
