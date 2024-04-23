@@ -1,0 +1,29 @@
+/* line 8, ../source/ext_aio_feedit_templavoila.scss */
+.aiofeedit_button {
+  float: left;
+  margin: 3px 0 0 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+/* line 14, ../source/ext_aio_feedit_templavoila.scss */
+.aiofeedit_button span {
+  display: none;
+}
+
+/* line 20, ../source/ext_aio_feedit_templavoila.scss */
+.aiofeedit_saveandclose {
+  background: url("/typo3conf/ext/aio_feedit/res/img/t3-icon-actions.png") no-repeat 0 -264px;
+}
+
+/* line 24, ../source/ext_aio_feedit_templavoila.scss */
+.backtowebsite {
+  display: block;
+  width: 200px;
+  color: #fff;
+  padding: 3px 5px 0 21px;
+}
+/* line 29, ../source/ext_aio_feedit_templavoila.scss */
+.backtowebsite:hover {
+  color: #eee;
+}

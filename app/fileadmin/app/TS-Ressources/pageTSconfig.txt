@@ -1,0 +1,495 @@
+# configure new content element wizard:
+# http://buzz.typo3.org/people/steffen-kamper/article/the-new-content-element-wizard-in-version-43/
+# custom groups explained in /Users/milian/Documents/Documentation/Typo3Docs/typo34-3dieneuerungentypofaktum-091203031649-phpapp02.pdf
+#templavoila.wizards.newContentElement.renderMode = tabs
+
+
+mod.SHARED {
+  defaultLanguageFlag = at
+  defaultLanguageLabel = deutsch
+}
+
+
+#######################
+# Templavoila config
+# http://typo3.org/documentation/document-library/extension-manuals/templavoila/1.4.2/view/1/2/#id2343598
+#######################
+mod.web_txtemplavoilaM1{
+  createPageWizard.fieldNames = hidden, title, subtitle, nav_title, description
+  showTabsIfEmpty = 0
+  enableEditIconForRefElements = 1
+  # disable the browse icon next to new element icon
+  blindIcons = browse
+}
+
+# TYPO3 4.5 features
+# Checkbox at the bottom of the modules are now hideable to provide a cleaner interface:
+#mod.web_list.enableDisplayBigControlPanel = 1
+#mod.web_list.enableClipBoard = 1
+#mod.web_list.enableLocalizationView = 1
+
+
+
+#restrict content elements to certain TV-Fields
+# If your FCEs have the Template Object IDs 1,2,3,4,5,6 and you want to hide 1,2,3 in the column 'field_container' you enter in the Page TSconfig:
+TCEFORM.tx_fcecolumn.field_sidecontent.tx_templavoila_tmplobj.removeItems = 1
+#TCEFORM.tx_fcecolumn.field_maincontent.tx_templavoila_tmplobj.removeItems = 1
+# Also you can hide Datastructures by adding:
+TCEFORM.tx_fcecolumn.field_sidecontent.tx_templavoila_datastructure.removeItems = 1
+#TCEFORM.tx_fcecolumn.field_maincontent.tx_templavoila_datastructure.removeItems = 1
+# You can hide standard content element by adding:
+TCEFORM.tt_content.tx_fcecolumn.field_sidecontent.removeItems = textpic, table
+
+# default Permission settings for new pages (uid4 == Redakteure_BasisGruppe)
+TCEMAIN.permissions.groupid = 4
+TCEMAIN.permissions.user = show, editcontent, edit, new, delete
+TCEMAIN.permissions.group = show, editcontent, edit, new, delete
+TCEMAIN.permissions.everybody = show
+
+######################################################
+# clear cache on changes to content or ts / 
+# Cache löschen wenn User Änderungen macht
+# http://buzz.typo3.org/people/ron-hall/article/dont-wear-out-the-clear-cache-button/
+# http://typo3.org/documentation/document-library/references/doc_core_tsconfig/4.1.0/view/1/3/#id3540718
+# http://www.webkontext.net/artikel/archiv/2007/september/artikel/cache-automatisch-loeschen-in-typo3/
+######################################################
+# Examples:
+
+# brute force - preferred version is to clear only page cache
+# Will clear ALL cache:
+#TCEMAIN.clearCacheCmd = all
+
+# refined configurations
+# Will clear the cache for page ID 12 and 23
+# when saving a record in this page:
+#TCEMAIN.clearCacheCmd = 12,23
+# Will clear all pages cache:
+#TCEMAIN.clearCacheCmd = pages
+# bietet die Möglichkeit die Unterseiten aller "Geschwisterseiten" (also die Caches aller Seiten auf gleicher Ebene sowie deren Unterseiten) automatisch löschen zu lassen. Standardmässig, also wenn TCEMAIN.clearCache_pageSiblingChildren = 0 ist, werden nur die Caches der Geschwisterseiten automatisch gelöscht.
+#TCEMAIN.clearCache_pageSiblingChildren = 1 
+# löscht den Cache der "Grosseltern-Seite", also der über der übergeordneten Seite bei Änderungen der Seite automatisch.
+#TCEMAIN.clearCache_pageGrandParent = 1
+# Wenn TCEMAIN.clearCache_disable = 1 im Page-TSConfig eingetragen ist werden bei Änderungen in dieser Seite oder deren Unterseiten keine Caches automatisch gelöscht. Wird diese Option verwendet muss der Redakteur also immer manuell den Cache löschen
+#TCEMAIN.clearCache_disable = 1 
+
+
+
+
+# (Kopie 1)-Zusatz beim Kopieren verhindern
+# http://typo3.schloebe.de/tweaks/kopie-1-zusatz-beim-kopieren-verhindern/
+TCEMAIN.table.tt_content {
+  disablePrependAtCopy = 1
+}
+
+
+################################
+#Typo3 Backend Felder ausblenden
+################################
+
+#Typo3 ist vielseitig, Typo3 kann viel, aber manche sehr hilfreiche Information scheint keiner vorher gebraucht zu haben oder ich finden Sie nicht.
+#Gleiches Problem hatte ich schon oft, wenn ich bestimmte Felder im Backend per TSconfig ausblenden wollte.
+#Für ein Projekt wurden per externer TSconfig Datei viele Felder ausblendet. Hier ist eine Großteil der Backend Felder die ausblendet werden können.
+
+#TCEFORM.pages = Seiteneigenschaften
+#TCEFORM.tt_content = Inhaltselemente
+
+
+
+TCEFORM {
+  #---------------------------------------------------------------------
+  # PAGES
+  #---------------------------------------------------------------------
+  pages {
+    # DISABLE SOME FIELDS IN BACKEND
+    #--------------------------------------------
+    # Site type
+    #--------------------------------------------
+    layout {
+      removeItems = 1,2,3
+      altLabels.0 = NL Standard
+    }
+    doktype.disabled = 0
+    #doktype.removeItems = 1,2,3,4,5,6,7,254,255
+    newUntil.disabled = 0
+    subtitle.disabled = 0
+    subtitle.label = Seitenüberschrift
+    author.disabled = 1
+    author_email.disabled = 1
+    abstract.disabled = 01
+    cache_timeout.disabled = 0
+    lastUpdated.disabled = 0
+    no_search.disabled = 0
+    target.disabled = 0
+    alias.disabled = 1
+    nav_title.disabled = 0
+    nav_hide.disabled = 0
+    no_cache.disabled = 0
+    keywords.disabled = 0
+    description.disabled = 0
+    starttime.disabled = 0
+    endtime.disabled = 0
+    storage_pid.disabled = 0
+    l18n_cfg.disabled = 0
+    content_from_pid.disabled = 0
+    tx_realurl_pathsegment.disabled = 0
+    starttime.disabled = 0
+    endtime.disabled = 0
+    fe_group.disabled = 0
+    fe_login_mode.disabled = 0
+    extendToSubpages.disabled = 0
+    module.disabled = 0
+    media.disabled = 0
+    TSconfig.disabled = 0
+    
+    #Templavoila pages
+    tx_templavoila_ds.disabled = 0
+    tx_templavoila_to.disabled = 0
+    tx_templavoila_flex.disabled = 0
+    CType.disabled = 0  
+
+  }
+
+  #Seiteneigenschaften von Übersetzungen
+  pages_language_overlay {
+    #media.label = PDF zum Download
+  }  
+    
+  #---------------------------------------------------------------------
+  # CONTENT ELEMENTS
+  #---------------------------------------------------------------------
+  tt_content {
+    layout.disabled = 0
+    section_frame.disabled = 0
+    section_frame {
+         addItems.100 = Trenner darüber
+         addItems.110 = Trenner darunter
+    }
+    #hide language field in BE to avoid editors confusion, but still enabled in editors user group
+    sys_language_uid.disabled = 1
+    
+    colPos.disabled = 0
+    
+    # remove content elements from list and selectbox
+    # allowed: table, html, mailform, textpic, menu, div, header, text, bullets, image, uploads, multimedia,  search, login, splash, shortcut, list, script
+    CType.removeItems = 
+    
+    # Access disabled (Allgemeinen Optionen -> Zugriff)
+    fe_group.disabled = 0
+    
+    starttime.disabled = 0
+    endtime.disabled = 0
+    # Ausgangspunkt
+    pages.disabled = 0
+    recursive.disabled = 0
+    
+    # Removes "Space before element" & "Space after element"
+    spaceBefore.disabled = 1
+    spaceAfter.disabled = 1
+    
+    #---------------------------------------------------------------------
+    # TEXT & TEXT WITH IMAGE | Disable some options
+    #---------------------------------------------------------------------
+    # HEADLINES
+    #--------------------------------------------
+    date.disabled = 1
+    header.disabled = 0
+    header_position.disabled = 1
+    header_link.disabled = 0
+    # http://www.typo3wizard.com/en/snippets/cool-stuff-typoscript/using-the-layout-field-in-tt-content-and-pages.html
+    header_layout.disabled = 0
+      header_layout.altLabels.3 = H4
+      header_layout.altLabels.2 = H3
+      header_layout.altLabels.0 = H2 (Standard)
+      # 0 -> h2 (normal)
+      # 1 -> leave out one, maps to normal too
+      # 2 -> h3
+      # defined in setup_customized eg.: lib.stdheader.10.2.dataWrap  = <h4 class="contentelement-header">|</h4>
+      header_layout.removeItems = 1,4,5,6,7,8,9
+    
+    sectionIndex.disabled = 1
+    linkToTop.disabled = 1
+    
+    # TABLE
+    #--------------------------------------------
+    table_bgColor.disabled = 1
+    table_border.disabled = 1
+    table_cellspacing.disabled = 1
+    table_cellpadding.disabled = 1
+    
+    # UNDER RTE
+    #--------------------------------------------
+    text_align.disabled = 1
+    text_face.disabled = 1
+    text_size.disabled = 1
+    text_color.disabled = 1
+    rte_enabled.disabled = 1
+    text_properties.disabled = 1
+    
+    # IMAGES
+    #--------------------------------------------
+    imageborder.disabled = 0
+    #26 - left, text right col
+    #25 - right, text left col
+    #0 - top center - text below
+    #1 - top right -  text below
+    #2 - top left - text below
+    imageorient.removeItems = 0, 1, 3, 4, 5, 6, 7, 8, 9, 10
+    imageorient = 26
+    image_compression.disabled = 1
+    image_effects.disabled = 1
+    imagecaption_position.disabled = 1
+    image_frames.removeItems = 2, 3, 4, 5, 6, 7, 8
+    longdescURL.disabled = 1
+    titleText.disabled = 0
+    imageheight.disabled = 1
+    imagewidth.disabled = 1
+    image_link.disabled = 0
+    image_noRows.disabled = 1
+    imagecols.disabled = 0
+    image_zoom.disabled = 0
+    records.disabled = 1
+    imagecaption.disabled = 0
+    altText.disabled = 0
+    
+    
+    #---------------------------------------------------------------------
+    # REMOVE BORDER TYP (unsichtbar, Linie davor,....)
+    #---------------------------------------------------------------------
+    section_frame {
+      removeItems = 1,5,6,10,11,12,20,21
+    }
+    
+    # Templavoila tt_content
+    tx_templavoila_ds.disabled = 0
+    tx_templavoila_to.disabled = 0
+    CType.disabled = 0  
+
+  }
+  
+  #Newsfelder unterdrücken
+  # e.g full path TCEFORM.tt_news.links.disabled = 1
+  tt_news{
+    keywords.disabled = 0
+    imagecaption.disabled = 0
+    category.disabled = 0
+    # hide language field in BE to avoid editors confusion, but still enabled in editors user group
+    sys_language_uid.disabled = 1
+    author.disabled = 0
+    author_email.disabled = 0
+    fe_group.disabled = 0
+    starttime.disabled = 0
+    endtime.disabled = 0
+    related.disabled = 0
+    links.disabled = 0
+  }
+}
+
+# default values in Backend Forms
+TCAdefaults{
+  tt_news{
+    hidden = 0
+    category = 1
+  }
+  tt_content{
+    #does'nt work due to bug in TYPO3 4.4
+    imageorient = 25
+    hidden = 0
+  }
+}
+
+
+#Das gesuchte Backend Feld ist hier nicht zu finden?
+
+#Es sollen nicht hier aufgeführte Backend Felder ausblendet werden? Egal ob Core Backend Feld oder von einer Extension ins Backend integriert? Es kann #jedes Feld normalerweise ausgeblendet werden, aber wo findet man die Information?
+#7 Schritte um jedes Typo3 Backend Feld ausblenden zu können
+#
+#   1. Ins Typo3 Backend einloggen und zur richtigen Backend Ansicht wechseln
+#   2. HTML Quelltext der betreffenden Ansicht öffnenen
+#   3. Nach dem Label des Backend Feldes suchen
+#   4. Nach dem dazugehörigen Input Feld suchen
+#   5. den Wert aus der letzten eckigen Klammer im name="" Attribut des input Feldes suchen und kopieren
+#   6. den Wert ins TSconfig kopieren und nach dem Wert noch .disabled = 1 anhängen.
+#   7. Seiteneigschafts-Backend-Felder in TCEFORM.pages...; Inhaltselement-Backend-Felder in TCEFORM.tt_cotent...
+#
+#Sollen Werte aus einem Select Feld ausgeblendet werden, muss der value="" in option gefunden werden. Meist wird dieser dann mit ...removeItems = Wert aus Value Feld entfernt.
+
+#################################################################
+## example for page-related TS
+#################################################################
+
+
+#Require to select a category for tt_news
+TCEFORM.tt_news.category.config.minitems = 1
+
+
+
+################################
+# RTE Config
+################################
+# partly used: http://philophax.lauftext.de/tipps-und-informationen/typo3-40/html-area/
+# partly used: http://www.sk-typo3.de/RTE-Standardkonfiguration.31.0.html
+# this config is used right now: http://www.typo3.net/forum/list/list_post//39948/?tx_mmforum_pi1[page]=5&cHash=69510f29f8688c69664d67e475be023c
+# what works fine now:
+# - Word-Cleaning (span-tag and format-removal)
+
+RTE.default {
+  ## Markup options
+  enableWordClean = 1
+  removeTrailingBR = 0
+  removeComments = 1
+  removeTags = center, sdfield
+  removeTagsAndContents = style,script 
+
+  ## RTE CSS File
+  contentCSS = fileadmin/app/static/css/compiled/css_png.css
+  ## Verwendet nur CSS-Anweisungen des RTE-Skins und der contentCSS-Datei (!!the holy grale of getting rid of standard paragraph styles / standard block stile!!)
+  ignoreMainStyleOverride = 1
+
+  hidePStyleItems = div,blockquote,pre,address,h1
+   
+  # zeigt alle CSS-Klassen die in formate.css vorhanden sind
+  showTagFreeClasses = 0
+  
+  # Specifies that Mozilla/Firefox should use style attributes or not. When enabled, Mozilla/Firefox use span tags with style attributes rather than tags such as b, i, font, etc.
+  useCSS = 1
+  
+  
+  showButtons = formatblock, blockstyle, blockstylelabel,  chMode,  bold, italic, underline, orderedlist, unorderedlist, insertcharacter, link, removeformat, insertcharacter, undo, redo, html, left, right, center, subscript, superscript, outdent, indent
+  hideButtons = table, line, emoticon, spellcheck, showhelp, about,  textstylelabel, fontstyle, fontsize, showhelp, textcolor, image, bgcolor,  strikethrough, underline, inserttag, user, findreplace, copy, cut, paste, about, help 
+  ## Sortierung der RTE Buttons
+  toolbarOrder = bar, formatblock, linebreak, blockstylelabel, blockstyle, bar, bold, italic , bar, left, right, center, bar, subscript, superscript, bar, orderedlist, unorderedlist, outdent, indent, bar, link, image, linebreak, removeformat, insertcharacter, undo, redo, chMode
+  keepButtonGroupTogether = 1
+  
+  #classesCharacter not used in this setup  
+  #classesCharacter = mono,file,directory,infoHeadline,questionHeadline,stopHeadline,underline,strikethrough
+  #taken from CSS-Style Sheet
+  #classesParagraph = code,note,importantquestion,stop,citation,csc-frame-frame1,csc-frame-frame2,align-center,align-left,align-right,align-justify
+  classesParagraph = smalltext, boxelement, preface, linklist, nomargin
+  classesAnchor = linkbutton, internal-link, external-link, mail, download
+  allowedClasses = underline, intro, mono, file, directory, infoHeadline, questionHeadline, stopHeadline, align-center, align-left, align-right, align-justify, smalltext, boxelement, preface, linklist, nomargin
+
+  ## Use same processing as on entry to database to clean content pasted into the editor
+  enableWordClean.HTMLparser < RTE.default.proc.entryHTMLparser_db
+  
+  proc {
+    ## br wird nicht zu p konvertiert
+    dontConvBRtoParagraph = 1 
+    # tags sind erlaubt außerhalt von p, div
+  	allowTagsOutside = img,hr 
+  	# List all class selectors that are allowed on the way to the database 
+    allowedClasses < RTE.default.allowedClasses
+
+  	# tags die erlaubt / verboten sind
+    allowTags = table, tbody, tr, th, td, h1, h2, h3, h4, h5, h6, div, p, br, ul, ol, li, re, blockquote, strong, em, b, i, u, sub, sup, strike, a, img, nobr, hr, tt, q, cite, abbr, acronym, center
+    denyTags = font, span
+    
+
+  	# html parser einstellungen
+  	HTMLparser_rte {
+	    # tags die erlaubt/verboten sind
+	    allowTags < RTE.default.proc.allowTags
+	    denyTags < RTE.default.proc.denyTags
+	    # tags die untersagt sind
+	    removeTags = font, span, style
+	 
+	    # entfernt html-kommentare
+	    removeComments = 1
+	 
+	    # tags die nicht übereinstimmen werden nicht entfernt (protect / 1 / 0)
+	    keepNonMatchedTags = 0
+	}
+ 
+	# Content to database
+	entryHTMLparser_db = 1
+	entryHTMLparser_db {
+	    # tags die erlaubt/verboten sind
+	    allowTags < RTE.default.proc.allowTags
+	    denyTags < RTE.default.proc.denyTags
+	 
+	    # CLEAN TAGS
+	    noAttrib = strike, em, quote, blockquote, cite, tt, span
+	 
+	    rmTagIfNoAttrib = span,div,font
+	 
+	    # htmlSpecialChars = 1
+	 
+	    # align attribute werden erlaubt
+	    .tags {
+	      p.fixAttrib.align.unset >
+	      p.allowedAttribs = class
+	 
+	      div.fixAttrib.align.unset >
+	 
+	      hr.allowedAttribs = class
+	 
+	      # b und i tags werden ersetzt (em / strong)
+	      b.remap = strong
+	      i.remap = em
+	 
+	      # img tags werden erlaubt
+	      img >
+	    }
+	}
+  }
+  #proc end
+  
+  FE {
+    proc  {
+      allowedClasses < RTE.default.allowedClasses
+    }
+  }
+}
+
+RTE.colors {
+  color1 {
+    name = My color 1
+    value = #ff0000
+  }
+}
+
+RTE.default.colors = color1
+RTE.classesAnchor {
+  external-link {
+    class = external-link
+    type = url
+    image >
+    titleText =
+  }
+  button-link {
+    class = linkbutton
+    type = page
+    image >
+    titleText =
+  }
+  internal-link {
+    class = internal-link
+    type = page
+    image >
+    titleText =
+  }
+  download {
+    class = download
+    type = file
+    image >
+    titleText =
+  }
+  
+  mail {
+    class = mail
+    type = mail
+    image >
+    titleText =
+  }
+}
+
+
+
+RTE.classes {
+  #custom anorak paragraph styles  
+  smalltext.name = Absatz mit kleiner Schriftgröße
+  boxelement.name = Absatz mit Hintergrund
+  preface.name = Absatz als Einleitung
+
+  linklist.name = Linkliste
+  nomargin.name = Kein Abstand nach unten 
+}

@@ -1,0 +1,25 @@
+@import "_global";
+
+//this file is included in TYPO3 if svg support is detected
+@mixin sprite_icons($x, $y, $repeat) {
+  background-image:url('#{$sprite_icons}.svg');
+  background-position: $x $y;
+  background-repeat:$repeat;
+}
+
+@mixin sprite_template($x, $y, $repeat) {
+  background-image:url('#{$sprite_template}.svg');
+  background-position: $x $y;
+  background-repeat:$repeat;
+}
+
+//all the mixins - use sprite()
+@import "_mixins";
+
+
+//pc styles
+@import "_styles.pc";  
+@import "_print";
+
+
+@import "_mobile";  

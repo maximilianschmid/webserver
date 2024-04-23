@@ -1,0 +1,30 @@
+Index: fileadmin/static/js/libs/jqueryplugins/jquery.swipe.js
+===================================================================
+--- fileadmin/static/js/libs/jqueryplugins/jquery.swipe.js	(revision 739)
++++ fileadmin/static/js/libs/jqueryplugins/jquery.swipe.js	(working copy)
+@@ -67,7 +67,8 @@
+ 						
+ 			// Screen touched, store the original coordinate
+ 			function touchStart(event) {
+-				
++        preventdefault_threshold = 0;
++        				
+ 				firstFinger = event.targetTouches[0];
+ 				
+ 				originalCoord.x = firstFinger.pageX;
+@@ -88,8 +89,14 @@
+ 			  // event.preventDefault();  // prevents page scrolling
+ 				finalCoord.x = firstFinger.pageX; // Updated X,Y coordinates
+ 				finalCoord.y = firstFinger.pageY;
+-				
+ 				var changeX = originalCoord.x - finalCoord.x;
++				
++				preventdefault_threshold += Math.abs(changeX);
++        //if threshold limit os reached prevent scrolling to keep moveevent alive
++        if (preventdefault_threshold > defaults.threshold.x){
++          event.preventDefault();
++        }
++        
+ 				defaults.touchMove(event, changeX);
+ 			}
+ 			

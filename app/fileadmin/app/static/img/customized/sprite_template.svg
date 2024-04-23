@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="1000px" height="200px" viewBox="80 80 1000 200"
+	 overflow="visible" enable-background="new 80 80 1000 200" xml:space="preserve">
+<defs>
+</defs>
+<rect x="80" y="80" display="none" fill="#B8B8B8" width="950" height="1000"/>
+<g>
+	<path fill="#C0D471" d="M1050,81v11.099h2.032v-0.001c4.188,0,7.582-2.037,7.582-4.549C1059.614,85.036,1050,81,1050,81z"/>
+</g>
+<g>
+	<path fill="#C0D471" d="M110,81v11.099h-2.032v-0.001c-4.188,0-7.582-2.037-7.582-4.549C100.386,85.036,110,81,110,81z"/>
+</g>
+<g>
+	<path fill="#A0BE28" d="M1052,92.109L1052,92.109h-1.615h-940.77H108l0,0c-4.188,0-7.582-2.037-7.582-4.55v58.89
+		c0,2.513,3.395,4.55,7.582,4.55V151c0,0,1.615,0,1.615-0.001h940.77C1050.385,151,1052,151,1052,151v-0.001
+		c4.188,0,7.582-2.037,7.582-4.55V87.56C1059.582,90.072,1056.188,92.109,1052,92.109z"/>
+</g>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="580" y1="163" x2="580" y2="151">
+	<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+	<stop  offset="0.9104" style="stop-color:#000000;stop-opacity:0.9104"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+<rect x="110" y="151" opacity="0.25" fill="url(#SVGID_1_)" width="940" height="12"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="980" y1="58.0039" x2="980" y2="46.0039" gradientTransform="matrix(-1 0 0 -1 1560 138.0039)">
+	<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+	<stop  offset="0.9104" style="stop-color:#000000;stop-opacity:0.9104"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+<rect x="110" y="80" opacity="0.25" fill="url(#SVGID_2_)" width="940" height="12"/>
+<rect x="581" y="206" fill="#A0BE28" width="6" height="5"/>
+<path fill="#A0BE28" d="M545,170v70h70v-70H545z M590.121,205.336l-1.121-1.1V215h-10v-9h-4v9h-4v-10.764l-1.121,1.1l-0.896-1.42
+	l10.95-8.518l4.067,3.189V197h2v3.313l4.854,3.603L590.121,205.336z"/>
+<polygon fill="#FFFFFF" points="588,255 580,263 572,255 "/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="0" y1="104.5" x2="1030" y2="104.5"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="0" y1="129.5" x2="1030" y2="129.5"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="0" y1="154.5" x2="1030" y2="154.5"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="0" y1="179.5" x2="1030" y2="179.5"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="0" y1="204.5" x2="1030" y2="204.5"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="0" y1="229.5" x2="1030" y2="229.5"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="0" y1="254.5" x2="1030" y2="254.5"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="0" y1="279.5" x2="1030" y2="279.5"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="104.5" y1="0" x2="104.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="129.5" y1="0" x2="129.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="154.5" y1="0" x2="154.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="179.5" y1="0" x2="179.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="204.5" y1="0" x2="204.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="229.5" y1="0" x2="229.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="254.5" y1="0" x2="254.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="279.5" y1="0" x2="279.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="304.5" y1="0" x2="304.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="329.5" y1="0" x2="329.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="354.5" y1="0" x2="354.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="379.5" y1="0" x2="379.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="404.5" y1="0" x2="404.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="429.5" y1="0" x2="429.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="454.5" y1="0" x2="454.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="479.5" y1="0" x2="479.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="504.5" y1="0" x2="504.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="529.5" y1="0" x2="529.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="554.5" y1="0" x2="554.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="579.5" y1="0" x2="579.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="604.5" y1="0" x2="604.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="629.5" y1="0" x2="629.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="654.5" y1="0" x2="654.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="679.5" y1="0" x2="679.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="704.5" y1="0" x2="704.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="729.5" y1="0" x2="729.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="754.5" y1="0" x2="754.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="779.5" y1="0" x2="779.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="804.5" y1="0" x2="804.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="829.5" y1="0" x2="829.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="854.5" y1="0" x2="854.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="879.5" y1="0" x2="879.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="904.5" y1="0" x2="904.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="929.5" y1="0" x2="929.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="954.5" y1="0" x2="954.5" y2="1580"/>
+<line display="none" fill="none" stroke="#00FFFF" x1="979.5" y1="0" x2="979.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="1004.5" y1="0" x2="1004.5" y2="1580"/>
+<line display="none" fill="none" stroke="#A6FFFF" x1="1029.5" y1="0" x2="1029.5" y2="1580"/>
+</svg>

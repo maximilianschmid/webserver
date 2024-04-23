@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="Tue Jul 12 18:56:04 UTC 2011" product-name="tt_address">
+    <header/>
+    <body>
+      <trans-unit id="tt_address" approved="yes">
+        <source>Address</source>
+        <target state="translated">Adresse</target>
+      </trans-unit>
+      <trans-unit id="tt_address.mobile" approved="yes">
+        <source>Mobile:</source>
+        <target state="translated">Mobil:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.gender" approved="yes">
+        <source>Gender:</source>
+        <target state="translated">Geschlecht:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.gender.m" approved="yes">
+        <source>Male (Mr)</source>
+        <target state="translated">Männlich (Herr)</target>
+      </trans-unit>
+      <trans-unit id="tt_address.gender.f" approved="yes">
+        <source>Female (Mrs)</source>
+        <target state="translated">Weiblich (Frau)</target>
+      </trans-unit>
+      <trans-unit id="tt_address.first_name" approved="yes">
+        <source>First Name:</source>
+        <target state="translated">Vorname:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.middle_name" approved="yes">
+        <source>Middle Name:</source>
+        <target state="translated">Zweiter Vorname:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.last_name" approved="yes">
+        <source>Last Name:</source>
+        <target state="translated">Nachname:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.birthday" approved="yes">
+        <source>Birthday:</source>
+        <target state="translated">Geburtstag:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.building" approved="yes">
+        <source>Building:</source>
+        <target state="translated">Gebäude:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.room" approved="yes">
+        <source>Room:</source>
+        <target state="translated">Raum:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.organization" approved="yes">
+        <source>Organization:</source>
+        <target state="translated">Organisation:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.region" approved="yes">
+        <source>Region/State:</source>
+        <target state="translated">Region/Bundesland:</target>
+      </trans-unit>
+      <trans-unit id="tt_address.addressgroup" approved="yes">
+        <source>Group:</source>
+        <target state="translated">Gruppe:</target>
+      </trans-unit>
+      <trans-unit id="tt_address_group" approved="yes">
+        <source>Address Group</source>
+        <target state="translated">Adressgruppe</target>
+      </trans-unit>
+      <trans-unit id="tt_address_group.parent_group" approved="yes">
+        <source>Parent Group:</source>
+        <target state="translated">Übergeordnete Gruppe:</target>
+      </trans-unit>
+      <trans-unit id="pi_tt_address" approved="yes">
+        <source>Addresses</source>
+        <target state="translated">Adressen</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,422 @@
+// FORMS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin form_print{
+  background: white !important;
+  border: 2px solid #CCC;
+  width: auto !important;
+
+  label{
+    color: black !important;
+  }
+}
+
+@mixin print{
+
+
+
+// R E S E T S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  body{
+    width: auto !important;
+    background: white !important;
+    zoom:96%;
+  }
+
+  .page_margins, .page,
+  .header, header, .header_innerwrap, .main, .main_innerwrap, .footer, footer, .footer_innerwrap {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    width: auto !important;
+    min-width: auto !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  .col2, .col2_content, .col3, .col3_content{
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    width: auto !important;
+    float: none !important;
+  }
+
+  .header_innerwrap{
+    padding-bottom: 20px !important;
+    margin-bottom: 10px !important;
+    border-bottom: 2px solid black !important;
+  }
+
+  .footer_innerwrap{
+    border-top: 2px solid black !important;
+    padding-top: 10px !important;
+    margin-top: 10px !important;
+  }
+  
+  .logolink_wrap{
+    .logolink_automargin{
+      .logolink{
+        display:none !important;
+      }
+      .print_logo{
+        display:block !important;
+      }
+    }//.logolink_automargin
+  }//.logolink_wrap
+
+
+// SUB TEMPLATES ( COLUMNS )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// TEXT / IMAGE ( TEXTPIC )
+// ###########################################################################################################################
+
+  .csc-textpic-imagewrap{
+    float: left;
+    //avoid break if page is to narrow
+    overflow-x:hidden;
+    white-space: nowrap;
+  }
+
+
+// SUB COLUMNS
+// ###########################################################################################################################
+
+  .c25l, .c33l, .c38l, .c50l, .c62l, .c66l, .c75l,
+  .c25r, .c33r, .c38r, .c50r, .c62r, .c66r, .c75r {
+    width: auto;
+    margin: 0; 
+    float: none; 
+    overflow: visible;
+    display: table;
+    border-bottom: 1px dotted #CCC;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+  .subc, .subcl, .subcr  {
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+
+
+// H I D D E N   E L E M E N T S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+  .col1,
+  .nav_main,
+  .nav_meta,
+  .langMenu,
+  .versionswitcher,
+  .tx-macinasearchbox-pi1,
+  .news-single-backlink,
+  .news-single-pagination,
+  #g-setup {
+    display: none;
+  }
+
+
+
+
+// C O N T E N T   E L E M E N T S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// CONTENT TABLE
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .contenttable{
+    thead{
+      tr.tr-even{
+        th{
+          background: transparent;
+        }
+      }
+    }//thead
+    tr{
+      td, th{
+        border-color: black !important;
+      }
+    }
+
+    tr.tr-even{
+      td, th{
+        background: #CCC;
+      }
+    }
+  }
+
+
+// SITEMAP
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .csc-sitemap{
+    ul{
+      margin-left: 0 !important;
+      li{
+        padding: 5px 10px !important;
+
+        a, a:link, a:visited{
+          font-size: 18px !important;
+          line-height: 22px !important;
+          text-decoration: none !important;
+        }
+        ul{
+          border-top: 2px solid black;
+          margin-top: 5px !important;
+          li{
+            padding-left: 0 !important;
+
+            ul{
+              border: none !important;
+              margin-top: 0 !important;
+              li{
+                padding: 5px 10px !important;
+                border: 1px solid grey !important;
+                a, a:link, a:visited{
+                  font-size: 16px !important;
+                  line-height: 19px !important;
+                }
+                ul{
+                  margin-top: 5px !important;
+                  li{
+                    padding: 5px 0 !important;
+                  a, a:link, a:visited{
+                    font-size: 14px !important;
+                    line-height: 17px !important;
+                  }
+                    border: none !important;
+                    border-top: 1px dotted grey !important;
+                    padding-right: 0 !important;
+                  }// li 4
+                }// ul 4
+              }// li 3
+            }// ul 3
+          }// li 2
+        }// ul 2
+      }// li 1
+    }// ul 01
+  }// csc-sitemap
+
+
+
+// LISTS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  ul{
+    margin-left: 25px !important;
+    list-style-type: square !important;
+
+    li{
+      padding-left: 0px !important;
+      list-style-type: square !important;
+      background: none !important;
+
+      ul{
+         li{
+        }
+      }
+    }
+  }
+
+
+
+  form#mailform{
+    @include form_print;
+  }
+  
+  .tx-felogin-pi1{
+    width: auto !important;
+    form{
+      @include form_print;
+    }
+  }
+  
+  .tx-indexedsearch{
+    width: auto !important;
+    form{
+      @include form_print;
+    }
+  }
+
+
+// DATE
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .aktDatum{
+    display: block !important; // shown in print
+  }
+
+
+// SLIDERELEMENT
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .sliderelement{
+    .coda-nav{
+      ul{
+        margin-left: 0 !important;
+        li{
+          list-style: none !important;
+          a{
+            border-color: black lightgrey !important;
+          &.current{
+            border-color: black !important;
+          }
+          }
+          a[href^="http:"]{
+            &:after{
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+// T E X T
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// FONT SIZES
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  body, input, select, textarea{
+    font-size: 14px !important;
+    line-height: 17px !important;
+  }
+
+  p{
+    font-size: 14px !important;
+    line-height: 17px !important;
+    padding-bottom: 14px !important;
+  }
+
+  h1{
+    font-size: 22px !important;
+    line-height: 26px !important;
+    margin: 22px 0 !important;
+  }
+
+  h2{
+    font-size: 18px !important;
+    line-height: 22px !important;
+    margin: 18px 0 !important;
+  }
+
+  h3, h4{
+    font-size: 16px !important;
+    line-height: 19px !important;
+    margin: 16px 0 !important;
+  }
+
+  h5, h6{
+    font-size: 14px !important;
+    line-height: 17px !important;
+    margin: 14px 0 !important;
+  }
+
+
+// LINKS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  a, a:link, a:visited{
+    text-decoration: underline !important;
+    color: black !important;
+    padding: 0 !important;
+    background-image: none !important;
+//    background-color: #CCC;
+  }
+
+
+// PAGE BREAKS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  h1, h2, h3, h4, h5, h6 { 
+    page-break-after: avoid; // Avoid page breaks right after headings
+  }
+
+  body{
+    widows: 2 !important;
+    orphans: 2 !important;
+  }
+
+
+// L A B E L S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// URL OUTPUT FOR LINKS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  a[href].external-link, a[href].external-link-new-window,
+  a[href].mail, a[href].download, a[href^="http:"], a[href^="https:"], a[href^="mailto:"],{
+    &:after {
+      content:" <URL: "attr(href)">";
+      font-family: monospace;
+      color: #444;
+      background: none;
+      font-style: italic;
+      font-size: 11px;
+      line-height: 12px;
+    }
+  }
+
+  .image_zoom:after{
+    content: none;
+  }
+
+// ACRONYMS & ABBREVIATIONS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  abbr[title]:after, acronym[title]:after {
+    content: '(' attr(title) ')';
+  }
+
+
+// COLUMN LABELS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .col3:before {
+    content: "<< RIGHT COLUMN >>";
+    color: grey;
+    border-top: 1px dashed grey;
+    border-bottom: 1px dashed grey;
+    display: block;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 5px;
+  }
+  
+}// mixin print

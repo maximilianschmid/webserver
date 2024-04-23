@@ -1,0 +1,26 @@
+************************************************************************************
+ES GIBT ABSOLUT KEINEN GRUND DIE HTML-VORLAGEN IN DIESEM ORDNER ZU VERÄNDERN.
+************************************************************************************
+Alle Änderungen am Design, sollten in den entsprechenden CSS-Dateien
+im Ordner fileadmin/ UND am TypoScript-Code vorgenommen werden.
+Zusätzliche DIV-Container sollten mittels TypoScript-Code erstellt werden.
+Das ist die Philosophie von YAML (und CSS im Allgemeinen). Halten Sie sich bitte daran
+und Sie werden sehr viel mehr Freude an YAML und Ihren Ergebnissen haben.
+************************************************************************************
+Wenn Sie, aus guten Gründen, WIRKLICH Änderungen an den HTML-Vorlagen durchführen
+MÜSSEN, erzeugen Sie bitte NEUE in einem ANDEREN Ordner und erzeugen Sie auch
+NEUE Datenstrukturen (DS) und Template Objekte (TS) mit TemplaVoila.
+In zukünftigen Versionen dieser Extension werden weitere HTML-Vorlagen
+sowie DS and TOs hinzukommen.
+
+Diese Vorgehensweise ist wichtig, damit Sie jederzeit ein Update dieser Extension
+durchführen können. Wenn Sie innerhalb des Extension-Verzeichnisses eigene Dateien
+anlegen, werden diese bei einem Update ÜBERSCHRIEBEN und sind verloren.
+
+Sie erhalten ausserdem Fehlermeldungen von TemplaVoila wenn Sie die HTML-Vorlagen ändern.
+Der Zeitstempel ändert sich dann, TYPO3 bemerkt das und eine Fehlermeldung entsteht.
+
+ÄNDERN SIE NUR DANN wenn Sie genau wissen, wie Sie mit solchen Fehlern umgehen müssen.
+************************************************************************************
+
+Ihr t3net-Team.

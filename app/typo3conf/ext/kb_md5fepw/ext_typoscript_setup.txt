@@ -1,0 +1,26 @@
+
+# For the "forgot password" function of the "newloginbox" extension
+plugin.tx_newloginbox_pi1 {
+	defaultPasswordLength = 5
+}
+
+# For the "forgot password" function of the "feuser_admin" extension
+plugin.feadmin.fe_users {
+	defaultPasswordLength = 5
+}
+
+
+includeLibs.kb_md5fepw = typo3conf/ext/kb_md5fepw/user_kb_md5fepw.php
+
+tt_content.login.20 {
+	dataArray {
+		20.type = *real_pass=password
+		50.type = pass=hidden
+		50.value = 
+		60.type = kb_md5fepw=hidden
+		60.value = 1
+		70.type = challenge=hidden
+		70.value = ###KB_MD5FEPW_CHALLENGE###
+	}
+}
+

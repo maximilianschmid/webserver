@@ -1,0 +1,30 @@
+2010-02-23  Stanislas Rolland  <typo3@sjbr.ca>
+
+	* Fixed bugtracker issue #12033: Deprecated function ereg_replace on PHP 5.3.0
+
+2009-02-19  Stanislas Rolland  <typo3@sjbr.ca>
+
+	* Fixed bug introduced in 1.5.0: Incorrect links in drop-down list when not using realUrl
+	* Version 1.5.1 published to TER
+
+2009-02-12  Stanislas Rolland  <typo3@sjbr.ca>
+
+	* Tagging version 1.5.0 published to TER
+
+2009-02-11  Stanislas Rolland  <typo3@sjbr.ca>
+
+	* Fixed bug: Sort languages in the order specified by the plugin record or TS setup. Thanks to Marco Bamert.
+	* Added feature: New constant showCurrentFirst. Thanks to Patric Pesch.
+	* Added feature: New constant addLinksListHeader and new marker ###LINK_SELECT_LANGUAGE###. Thanks to Ingo Schmitt.
+
+2009-02-10  Stanislas Rolland  <typo3@sjbr.ca>
+
+	* Added feature forceUseOfExternalUrl
+
+2009-02-04  Stanislas Rolland  <typo3@sjbr.ca>
+
+	* Initial upload to TYPO3 Forge
+	* Cleanup (CGL, while loops, globals)
+	* Factor out method makeUrl
+	* Simplify method optionsConstructor and more cleanup
+	* Added feature useExternalUrl

@@ -1,0 +1,208 @@
+@import "_global";
+
+@media screen{
+
+  html { height: auto; margin-bottom:0; }
+  * html textarea { overflow:scroll; overflow-x: hidden; }
+  * html input { overflow: hidden; }
+
+  body { position:relative }  /* Essential in IE7 for correct layout scaling ... */
+  * html body { position:static }  /* ... but not for IE5.x and IE6 */
+  #main { position: relative } /* helpful for several problems in older IE versions*/
+
+  .clearfix { display: inline-block }  /* ... especial for IE7 */
+  .clearfix { display: block }      /* ... für IE5,IE6,IE7 */
+  * html .clearfix { height: 1% }   /* ... für IE5 + IE6/Win | hasLayout aktivieren */
+
+
+  * html .floatbox { width:100% }
+
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * (en): Bugfix for partially displayed column separators
+   * (de): Bugfix für unvollständige Darstellung der Spalteninhalte / Spaltentrenner
+   *
+   * @bugfix
+   * @affected   IE 5.x/Win, IE6
+   * @css-for    IE 5.x/Win, IE6
+   * @valid      yes
+   */
+
+  * html #col1 { position:relative } /* Nur für < IE7, sonst gibts im IE7 neue Positionierungsprobleme */
+  * html #col2 { position:relative } /* Nur für < IE7, sonst gibts im IE7 neue Positionierungsprobleme */
+  * html #col3 { position:relative }
+
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * (en) Preventing several css bugs by forcing "hasLayout"
+   * (de) Vermeidung verschiedenster Bugs durch Erzwingen von "hasLayout"
+   *
+   * @workaround
+   * @affected   IE 5.x/Win, IE6, IE7
+   * @css-for    IE 5.x/Win, IE6, IE7
+   * @valid      no
+   */
+   
+  body { height: 1% }
+  .page_margins, .page, .header, .nav, .main, .footer { zoom:1 }             /* IE6 & IE7    */
+
+
+  /**
+   * List-Numbering Bug
+   *
+   * @bugfix
+   * @affected   IE 5.x/Win, IE6, IE7
+   * @css-for    IE 5.x/Win, IE6, IE7
+   * @valid      yes
+   */
+  body ol li { display:list-item; }
+  
+  /*------------------------------------------------------------------------------------------------------*/
+
+
+  /* (en) avoid horizontal scrollbars in IE7 in borderless layouts because of negative margins */
+  /* (de) Vermeidung horizontaler Scrollbalken bei randabfallenden Layouts im IE7 */
+  html {margin-right: 1px}
+  * html {margin-right: 0}
+
+  //layout clearing
+  
+  img{
+    -ms-interpolation-mode: bicubic;
+  }
+
+  .teaser{
+    overflow:hidden;
+  }
+  
+  // content element clearing
+  .csc-textpic, .csc-default{
+    overflow:hidden;
+  }
+
+  .csc-textpic{
+    dd.csc-textpic-caption{
+      padding-bottom: $fs*0.5;
+    }
+    .csc-textpic-caption{
+      padding-top: $fs*0.5;
+    }
+  }
+
+  a{
+    &:hover{
+      cursor:pointer;
+    }
+  }
+ 
+  input[type = file]{
+    border: 2px solid $color_input_border;
+    padding: $fs*0.25 $fs*0.50;
+  }
+  
+  input.button, input[type = submit], input[type = button], button{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  div.csc-mailform-field{
+    &:first-child{
+      padding-top: $bu*2.0!important;
+    }
+  }
+
+
+// MENU ( CSC-MENU )
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  .csc-menu{//ul.csc-menu
+    li{
+      float: left;
+      a, a:link, a:visited{
+      }
+    }
+  }
+
+
+// 33% SUBCOLUMN
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  .c33r, .c33l{
+    width: 33.3%;
+  }
+
+// CONTENT TABLE ( CONTENTTABLE )
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  .contenttable{
+    border-bottom-style: solid !important;
+    caption{
+      padding-bottom: $fs*1.0;
+    }
+    thead{
+      tr{
+        th{
+          border-top: none !important;
+        }// th
+      }// tr
+    }// thead
+    tr{
+      td, th{
+        border-top-style: solid !important;
+      }
+    }
+    
+  }
+
+
+// TEXT FORMAT MAIN ( CSC-UPLOADS )
+// ---------------------------------------------------------------------------------------------------------------------------
+
+  .csc-uploads {
+    border-bottom-style: solid !important;
+    tr{
+      td {
+        border-top-style: solid !important;
+      }// td
+    }// tr
+  }// TABLE
+
+
+// HEADER LIST VIEW
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  .news-header-list-container{
+    overflow: hidden;
+    .news-header-list-title, .news-header-list-time, .news-header-list-categories{
+      float: left;
+    }
+    .news-header-list-title{
+    }
+    .news-header-list-time{
+    }
+  }
+
+
+// SITEMAP
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  .csc-sitemap{
+    ul{
+      li{
+        ul{
+          li{
+            ul{
+              overflow: hidden !important;
+              li{
+                float: left !important;
+              }// li 3
+            }// ul 3
+          }// li 2
+        }// ul 2
+      }// li 1
+    }// ul 1
+  }
+
+}//@media

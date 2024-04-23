@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="de" type="array">
+			<label index="title">Links überprüfen</label>
+			<label index="menu.introduction">Einleitung</label>
+			<label index="menu.checkLinks">Links auf Gültigkeit überprüfen</label>
+			<label index="menu.overview">Überblick der Links auf der Website</label>
+			<label index="overview.header">Überblick - Wählen Sie aus den folgenden Optionen, um die Links zu prüfen</label>
+			<label index="overview.all.header">Anzahl in tt_content</label>
+			<label index="overview.all.records">Datensätze mit ext. Links:</label>
+			<label index="overview.all.links">Externe Links:</label>
+			<label index="overview.branch.header">Anzahl aus aktuellem Teilbereich in tt_content</label>
+			<label index="overview.branch.records">Datensätze mit externen Links:</label>
+			<label index="overview.branch.links">Externe Links:</label>
+			<label index="overview.attention.header">Achtung:</label>
+			<label index="overview.attention.text">Die Überprüfung kann mehrere Minuten dauern. Die Überprüfung eines einzelnen Links kann bis zu 3 Sekunden benötigen.</label>
+			<label index="first.steps">Wählen Sie die Anzahl der zu prüfenden Seitenebenen und klicken Sie auf &quot;Ansicht aktualisieren&quot;, um die Ergebnisse anzuzeigen.</label>
+			<label index="first.steps.info.update.button">Sie können die zwischengespeicherten Ergebnisse aktualisieren, indem Sie auf &quot;Links überprüfen&quot; klicken. Beachten Sie, dass dieser Vorgang einige Zeit benötigen kann.</label>
+			<label index="first.steps.info.scheduler">Alternativ können Sie auch den %sTYPO3-Scheduler%s konfigurieren, um die gespeicherten Ergebnisse regelmäßig zu aktualisieren.</label>
+			<label index="first.steps.info.scheduler.admin">Alternativ kann Ihr Administrator auch den TYPO3-Scheduler konfigurieren, um die gespeicherten Ergebnisse regelmäßig zu aktualisieren.</label>
+			<label index="label_refresh">Ansicht aktualisieren</label>
+			<label index="label_update">Links überprüfen</label>
+			<label index="overviews.statistics.header">Statistik defekter Links</label>
+			<label index="overviews.nbtotal">Defekte Links insgesamt:</label>
+			<label index="hooks.db">Interne Links:</label>
+			<label index="hooks.file">Dateilinks:</label>
+			<label index="hooks.external">Externe Links:</label>
+			<label index="hooks.linkhandler">Linkhandler-Links:</label>
+			<label index="list.header">Auflistung defekter Links</label>
+			<label index="list.tableHead.path">Pfad</label>
+			<label index="list.tableHead.element">Element</label>
+			<label index="list.tableHead.headlink">Link</label>
+			<label index="list.tableHead.linktarget">URL/Linkziel</label>
+			<label index="list.tableHead.linkmessage">Fehlermeldung</label>
+			<label index="list.tableHead.lastCheck">Letzte Überprüfung</label>
+			<label index="list.edit">Das Element, das diesen defekten Link enthält, bearbeiten</label>
+			<label index="list.field">(Feld: %s)</label>
+			<label index="list.no.headline">keine Überschrift</label>
+			<label index="list.report.pagedeleted">Seite '###title###' (###uid###) ist gelöscht.</label>
+			<label index="list.report.pagenotexisting">Seite (###uid###) existiert nicht.</label>
+			<label index="list.report.pagenotvisible">Seite '###title###' (###uid###) ist nicht sichtbar.</label>
+			<label index="list.report.rowdeleted">Zeile ###title### (###uid###) ist gelöscht.</label>
+			<label index="list.report.rowdeleted.default.title">&lt;!-- hier keinen Text einfügen --&gt;</label>
+			<label index="list.report.rownotexisting">Zeile (###uid###) existiert nicht.</label>
+			<label index="list.report.noresponse">Das Ziel des externen Links ist nicht erreichbar.</label>
+			<label index="list.report.redirectloop">Es ist eine Weiterleitungsschleife aufgetreten. (%s: %s)</label>
+			<label index="list.report.pageforbidden403">Der Zugriff auf diese URL ist nicht erlaubt (403).</label>
+			<label index="list.report.pagenotfound404">Die angeforderte URL wurde nicht gefunden (404).</label>
+			<label index="list.report.externalerror">Der externe Link gab einen Fehlercode zurück (%s).</label>
+			<label index="list.report.filenotexisting">Datei existiert nicht.</label>
+			<label index="list.msg.ok">Ok</label>
+			<label index="list.msg.lastRun">%1$s %2$s</label>
+			<label index="list.no.broken.links.title">Keine defekten Links anzuzeigen!</label>
+			<label index="list.no.broken.links">Es gibt keine defekten Links, die hier anzuzeigen wären.</label>
+			<label index="list.tableHead.type">Typ</label>
+			<label index="list.tableHead.headline">Überschrift</label>
+			<label index="list.tableHead.field">Feld</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="de" type="array">
+			<label index="title" type="integer">46540863</label>
+			<label index="menu.introduction" type="integer">12031893</label>
+			<label index="menu.checkLinks" type="integer">168488402</label>
+			<label index="menu.overview" type="integer">167812335</label>
+			<label index="overview.header" type="integer">178288153</label>
+			<label index="overview.all.header" type="integer">231957694</label>
+			<label index="overview.all.records" type="integer">162643915</label>
+			<label index="overview.all.links" type="integer">89085501</label>
+			<label index="overview.branch.header" type="integer">249718066</label>
+			<label index="overview.branch.records" type="integer">162643915</label>
+			<label index="overview.branch.links" type="integer">89085501</label>
+			<label index="overview.attention.header" type="integer">232952482</label>
+			<label index="overview.attention.text" type="integer">135097881</label>
+			<label index="list.tableHead.lastCheck" type="integer">61994194</label>
+			<label index="list.header" type="integer">140641453</label>
+			<label index="list.tableHead.path" type="integer">180814866</label>
+			<label index="list.tableHead.type" type="integer">169845367</label>
+			<label index="list.tableHead.headline" type="integer">192455458</label>
+			<label index="list.tableHead.headlink" type="integer">159284378</label>
+			<label index="list.tableHead.field" type="integer">7224630</label>
+			<label index="list.tableHead.linktarget" type="integer">224573615</label>
+			<label index="list.tableHead.linkmessage" type="integer">237030329</label>
+			<label index="list.report.pagedeleted" type="integer">51132563</label>
+			<label index="list.report.pagenotexisting" type="integer">212531099</label>
+			<label index="list.report.rowdeleted" type="integer">251638812</label>
+			<label index="list.report.rownotexisting" type="integer">197690692</label>
+			<label index="list.report.noresponse" type="integer">31928843</label>
+			<label index="list.report.filenotexisting" type="integer">175302742</label>
+			<label index="label_update" type="integer">13119180</label>
+			<label index="label_refresh" type="integer">10006815</label>
+			<label index="hooks.db" type="integer">20571131</label>
+			<label index="hooks.file" type="integer">186450313</label>
+			<label index="hooks.external" type="integer">112352774</label>
+			<label index="overviews.nbtotal" type="integer">150135854</label>
+			<label index="hooks.linkhandler" type="integer">219306482</label>
+			<label index="list.msg.lastRun" type="integer">234537369</label>
+			<label index="overviews.statistics.header" type="integer">8606400</label>
+			<label index="list.tableHead.element" type="integer">36810724</label>
+			<label index="list.edit" type="integer">208654880</label>
+			<label index="list.field" type="integer">32953004</label>
+			<label index="list.no.headline" type="integer">126922108</label>
+			<label index="list.report.pagenotvisible" type="integer">223533219</label>
+			<label index="list.report.rowdeleted.default.title" type="integer">200044482</label>
+			<label index="list.report.redirectloop" type="integer">147788101</label>
+			<label index="list.report.pageforbidden403" type="integer">69011174</label>
+			<label index="list.report.pagenotfound404" type="integer">34127485</label>
+			<label index="list.report.externalerror" type="integer">1830813</label>
+			<label index="list.msg.ok" type="integer">174097711</label>
+			<label index="list.no.broken.links.title" type="integer">9734419</label>
+			<label index="list.no.broken.links" type="integer">7113423</label>
+			<label index="first.steps" type="integer">1767938</label>
+			<label index="first.steps.info.update.button" type="integer">267473237</label>
+			<label index="first.steps.info.scheduler" type="integer">17979857</label>
+			<label index="first.steps.info.scheduler.admin" type="integer">129981835</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="de" type="array">
+			<label index="title">Check Links</label>
+			<label index="menu.introduction">Introduction</label>
+			<label index="menu.checkLinks">Check Links for validity</label>
+			<label index="menu.overview">Overview of links on website</label>
+			<label index="overview.header">Overview - choose options to check the links</label>
+			<label index="overview.all.header">Total amounts in tt_content</label>
+			<label index="overview.all.records">Records with ext. links:</label>
+			<label index="overview.all.links">External links:</label>
+			<label index="overview.branch.header">Amounts from actual branch in tt_content</label>
+			<label index="overview.branch.records">Records with ext. links:</label>
+			<label index="overview.branch.links">External links:</label>
+			<label index="overview.attention.header">Attention:</label>
+			<label index="overview.attention.text">Checking links may take up to several minutes. Checking ONE link can last up to 3 seconds.</label>
+			<label index="list.tableHead.lastCheck">Last check</label>
+			<label index="list.header">Listing of broken links</label>
+			<label index="list.tableHead.path">Path</label>
+			<label index="list.tableHead.type">Type</label>
+			<label index="list.tableHead.headline">Title</label>
+			<label index="list.tableHead.headlink">Link</label>
+			<label index="list.tableHead.field">field</label>
+			<label index="list.tableHead.linktarget">URL / Link Target</label>
+			<label index="list.tableHead.linkmessage">Error message</label>
+			<label index="list.report.pagedeleted">Page '###title###' (###uid###) is deleted.</label>
+			<label index="list.report.pagenotexisting">Page (###uid###) does not exist.</label>
+			<label index="list.report.rowdeleted">###title### row (###uid###) is deleted.</label>
+			<label index="list.report.rownotexisting">Row (###uid###) does not exist.</label>
+			<label index="list.report.noresponse">External Link not reachable.</label>
+			<label index="list.report.filenotexisting">File doesn't exist.</label>
+			<label index="label_update">Check links</label>
+			<label index="label_refresh">Refresh display</label>
+			<label index="hooks.db">Internal Links:</label>
+			<label index="hooks.file">File Links:</label>
+			<label index="hooks.external">External Links:</label>
+			<label index="overviews.nbtotal">Broken links total:</label>
+			<label index="hooks.linkhandler">Linkhandler Links:</label>
+			<label index="list.msg.lastRun">%1$s %2$s</label>
+			<label index="overviews.statistics.header">Statistics of broken Links</label>
+			<label index="list.tableHead.element">Element</label>
+			<label index="list.edit">Edit element containing this broken link</label>
+			<label index="list.field">(Field: %s)</label>
+			<label index="list.no.headline">&lt;i&gt;(no headline)&lt;/i&gt;</label>
+			<label index="list.report.pagenotvisible">Page '###title###' (###uid###) is not visible.</label>
+			<label index="list.report.rowdeleted.default.title">Linked</label>
+			<label index="list.report.redirectloop">A redirect loop occurred. (%s: %s)</label>
+			<label index="list.report.pageforbidden403">Accessing this address is not allowed (403).</label>
+			<label index="list.report.pagenotfound404">The requested url was not found (404).</label>
+			<label index="list.report.externalerror">External Link returned HTTP error code (%s).</label>
+			<label index="list.msg.ok">Ok</label>
+			<label index="list.no.broken.links.title">No broken links to show!</label>
+			<label index="list.no.broken.links">There are no broken links to be displayed.</label>
+			<label index="first.steps">Choose the level of pages to check and press &quot;Refresh display&quot; to show the results.</label>
+			<label index="first.steps.info.update.button">You can update the stored results by pressing &quot;Check links&quot;. Note that this process can take some time.</label>
+			<label index="first.steps.info.scheduler">Alternatively you can also configure the %sTYPO3 Scheduler%s to update the stored results regularly.</label>
+			<label index="first.steps.info.scheduler.admin">Alternatively your administrator can also configure the TYPO3 Scheduler to update the stored results regularly.</label>
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

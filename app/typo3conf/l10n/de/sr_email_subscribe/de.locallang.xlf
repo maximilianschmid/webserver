@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="Tue Jul 12 18:53:22 UTC 2011" product-name="sr_email_subscribe">
+    <header/>
+    <body>
+      <trans-unit id="fe_user_register" approved="yes">
+        <source>Subscription by email address</source>
+        <target state="translated">Abonnement über E-Mail-Adressen</target>
+      </trans-unit>
+      <trans-unit id="m_default" approved="yes">
+        <source>default</source>
+        <target state="translated">Standard</target>
+      </trans-unit>
+      <trans-unit id="m_ext" approved="yes">
+        <source>extended</source>
+        <target state="translated">Erweitert</target>
+      </trans-unit>
+      <trans-unit id="m_company" approved="yes">
+        <source>company</source>
+        <target state="translated">Firma</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

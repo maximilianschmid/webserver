@@ -1,0 +1,105 @@
+##################################################################################################################
+# TV richtig konfigurieren
+# http://typo3.greenbanana.ch/news/beitrag/datum/2008/06/09/benutzerrechte-fuer-templavooila-richtig-setzen.html
+# http://blog.tolleiv.de/2009/11/templavoila-1-4-released/
+##################################################################################################################
+
+# Templavoila 1.4.1 config
+# By default you will still see the “unlink” icon within the pagemodule but one small setting within User- or PageTSconfig will show up delete buttons as well. There are two modes:
+# mod.web_txtemplavoilaM1.enableDeleteIconForLocalElements = 1
+# will show unlink and delete icons for local elements side-by-side
+mod.web_txtemplavoilaM1.enableDeleteIconForLocalElements = 2
+# will show the delete icon and hide the unlink icon whenever possible.
+
+# hide Templavoila Tabs on Top
+mod.web_txtemplavoilaM1.sideBarEnable = 1
+
+mod.web_list { 
+	#edit record just by clicking on title in list-view
+	clickTitleMode = edit		
+	#alternating colors for records in list-view
+	alternateBgColors = 1 	
+}
+
+# FE-Edit config
+# http://expertinnen-web.de/2006-160/typo3-seiten-mit-frontend-editing-pflegen/
+#
+# PANELCONFIG IS BUGGY - DOES NOT WORK
+# see http://bugs.typo3.org/bug_view_advanced_page.php?bug_id=15511
+#
+
+admPanel {
+    enable.edit = 1
+    module.edit.forceNoPopup = 1
+    module.edit.forceDisplayFieldIcons = 1
+    module.edit.forceDisplayIcons = 1
+    enable.preview = 1
+    #override.preview.showHiddenPages = 1
+    #override.preview.showHiddenRecords = 1
+    hide = 0
+}
+
+# backend module width
+setup.default.navFrameResizable = 0
+setup.override.navFrameResizable = 0
+setup.override.navFrameWidth = 280
+
+
+#Backendsprache
+setup.override.lang = de 
+
+# enable flash uploader
+setup.override.enableFlashUploader = 0
+
+#http://bugs.typo3.org/view.php?id=4543
+# user can manually empty cache
+options.clearCache.pages = 1 
+options.clearCache.all = 1
+
+#ContextMenu Pagetree
+#complete list of items
+#options.contextMenu.pageTree.disableItems = moreoptions,view,edit,new,info,copy,cut,paste,delete,move_wizard,history,perms,new_wizard,edit_access,edit_pageheader,db_list,versioning
+options.contextMenu.pageTree.disableItems = info,move_wizard,history,perms,new_wizard,edit_access,db_list,versioning
+
+
+#RTE width (Default: RTESmallWidth = 530, RTESmallHeight = 380)
+# ACHTUNG: Backend addiert immer ca 120px dazu - wieso auch immer
+# dh. 660 Spaltenbreite FE - 540 im Backend
+options{
+  RTESmallWidth = 540
+  RTESmallHeight = 800
+}
+
+
+# new TYPO3 4.5 options
+# Checkbox at the bottom of the modules are now hideable to provide a cleaner interface:
+#options.file_list.enableDisplayBigControlPanel = 1
+#options.file_list.enableDisplayThumbnails = 1
+#options.file_list.enableClipBoard = 1
+
+
+
+#border by default
+#TCAdefaults.tt_content.imageborder = 1
+#TCAdefaults.tt_content.imagewidth = 100
+#TCAdefaults.tt_content.imageheight = 75
+#click-enlarge by default
+#TCAdefaults.tt_content.image_zoom = 1
+
+
+
+#Cache während Backend-Login ausschalten
+admPanel.override.tsdebug.forceTemplateParsing = 1
+
+
+
+FDFX_BE_IMAGE{   
+	display{
+		maxWidth=600
+		maxHeight=600
+		fixedSize=200x80=small Banner,480x120=Big Banner
+		fixedSizeDefault=1
+		samePath=0
+		#isAbsolute=1newPath=/path/to/the/images/stored        
+	}
+}

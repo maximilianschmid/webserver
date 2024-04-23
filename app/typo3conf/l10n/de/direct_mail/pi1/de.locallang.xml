@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index="header_date_prefix">Datum:</label>
+      <label index="header_link_prefix">- Link für Überschrift:</label>
+      <label index="uploads_header">Dateiquellen:</label>
+      <label index="images_header">Bilder:</label>
+      <label index="image_link_prefix">- Link für Bilder:</label>
+      <label index="caption_header">Beschreibung:</label>
+      <label index="unrendered_content">Nicht angezeigte Inhaltselemente:</label>
+      <label index="link_prefix">Link:</label>
+      <label index="tt_news_author_prefix">Autor:</label>
+      <label index="tt_news_author_date_prefix">Datum:</label>
+      <label index="tt_news_author_email_prefix">- E-Mail-Adresse:</label>
+      <label index="tt_news_short_header">Zusammenfassung:</label>
+      <label index="tt_news_bodytext_header">Langfassung:</label>
+    </languageKey>
+  </data>
+</T3locallangExt>

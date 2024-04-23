@@ -1,0 +1,8 @@
+master
+.DS_Store
+/typo3temp/*
+/typo3conf/temp_CACHED_*
+/fileadmin/app/static/css/.sass-cache
+/typo3conf/ENABLE_INSTALL_TOOL
+/typo3conf/ext/aio_feedit/res/css/.sass-cache
+*.sass-cache*

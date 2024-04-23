@@ -1,0 +1,90 @@
+Index: typo3conf/ext/fdfx_be_image/cm1/locallang.xml
+===================================================================
+--- typo3conf/ext/fdfx_be_image/cm1/locallang.xml	(revision 193)
++++ typo3conf/ext/fdfx_be_image/cm1/locallang.xml	(working copy)
+@@ -9,7 +9,7 @@
+     </meta>
+     <data type="array">
+         <languageKey index="default" type="array">
+-            <label index="tx_fdfxbeimage_title">FXImage</label>
++            <label index="tx_fdfxbeimage_title">Bild beschneiden/rotieren</label>
+             <label index="tx_fdfxbeimage_function1">Crop Image</label>
+             <label index="tx_fdfxbeimage_function2">Rotate Image</label>
+             <label index="tx_fdfxbeimage_function3">T.B.D</label>
+@@ -57,7 +57,7 @@
+         <languageKey index="dk" type="array">
+         </languageKey>
+         <languageKey index="de" type="array">
+-            <label index="tx_fdfxbeimage_title">FXImage</label>
++            <label index="tx_fdfxbeimage_title">Bild beschneiden/rotieren</label>
+             <label index="tx_fdfxbeimage_function1">Bild beschneiden</label>
+             <label index="tx_fdfxbeimage_function2">Bild drehen</label>
+             <label index="tx_fdfxbeimage_function3">T.B.D</label>
+Index: typo3conf/ext/fdfx_be_image/lib/class.tx_fdfxbeimage_image_crop.php
+===================================================================
+--- typo3conf/ext/fdfx_be_image/lib/class.tx_fdfxbeimage_image_crop.php	(revision 200)
++++ typo3conf/ext/fdfx_be_image/lib/class.tx_fdfxbeimage_image_crop.php	(working copy)
+@@ -59,12 +59,17 @@
+ 		$convertTo = tx_fdfxbeimage_data::getValueFromSession($sessionData, 'convertTo');
+ 		$content = '
+ <div id="pageContent">
++<div>
+ ' . $this->btn_back ( '', $this->returnUrl ) . '
+-<div class="crop_content">
+-<div id="imageContainer">
+-<img src="' . $fileName . '">
+ </div>
++
++<div class="crop_content"  style="float:left;">
++  <div id="imageContainer">
++    <img src="' . $fileName . '">
++  </div>
+ </div>
++
++<div style="float:left;">
+ <form>
+ <input type="hidden" id="input_image_ref" value="' . $fileNameLocal . '">
+ <fieldset id="fdfx-be-image-crop-offset">
+@@ -125,11 +130,11 @@
+ 	<legend>' . $GLOBALS ['LANG']->getLL ( 'tx_fdfxbeimage_crop_legend_process' ) . '</legend>
+     <div class="item item-preview">
+     	<label for=""input_preview">' . $GLOBALS ['LANG']->getLL ( 'tx_fdfxbeimage_crop_label_preview' ) . '</label>
+-		<input type="radio" name="store" id="input_preview" value="1" checked="checked" />
++		<input type="radio" name="store" id="input_preview" value="1" />
+     </div>
+     <div class="item item-store">
+     	<label for=""input_store">' . $GLOBALS ['LANG']->getLL ( 'tx_fdfxbeimage_crop_label_store' ) . '</label>
+-		<input type="radio" name="store" id="input_store" value="2" />
++		<input type="radio" name="store" id="input_store" value="2" checked="checked" />
+     </div>
+     <div class="item crop-botton">
+            <input type="button" class="button" onclick="cropScript_executeCrop(this)" value="' . $GLOBALS ['LANG']->getLL ( 'tx_fdfxbeimage_crop_submit' ) . '" />
+@@ -137,6 +142,9 @@
+     <div id="crop_progressBar"></div>
+ </fieldset>
+ </form>
++
++</div>
++
+ </div>
+ 
+ <script type="text/javascript">
+Index: typo3conf/ext/fdfx_be_image/locallang.xml
+===================================================================
+--- typo3conf/ext/fdfx_be_image/locallang.xml	(revision 200)
++++ typo3conf/ext/fdfx_be_image/locallang.xml	(working copy)
+@@ -9,12 +9,12 @@
+     </meta>
+     <data type="array">
+         <languageKey index="default" type="array">
+-            <label index="cm1_title">FXImage</label>
++            <label index="cm1_title">Bild beschneiden/rotieren</label>
+         </languageKey>
+         <languageKey index="dk" type="array">
+         </languageKey>
+         <languageKey index="de" type="array">
+-            <label index="cm1_title">FXImage</label>
++            <label index="cm1_title">Bild beschneiden/rotieren</label>
+         </languageKey>
+         <languageKey index="no" type="array">
+         </languageKey>

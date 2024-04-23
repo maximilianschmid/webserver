@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="Tue Jul 12 18:53:28 UTC 2011" product-name="sr_feuser_register">
+    <header/>
+    <body>
+      <trans-unit id="tt_content.list_type" approved="yes">
+        <source>Front End User Registration</source>
+        <target state="translated">Frontend-Benutzerregistrierung</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode" approved="yes">
+        <source>Display mode</source>
+        <target state="translated">Anzeigemodus</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode.1" approved="yes">
+        <source>Default</source>
+        <target state="translated">Standard</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode.3" approved="yes">
+        <source>Create</source>
+        <target state="translated">Anlegen</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode.4" approved="yes">
+        <source>Delete</source>
+        <target state="translated">Löschen</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode.5" approved="yes">
+        <source>Invite</source>
+        <target state="translated">Einladen</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode.7" approved="yes">
+        <source>Edit</source>
+        <target state="translated">Bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode.8" approved="yes">
+        <source>Setfixed</source>
+        <target state="translated">Parameter-Kommando</target>
+      </trans-unit>
+      <trans-unit id="tt_content.pi1_flexform.display_mode.9" approved="yes">
+        <source>Infomail</source>
+        <target state="translated">E-Mail-Benachrichtigung</target>
+      </trans-unit>
+      <trans-unit id="fe_users.cnum" approved="yes">
+        <source>Customer Number:</source>
+        <target state="translated">Kundennummer:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.static_info_country" approved="yes">
+        <source>Country Code:</source>
+        <target state="translated">Ländercode:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.zone" approved="yes">
+        <source>State/province:</source>
+        <target state="translated">Bundesland/Staat/Provinz:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.language" approved="yes">
+        <source>Language:</source>
+        <target state="translated">Sprache:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.first_name" approved="yes">
+        <source>First Name:</source>
+        <target state="translated">Vorname:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.last_name" approved="yes">
+        <source>Last Name:</source>
+        <target state="translated">Nachname:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.module_sys_dmail_html" approved="yes">
+        <source>Receive emails in HTML format?</source>
+        <target state="translated">E-Mails im HTML-Format erhalten?</target>
+      </trans-unit>
+      <trans-unit id="fe_users.date_of_birth" approved="yes">
+        <source>Date of birth:</source>
+        <target state="translated">Geburtsdatum:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.gender" approved="yes">
+        <source>Mr/Ms:</source>
+        <target state="translated">Hr./Fr.:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.gender.I.0" approved="yes">
+        <source>Mr</source>
+        <target state="translated">Hr.</target>
+      </trans-unit>
+      <trans-unit id="fe_users.gender.I.1" approved="yes">
+        <source>Ms</source>
+        <target state="translated">Fr.</target>
+      </trans-unit>
+      <trans-unit id="fe_users.gender.I.99">
+        <source>  </source>
+      </trans-unit>
+      <trans-unit id="fe_users.status" approved="yes">
+        <source>Status:</source>
+        <target state="translated">Status:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.status.I.1" approved="yes">
+        <source>Student</source>
+        <target state="translated">Student</target>
+      </trans-unit>
+      <trans-unit id="fe_users.status.I.2" approved="yes">
+        <source>Job seeking full time</source>
+        <target state="translated">Schüler</target>
+      </trans-unit>
+      <trans-unit id="fe_users.status.I.3" approved="yes">
+        <source>Working</source>
+        <target state="translated">Angestellt</target>
+      </trans-unit>
+      <trans-unit id="fe_users.status.I.4" approved="yes">
+        <source>Retired</source>
+        <target state="translated">Selbstständig</target>
+      </trans-unit>
+      <trans-unit id="fe_users.status.I.5" approved="yes">
+        <source>Job seeking half time</source>
+        <target state="translated">halbtags beschäftigt</target>
+      </trans-unit>
+      <trans-unit id="fe_users.comments" approved="yes">
+        <source>Comments:</source>
+        <target state="translated">Kommentare:</target>
+      </trans-unit>
+      <trans-unit id="fe_users.by_invitation" approved="yes">
+        <source>Was invited:</source>
+        <target state="translated">Wurde eingeladen:</target>
+      </trans-unit>
+      <trans-unit id="fe_groups_language_overlay" approved="yes">
+        <source>User Group Alternative Language</source>
+        <target state="translated">Alternative Sprache Benutzergruppe</target>
+      </trans-unit>
+      <trans-unit id="fe_groups_language_overlay.title" approved="yes">
+        <source>Translated user group name</source>
+        <target state="translated">Übersetzter Name Benutzergruppe</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

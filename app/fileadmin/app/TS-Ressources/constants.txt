@@ -1,0 +1,360 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/app/TS-Ressources/constants_revisionnumber.txt">
+
+#############################################
+# fancybox (taken from extension pmkslimbox)
+#############################################
+plugin.pmkslimbox {
+  # cat=pmkslimbox/enable/e8; type=boolean; label= Enable SlimBox in displaySingle : If set, LightBox effect will be available in tt_news SingleView when you click on an image.
+  tt_news.displaySingle.slimBoxEnable = 1
+
+  # cat=pmkslimbox/enable/e9; type=boolean; label= Enable SlimBox in displayLatest : If set, LightBox effect will be available in tt_news LatestView when you click on an image.
+  tt_news.displayLatest.slimBoxEnable = 0
+
+  # cat=pmkslimbox/enable/ea; type=boolean; label= Enable SlimBox in displayList : If set, LightBox effect will be available in tt_news ListView when you click on an image.
+  tt_news.displayList.slimBoxEnable = 0
+
+  # cat=pmkslimbox/enable/eb; type=boolean; label= Enable singleView in SlimBox : If set, tt_news SingleView will be shown inside a LightBox.
+  tt_news.displayList.slimBoxSingleView = 0
+
+  # cat=pmkslimbox/dims/d2; type=int+; label= Starting Height: The initial height of the box, in pixels.
+  initialHeight = 250
+
+  # cat=pmkslimbox/dims/d3; type=int+; label= SlimBox Max Image Width: Defines the maxwidth of the image shown in the Lightbox.
+  slimBoxMaxW = 800
+
+  # cat=pmkslimbox/dims/d4; type=int+; label= SlimBox Max Image Height: Defines the maxheight of the image shown in the Lightbox.
+  slimBoxMaxH = 600
+
+  # cat=pmkslimbox/dims/d7; type=int+; label= SlimBox tt_news Iframe width : Used to set the width of the LightBox if displaying tt_news SingleView in SlimBox is enabled.
+  tt_news.displayList.slimBoxWidth = 600
+
+  # cat=pmkslimbox/dims/d8; type=int+; label= SlimBox tt_news Iframe height : Used to set the height of the LightBox if displaying tt_news SingleView in SlimBox is enabled.
+  tt_news.displayList.slimBoxHeight = 500
+
+  # cat=pmkslimbox//o6; type=options[titleText,altText,imagecaption]; label= tt_content Caption Field: tt_content field to use as caption inside the Lightbox.
+  imgtext.captionField = titleText
+
+  # cat=pmkslimbox//o7; type=options[imagetitletext,imagealttext,imagecaption]; label= tt_news Caption Field: tt_news field to use as caption inside the Lightbox.
+  tt_news.captionField = imagetitletext
+}
+
+
+
+////////////////////////////////////////////////////
+// TSConstantsEditor Config
+////////////////////////////////////////////////////
+TSConstantEditor.yaml-basics {
+	header = anorak.io TYPO3
+	description = anorak.io - ideas that work.
+	bulletlist = <b>To edit an option,</b> first mark the corresponding check-box, click "Update", then change the value.//Some checkboxes are possibly checked already, even if it is a fresh installation. This is <b>not</b> a problem.//<b>To return to a default value,</b> uncheck the corresponding check-box, then click "Update".//All values are stored in the "Constants"-Section of your main template. You can also delete them there to return to the default value(s).//<b>The links in the footer must not be removed unless you bought a license.</b>//<b>If you need help</b> with YAML or this TYPO3 template, don't hesitate to join our forum at <b>forum.yaml.de</b> and ask your questions. Help is available there in both english and german language.//<b>Documentation</b> about this template you will find at yaml.t3net.de. Please read <b>before</b> posting questions in our forum.//If you find an <b>error or a bug in this template</b>, please don't write emails to me, but report the error in our forum.//If you find a <b>bug in TYPO3</b>, we cannot help you. Please report bugs concerning TYPO3 itself at bugs.typo3.org
+	image = yaml-t3*.gif
+	3 = mainMenuLinkWrap, mainMenuHeaderWrap, mainMenuIfsubLinkWrap, subMenuEntryLevel, subMenuExpandToggle, subNavExcludeList, subMenuOff
+	4 = mainMenuJsMenuStandardLabel, mainMenuJsMenuFirstLangLabel, mainMenuJsMenuSecondLangLabel, mainMenuJsMenuThirdLangLabel, mainMenuJsMenuFourthLangLabel, mainMenuJsMenuFifthLangLabel, mainMenuJsMenuSixthLangLabel, mainMenuJsMenuAllWrap, selectorBoxOff, mainMenuJsMenuPage
+	6 = tabNavigationOff, tabNavEntryLevel, tabNavExcludeList
+	7 = menuHeadlineOff
+	8 = footerOff, footerStandardLangHtmlCode, footerFirstLangHtmlCode, footerSecondLangHtmlCode, footerThirdLangHtmlCode, footerFourthLangHtmlCode, footerFifthLangHtmlCode, footerSixthLangHtmlCode
+}
+TSConstantEditor.yaml-language {
+	header = YAML for TemplaVoila (Use with TYPO3 Versions 4.2.x ONLY)
+	description = Public versions, please notice:
+	bulletlist = <b>To edit an option,</b> first mark the corresponding check-box, click "Update", then change the value.//Some checkboxes are possibly checked already, even if it is a fresh installation. This is <b>not</b> a problem.//<b>To return to a default value,</b> uncheck the corresponding check-box, then click "Update".//All values are stored in the "Constants"-Section of your main template. You can also delete them there to return to the default value(s).//<b>The links in the footer must not be removed unless you bought a license.</b>//<b>If you need help</b> with YAML or this TYPO3 template, don't hesitate to join our forum at <b>forum.yaml.de</b> and ask your questions. Help is available there in both english and german language.//<b>Documentation</b> about this template you will find at yaml.t3net.de. Please read <b>before</b> posting questions in our forum.//If you find an <b>error or a bug in this template</b>, please don't write emails to me, but report the error in our forum.//If you find a <b>bug in TYPO3</b>, we cannot help you. Please report bugs concerning TYPO3 itself at bugs.typo3.org
+	image = yaml-t3*.gif
+	1 = yamlTemplateUsesLanguages, standardLanguage, firstForeignLanguage, secondForeignLanguage, thirdForeignLanguage, fourthForeignLanguage, fifthForeignLanguage, sixthForeignLanguage, languageIsoCodeStandardLang, languageIsoCodeFirstLang, languageIsoCodeSecondLang, languageIsoCodeThirdLang, languageIsoCodeFourthLang, languageIsoCodeFifthLang, languageIsoCodeSixthLang, languageLocaleStandardLang, languageLocaleFirstLang, languageLocaleSecondLang, languageLocaleThirdLang, languageLocaleFourthLang, languageLocaleFifthLang, languageLocaleSixthLang
+}
+TSConstantEditor.yaml-searchbox {
+	header = YAML for TemplaVoila (Use with TYPO3 Versions 4.2.x ONLY)
+	description = Public versions, please notice:
+	bulletlist = <b>To edit an option,</b> first mark the corresponding check-box, click "Update", then change the value.//Some checkboxes are possibly checked already, even if it is a fresh installation. This is <b>not</b> a problem.//<b>To return to a default value,</b> uncheck the corresponding check-box, then click "Update".//All values are stored in the "Constants"-Section of your main template. You can also delete them there to return to the default value(s).//<b>The links in the footer must not be removed unless you bought a license.</b>//<b>If you need help</b> with YAML or this TYPO3 template, don't hesitate to join our forum at <b>forum.yaml.de</b> and ask your questions. Help is available there in both english and german language.//<b>Documentation</b> about this template you will find at yaml.t3net.de. Please read <b>before</b> posting questions in our forum.//If you find an <b>error or a bug in this template</b>, please don't write emails to me, but report the error in our forum.//If you find a <b>bug in TYPO3</b>, we cannot help you. Please report bugs concerning TYPO3 itself at bugs.typo3.org
+	image = yaml-t3*.gif
+	13 = searchBoxOff, searchPagePID, searchboxTmplFile, searchboxTmplFileFirstLang, searchboxTmplFileSecondLang, searchboxTmplFileThirdLang, searchboxTmplFileFourthLang, searchboxTmplFileFifthLang, searchboxTmplFileSixthLang
+}
+TSConstantEditor.yaml-header {
+	header = YAML for TemplaVoila (Use with TYPO3 Versions 4.2.x ONLY)
+	description = Public versions, please notice:
+	bulletlist = <b>To edit an option,</b> first mark the corresponding check-box, click "Update", then change the value.//Some checkboxes are possibly checked already, even if it is a fresh installation. This is <b>not</b> a problem.//<b>To return to a default value,</b> uncheck the corresponding check-box, then click "Update".//All values are stored in the "Constants"-Section of your main template. You can also delete them there to return to the default value(s).//<b>The links in the footer must not be removed unless you bought a license.</b>//<b>If you need help</b> with YAML or this TYPO3 template, don't hesitate to join our forum at <b>forum.yaml.de</b> and ask your questions. Help is available there in both english and german language.//<b>Documentation</b> about this template you will find at yaml.t3net.de. Please read <b>before</b> posting questions in our forum.//If you find an <b>error or a bug in this template</b>, please don't write emails to me, but report the error in our forum.//If you find a <b>bug in TYPO3</b>, we cannot help you. Please report bugs concerning TYPO3 itself at bugs.typo3.org
+	image = yaml-t3*.gif
+	2 = headerImageWidth, headerImageHeight, headerImageTransparency, firstHeaderImageOff, noGifBuilderForFirstHeaderImage, linkFirstImageToggle, homePageUID
+	5 = headerNavigationIncludeList
+	11 = secondHeaderImageOff, noGifBuilderForSecondHeaderImage, headerBannerWidth, headerBannerHeight, headerBannerTransparency
+}
+TSConstantEditor.yaml-teaser {
+	header = YAML for TemplaVoila (Use with TYPO3 Versions 4.2.x ONLY)
+	description = Public versions, please notice:
+	bulletlist = <b>To edit an option,</b> first mark the corresponding check-box, click "Update", then change the value.//Some checkboxes are possibly checked already, even if it is a fresh installation. This is <b>not</b> a problem.//<b>To return to a default value,</b> uncheck the corresponding check-box, then click "Update".//All values are stored in the "Constants"-Section of your main template. You can also delete them there to return to the default value(s).//<b>The links in the footer must not be removed unless you bought a license.</b>//<b>If you need help</b> with YAML or this TYPO3 template, don't hesitate to join our forum at <b>forum.yaml.de</b> and ask your questions. Help is available there in both english and german language.//<b>Documentation</b> about this template you will find at yaml.t3net.de. Please read <b>before</b> posting questions in our forum.//If you find an <b>error or a bug in this template</b>, please don't write emails to me, but report the error in our forum.//If you find a <b>bug in TYPO3</b>, we cannot help you. Please report bugs concerning TYPO3 itself at bugs.typo3.org
+	image = yaml-t3*.gif
+	1 = languageMenuOff
+	9 = toolbarDateFormatStandardLang, toolbarDateFormatFirstLang, toolbarDateFormatSecondLang, toolbarDateFormatThirdLang, toolbarDateFormatFourthLang, toolbarDateFormatFifthLang, toolbarDateFormatSixthLang, dateAndTimeOff
+	10 = fontsizeHtmlCode, fontSizeSelectorOff, pageHeaderDataStandardLang, pageHeaderDataFirstLang, pageHeaderDataSecondLang, pageHeaderDataThirdLang, pageHeaderDataFourthLang, pageHeaderDataFifthLang, pageHeaderDataSixthLang, pageBodyData
+	12 = teaserOff, toolbarStandardLangClickPathPrefix, toolbarFirstLangClickPathPrefix, toolbarSecondLangClickPathPrefix, toolbarThirdLangClickPathPrefix, toolbarFourthLangClickPathPrefix, toolbarFifthLangClickPathPrefix, toolbarSixthLangClickPathPrefix, rootlineLinkWrap, rootlineOff
+}
+
+TSConstantEditor.yaml-anorak {
+	header = YAML for TemplaVoila (Use with TYPO3 Versions 4.2.x ONLY)
+	description = Public versions, please notice:
+	bulletlist = <b>To edit an option,</b> first mark the corresponding check-box, click "Update", then change the value.//Some checkboxes are possibly checked already, even if it is a fresh installation. This is <b>not</b> a problem.//<b>To return to a default value,</b> uncheck the corresponding check-box, then click "Update".//All values are stored in the "Constants"-Section of your main template. You can also delete them there to return to the default value(s).//<b>The links in the footer must not be removed unless you bought a license.</b>//<b>If you need help</b> with YAML or this TYPO3 template, don't hesitate to join our forum at <b>forum.yaml.de</b> and ask your questions. Help is available there in both english and german language.//<b>Documentation</b> about this template you will find at yaml.t3net.de. Please read <b>before</b> posting questions in our forum.//If you find an <b>error or a bug in this template</b>, please don't write emails to me, but report the error in our forum.//If you find a <b>bug in TYPO3</b>, we cannot help you. Please report bugs concerning TYPO3 itself at bugs.typo3.org
+	image = yaml-t3*.gif
+	1 = languageMenuOff
+	9 = toolbarDateFormatStandardLang, toolbarDateFormatFirstLang, toolbarDateFormatSecondLang, toolbarDateFormatThirdLang, toolbarDateFormatFourthLang, toolbarDateFormatFifthLang, toolbarDateFormatSixthLang, dateAndTimeOff
+	10 = fontsizeHtmlCode, fontSizeSelectorOff, pageHeaderDataStandardLang, pageHeaderDataFirstLang, pageHeaderDataSecondLang, pageHeaderDataThirdLang, pageHeaderDataFourthLang, pageHeaderDataFifthLang, pageHeaderDataSixthLang, pageBodyData
+	12 = teaserOff, toolbarStandardLangClickPathPrefix, toolbarFirstLangClickPathPrefix, toolbarSecondLangClickPathPrefix, toolbarThirdLangClickPathPrefix, toolbarFourthLangClickPathPrefix, toolbarFifthLangClickPathPrefix, toolbarSixthLangClickPathPrefix, rootlineLinkWrap, rootlineOff
+}
+
+###MOD_TS:EDITABLE_CONSTANTS###
+# cat=yaml-searchbox/enable/a; type=options[No=0,Yes=1]; label=Switch off searchbox?:If the searchbox should be displayed, make sure the next 1 to 8 options (depending on how much languages you use) are also correctly set.
+searchBoxOff = 0
+# cat=yaml-searchbox/enable/b; type=int+; label=Searchpage PID (all languages):UID of the page containing the Indexed-Search-Plugin - REQUIRED if searchbox is in use:
+searchPagePID = 5
+# cat=yaml-searchbox/enable/c; type=string; label=HTML-Template for searchbox:(Standard Language) - REQUIRED if searchbox is in use:
+searchboxTmplFile = fileadmin/app/templates/extensiontemplates/searchbox/template.htm
+# cat=yaml-searchbox/enable/d; type=string; label=HTML-Template for searchbox:(First Foreign Language):
+searchboxTmplFileFirstLang = fileadmin/app/templates/extensiontemplates/searchbox/template-en.htm
+# cat=yaml-searchbox/enable/e; type=string; label=HTML-Template for searchbox:(Second Foreign Language):
+searchboxTmplFileSecondLang =
+# cat=yaml-searchbox/enable/f; type=string; label=HTML-Template for searchbox:(Third Foreign Language):
+searchboxTmplFileThirdLang =
+# cat=yaml-searchbox/enable/g; type=string; label=HTML-Template for searchbox:(Fourth Foreign Language):
+searchboxTmplFileFourthLang =
+# cat=yaml-searchbox/enable/h; type=string; label=HTML-Template for searchbox:(Fifth Foreign Language):
+searchboxTmplFileFifthLang =
+# cat=yaml-searchbox/enable/i; type=string; label=HTML-Template for searchbox:(Sixth Foreign Language):
+searchboxTmplFileSixthLang =
+
+
+# cat=yaml-header/links/a; type=string; label=Skiplink navigation (Lang 0):HTML-Code for the Skiplink-Navigation (used by YAML). If you don't know what it is, leave this setting alone:
+headerSkiplinkHtmlCodeStandardLang = <a class="skip" href="#navigation" title="Direkt zur Navigation springen">Zur Navigation springen</a><span class="hideme">.</span><a class="skip" href="#content" title="Direkt zum Inhalt springen">Zum Inhalt springen</a><span class="hideme">.</span>
+# cat=yaml-header/links/b; type=string; label=Skiplink navigation (Lang 1):HTML-Code for the Skiplink-Navigation (used by YAML). If you don't know what it is, leave this setting alone:
+headerSkiplinkHtmlCodeFirstLang = <a class="skip" href="#navigation" title="Jump to navigation">Jump to navigation</a><span class="hideme">.</span><a class="skip" href="#content" title="Jump to content">Jump to content</a><span class="hideme">.</span>
+# cat=yaml-header/links/c; type=string; label=Skiplink navigation (Lang 2):HTML-Code for the Skiplink-Navigation (used by YAML). If you don't know what it is, leave this setting alone:
+headerSkiplinkHtmlCodeSecondLang =
+# cat=yaml-header/links/d; type=string; label=Skiplink navigation (Lang 3):HTML-Code for the Skiplink-Navigation (used by YAML). If you don't know what it is, leave this setting alone:
+headerSkiplinkHtmlCodeThirdLang =
+# cat=yaml-header/links/e; type=string; label=Skiplink navigation (Lang 4):HTML-Code for the Skiplink-Navigation (used by YAML). If you don't know what it is, leave this setting alone:
+headerSkiplinkHtmlCodeFourthLang =
+# cat=yaml-header/links/f; type=string; label=Skiplink navigation (Lang 5):HTML-Code for the Skiplink-Navigation (used by YAML). If you don't know what it is, leave this setting alone:
+headerSkiplinkHtmlCodeFifthLang =
+# cat=yaml-header/links/g; type=string; label=Skiplink navigation (Lang 6):HTML-Code for the Skiplink-Navigation (used by YAML). If you don't know what it is, leave this setting alone:
+headerSkiplinkHtmlCodeSixthLang =
+
+
+# cat=yaml-header/other/b; type=int+; label=UID of homepage?:If you have chosen the previous option, you need to tell TYPO3 what UID the homepage has, since this could be any page.
+homePageUID = 23
+
+
+# cat=yaml-teaser/enable/a; type=options[No=0,Yes=1]; label=Switch off teaser?:If you turn off the teaser completely, everything in it (rootline, date and time, magnifiying glasses and language selector) is also turned off, no matter what the settings are in ALL following options.
+teaserOff = 0
+# cat=yaml-teaser/enable/b; type=options[No=0,Yes=1]; label=Switch off rootline (click path)?:If the rootline-menu is turned on (default), make sure the next 4 options are also correctly set.
+rootlineOff = 0
+# cat=yaml-teaser/enable/c; type=string; label=Toolbar Rootline (Lang 0):This Text prepends the clickpath-menu (standard language):
+toolbarStandardLangClickPathPrefix = Sie sind hier:
+# cat=yaml-teaser/enable/d; type=string; label=Toolbar Rootline (Lang 1):This Text prepends the clickpath-menu (first foreign language):
+toolbarFirstLangClickPathPrefix = You are here:
+# cat=yaml-teaser/enable/e; type=string; label=Toolbar Rootline (Lang 2):This Text prepends the clickpath-menu (second foreign language):
+toolbarSecondLangClickPathPrefix =
+# cat=yaml-teaser/enable/f; type=string; label=Toolbar Rootline (Lang 3):This Text prepends the clickpath-menu (third foreign language):
+toolbarThirdLangClickPathPrefix =
+# cat=yaml-teaser/enable/g; type=string; label=Toolbar Rootline (Lang 4):This Text prepends the clickpath-menu (fourth foreign language):
+toolbarFourthLangClickPathPrefix =
+# cat=yaml-teaser/enable/h; type=string; label=Toolbar Rootline (Lang 5):This Text prepends the clickpath-menu (fifth foreign language):
+toolbarFifthLangClickPathPrefix =
+# cat=yaml-teaser/enable/i; type=string; label=Toolbar Rootline (Lang 6):This Text prepends the clickpath-menu (sixth foreign language):
+toolbarSixthLangClickPathPrefix =
+# cat=yaml-teaser/enable/j; type=string; label=Toolbar Rootline (all languages):Wrap around each single rootline-element:
+rootlineLinkWrap = |&nbsp;/&nbsp; |*| |&nbsp;/&nbsp; |*| |
+# cat=yaml-teaser/enable/k; type=options[No=0,Yes=1]; label=Switch off language menu?:
+languageMenuOff = 0
+# cat=yaml-teaser/enable/l; type=options[No=0,Yes=1]; label=Switch off fontsize selector?:If the fontsize selector is turned on (default), the next 5 options provide the necessary scripts. You could also turn off the fontsize selector and add other scripts instead, if you need that. Or you could leave the fontsize selector in place and add additional scripts.
+fontSizeSelectorOff = 1
+# cat=yaml-teaser/enable/m; type=string; label=JavaScript in Header (Lang 0):HTML-Code, beeing written in the <head>Tag of the page (standard language):
+pageHeaderDataStandardLang = 
+# cat=yaml-teaser/enable/n; type=string; label=JavaScript in Header (Lang 1):HTML-Code, beeing written in the <head>Tag of the page (first foreign language):
+pageHeaderDataFirstLang = 
+# cat=yaml-teaser/enable/o; type=string; label=JavaScript in Header (Lang 2):HTML-Code, beeing written in the <head>Tag of the page (second foreign language):
+pageHeaderDataSecondLang =
+# cat=yaml-teaser/enable/p; type=string; label=JavaScript in Header (Lang 3):HTML-Code, beeing written in the <head>Tag of the page (third foreign language):
+pageHeaderDataThirdLang =
+# cat=yaml-teaser/enable/q; type=string; label=JavaScript in Header (Lang 4):HTML-Code, beeing written in the <head>Tag of the page (fourth foreign language):
+pageHeaderDataFourthLang =
+# cat=yaml-teaser/enable/r; type=string; label=JavaScript in Header (Lang 5):HTML-Code, beeing written in the <head>Tag of the page (fifth foreign language):
+pageHeaderDataFifthLang =
+# cat=yaml-teaser/enable/s; type=string; label=JavaScript in Header (Lang 6):HTML-Code, beeing written in the <head>Tag of the page (sixth foreign language):
+pageHeaderDataSixthLang =
+# cat=yaml-teaser/enable/t; type=string; label=HTML-Code for body (Lang all):HTML-Code, beeing written in the <body>Tag of the page:
+pageBodyData = 
+# cat=yaml-teaser/enable/v; type=options[No=0,Yes=1]; label=Switch off display of date and time?:If turned on (default), the next options provide the language-specific settings.
+dateAndTimeOff = 0
+# cat=yaml-teaser/enable/w; type=string; label=Toolbar Date/Time (Lang 0):Formatting date and time for standard-language (see http://th2.php.net/strftime for possible strings formatting the date and time):
+toolbarDateFormatStandardLang = %A, %d. %B %Y
+# cat=yaml-teaser/enable/x; type=string; label=Toolbar Date/Time (Lang 1):Formatting date and time for first foreign language:
+toolbarDateFormatFirstLang = %A, %B %d, %Y
+# cat=yaml-teaser/enable/y; type=string; label=Toolbar Date/Time (Lang 2):Formatting date and time for second foreign language:
+toolbarDateFormatSecondLang =
+# cat=yaml-teaser/enable/za; type=string; label=Toolbar Date/Time (Lang 3):Formatting date and time for third foreign language:
+toolbarDateFormatThirdLang =
+# cat=yaml-teaser/enable/zb; type=string; label=Toolbar Date/Time (Lang 4):Formatting date and time for fourth foreign language:
+toolbarDateFormatFourthLang =
+# cat=yaml-teaser/enable/zc; type=string; label=Toolbar Date/Time (Lang 5):Formatting date and time for fifth foreign language:
+toolbarDateFormatFifthLang =
+# cat=yaml-teaser/enable/zd; type=string; label=Toolbar Date/Time (Lang 6):Formatting date and time for sixth foreign language:
+toolbarDateFormatSixthLang =
+
+# cat=yaml-basics/enable/b; type=options[No=0,Yes=1]; label=Compatibility mode?:Set this to yes, if your are upgrading from a version older than 3.0.0 AND you still want to use the old directory structure.
+yamlCompatMode1 = 0
+# cat=yaml-basics/enable/c; type=options[No=0,Yes=1]; label=Switch off JavaScript menu?:If switched on (default), the next 5 options should be used to set it up properly. 
+selectorBoxOff = 1
+# cat=yaml-basics/enable/d; type=string; label=Page IDs where JavaScript-Menu displays ?:If you need to add pages, DO NOT just enter page-IDs here, but use this syntax: TSFE:id=2,TSFE:id=5 to display the menu on pages with ID 2 and 5. Don't forget the comma to separate each one.
+mainMenuJsMenuPage = TSFE:id=23
+# cat=yaml-basics/enable/e; type=string; label=JavaScript menu (Lang 0):Headline of the JavaScript-Menu (standard language):
+mainMenuJsMenuStandardLabel = Zuletzt Aktualisierte Seiten:
+# cat=yaml-basics/enable/f; type=string; label=JavaScript menu (Lang 1):Headline of the JavaScript-Menu (first foreign language):
+mainMenuJsMenuFirstLangLabel = Last updated pages:
+# cat=yaml-basics/enable/g; type=string; label=JavaScript menu (Lang 2):Headline of the JavaScript-Menu (second foreign language):
+mainMenuJsMenuSecondLangLabel =
+# cat=yaml-basics/enable/h; type=string; label=JavaScript menu (Lang 3):Headline of the JavaScript-Menu (third foreign language):
+mainMenuJsMenuThirdLangLabel =
+# cat=yaml-basics/enable/i; type=string; label=JavaScript menu (Lang 4):Headline of the JavaScript-Menu (forth foreign language):
+mainMenuJsMenuFourthLangLabel =
+# cat=yaml-basics/enable/j; type=string; label=JavaScript menu (Lang 5):Headline of the JavaScript-Menu (fifth foreign language):
+mainMenuJsMenuFifthLangLabel =
+# cat=yaml-basics/enable/k; type=string; label=JavaScript menu (Lang 6):Headline of the JavaScript-Menu (sixth foreign language):
+mainMenuJsMenuSixthLangLabel =
+# cat=yaml-basics/enable/l; type=wrap; label=JavaScript menu (Lang all):The wrap around the Dropdown-Box of the JavaScript-Menu:
+mainMenuJsMenuAllWrap = |
+# cat=yaml-basics/enable/m; type=options[No=0,Yes=1]; label=Switch off tab-navigation?:IMPORTANT: If you switch off the tab-navigation, you should set [subMenuEntryLevel] to 0 - otherwise the FIRST level of your pagetree ist NOT shown, because the tab-naviation doesn't exist anymore.
+tabNavigationOff = 0
+# cat=yaml-basics/enable/n; type=int+; label=Entry level of tab-navigation:By default it shows all pages of the FIRST level (0) in your pagetree.
+tabNavEntryLevel = 1
+# cat=yaml-basics/enable/o; type=string; label=Exclude from tab-navigation:Enter a comma-separated list of page-IDs here, to be excluded from tab-navigation.
+tabNavExcludeList =
+# cat=yaml-basics/enable/p; type=options[No=0,Yes=1]; label=Switch off entire submenu?:NOTICE: If you turn off the submenu, all other options concerning it are ignored, of course.
+subMenuOff = 0
+# cat=yaml-basics/enable/q; type=options[No=0,Yes=1]; label=Switch off headline above submenu?:Maybe your design requires this.
+menuHeadlineOff = 0
+# cat=yaml-basics/enable/r; type=int+; label=Entry level of submenu:The submenu is the menu on the left side and by default it shows all pages and subpages of the SECOND level in your pagetree. 
+subMenuEntryLevel = 1
+# cat=yaml-basics/enable/s; type=options[No=0,Yes=1]; label=Expand levels of submenu?:By default ALL levels of submenu are expanded (open). If there are many pages and subpages in your pagetree, it is possibly better to set this feature to "no" to make it more concise for the website-user. Then, the resepective levels are expanded (opened) only, if the user clicks on a parent-page.
+subMenuExpandToggle = 1
+# cat=yaml-basics/enable/t; type=string; label=Exclude from sub navigation:Enter a comma-separated list of page-IDs here, to be excluded from sub navigation.
+subNavExcludeList =
+# cat=yaml-basics/enable/u; type=options[No=0,Yes=1]; label=Switch off entire footer?:MUST NOT be removed, unless you bought a license.
+footerOff = 0
+# cat=yaml-basics/enable/v; type=string; label=Footer Links (Lang 0):HTML-Code for the footer (standard language). MUST NOT be removed, unless you bought a license.
+footerStandardLangHtmlCode = <a class="siteby" target="_blank" href="http://www.anorak.io">site by anorak.io</a>
+# cat=yaml-basics/enable/w; type=string; label=Footer Links (Lang 1):HTML-Code for the footer (first foreign language). MUST NOT be removed, unless you bought a license.
+footerFirstLangHtmlCode =
+# cat=yaml-basics/enable/x; type=string; label=Footer Links (Lang 2):HTML-Code for the footer (second foreign language). MUST NOT be removed, unless you bought a license.
+footerSecondLangHtmlCode =
+# cat=yaml-basics/enable/y; type=string; label=Footer Links (Lang 3):HTML-Code for the footer (third foreign language). MUST NOT be removed, unless you bought a license.
+footerThirdLangHtmlCode =
+# cat=yaml-basics/enable/z; type=string; label=Footer Links (Lang 4):HTML-Code for the footer (fourth foreign language). MUST NOT be removed, unless you bought a license.
+footerFourthLangHtmlCode =
+# cat=yaml-basics/enable/za; type=string; label=Footer Links (Lang 5):HTML-Code for the footer (fifth foreign language). MUST NOT be removed, unless you bought a license.
+footerFifthLangHtmlCode =
+# cat=yaml-basics/enable/zb; type=string; label=Footer Links (Lang 6):HTML-Code for the footer (sixth foreign language). MUST NOT be removed, unless you bought a license.
+footerSixthLangHtmlCode =
+
+# cat=yaml-basics/typo/a; type=wrap; label=Link to top (Lang 0):Wrap for "Link-To-Top" (small Icon):
+pageLinkToTopStandardLang = |<p class="csc-linkToTop"><a href="#content"><img src="fileadmin/img/icons/top.gif" alt="" title="Nach oben" /></a></p>
+# cat=yaml-basics/typo/b; type=wrap; label=Link to top (Lang 1):Wrap for "Link-To-Top" (small Icon):
+pageLinkToTopFirstLang = |<p class="csc-linkToTop"><a href="#content"><img src="fileadmin/img/icons/top.gif" alt="" title="To top" /></a></p>
+# cat=yaml-basics/typo/c; type=wrap; label=Link to top (Lang 2):Wrap for "Link-To-Top" (small Icon):
+pageLinkToTopSecondLang =
+# cat=yaml-basics/typo/d; type=wrap; label=Link to top (Lang 3):Wrap for "Link-To-Top" (small Icon):
+pageLinkToTopThirdLang =
+# cat=yaml-basics/typo/e; type=wrap; label=Link to top (Lang 4):Wrap for "Link-To-Top" (small Icon):
+pageLinkToTopFourthLang =
+# cat=yaml-basics/typo/f; type=wrap; label=Link to top (Lang 5):Wrap for "Link-To-Top" (small Icon):
+pageLinkToTopFifthLang =
+# cat=yaml-basics/typo/g; type=wrap; label=Link to top (Lang 6):Wrap for "Link-To-Top" (small Icon):
+pageLinkToTopSixthLang =
+
+# cat=yaml-basics/other/a; type=wrap; label=Mainmenu (Lang all, optional):Wrap around each single link (if needed):
+mainMenuLinkWrap = |
+# cat=yaml-basics/other/b; type=wrap; label=Mainmenu (Lang all, optional):The wrap around a single Link in the mainmenu, if subpages are present (if needed):
+mainMenuIfsubLinkWrap = |
+# cat=yaml-basics/other/c; type=wrap; label=Mainmenu (Lang all, optional):The wrap around the headline of the mainmenu (if needed):
+mainMenuHeaderWrap = |
+
+
+# cat=yaml-language/language/a; type=string; label=Languages to use:If you leave this setting to an empty string (default), ALL languages found in table sys_language will be used. Otherwise provide a comma seperated list (e.g. 2,5,8) to use only languages with these IDs.:
+yamlTemplateUsesLanguages = 
+# cat=yaml-language/language/b; type=string; label=Default language (Lang 0):UID of your default language (usually ALWAYS 0):
+standardLanguage = 0
+# cat=yaml-language/language/c; type=string; label=First foreign language (Lang 1):UID of your first foreign language (if any):
+firstForeignLanguage = 1
+# cat=yaml-language/language/d; type=string; label=Second foreign language (Lang 2):UID of your second foreign language (if any):
+secondForeignLanguage = 2
+# cat=yaml-language/language/e; type=string; label=Third foreign language (Lang 3):UID of your third foreign language (if any):
+thirdForeignLanguage = 3
+# cat=yaml-language/language/f; type=string; label=Fourth foreign language (Lang 4):UID of your fourth foreign language (if any):
+fourthForeignLanguage = 4
+# cat=yaml-language/language/g; type=string; label=Fifth foreign language (Lang 5):UID of your fifth foreign language (if any):
+fifthForeignLanguage = 5
+# cat=yaml-language/language/h; type=string; label=Sixth foreign language (Lang 6):UID of your sixth foreign language (if any):
+sixthForeignLanguage = 6
+# cat=yaml-language/language/i; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 0):of the standard language.
+languageIsoCodeStandardLang = de
+# cat=yaml-language/language/j; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 1):of the first foreign language.
+languageIsoCodeFirstLang = en
+# cat=yaml-language/language/k; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 2):of the second foreign language.
+languageIsoCodeSecondLang =
+# cat=yaml-language/language/l; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 3):of the third foreign language.
+languageIsoCodeThirdLang =
+# cat=yaml-language/language/m; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 4):of the fourth foreign language.
+languageIsoCodeFourthLang =
+# cat=yaml-language/language/n; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 5):of the fifth foreign language.
+languageIsoCodeFifthLang =
+# cat=yaml-language/language/o; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 6):of the sixth foreign language.
+languageIsoCodeSixthLang =
+# cat=yaml-language/language/p; type=text; label=Locale-Setting (Lang 0):of the standard language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleStandardLang = de_DE
+# cat=yaml-language/language/q; type=text; label=Locale-Setting (Lang 1):of the first foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleFirstLang = en_EN
+# cat=yaml-language/language/r; type=text; label=Locale-Setting (Lang 2):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleSecondLang =
+# cat=yaml-language/language/s; type=text; label=Locale-Setting (Lang 3):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleThirdLang =
+# cat=yaml-language/language/t; type=text; label=Locale-Setting (Lang 4):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleFourthLang =
+# cat=yaml-language/language/u; type=text; label=Locale-Setting (Lang 5):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleFifthLang =
+# cat=yaml-language/language/v; type=text; label=Locale-Setting (Lang 6):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleSixthLang =
+
+# cat=yaml-expert-settings/other/e; type=options[ltr,rtl]; label=Text direction:Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left) 
+userHtmlTagDir = ltr
+
+
+
+
+plugin.tx_srlanguagemenu_pi1 {
+	# all other flags are taken from fileadmin/app/flags as well, automatically.
+  englishFlagFile = fileadmin/app/flags/en.gif	
+	# This is the  language ISO-alpha-2 code of the site language when sys_language_uid = 0
+	defaultLanguageISOCode = {$languageIsoCodeStandardLang}
+	# Possible values: 0 = flags, 1 = selection list, 2 = list of links.
+  defaultLayout = 0
+	# If enabled, the selection list or menu is not rendered if no alternate languages are present on the current page.
+  hideIfNoAltLanguages = 0
+	# If enabled, the current language is shown in the language menu.
+  showCurrent = 1
+	# Do not wrap the current language in a link.
+  doNotLinkCurrent = 1
+	# Do not wrap inactive language in a link.
+  doNotLinkInactive = 1
+	# If enabled, when the layout is a selection list, a header will be added at the top of the list.
+  addSelectionListHeader = 1
+	# Separator between the selection list and its header, if the selection list header is enabled.
+  selectionListSeparator = .........
+  file {
+    templateFile = fileadmin/app/templates/extensiontemplates/language/template.html
+  }
+}
+
+
+### Begin of standard constants for current page layout
+## searchbox
+searchBoxOff = 0
+searchboxTmplFile = fileadmin/app/templates/extensiontemplates/searchbox/template.htm
+searchboxTmplFileFirstLang = fileadmin/app/templates/extensiontemplates/searchbox/template-en.htm
+
+<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/app/TS-Ressources/constants_customized.txt">

@@ -1,0 +1,692 @@
+# TypoScript objects structure
+
+# The following objects are mapped in TV Standardpage:
+# lib.header (TV-Mapping)
+# lib.submenu (TV-Mapping) / vertical submenu in col1
+# lib.teaser  (TV-Mapping)
+# lib.footer  (TV-Mapping)
+# lib.lastonpage (TV-Mapping)
+# lib.firstonpage (TV-Mapping)
+
+# generic standard objects:
+# lib.nav
+# lib.rootline
+# lib.homelink
+# lib.nav_meta
+# lib.contentheader
+# lib.teaser.20.10 < plugin.tx_srlanguagemenu_pi1
+# lib.yamlheader (original header constructed in yaml-template
+# lib.gototop
+
+# lib.javascript
+# lib.versionswitcher
+# lib.skiplinks
+# lib.lastchanged_year
+
+
+##########################################################
+# lib.mobileheader / display contact info on top of page
+##########################################################
+
+lib.mobileheader = COA
+lib.mobileheader{
+  wrap = <div class="mobileheader"><div class="mobileheader_togglebutton"><span class="phone_icon"></span><span class="label">Kontaktdaten / Anrufen</span><span class="arrow"></span></div><div class="mobileheader_content_wrap"> <div class="mobileheader_content">| </div></div><div class="mobileheader_togglebutton mobileheader_togglebutton_bottom"><span>Kontaktinfos schliessen</span></div></div>
+  
+  10 = HTML
+  10.value(
+    <pre>
+      Max Mustermann
+      Max Mustermann GmbH
+      Teststrasse 16-18, Stiege 3/DG 
+      1110 Wien, Austria
+      Telefon +43 650 70 90 707
+      Fax +43 1 789 06 12 7084
+      E-Mail mail@musterdomain.com
+      
+      UID: ATU 344 54 303 
+      Angaben nach § 5 E-Commerce Gesetz und Offenlegung nach § 25 Medien Gesetz.  
+    </pre>
+  )
+}
+
+
+
+# turn off lib.mobileheader if not mobile
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+[else]
+lib.mobileheader >
+[global]
+
+
+
+
+
+#############################################################
+# lib.debug / display debug information
+#############################################################
+lib.debug = COA_INT
+lib.debug{
+  wrap = <div class="debug"><span>anorak.io TYPO3 debugger: </span> | </div>
+  5 = TEXT
+  5.value = HDswitch Cookie Wert:
+  10 = TEXT
+  10.data = global : _COOKIE | hdswitch
+  10.ifEmpty = Cookie "hdswitch" war nicht gesetzt
+}
+lib.debug.20 = TEXT
+lib.debug.20.value = hd var is off
+[globalVar = LIT:1 = {$hd}]
+lib.debug.20.value = hd var is on
+[global]
+
+lib.debug.30 = TEXT
+lib.debug.30.value = isMobile var is off
+[globalVar = LIT:1 = {$isMobile}]
+lib.debug.30.value = isMobile var is on
+[global]
+
+# turn off in production environments
+[globalVar = LIT:1 = {$isDevelopmentServer}] && [globalVar = LIT:1 = {$DEBUGGER_enabled}]
+[else]
+lib.debug >
+[global]
+
+
+
+#############################################################
+# lib.hdswitch
+#############################################################
+# why COA_INT?
+# read this: http://lists.typo3.org/pipermail/typo3-german/2006-August/020800.html
+lib.hdswitch = COA_INT
+lib.hdswitch{
+  wrap = <div class="hdswitch hdswitch_off"> | </div>
+  10 = HTML
+  10.value = <a href="
+  10.insertData = 1
+  
+  20 = TEXT
+  20.data = getIndpEnv:TYPO3_REQUEST_URL
+  
+  30 = HTML
+  30.value= "><span>HD Status(1=on, 2=off): {$hd}</span></a>
+  30.insertData = 1
+}
+[globalVar = LIT:1 = {$hd}]
+lib.hdswitch{
+  wrap = <div class="hdswitch hdswitch_on"> | </div>
+}
+[global]  
+  
+# show HD-Switch only if Browser is SVG capable
+[globalVar = LIT:1 = {$svg_browser}]
+[else]
+  lib.hdswitch >
+[global]
+
+[globalVar = LIT:1 = {$HD_enabled}]
+[else]
+  lib.hdswitch >
+[global]
+
+
+
+#################
+# lib.firstonpage
+#################
+lib.firstonpage = COA
+lib.firstonpage{
+  1 < lib.feedit_bar
+  2 = COA
+  2{
+    10 = HTML
+    10.value = <a id="gototop"></a>
+  }
+  3 < lib.skiplinks
+  4 < lib.debug  
+}
+
+
+################
+# lib.lastonpage
+################
+lib.lastonpage = COA
+lib.lastonpage{
+  100 < lib.javascript
+}
+
+
+################
+# lib.beforeheader
+################
+lib.beforeheader = COA
+lib.beforeheader{
+  20 < lib.hdswitch
+  30 < lib.mobileheader 
+}
+
+################
+# gototop
+################
+lib.gototop = COA
+lib.gototop {
+  wrap = <div class="gototop"><div class="gototop_innerwrap"><a href="#gototop"><span>|</span></a></div></div>
+  10 = TEXT
+  10.value = back to top
+} 
+
+#############
+# lib.submenu
+#############
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+lib.submenu >
+[else]
+lib.submenu < lib.tmenu_class
+lib.submenu.20.entryLevel = 1
+lib.submenu.20.1.wrap = <div class="submenu"><ul>|</ul></div>
+[global]
+
+
+#############
+# lib.nav
+#############
+
+
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+lib.nav < lib.tmenu_expAll_class
+lib.nav.20.entryLevel = 0
+lib.nav.20.1.wrap = <div class="nav_main"><div class="nav_main_togglebutton"><span>Navigation</span></div><a id="navigation"></a><div class="nav_main_ul_wrap"><ul> | </ul></div><div class="nav_main_togglebutton nav_main_togglebutton_bottom"><span>Navigation schliessen</span></div></div>
+[else]
+lib.nav < lib.tmenu_horizontal_class
+lib.nav.20.excludeUidList = 6,4,63,114
+lib.nav.20.1.wrap = <div class="nav_main"><a id="navigation"></a><div class="nav_main_ul_wrap"><ul> | </ul></div></div>
+[global]
+
+
+
+###############
+## lib.nav_meta
+###############
+lib.nav_meta < lib.tmenu_horizontal_class
+lib.nav_meta.20.special = directory
+lib.nav_meta.20.special.value = 70
+lib.nav_meta.20.1.wrap = <div class="nav_meta"><ul>|</ul></div>
+
+
+#################################################################
+## lib.homelink - Logo verlinkt
+#################################################################
+lib.homelink = COA
+lib.homelink.wrap = <div class="logolink_wrap"><div class="logolink_automargin">|</div></div>
+lib.homelink{
+  10 = TEXT
+  10{
+    value ( 
+      <span>gehe zur Startseite</span>
+      <img src="/fileadmin/app/static/img/customized/{$logo_filename_png}" width="{$logo_width}" height="{$logo_height}" alt="{$logo_alt}" title="{$logo_title}"/>
+    )
+    typolink.parameter = {$homePageUID} _self logolink
+    typolink.target =   
+  }
+  20 = TEXT
+  20{
+    value ( 
+      <img class="print_logo" src="/fileadmin/app/static/img/customized/{$logo_filename_print}.png" width="{$logo_width}" height="{$logo_height}" alt="{$logo_alt}" title="{$logo_title}"/>
+    )  
+  }
+}
+[globalVar = LIT:1 = {$svg_browser}] && [globalVar = LIT:1 = {$hd}]
+lib.homelink{
+  10{
+    value ( 
+      <span>gehe zur Startseite</span>
+      <img src="/fileadmin/app/static/img/customized/{$logo_filename_svg}" width="{$logo_width}" height="{$logo_height}" alt="{$logo_alt}" title="{$logo_title}"/>
+    )
+  }
+  20{
+    value ( 
+      <img class="print_logo"  src="/fileadmin/app/static/img/customized/{$logo_filename_print}.svg" width="{$logo_width}" height="{$logo_height}" alt="{$logo_alt}" title="{$logo_title}"/>
+    )
+  }
+}
+[global]
+
+
+############
+# lib.header
+############
+lib.header = COA
+lib.header.5 < lib.beforeheader
+lib.header.10 = COA
+lib.header.10{
+  wrap = <div class="header"><header><div class="header_innerwrap">|</div></header></div>
+  10 < plugin.tx_macinasearchbox_pi1
+  20 < lib.nav_meta
+  30 < lib.homelink
+  40 < lib.nav
+}
+
+###########################################################
+# pass constants to DS
+# check out http://wiki.typo3.org/index.php/TemplaVoila/FCE
+###########################################################
+<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/app/TS-Ressources/lib/setup_CONSTANTS.txt">
+
+
+
+###################################
+# Glossar extension
+###################################
+plugin.tx_contagged {
+	listPages = 59
+	storagePids = 58
+	includeRootPages = 1
+}
+# config for tt_news
+plugin.tt_news.general_stdWrap.postUserFunc = tx_contagged->main
+
+
+
+#####################################################
+# tt_news config
+#####################################################
+plugin.tt_news{
+	pid_list = 27
+	singlePid = 8
+	templateFile = fileadmin/app/templates/extensiontemplates/tt_news/tt_news_v3_template.html
+	
+	# max items in list view
+	limit = 9999
+	# max items in latest view
+	latestLimit = 20
+
+	_LOCAL_LANG.de {
+		latestHeader = latestHeader Überschrift
+		more = [weiterlesen...]
+		backToList = zurück zur Übersicht
+		pi_list_browseresults_displays = Sie sehen Artikel
+		###SPAN_BEGIN###%s bis %s von ###SPAN_BEGIN### %s
+		
+    #  latestHeader = Die aktuellsten Nachrichten:
+    #goToArchive = weitere Nachrichten hier klicken
+    #textRelated = In Verbindung stehende Informationen:
+    #textLinks = Links:
+    noNewsToListMsg = In dieser Ansicht ist kein Beitrag verfügbar.
+    #catmenuHeader = Wählen Sie ein Thema aus dieser Liste		
+
+    prevArticle = vorheriger Eintrag 
+    nextArticle = nächster Eintrag  
+	}
+
+  _LOCAL_LANG.en {
+    more = read more
+    backToList = back to newslist
+  }
+  	
+  displayLatest{
+    subheader_stdWrap{
+      crop = 100 | ... | 1
+      append.data = register:newsMoreLink
+      append.if.isTrue.field = bodytext
+      append.wrap = <span class="news-list-morelink">|</span>
+      outerWrap = <p class="content">|</p>
+    }
+  }
+    
+  displayList{
+    subheader_stdWrap{
+      crop = 100 | ... | 1
+      append.wrap = <span class="news-list-morelink">|</span>
+      outerWrap = <p class="content">|</p>
+    }
+  }
+  
+  displaySingle{
+    showTitleAsPrevNextLink = 0
+
+    # next/prev pagination-nav wraps
+    prevLinkTitle_stdWrap.wrap = |
+    prevLinkLabel_stdWrap.wrap = <span>|</span>
+    prevLink_stdWrap.wrap = |
+
+    nextLinkTitle_stdWrap.wrap = |
+    nextLinkLabel_stdWrap.wrap = <span>|</span>
+    nextLink_stdWrap.wrap = |
+  }
+  
+}
+
+### config according to http://www.tugle.de/know_how/tipps/realurl_konfiguration_tt_news.html
+plugin.tt_news.useHRDatesSingle = 1
+plugin.tt_news.useHRDatesSingleWithoutDay = 0
+plugin.tt_news.dontUseBackPid = 1
+plugin.tt_news.backPid = 7
+plugin.tt_news.useHRDates = 1
+
+
+#tt_news displaySingle auto image size
+plugin.tt_news.displaySingle{
+  image.file{
+    maxW.data = register:maxImageWidthInText
+    maxH = 10000
+    resolution = {$resolution}
+  }
+}
+
+
+#tt_news displayList auto image size
+# plugin.tt_news.listMaxW in constants has to be set to 10000 to make this code work
+plugin.tt_news.displayList{
+  image.file{
+    maxW.override.dataWrap = {register:maxImageWidthInText2}
+    maxW.prioriCalc = 1
+    resolution = {$resolution}
+  }
+}
+
+# tt_news displayLatest auto image size
+# plugin.tt_news.latestMaxW in constants has to be set to 10000 to make this code work
+plugin.tt_news.displayLatest{
+  image.file{
+    maxW.override.dataWrap = {register:maxImageWidthInText2}
+    maxW.prioriCalc = 1
+    resolution = {$resolution}
+  }
+}
+
+
+
+#################################################################
+## Seitenüberschrift
+#################################################################
+lib.contentheader_text  = COA
+lib.contentheader_text{
+	10 = COA
+	10.wrap = <!--TYPO3SEARCH_begin--> | <!--TYPO3SEARCH_end-->
+	10{
+		wrap = <h1 class="pageheadline">|</h1>
+		10 = HTML
+			10 {
+			value.data = page:subtitle
+			value.ifEmpty.data = page:title
+		}
+	}
+}
+
+# select header type by uncommenting / image or text
+lib.contentheader < lib.contentheader_text
+
+# remove lib.contentheader on tt_news single page
+[PIDinRootline = 8]
+lib.contentheader >
+[global]
+
+
+
+###################################################
+## lib.footer
+###################################################
+lib.footer_1 = RECORDS
+lib.footer_1 {
+  tables = tt_content
+  #### UID des gewünschten Inhaltselments
+  source = 386
+}
+
+lib.footer_2 = RECORDS
+lib.footer_2 {
+  tables = tt_content
+  source = 686
+}
+
+lib.footer_3 = RECORDS
+lib.footer_3 {
+  tables = tt_content
+  source = 687
+}
+
+# make it a COA, just in case the user wants to put
+# anything else here.
+lib.footer = COA
+lib.footer{
+  10 = COA
+  10 {
+  	stdWrap.prefixComment = 2|Output of lib.footer
+  	wrap = <div class="footer"><footer><div class="footer_innerwrap">|</div></footer></div>
+    
+  	10 = COA
+  	10.wrap = <div class="footer_1">|</div>
+  	10.10 < lib.footer_1
+  
+    20 = COA
+    20.wrap = <div class="footer_2">|</div>
+    20.10 < lib.footer_2
+  
+    30 = COA
+    30.wrap = <div class="footer_3">|</div>
+    30.10 < lib.footer_3
+    30.15 < lib.nav_meta 
+  
+  
+    50 < lib.gototop
+  	
+  	200 = TEXT
+  	200 < lib.lastchanged_year
+  	200.wrap = <p class="copyright">Copyright &copy;&nbsp;|</p>
+  
+  	300 < lib.versionswitcher
+  }
+  20 = TEXT
+  20{
+    stdWrap.prefixComment = 2|Output of lib.footer.100
+    value = {$footerStandardLangHtmlCode}
+  }
+}
+
+
+
+###########################################
+# Mobile / PC version switch body CSS Class
+###########################################
+lib.loadCSS_default = TEXT
+lib.loadCSS_default.insertData = 1
+lib.loadCSS_default.value = <body class="page-{TSFE:id} {$bodyprintclass}">
+
+lib.loadCSS_default_1col = TEXT
+lib.loadCSS_default_1col.value = <body class="standardseite_1col page-{TSFE:id}  {$bodyprintclass}"> 
+lib.loadCSS_default_1col.insertData = 1
+
+lib.loadCSS_default_2col = TEXT
+lib.loadCSS_default_2col.value = <body class="standardseite_2col page-{TSFE:id}  {$bodyprintclass}"> 
+lib.loadCSS_default_2col.insertData = 1
+
+###########################################
+# Mobile / PC version switch body CSS Class
+###########################################
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+lib.loadCSS_default.value = <body class="page-{TSFE:id} mobile mobile-page-{TSFE:id}  {$bodyprintclass}">
+lib.loadCSS_default_1col.value = <body class="standardseite_1col page-{TSFE:id} mobile mobile-page-{TSFE:id}  {$bodyprintclass}"> 
+lib.loadCSS_default_2col.value = <body class="standardseite_2col page-{TSFE:id} mobile mobile-page-{TSFE:id}  {$bodyprintclass}"> 
+[end]
+# override $isMobile if PC Browser version is explicitly demanded via subdomain pc.xxx
+# case: if user uses mobile device but demands PC-Version via pc. subdomain | remove mobile class
+[globalString = IENV:HTTP_HOST = pc.*]
+lib.loadCSS_default.value = <body class="page-{TSFE:id}  {$bodyprintclass}">
+lib.loadCSS_default_1col.value = <body class="standardseite_1col page-{TSFE:id}  {$bodyprintclass}"> 
+lib.loadCSS_default_2col.value = <body class="standardseite_2col page-{TSFE:id}  {$bodyprintclass}"> 
+[end]
+
+############################################
+# select CSS based on Templavoila-TO
+# http://dev.datenwolken.de/index.php?id=270
+############################################
+# check for used Templavoila Template Object
+page.bodyTagCObject = CASE
+page.bodyTagCObject {
+	key.field = tx_templavoila_to
+	
+	default = CASE
+	default {
+		key.data = levelfield : -1 , tx_templavoila_next_to, slide
+		# ids of Templavoila-TemplateObject
+		21 < lib.loadCSS_default_1col
+		22 < lib.loadCSS_default_2col
+		# no template selected - load default
+		default < lib.loadCSS_default
+	}
+	21 < lib.loadCSS_default_1col
+	22 < lib.loadCSS_default_2col
+}
+
+
+
+
+#################################################################
+## content wrap examples
+## TYPO3 4.2 > upgrade 
+## siehe http://www.typo3.net/forum/list/list_post//97989/?tx_mmforum_pi1%5Bpage%5D=1&cHash=18008dd0ddfecf4ec32a1872315ca732
+## doesn't break anchor-links anymore
+#################################################################
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+	key.field = section_frame
+	#Trenner darüber
+	100 =< tt_content.stdWrap.innerWrap.cObject.default
+	100.15.value = csc-default csc-frame section_frame section_frame_top
+	100.30.value = > |</div>
+	#Trenner darunter
+	110 =< tt_content.stdWrap.innerWrap.cObject.default
+	110.15.value = csc-default csc-frame section_frame section_frame_bottom
+	110.30.value = > | </div>
+}
+
+
+
+
+
+
+
+###################################################
+# RSS-Config taken from
+# http://typo3-blog.net/tutorials/news/rss-feed-tt-news.html
+# !!! MUST BE PLACED AT THE END OF THE ENTIRE TYPOSCRIPT !!!
+# siehe http://www.typo3forum.net/forum/news-tt_news-mininews-co/19335-tt_news-rss-realurl-problem-bilder-url-post-links.html
+###################################################
+xmlnews = PAGE
+xmlnews {
+	10 < plugin.tt_news
+  10.displayXML{
+    image.file.maxW = 460
+    image.file.resolution = 72
+  }
+	#Seite, die die tt_news Records enthält. Mehrere durch komma trennen.
+	10.pid_list = {$rss_tt_news_pid}
+	#Seite die zur Anzeige der News im RSS Feed genutzt werden soll
+	10.singlePid = {$rss_tt_news_single_pid}
+	10.defaultCode = XML
+	dontUseBackPid = 1
+	useSPidFromCategory = 1
+	useSPidFromCategoryRecusive = 1
+	useHRDates = 1
+	useSubCategories = 1
+	displaySubCategories = 1
+	categoryMode = 1
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:text/xml
+		no_cache = 1
+		xhtml_cleaning = 0
+		linkvars = L
+	}
+	typeNum = 100
+}
+
+### RSS 0.91 feed ###
+rss091Feed < xmlnews
+rss091Feed {
+   typeNum = 101
+   10.displayXML.xmlFormat = rss091
+}
+
+### Atom 0.3 feed ###
+atom03Feed < xmlnews
+atom03Feed {
+   typeNum = 102
+   10.displayXML.xmlFormat = atom03
+}
+
+### Atom 1.0 feed ###
+atom1Feed < xmlnews
+atom1Feed {
+   typeNum = 103
+   10.displayXML.xmlFormat = atom1
+}
+
+### RDF feed ###
+rdfFeed < xmlnews
+rdfFeed {
+   typeNum = 104
+   10.displayXML.xmlFormat = rdf
+}
+
+
+####################
+# csc-textpic config
+####################
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+tt_content.image.20{
+  colSpace{
+    override.dataWrap = {$mobile.standardPadding} * 2
+    prioriCalc = 1    
+  }
+  rowSpace{
+    override.dataWrap = {$mobile.standardPadding}*2
+    prioriCalc = 1   
+  }
+  textMargin{
+    override.dataWrap = {$mobile.standardPadding}*2
+    prioriCalc = 1 
+  }
+}
+[else]
+tt_content.image.20{
+  colSpace{
+    override.dataWrap = {$pc.standardPadding} * 2
+    prioriCalc = 1    
+  }
+  rowSpace{
+    override.dataWrap = {$pc.standardPadding}*2
+    prioriCalc = 1   
+  }
+  textMargin{
+    override.dataWrap = {$pc.standardPadding}*2
+    prioriCalc = 1 
+  }
+}
+[global]
+
+# change image render method -> tt_content.image.20.renderMethod = dl
+# original behaviour: render .csc-textpic-single-image class when only single image is rendered and no caption is entered
+# modified behaviour: render .csc-textpic-single-image class when only single image is rendered and a caption is entered
+tt_content.image.20.rendering.dl.fallbackRendering.10.if.isFalse >
+tt_content.image.20.rendering.simple {
+  oneImageStdWrap.dataWrap = <div class="csc-textpic-image-single-widthwrap" style="width:{register:imagespace}px;"> | </div>
+}
+
+
+
+
+#########################
+# resolution patch
+#########################
+# enable high-res for all images in content-elements
+tt_content.image.20.1.file.resolution = {$resolution}
+
+
+
+# check for be-user login
+# disable cache when backend user is logged in
+[globalVar = TSFE:beUserLogin = 1]
+  page.config.no_cache = 1
+  config.no_cache = 1
+[global]

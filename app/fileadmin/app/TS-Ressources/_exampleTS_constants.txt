@@ -1,0 +1,24 @@
+# csc-textpic borders etc.
+styles.content.imgtext {
+	borderColor = white
+	borderThick = 8
+}
+
+
+
+
+
+
+
+
+
+
+# language settings for page tree
+# mountpoint demo code to only use certain languag in mount point area
+[PIDinRootline = 42]
+yamlTemplateUsesLanguages = 1
+
+plugin.tx_srlanguagemenu_pi1 {
+    hideIfNoAltLanguages = 1
+}
+[global]

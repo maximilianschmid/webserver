@@ -1,0 +1,1970 @@
+/**
+ * Fonts
+ * (en) font-family and font-size selection for headings and standard text elements
+ * (de) Zeichensatz und Schriftgrößen für Überschriften und übliche Text-Elemente
+ *
+ * @section content-fonts
+ */
+/* line 12, ../../../../../../static/css/source/4_content.scss */
+img {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* #############################
+** ### felogin #################
+** #############################
+*/
+/* #############################
+** ### tt_news #################
+** #############################
+*/
+/* LATEST Ansicht */
+/* line 49, ../../../../../../static/css/source/4_content.scss */
+.news-latest-item:hover {
+  background-color: #efefef;
+}
+
+/* line 55, ../../../../../../static/css/source/4_content.scss */
+.news-latest-item p {
+  display: block;
+}
+
+/* line 58, ../../../../../../static/css/source/4_content.scss */
+.news-latest-item img {
+  float: left;
+}
+
+/* LIST Ansicht */
+/* line 71, ../../../../../../static/css/source/4_content.scss */
+.news-list-item-dottetlist {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 79, ../../../../../../static/css/source/4_content.scss */
+.news-list-item-js:hover {
+  cursor: pointer;
+}
+
+/* line 82, ../../../../../../static/css/source/4_content.scss */
+.news-list-item:hover {
+  background-color: #efefef;
+}
+
+/* line 90, ../../../../../../static/css/source/4_content.scss */
+.news-list-item h3 span.news-list-date {
+  display: block;
+}
+
+/* line 94, ../../../../../../static/css/source/4_content.scss */
+.news-list-morelink {
+  padding: 0;
+}
+
+/* line 95, ../../../../../../static/css/source/4_content.scss */
+.news-list-morelink a {
+  float: right;
+}
+
+/* SINGLE Ansicht */
+/* line 102, ../../../../../../static/css/source/4_content.scss */
+.news-single-img {
+  float: left;
+}
+
+/* line 103, ../../../../../../static/css/source/4_content.scss */
+.news-single-img p {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 104, ../../../../../../static/css/source/4_content.scss */
+.news-single-img img {
+  padding: 0;
+}
+
+/* CATEGORY Menu */
+/* line 120, ../../../../../../static/css/source/4_content.scss */
+.news-catmenu a {
+  display: inline;
+  padding-left: 2px;
+}
+
+/* ##############################
+** ### tx_indexedsearch #########
+** ##############################
+*/
+/* line 129, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-button {
+  width: 100px;
+}
+
+/* line 130, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-sword {
+  width: 150px;
+}
+
+/* line 131, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-whatis P .tx-indexedsearch-sw {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* line 132, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-whatis {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 133, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch P.tx-indexedsearch-noresults {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 143, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead TD {
+  vertical-align: middle;
+}
+
+/* line 144, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-res .noResume {
+  color: #666666;
+}
+
+/* ########################################################
+** ### tx_indexedsearch with tablee-free template #########
+** ########################################################
+*/
+/* line 151, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset legend {
+  display: none;
+}
+
+/* line 152, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-form {
+  margin: 0 0 0.5em 0;
+  clear: both;
+}
+
+/* line 153, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-form label {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+/* line 154, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-form input {
+  margin: 0;
+}
+
+/* line 155, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-for {
+  margin: 0 0 0.5em 0;
+  clear: both;
+}
+
+/* line 156, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-for label {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+/* line 157, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-for select {
+  margin: 0;
+}
+
+/* line 158, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-select-section {
+  margin: 0 0 0.5em 0;
+  clear: both;
+}
+
+/* line 159, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-select-section label {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+/* line 160, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-select-section select {
+  margin: 0;
+}
+
+/* line 161, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-select-results {
+  margin: 0 0 0.5em 0;
+  clear: both;
+}
+
+/* line 162, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-select-results label {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+/* line 163, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-select-results select {
+  margin: 0;
+}
+
+/* line 164, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-submit {
+  clear: both;
+}
+
+/* line 165, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .searchbox-tmpl-css form fieldset .tx-indexedsearch-search-submit input {
+  margin: 0 0 0 25%;
+}
+
+/* line 167, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .res-tmpl-css h3 {
+  clear: both;
+}
+
+/* line 168, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .res-tmpl-css .tx-indexedsearch-result-number {
+  display: none;
+}
+
+/* line 169, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .res-tmpl-css.tx-indexedsearch-res .tx-indexedsearch-title {
+  background: transparent;
+}
+
+/* line 173, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .res-tmpl-css dt {
+  float: left;
+}
+
+/* line 174, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .res-tmpl-css dd {
+  float: left;
+  margin: 0;
+}
+
+/* line 175, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-browsebox ul.browsebox {
+  list-style: none;
+}
+
+/* line 176, ../../../../../../static/css/source/4_content.scss */
+.tx-indexedsearch .tx-indexedsearch-browsebox ul.browsebox li {
+  float: left;
+}
+
+/* #############################
+** ### Mail-Formular ###########
+** #############################
+*/
+/* line 186, ../../../../../../static/css/source/4_content.scss */
+form#mailform fieldset span.csc-mailform-radio fieldset label {
+  float: none;
+}
+
+/* line 187, ../../../../../../static/css/source/4_content.scss */
+.csc-mailform-field {
+  clear: both;
+}
+
+/* line 188, ../../../../../../static/css/source/4_content.scss */
+fieldset.csc-mailform .csc-mailform-field label {
+  float: left;
+}
+
+/* line 193, ../../../../../../static/css/source/4_content.scss */
+input#mailformformtype_mail {
+  cursor: pointer;
+}
+
+/* #############################
+** ### Datei-Links #############
+** #############################
+*/
+/* ################################
+** ### FCE adjustable columns     #
+** ################################
+*/
+/* line 213, ../../../../../../static/css/source/4_content.scss */
+.flexi {
+  overflow: hidden;
+  display: block;
+  clear: both;
+  width: 100%;
+  height: 1%;
+}
+
+/*.flexi div {display:block; overflow:hidden; float:left;}*/
+/* line 215, ../../../../../../static/css/source/4_content.scss */
+.flexi .left {
+  margin-right: 5px;
+  display: block;
+  overflow: hidden;
+  float: left;
+}
+
+/* line 216, ../../../../../../static/css/source/4_content.scss */
+.flexi .center {
+  margin-right: 5px;
+  margin-left: 5px;
+  display: block;
+  overflow: hidden;
+  float: left;
+}
+
+/* line 217, ../../../../../../static/css/source/4_content.scss */
+.flexi .right {
+  margin-left: 5px;
+  display: block;
+  overflow: hidden;
+  float: left;
+}
+
+/* FCE adjustable columns End */
+/* ###########################
+** ### cssstyledcontent ######
+** ###########################
+*/
+/* deleted in setup and copied to here, to make it easier to edit */
+/* default styles for extension "tx_cssstyledcontent" */
+/* Captions */
+/* line 226, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic {
+  overflow: hidden;
+}
+/* line 230, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic ul li {
+  background: none;
+}
+/* line 233, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic ul li ul li {
+  background: none;
+}
+
+/* line 240, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-caption-c .csc-textpic-caption {
+  text-align: center;
+}
+
+/* line 241, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-caption-r .csc-textpic-caption {
+  text-align: right;
+}
+
+/* line 242, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-caption-l .csc-textpic-caption {
+  text-align: left;
+}
+
+/* Needed for noRows setting */
+/* line 244, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagecolumn {
+  float: left;
+  display: inline;
+}
+
+/* Border just around the image */
+/* line 247, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-imagewrap {
+  padding: 0;
+}
+
+/* line 248, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic IMG {
+  border: none;
+}
+
+/* DIV: This will place the images side by side */
+/* line 250, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap .csc-textpic-image {
+  float: left;
+}
+
+/* UL: This will place the images side by side */
+/* line 252, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap UL {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 253, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap UL LI {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* DL: This will place the images side by side */
+/* line 255, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap DL.csc-textpic-image {
+  float: left;
+}
+
+/* line 256, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap DL.csc-textpic-image DT {
+  float: none;
+}
+
+/* line 257, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap DL.csc-textpic-image DD {
+  float: none;
+}
+
+/* line 258, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap DL.csc-textpic-image DD IMG {
+  border: none;
+}
+
+/* FE-Editing Icons */
+/* line 259, ../../../../../../static/css/source/4_content.scss */
+DL.csc-textpic-image {
+  margin: 0;
+}
+
+/* line 260, ../../../../../../static/css/source/4_content.scss */
+DL.csc-textpic-image DT {
+  margin: 0;
+  display: inline;
+}
+
+/* line 261, ../../../../../../static/css/source/4_content.scss */
+DL.csc-textpic-image DD {
+  margin: 0;
+}
+
+/* Clearer */
+/* Margins around images: */
+/* Pictures on left, add margin on right */
+/* line 268, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-left .csc-textpic-imagewrap .csc-textpic-image,
+.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap .csc-textpic-image,
+.csc-textpic-intext-left .csc-textpic-imagewrap .csc-textpic-image {
+  display: inline;
+  /* IE fix for double-margin bug */
+  margin-right: 10px;
+}
+
+/* Pictures on right, add margin on left */
+/* line 275, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-right .csc-textpic-imagewrap .csc-textpic-image,
+.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap .csc-textpic-image,
+.csc-textpic-intext-right .csc-textpic-imagewrap .csc-textpic-image {
+  display: inline;
+  /* IE fix for double-margin bug */
+  margin-left: 10px;
+}
+
+/* Pictures centered, add margin on left */
+/* line 280, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-center .csc-textpic-imagewrap .csc-textpic-image {
+  display: inline;
+  /* IE fix for double-margin bug */
+  margin-left: 10px;
+}
+
+/* line 284, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap .csc-textpic-image .csc-textpic-caption {
+  margin: 5px 0 0 0;
+  font-style: italic;
+}
+
+/* line 285, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap .csc-textpic-image IMG {
+  margin: 0.2em 0 0 0;
+}
+
+/* Space below each image (also in-between rows) */
+/* line 287, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap .csc-textpic-image {
+  margin-bottom: 5px;
+}
+
+/* line 288, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-equalheight .csc-textpic-imagerow {
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* line 289, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagerow {
+  clear: both;
+}
+
+/* No margins around the whole image-block */
+/* line 291, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap .csc-textpic-firstcol {
+  margin-left: 0px !important;
+}
+
+/* line 292, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic .csc-textpic-imagewrap .csc-textpic-lastcol {
+  margin-right: 0px !important;
+}
+
+/* Add margin from image-block to text (in case of "Text w/ images") */
+/* line 295, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-intext-left .csc-textpic-imagewrap,
+.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+  margin-right: 10px !important;
+}
+
+/* line 299, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-intext-right .csc-textpic-imagewrap,
+.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+  margin-left: 10px !important;
+}
+
+/* Positioning of images: */
+/* Above */
+/* line 304, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-above .csc-textpic-text {
+  clear: both;
+}
+
+/* Center (above or below) */
+/* line 306, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-center {
+  text-align: center;
+  /* IE-hack */
+}
+
+/* line 307, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-center .csc-textpic-imagewrap {
+  margin: 0 auto;
+}
+
+/* line 308, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-center .csc-textpic-imagewrap .csc-textpic-image {
+  text-align: left;
+  /* Remove IE-hack */
+}
+
+/* line 309, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-center .csc-textpic-text {
+  text-align: left;
+  /* Remove IE-hack */
+}
+
+/* Right (above or below) */
+/* line 311, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-right .csc-textpic-imagewrap {
+  float: right;
+}
+
+/* line 312, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-right .csc-textpic-text {
+  clear: right;
+}
+
+/* Left (above or below) */
+/* line 314, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-left .csc-textpic-imagewrap {
+  float: left;
+}
+
+/* line 315, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-left .csc-textpic-text {
+  clear: left;
+}
+
+/* Left (in text) */
+/* line 317, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-intext-left .csc-textpic-imagewrap {
+  float: left;
+}
+
+/* Right (in text) */
+/* line 319, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-intext-right .csc-textpic-imagewrap {
+  float: right;
+}
+
+/* Right (in text, no wrap around) */
+/* line 321, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+  float: right;
+  clear: both;
+}
+
+/* End hide from IE5/mac */
+/* Left (in text, no wrap around) */
+/* line 324, ../../../../../../static/css/source/4_content.scss */
+.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+  float: left;
+  clear: both;
+}
+
+/**
+ * fancybox styles
+ * 
+ */
+/**
+ * custom anorak styles for fancybox
+ */
+/* line 340, ../../../../../../static/css/source/4_content.scss */
+a.image_zoom {
+  position: relative;
+  display: block;
+}
+/* line 344, ../../../../../../static/css/source/4_content.scss */
+a.image_zoom .imagezoom {
+  width: 32px;
+  height: 32px;
+  background: url("/typo3conf/ext/pmkslimbox/res/images/fancybox/lupe.png") no-repeat bottom right;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+/* line 356, ../../../../../../static/css/source/4_content.scss */
+a.image_zoom:hover .imagezoom {
+  background: url("/typo3conf/ext/pmkslimbox/res/images/fancybox/lupe-hover.png") no-repeat bottom right;
+  cursor: pointer;
+}
+
+/*
+ * FancyBox - jQuery Plugin
+ * Simple and fancy lightbox alternative
+ *
+ * Copyright (c) 20010 Janis Skarnelis
+ * Examples and documentation at: http://fancybox.net
+ *
+ * Version: 1.3.0 (02/02/2010)
+ * Requires: jQuery v1.3+
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+/* line 379, ../../../../../../static/css/source/4_content.scss */
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 40px;
+  width: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+  z-index: 1104;
+  display: none;
+}
+
+/* line 394, ../../../../../../static/css/source/4_content.scss */
+* html #fancybox-loading {
+  /* IE6 */
+  position: absolute;
+  margin-top: 0;
+}
+
+/* line 399, ../../../../../../static/css/source/4_content.scss */
+#fancybox-loading div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 480px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_loading-201009220932.png") no-repeat;
+}
+
+/* line 408, ../../../../../../static/css/source/4_content.scss */
+#fancybox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  z-index: 1100;
+  display: none;
+}
+
+/* line 419, ../../../../../../static/css/source/4_content.scss */
+* html #fancybox-overlay {
+  /* IE6 */
+  position: absolute;
+  width: 100%;
+}
+
+/* line 424, ../../../../../../static/css/source/4_content.scss */
+#fancybox-tmp {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: auto;
+  display: none;
+}
+
+/* line 432, ../../../../../../static/css/source/4_content.scss */
+#fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px;
+  z-index: 1101;
+  display: none;
+}
+
+/* line 442, ../../../../../../static/css/source/4_content.scss */
+#fancybox-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+}
+
+/* line 449, ../../../../../../static/css/source/4_content.scss */
+#fancybox-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+}
+
+/* line 461, ../../../../../../static/css/source/4_content.scss */
+#fancybox-hide-sel-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* line 470, ../../../../../../static/css/source/4_content.scss */
+#fancybox-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 32px;
+  height: 32px;
+  background: url("/fileadmin/app/static/img/fancybox/fancy_close-201009220932.png") top left no-repeat;
+  cursor: pointer;
+  z-index: 1103;
+  display: none;
+}
+
+/* line 482, ../../../../../../static/css/source/4_content.scss */
+#fancybox_error {
+  color: #444;
+  font: normal 12px/20px Arial;
+}
+
+/* line 487, ../../../../../../static/css/source/4_content.scss */
+#fancybox-content {
+  height: auto;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 494, ../../../../../../static/css/source/4_content.scss */
+#fancybox-img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  line-height: 0;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 506, ../../../../../../static/css/source/4_content.scss */
+#fancybox-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* line 514, ../../../../../../static/css/source/4_content.scss */
+#fancybox-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: Arial;
+  font-size: 12px;
+  z-index: 1102;
+}
+
+/* line 523, ../../../../../../static/css/source/4_content.scss */
+.fancybox-title-inside {
+  padding: 10px 0;
+  text-align: center;
+  color: #333;
+}
+
+/* line 529, ../../../../../../static/css/source/4_content.scss */
+.fancybox-title-outside {
+  padding-top: 5px;
+  color: #FFF;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 536, ../../../../../../static/css/source/4_content.scss */
+.fancybox-title-over {
+  color: #FFF;
+  text-align: left;
+}
+
+/* line 541, ../../../../../../static/css/source/4_content.scss */
+#fancybox-title-over {
+  padding: 10px;
+  background: url("/fileadmin/app/static/img/fancybox/fancy_title_over-201009220932.png");
+  display: block;
+}
+
+/* line 547, ../../../../../../static/css/source/4_content.scss */
+#fancybox-title-wrap {
+  display: inline-block;
+}
+
+/* line 551, ../../../../../../static/css/source/4_content.scss */
+#fancybox-title-wrap span {
+  height: 32px;
+  float: left;
+}
+
+/* line 556, ../../../../../../static/css/source/4_content.scss */
+#fancybox-title-left {
+  padding-left: 15px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_title_left-201009220932.png") repeat-x;
+}
+
+/* line 561, ../../../../../../static/css/source/4_content.scss */
+#fancybox-title-main {
+  font-weight: bold;
+  line-height: 29px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_title_main-201009220932.png") repeat-x;
+  color: #FFF;
+}
+
+/* line 568, ../../../../../../static/css/source/4_content.scss */
+#fancybox-title-right {
+  padding-left: 15px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_title_right-201009220932.png") repeat-x;
+}
+
+/* line 573, ../../../../../../static/css/source/4_content.scss */
+#fancybox-left, #fancybox-right {
+  position: absolute;
+  bottom: 0px;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
+  outline: none;
+  background-image: url("/fileadmin/app/static/img/fancybox/blank.gif");
+  z-index: 1102;
+  display: none;
+}
+
+/* line 585, ../../../../../../static/css/source/4_content.scss */
+#fancybox-left {
+  left: 0px;
+}
+
+/* line 589, ../../../../../../static/css/source/4_content.scss */
+#fancybox-right {
+  right: 0px;
+}
+
+/* line 593, ../../../../../../static/css/source/4_content.scss */
+#fancybox-left-ico, #fancybox-right-ico {
+  position: absolute;
+  top: 50%;
+  left: -9999px;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  cursor: pointer;
+  z-index: 1102;
+  display: block;
+}
+
+/* line 605, ../../../../../../static/css/source/4_content.scss */
+#fancybox-left-ico {
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_nav_left-201009220932.png") no-repeat;
+}
+
+/* line 609, ../../../../../../static/css/source/4_content.scss */
+#fancybox-right-ico {
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_nav_right-201009220932.png") no-repeat;
+}
+
+/* line 613, ../../../../../../static/css/source/4_content.scss */
+#fancybox-left:hover, #fancybox-right:hover {
+  visibility: visible;
+  /* IE6 */
+}
+
+/* line 617, ../../../../../../static/css/source/4_content.scss */
+#fancybox-left:hover span {
+  left: 20px;
+}
+
+/* line 621, ../../../../../../static/css/source/4_content.scss */
+#fancybox-right:hover span {
+  left: auto;
+  right: 20px;
+}
+
+/**
+ * display left-right buttons permanently
+ * - helps user to understand that there are more images in the set
+ * - makes fancybox more usable on touch-devices (hover is not touch compatible)
+ */
+/* line 631, ../../../../../../static/css/source/4_content.scss */
+#fancybox-left span {
+  left: 20px;
+}
+
+/* line 635, ../../../../../../static/css/source/4_content.scss */
+#fancybox-right span {
+  left: auto;
+  right: 20px;
+}
+
+/* line 640, ../../../../../../static/css/source/4_content.scss */
+.fancy-bg {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 1001;
+}
+
+/* line 648, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-n {
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_n-201009220932.png") repeat-x;
+}
+
+/* line 656, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-ne {
+  top: -20px;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_ne-201009220932.png") no-repeat;
+}
+
+/* line 664, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-e {
+  top: 0;
+  right: -20px;
+  height: 100%;
+  width: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_e-201009220932.png") repeat-y;
+}
+
+/* line 672, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-se {
+  bottom: -20px;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_se-201009220932.png") no-repeat;
+}
+
+/* line 680, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-s {
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_s-201009220932.png") repeat-x;
+}
+
+/* line 688, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-sw {
+  bottom: -20px;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_sw-201009220932.png") no-repeat;
+}
+
+/* line 696, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-w {
+  top: 0;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_w-201009220932.png") repeat-y;
+}
+
+/* line 704, ../../../../../../static/css/source/4_content.scss */
+div#fancy-bg-nw {
+  top: -20px;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background: transparent url("/fileadmin/app/static/img/fancybox/fancy_shadow_nw-201009220932.png") no-repeat;
+}
+
+/**
+ * csc-textpix clearing fix
+ */
+/* line 6, ../../../../../../static/css/source/5_fce.scss */
+.csc-textpic {
+  margin: 0 0 20px 0;
+  display: block;
+}
+
+/* (en) clearfix method for clearing floats */
+/* (de) Clearfix-Methode zum Clearen der Float-Umgebungen */
+/* line 13, ../../../../../../static/css/source/5_fce.scss */
+.csc-textpic:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/**
+ * krpano qtvr
+ */
+/* line 25, ../../../../../../static/css/source/5_fce.scss */
+.krpano_wrap {
+  height: 300px;
+}
+
+/**
+ * pano-css
+ */
+/*
+ * jquery.panorama original styles
+ */
+/* line 39, ../../../../../../static/css/source/5_fce.scss */
+.panorama-viewport {
+  position: relative;
+  width: 600px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* line 47, ../../../../../../static/css/source/5_fce.scss */
+.panorama-container {
+  position: relative;
+  width: 100000px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 54, ../../../../../../static/css/source/5_fce.scss */
+.panorama-control {
+  position: absolute;
+  display: none;
+  padding: 0;
+  margin: 0;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: black;
+  filter: alpha(opacity=50);
+  opacity: .5;
+  text-align: left;
+}
+
+/* line 68, ../../../../../../static/css/source/5_fce.scss */
+.panorama-control-left, .panorama-control-right, .panorama-control-pause {
+  float: left;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 30px;
+  width: 33%;
+  text-align: center;
+  font-family: 'Arial',sans-serif;
+}
+
+/* line 80, ../../../../../../static/css/source/5_fce.scss */
+.panorama-control-left:hover, .panorama-control-right:hover, .panorama-control-pause:hover {
+  text-decoration: none;
+}
+
+/* line 83, ../../../../../../static/css/source/5_fce.scss */
+.panorama-control-pause {
+  text-transform: uppercase;
+}
+
+/* line 86, ../../../../../../static/css/source/5_fce.scss */
+.panorama-panel {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  background: #009cff;
+  filter: alpha(opacity=50);
+  opacity: .5;
+  color: white;
+  padding: 4px;
+}
+
+/* line 97, ../../../../../../static/css/source/5_fce.scss */
+.panorama-panel h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  text-align: right;
+}
+
+/* line 103, ../../../../../../static/css/source/5_fce.scss */
+.panorama-panel ul {
+  display: none;
+}
+
+/* line 106, ../../../../../../static/css/source/5_fce.scss */
+.panorama {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+ * anorak.panoramaplayer jquery.panorama overrides
+ */
+/* line 118, ../../../../../../static/css/source/5_fce.scss */
+.panorama-viewport {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+/* line 124, ../../../../../../static/css/source/5_fce.scss */
+.panorama-viewport .panorama-control a {
+  font-family: Helvetica, Arial, sans-serif;
+  display: block;
+  height: 60px;
+  font-weight: bold;
+  padding-top: 18px;
+  font-size: 50px;
+  bottom: 0;
+  border-right: 1px solid #fff;
+}
+
+/* line 135, ../../../../../../static/css/source/5_fce.scss */
+.panorama-viewport .panorama-control a.panorama-control-left, .panorama-viewport .panorama-control a.panorama-control-right {
+  padding-top: 10px;
+  font-size: 80px;
+}
+
+/* line 140, ../../../../../../static/css/source/5_fce.scss */
+.panorama-viewport .panorama-control a.panorama-control-right {
+  border-right: none;
+}
+
+/* line 144, ../../../../../../static/css/source/5_fce.scss */
+.panorama-viewport .panorama-control {
+  bottom: 0;
+  height: 70px;
+}
+
+/*
+ * krpano overrides
+ */
+/* line 153, ../../../../../../static/css/source/5_fce.scss */
+body.js #krpanoDIV {
+  width: 100%;
+  height: 375px;
+  overflow: hidden;
+}
+
+/* line 159, ../../../../../../static/css/source/5_fce.scss */
+.pano_1 img {
+  left: -1600px;
+}
+
+/**
+	jQuery Coda-Slider v2.0 - http://www.ndoherty.biz/coda-slider
+	Copyright (c) 2009 Niall Doherty
+	This plugin available for use in all personal or commercial projects under both MIT and GPL licenses.
+	
+	TYPO3 Object
+	lib.contentslider
+*/
+/* line 193, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement {
+  position: relative;
+  margin: 0;
+  padding: 0 0 50px 0;
+}
+/* line 198, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .main_link {
+  position: absolute;
+  bottom: 33px;
+  left: 65px;
+}
+/* line 205, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper {
+  padding: 0;
+  clear: both;
+  overflow: auto;
+  /* Tabbed nav */
+}
+/* line 210, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  /* Preloader */
+}
+/* line 215, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel {
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+/* line 220, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel:hover {
+  cursor: pointer;
+}
+/* line 224, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel .panel-wrapper {
+  background-color: #f00;
+  float: left;
+}
+/* line 228, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel .panel-wrapper img {
+  float: right;
+  margin: 0 0 0 20px;
+}
+/* line 232, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel .panel-wrapper p {
+  padding: 10px;
+}
+/* line 236, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel .panel-wrapper a.morelink {
+  text-decoration: none;
+}
+/* line 238, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel .panel-wrapper a.morelink span {
+  display: block;
+  padding: 0;
+  text-decoration: underline;
+}
+/* line 246, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider .panel .panel-wrapper h2.title {
+  margin: 0 0 10px 0;
+}
+/* line 260, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-slider p.loading {
+  padding: 20px;
+  text-align: center;
+}
+/* line 268, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+/* line 273, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav ul {
+  clear: both;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+}
+/* line 279, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav ul li {
+  float: left;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 285, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav ul li a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+}
+/* line 305, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav-left {
+  left: 0;
+  border: 1px solid blue;
+  position: absolute;
+  top: 0;
+  z-index: 500;
+}
+/* line 184, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav-left a {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+/* line 311, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav-right {
+  right: 0;
+  border: 1px solid green;
+  position: absolute;
+  top: 0;
+  z-index: 500;
+}
+/* line 184, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .coda-slider-wrapper .coda-nav-right a {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+/* line 322, ../../../../../../static/css/source/5_fce.scss */
+.sliderelement .float_right {
+  float: right;
+}
+
+/**
+ * styles for TYPO3-Backend Editor
+ * eg. define background-color of page to render properly in the backend
+ */
+/* line 10, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.htmlarea-content-body {
+  /*background-color:blue;*/
+  color: lime;
+  font-size: 14px;
+  font-family: "Trebuchet MS", Arial, Verdana, Times, serif;
+}
+
+/**
+ * H1 - H6
+ */
+/* line 23, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}
+
+/* line 28, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+  color: #A0AA4B;
+  font-style: italic;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+}
+
+/* 21px */
+/* line 29, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h2 {
+  font-size: 22px;
+  font-weight: normal;
+  color: #76886C;
+  font-style: italic;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+}
+
+/* 18px */
+/* line 30, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #BDC1BA;
+  font-style: normal;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* 18px */
+/* line 31, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #A0AA4B;
+  font-style: normal;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* 16px */
+/* line 32, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h5 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #76886C;
+  font-style: normal;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* 14px */
+/* line 33, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h6 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #BDC1BA;
+  font-style: normal;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* 14px */
+/* line 36, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h1.G {
+  border: 0;
+  height: 45px;
+  text-indent: -999em;
+}
+
+/* line 37, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h2.G {
+  border: 0;
+  height: 30px;
+  text-indent: -999em;
+}
+
+/* line 38, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h3.G {
+  border: 0;
+  height: 30px;
+  text-indent: -999em;
+}
+
+/* line 39, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h4.G {
+  border: 0;
+  height: 30px;
+  text-indent: -999em;
+}
+
+/* line 40, ../../../../../../static/css/source/6_typo3-RTE.scss */
+h5.G {
+  border: 0;
+  height: 30px;
+  text-indent: -999em;
+}
+
+/**
+ * Textauszeichnung 
+*/
+/* line 47, ../../../../../../static/css/source/6_typo3-RTE.scss */
+p {
+  line-height: 20px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: lime;
+  margin-bottom: 20px;
+}
+
+/* line 54, ../../../../../../static/css/source/6_typo3-RTE.scss */
+cite, blockquote {
+  font-style: italic;
+}
+
+/* line 55, ../../../../../../static/css/source/6_typo3-RTE.scss */
+blockquote {
+  margin: 0 0 1em 1.5em;
+}
+
+/* line 57, ../../../../../../static/css/source/6_typo3-RTE.scss */
+strong, b {
+  font-weight: bold;
+}
+
+/* line 58, ../../../../../../static/css/source/6_typo3-RTE.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 60, ../../../../../../static/css/source/6_typo3-RTE.scss */
+pre, code {
+  font-family: monospace;
+}
+
+/* line 62, ../../../../../../static/css/source/6_typo3-RTE.scss */
+acronym, abbr {
+  letter-spacing: .07em;
+  border-bottom: .1em dashed #c00;
+  cursor: help;
+}
+
+/**
+* Linkformate
+*/
+/* line 73, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a {
+  text-decoration: underline;
+  color: #BCC381;
+  text-decoration: underline;
+}
+
+/* line 79, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a:focus,
+a:hover,
+a:active {
+  color: #BCC381;
+  text-decoration: none;
+}
+
+/* line 88, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a.internal-link:hover {
+  text-decoration: none;
+}
+
+/*
+a.internal-link:visited{
+	color:#76886C;
+	text-decoration:underline;
+}
+*/
+/* line 99, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a.external-link, a.external-link-new-window {
+  padding: 0 0 0 1.3em;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat 0 -17px;
+}
+
+/* line 104, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a.external-link:hover, a.external-link-new-window:hover {
+  text-decoration: none;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat 0 -167px;
+}
+
+/*
+a.external-link:visited, a.external-link-new-window:visited{
+	color:#666;
+}
+ */
+/* line 115, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a.mail {
+  text-decoration: underline;
+  padding: 0 0 0 1.3em;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat 0 -67px;
+}
+
+/* line 121, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a.mail:hover {
+  text-decoration: none;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat 0 -217px;
+}
+
+/*
+a.mail:visited{
+	color:#666;
+}
+ */
+/* line 131, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a.download {
+  padding: 0 0 0 1.3em;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat 0 -117px;
+}
+
+/* line 136, ../../../../../../static/css/source/6_typo3-RTE.scss */
+a.download:hover {
+  text-decoration: none;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat 0 -267px;
+}
+
+/*
+a.download:visited{
+	color:#666;
+}
+ */
+/*
+ * Tabellen
+ */
+/* line 151, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable {
+  width: 100%;
+  margin: 0 0 2em 0;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+/* line 157, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable caption {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+/* line 163, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable thead {
+  border-bottom: 2px solid #656F5E;
+}
+/* line 167, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable thead tr th {
+  color: #A0AA4B;
+  padding: 10px;
+  border-right: none;
+  font-size: 16px;
+}
+/* line 175, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable thead tr.tr-even {
+  background-color: transparent;
+}
+/* line 184, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable tr {
+  background: none;
+  padding: 3px 0 3px 0;
+  border-bottom: 1px solid #394630;
+  /*if THeader is left col*/
+}
+/* line 189, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable tr td {
+  padding: 10px;
+}
+/* line 193, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable tr th {
+  padding: 10px;
+  color: #A0AA4B;
+  border-right: 2px solid #656F5E;
+  font-size: 16px;
+}
+/* line 205, ../../../../../../static/css/source/6_typo3-RTE.scss */
+table.contenttable tr.tr-even {
+  background-color: #203920;
+}
+
+/**
+* Listen
+*/
+/* line 214, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ul, ol, dl {
+  margin: 0;
+}
+
+/* line 217, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ul {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+/* line 221, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ul li {
+  margin: 0 0 5px 0;
+  padding: 0 0 0 1em;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat -950px 0;
+  list-style: none;
+  line-height: 1.4em;
+  color: lime;
+}
+/* line 229, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ul li ul {
+  margin: 0 0 0.3em 0;
+}
+/* line 232, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ul li ul li {
+  margin: 0;
+  background: url(/fileadmin/app/static/img/customized/sprite-201009220932.png) no-repeat 0 -512px;
+}
+
+/* line 247, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ol {
+  margin: 0 0 15px 0;
+  list-style: decimal;
+}
+
+/* line 252, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ol li {
+  margin: 0 0 0 18px;
+  padding: 0;
+}
+
+/* line 258, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ol li ol {
+  margin: 0 0 0.3em 0;
+}
+
+/* line 262, ../../../../../../static/css/source/6_typo3-RTE.scss */
+ol li ol li {
+  margin: 0 0 0 0.7em;
+}
+
+/* line 266, ../../../../../../static/css/source/6_typo3-RTE.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 267, ../../../../../../static/css/source/6_typo3-RTE.scss */
+dd {
+  margin: 0 0 1em 2em;
+}
+
+/*
+ * TinyMCE CSS Styles
+ */
+/* line 274, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.roterRahmen {
+  border: 1px solid red;
+}
+
+/* line 278, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.blauerRahmenBottom {
+  border-bottom: 1px solid blue;
+}
+
+/**
+ * RTE styles
+ */
+/* #############################
+** ### classesParagraph ########
+** #############################
+*/
+/*p.csc-frame-frame1 {background:#EDEBF1; border:1px solid #000; padding:5px;}
+p.csc-frame-frame2 {background:#F5FFAA; border:1px solid #000; padding:5px;}
+p.align-center {text-align:center;}
+p.align-left {text-align:left;}
+p.align-right {text-align:right;}
+p.align-justify {text-align:justify;}
+p.indent {margin-left:1.5em;}
+table.contenttable {font-size:0.8em;}
+p sup, p sub {font-size:0.7em;}
+p.code {font-family:"Courier New", Courier, monospace; font-size:0.9em; padding:1em; background:#f0f0f4; border:1px #ccd solid;}
+p.note {background:#dfd; padding: 1em; border-bottom: 1px #bdb dotted;}
+p.important {background:#ffd; padding:1em; border-bottom:1px #ddb dotted;}
+p.question {background:#A43F15 url(../img/icons/fragez-blau.gif) 10px 10px no-repeat; color:#fff; padding:1.5em 1.5em 1.5em 4em;}
+p.stop {background:#fff url(../img/icons/stop.gif) 10px 10px no-repeat; padding:1.5em 1.5em 1.5em 4em; border:1px solid #a43f15;}
+p.citation {background:#fff url(../img/icons/sprechblase.gif) 10px 10px no-repeat; color:#187ba2; padding:1.5em 1.5em 1.5em 4em; border:1px solid #187ba2; font-style:italic;}
+*/
+/* line 308, ../../../../../../static/css/source/6_typo3-RTE.scss */
+p.abstract {
+  font-size: 18px;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+  color: #bec3bb;
+}
+
+/*p.warning {background:#fdd; padding:1em; border-bottom:1px #dbb dotted;}
+p.info {background:#f7f7ef url(../img/icons/ausrufez-blau.gif) 10px 10px no-repeat; padding:1.5em 1.5em 1.5em 4em;}*/
+/* line 312, ../../../../../../static/css/source/6_typo3-RTE.scss */
+p.abstract {
+  font-size: 18px;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+  color: #bec3bb;
+}
+
+/* #############################
+** ### classesCharacter ########
+** #############################
+*/
+/*
+span.underline {text-decoration:underline;}
+span.strikethrough {text-decoration:line-through;}
+span.mono {font-family:"Courier New", Courier, monospace; padding:0 0.3em 0 0.3em; background:#f0f0f4; border:1px #ccd solid;}
+span.file {font-family:"Courier New", Courier, monospace;	padding:0 0 0 14px; color:#000088; background:transparent url('../img/icons/file.gif') no-repeat left;}
+span.directory {font-family:"Courier New", Courier, monospace; padding:0 0 0 15px; color:#000088; background:transparent url('../img/icons/dir.gif') no-repeat left;}
+span.infoHeadline {display:block; color:#187ba2; text-transform:uppercase; font-weight:bold; border-bottom:2px solid white; padding-bottom:0.5em; margin-bottom:-1em; margin-left:-4em; padding-left:4em; margin-right:-1.5em;}
+span.questionHeadline {display:block; color:#fff; text-transform:uppercase; font-weight:bold; border-bottom:2px solid white; padding-bottom:0.5em; margin-bottom:-1em; margin-left:-4em; padding-left:4em; margin-right:-1.5em;}
+span.stopHeadline {display:block; color:#A43F15; text-transform:uppercase; font-weight:bold; padding-bottom:0.5em; margin-bottom:-1em;}
+*/
+/****************************************************************************************
+# Default css file for content edited with htmlArea RTE
+#
+# Defines a few class selectors that can be simply taken as examples by anyone who needs to configure the RTE.
+# This css file is referenced by property RTE.default.contentCSS in the default configuration of htmlArea RTE.
+#
+# TYPO3 SVN ID: $Id: default.css 6539 2009-11-25 14:49:14Z stucki $
+# ***************************************************************************************/
+/* Left, center, right and justify alignment of text in block elements*/
+/* line 346, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.align-left {
+  text-align: left;
+}
+
+/* line 347, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.align-center {
+  text-align: center;
+}
+
+/* line 348, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.align-right {
+  text-align: right;
+}
+
+/* line 349, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.align-justify {
+  text-align: justify;
+}
+
+/* Default selector for indentation.*/
+/* line 352, ../../../../../../static/css/source/6_typo3-RTE.scss */
+.indent {
+  margin-left: 2em;
+}
+
+/* line 6, ../source/converttoinline.scss */
+body {
+  background-color: #191919;
+}
+
+/* line 10, ../source/converttoinline.scss */
+p {
+  font-size: 13px;
+}
+
+/**
+ * insert RTE Stylesheet here
+ */
+/* line 20, ../source/converttoinline.scss */
+.csc-textpic-image dl {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 25, ../source/converttoinline.scss */
+td.footer {
+  background-color: #080c06;
+  text-align: center;
+  height: 41px;
+  padding: 20px 30px;
+  border-top: 2px solid #1f2c17;
+}
+/* line 31, ../source/converttoinline.scss */
+td.footer a, td.footer p {
+  text-align: center;
+  font-size: 10px;
+  color: #525d4b;
+  margin: 0;
+}
+
+/* line 42, ../source/converttoinline.scss */
+table.page {
+  width: 600px;
+  border-collapse: collapse;
+  border: 0;
+  padding: 0;
+  background-color: #16230e;
+}
+
+/* line 50, ../source/converttoinline.scss */
+tr, td {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/* line 54, ../source/converttoinline.scss */
+.main_content {
+  padding: 30px;
+  margin: 0;
+}
+
+/* line 59, ../source/converttoinline.scss */
+.twocol_fce {
+  margin: 0 0 30px 0;
+}
+
+/* line 63, ../source/converttoinline.scss */
+.twocol_fce_left_padding {
+  padding: 0 30px 0 0;
+}
+
+/* line 67, ../source/converttoinline.scss */
+.fourcol_fce_right_padding {
+  padding: 0 20px 0 0;
+}
+
+/* line 71, ../source/converttoinline.scss */
+.csc-header-n1 {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 77, ../source/converttoinline.scss */
+.alternativeviewlink {
+  padding: 0 0 7px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 10px;
+  color: #525d4b;
+  display: block;
+  text-decoration: none;
+}
+
+/**
+ * @section subtemplates
+ * @see     http://www.yaml.de/en/documentation/practice/subtemplates.html
+*/
+/* line 101, ../source/converttoinline.scss */
+.subcolumns, .subcolumns_oldgecko {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 15px 0;
+}
+
+/* (en) alternative class for optional support of old  Mozilla/Netscape browers */
+/* (de) Alternative Klasse zur optionalen Unterstützung alter Mozilla/Netscape-Brower */
+/* line 109, ../source/converttoinline.scss */
+.subcolumns_oldgecko {
+  float: left;
+}
+
+/* line 111, ../source/converttoinline.scss */
+.c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l {
+  float: left;
+}
+
+/* line 112, ../source/converttoinline.scss */
+.c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r {
+  float: right;
+  margin-left: -5px;
+}
+
+/* line 114, ../source/converttoinline.scss */
+.c25l, .c25r {
+  width: 25%;
+}
+
+/* line 115, ../source/converttoinline.scss */
+.c33l, .c33r {
+  width: 33.333%;
+}
+
+/* line 116, ../source/converttoinline.scss */
+.c50l, .c50r {
+  width: 50%;
+}
+
+/* line 117, ../source/converttoinline.scss */
+.c66l, .c66r {
+  width: 66.666%;
+}
+
+/* line 118, ../source/converttoinline.scss */
+.c75l, .c75r {
+  width: 75%;
+}
+
+/* line 119, ../source/converttoinline.scss */
+.c38l, .c38r {
+  width: 38.2%;
+}
+
+/* line 120, ../source/converttoinline.scss */
+.c62l, .c62r {
+  width: 61.8%;
+}
+
+/* line 122, ../source/converttoinline.scss */
+.subc {
+  padding: 0;
+}
+
+/* line 123, ../source/converttoinline.scss */
+.subcl {
+  padding: 0 20px 0 0;
+}
+
+/* line 124, ../source/converttoinline.scss */
+.subcr {
+  padding: 0 0 0 20px;
+}

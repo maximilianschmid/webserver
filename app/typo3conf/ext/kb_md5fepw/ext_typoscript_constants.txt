@@ -1,0 +1,5 @@
+plugin.feadmin.fe_users {
+  file.templateFile = EXT:kb_md5fepw/res/fe_admin_fe_users.tmpl
+}
+
+

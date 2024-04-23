@@ -1,0 +1,104 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  DI(FH) Maximilian Schmid, MSc | Bernd Koller
+  Site: www.anorak.io - ideas that work.
+  Twitter: http://twitter.com/anorakio
+  Location: Austria
+
+/* THANKS */ 
+  Paul Irish, http://html5boilerplate.com/
+
+/* SITE */
+  Standards: HTML5, CSS3, 100% vector-based workflow (SVG)
+  Components: Modernizr, jQuery
+  Software: TYPO3, APACHE2, MYSQL, PHP, ANT, DEBIAN, COMPASS, SASS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+                                                                                                        .iiiiii                                                    
+                                                                                                        .8@@@@8.                                                   
+                                                                                                        .8@@@@8.                                                   
+         .;111:.                   ,;11i:             .:i11;,                 ,ii      ,;11i:           .8@@@@8.                                    .,;;;:,        
+      t8@@@@@@@@@fL@@@@@1 ,@@@@@LL@@@@@@@@@t      .f@@@@@@@@@@@0;    .8@@@@CL@@@C   f@@@@@@@@@@fC@@@@@i .8@@@@8.   1@@@@@@L          iCCCCCi     1CCCCCCCCCCCL:    
+    t@@@@@@@@@@@@@@@@@@@1 .8@@@@@@@@@@@@@@@@G    C@@@@@@@@@@@@@@@@;  .8@@@@@@@@@C f@@@@@@@@@@@@@@@@@@@; .8@@@@8. .0@@@@@0.           iCCCCCi   tCCCCCCCCCCCCCCCC:  
+   L@@@@@@01:,;f8@@@@@@@1 .8@@@@@@L;:iG@@@@@@i .8@@@@@@Ci:;t8@@@@@@t .8@@@@@@@GL1C@@@@@@01:,;f@@@@@@@@; .8@@@@8 t@@@@@8;                     .LCCCCCCt;,,iLCCCCCCi 
+  i@@@@@8:       i@@@@@@1 .8@@@@@:     L@@@@@f C@@@@@L       :@@@@@@:.8@@@@@1   1@@@@@8,       1@@@@@@; .8@@@@88@@@@@t               iCCCCCi tCCCCCt       ,LCCCCC:
+  8@@@@@1         L@@@@@1 .8@@@@8.     1@@@@@t.8@@@@8.        t@@@@@t 8@@@@8.   C@@@@@i         C@@@@@; .8@@@@@@@@@@t                iCCCCCi LCCCCL.        ;CCCCC;
+  G@@@@@f         G@@@@@1 .8@@@@8.     1@@@@@f.8@@@@8,        L@@@@@1 8@@@@8.   L@@@@@1         0@@@@@; .8@@@@0f@@@@@G               iCCCCCi LCCCCC,        iCCCCC;
+  :@@@@@@f       C@@@@@@1 .8@@@@8.     1@@@@@f f@@@@@8:      L@@@@@8..8@@@@8.   ;@@@@@@1      .G@@@@@@; .8@@@@8 ;@@@@@8,             iCCCCCi iCCCCCL,      iCCCCCL.
+   1@@@@@@@8CCG8@@@@@@@@1 .8@@@@8.     1@@@@@f  L@@@@@@@0GG8@@@@@@@: .8@@@@8.    t@@@@@@@8CCG@@@@@@@@@; .8@@@@8. ,8@@@@@1   ;CCCCCf  iCCCCCi  1CCCCCCCLffLCCCCCCC, 
+    :8@@@@@@@@@@@@@@@@@@1 .8@@@@8.     1@@@@@f   ;8@@@@@@@@@@@@@@C   .8@@@@8.     ;8@@@@@@@@@@@@@@@@@@; .8@@@@8.  .0@@@@@C  ;CCCCCf  iCCCCCi   :LCCCCCCCCCCCCCCt   
+      ,L@@@@@@@@G:f@@@@@1 .8@@@@8.     1@@@@@f     ,f8@@@@@@@@Gi     .8@@@@8.       ,C@@@@@@@@G,L@@@@@; .8@@@@8.    C@@@@@8,;CCCCCf  iCCCCCi     .1LCCCCCCCCf;     
+  
+                        
+  anorak.io                          
+  ideas that work 
+
+
+
+
+  Feel free to contact us!    
+  www.anorak.io 
+  info@anorak.io 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Credits go to http://html5boilerplate.com/ for theis awesome work. Thank you guys!
+
+                                    
+                               -o/-                       
+                               +oo//-                     
+                              :ooo+//:                    
+                             -ooooo///-                   
+                             /oooooo//:                   
+                            :ooooooo+//-                  
+                           -+oooooooo///-                 
+           -://////////////+oooooooooo++////////////::    
+            :+ooooooooooooooooooooooooooooooooooooo+:::-  
+              -/+ooooooooooooooooooooooooooooooo+/::////:-
+                -:+oooooooooooooooooooooooooooo/::///////:-
+                  --/+ooooooooooooooooooooo+::://////:-   
+                     -:+ooooooooooooooooo+:://////:--     
+                       /ooooooooooooooooo+//////:-        
+                      -ooooooooooooooooooo////-           
+                      /ooooooooo+oooooooooo//:            
+                     :ooooooo+/::/+oooooooo+//-           
+                    -oooooo/::///////+oooooo///-          
+                    /ooo+::://////:---:/+oooo//:          
+                   -o+/::///////:-      -:/+o+//-         
+                   :-:///////:-            -:/://         
+                     -////:-                 --//:        
+                       --                       -:        

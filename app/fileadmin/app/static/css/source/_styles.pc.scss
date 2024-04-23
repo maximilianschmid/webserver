@@ -1,0 +1,721 @@
+@import "compass/reset";
+
+@include layout;
+@include page_templates;
+@include styles_t3be; // RTE Backend
+
+@include krpano;// !!! not proofed !!!
+
+
+body.print{
+  @include print;
+}
+
+@media print{
+  @include print; 
+}
+
+@page{
+  margin: 1.0cm 1.0cm 1.0cm 2.0cm;
+}
+
+
+// B O D Y
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+body{
+  @include textformat_body;
+  background: url(../../../../../fileadmin/app/static/img/customized/background_waves.png) -620px 0 repeat-x #A9C43D;
+    
+  .versionswitcher{ // has to change into footer_innerwrap!!!
+    @include textformat_footer;
+    float: right;
+  }
+
+  // include TYPO3 lib.debug
+  @include debug;
+
+  .page{
+    @include pageblock;
+    padding-bottom: $bu*4.0;
+    margin-bottom: $bu*2.5;
+    @include border-radius(0 0 $border-radius_big $border-radius_big);
+    @include box-shadow(rgba($color_99,0.25) 2px 2px 10px);
+    background: $color_main_background url(../../../../../fileadmin/app/static/img/customized/content-bg.png) right bottom no-repeat;
+  }
+
+// H E A D E R   ( LOGO / META NAVIGATION / MAIN NAVIGATION )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .header{
+    .header_innerwrap{
+      height: 175px;
+      background: url(../../../../../fileadmin/app/static/img/customized/img_start-header.jpg) 0 -280px no-repeat;
+      @include border-radius(0 0 $border-radius_big $border-radius_big);
+      @include textformat_header;
+      position: relative;// just for absolute 'search box' position
+      padding-bottom: $fs;
+
+
+// LOGO
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .logolink_wrap{
+        @include logolink_wrap;
+        float: right;
+        margin-right: $bu*3.0;
+      }
+
+
+// META NAVIGATION
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .nav_meta{
+        @include tmenu;
+        display: none;
+      
+        ul{
+          float:right;
+      
+          li{
+            float:left;
+            @include border(left, $color_header_border);
+            border-width: 1px;
+            &:first-child, &.first{
+              border: none;
+            }
+            &:last-child, &.last{
+              a{
+                span{
+                  margin-right: 0;
+                }
+              }
+            }
+            
+            a{
+              span{
+                margin: 0 $fs*0.50;
+                @include border(bottom, transparent);
+                border-width: $border-width*0.5;
+              }
+            }
+            
+          &.active{// li.active
+            a{
+              color: $color_header_link_active;
+              span{
+                @include border(bottom, $color_header_link);
+                border-width: $border-width*0.5;
+              }
+            &:hover{
+              color: $color_header_link_hover;
+            }
+            }
+          }// li.active
+
+          &.current{// li.current
+            a{
+              color: $color_header_link_active;
+              span{
+                @include border(bottom, $color_header_link);
+                border-width: $border-width*0.5;
+              }
+            }
+          }// li.current
+      
+          }// li 1
+        }// ul 1
+      }//.nav_meta
+
+
+// MAIN NAVIGATION
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .nav_main {
+        position: absolute;
+        left: -10px;
+        top: 70px;
+        width: 900px;
+        height: 43px;
+        padding: $bu*2.0 $bu*3.0;
+        @include sprite_template(center, 0, no-repeat);
+        @include tmenu;
+        @include font-size_nav_main;
+        @include font_02(normal, normal, uppercase);
+        ul{
+          li{
+            float:left;
+      
+          &.first, &:first-child, &.first.current{// li.first
+            a{
+              display: block;
+              width: 50px;
+              height: 50px;
+              @include sprite_template(center, -105px, no-repeat);
+              background-color: $color_nav1_link;
+              @include animation-background;
+            &:hover{
+              background-color: $color_nav1_link_hover;
+            }
+              
+              span{
+                display: none;
+              }
+            }
+          }
+          
+            a{
+              @include animation_textlink;
+              color: $color_nav1_link;
+              span{
+                margin: $bu*1.0 0;
+                padding: 0 $fs*1.0;
+                @include border(left, $color_header_border);
+                border-width: 1px;
+              }
+            &:hover{
+              color: $color_nav1_link_hover;
+            }
+            }
+      
+          &.active{// li.active
+            a{
+              color: $color_nav1_link_active;
+              @include sprite_template(center, -140px, no-repeat);
+              span{
+              }
+            &:hover{
+              color: $color_nav1_link_active_hover;
+            }
+            }
+          }
+
+          &.current{// li.current
+            a{
+              color: $color_nav1_link_active;
+              @include sprite_template(center, -140px, no-repeat);
+              span{
+              }
+            &:hover{
+              color: $color_nav1_link_active;
+            }
+            }
+          }
+          }// li 1
+        }// ul 1
+      }//.nav_main
+
+
+// SEARCH BOX ( HEADER )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .tx-macinasearchbox-pi1{
+        position: absolute;
+        bottom: $fs;
+        right: $bu*2.0;
+        input{
+          @include font-size_small;
+        }
+        display: none;
+      }// .tx-macinasearchbox-pi1
+
+    }// .header_innerwrap
+  }// .HEADER
+
+
+
+// M A I N   ( TEASER / SUBMENU /  )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .main{
+    padding: $bu*5.0 $bu*8.0 0 $bu*8.0;
+    .main_innerwrap{
+      @include basics;
+      @include textformat_main;
+
+
+// TEASER
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .teaser{
+        @include teaser;
+        padding: ($fs*1.0) 0;
+        display: none;
+      }// .teaser
+
+
+// SUBMENU
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .submenu{
+        @include tmenu;
+        margin-bottom: $fs*2.0;
+        @include border(bottom, $color_nav2_level01_border);
+        border-width: 1px;
+        
+        .current, .currentandsub{
+          a:link, a:visited, a:hover{
+            color: $color_nav2_level01_link_current;
+            background-color: transparent;
+          }
+          
+          li{// levels after
+            a:link, a:visited{
+              color: $color_nav2_level02_link;
+              background-color: $color_nav2_level01_background;
+              &:hover{
+                color: $color_nav2_level02_link_hover;
+                background-color: $color_nav2_level01_background_hover;
+              }
+            }
+          }
+        }
+        
+// level 01
+// ---------------------------------------------------------------------------------------------------------------------------
+        ul{
+          li{
+            @include border(top, $color_nav2_level01_border);
+            border-width: 1px;
+            @include animation_background;
+            a{
+              display: block;
+      
+              &:link, &:visited{
+                color: $color_nav2_level01_link;
+              }
+              
+              &:hover{
+                color: $color_nav2_level01_link_hover;
+                background-color: $color_nav2_level01_background_hover;
+              }
+              span{
+                margin: ($fs*0.5) ($bu*1.0);
+                padding-right: $bu*2.0;
+              }
+            }
+      
+          &.hassub{
+            a{span{
+              @include sprite_icons(right, -545px, no-repeat);
+            }}
+            
+            li{
+              a{span{
+                background-image: none;
+              }}
+            }
+          }
+      
+          &.currentandsub{
+            a{span{
+              @include sprite_icons(right, -595px, no-repeat);
+            }}
+            
+            li{
+              a{span{
+                background-image: none;
+              }}
+            }
+          }
+      
+          &.activeandsub{
+            a{span{
+              @include sprite_icons(right, -595px, no-repeat);
+            }}
+            
+            li{
+              a{span{
+                background-image: none;
+              }}
+            }
+          }
+      
+// level 02
+// ---------------------------------------------------------------------------------------------------------------------------
+            ul{
+              li{
+                @include seperator(top, $color_nav2_level02_border);
+                a{
+                  padding-left: $bu*1.0;
+                  @include font-size_small;
+                  font-weight: bold;
+      
+                  &:link, &:visited{
+                    color: $color_nav2_level02_link;
+                  }
+      
+                  &:hover{
+                    color: $color_nav2_level01_link_hover;
+                  }
+      
+                  span{
+                    margin: ($fs*0.25) ($bu*1.0);
+                  }
+                }
+      
+              &.hassub{
+                a{span{
+                  @include sprite_icons(right, -548px, no-repeat);
+                }}
+                
+                li{
+                  a{span{
+                    background-image: none;
+                  }}
+                }
+              }
+          
+              &.currentandsub{
+                a{span{
+                  @include sprite_icons(right, -598px, no-repeat);
+                }}
+                
+                li{
+                  a{span{
+                    background-image: none;
+                  }}
+                }
+              }
+          
+              &.activeandsub{
+                a{span{
+                  @include sprite_icons(right, -598px, no-repeat);
+                }}
+                
+                li{
+                  a{span{
+                    background-image: none;
+                  }}
+                }
+              }
+      
+// level 03
+// ---------------------------------------------------------------------------------------------------------------------------
+                ul{
+                  li{
+                    @include seperator(top, $color_nav2_level03_border);
+                    a{
+                      padding-left: $bu*2.0;
+                      font-weight: normal;
+                      span{
+                      }
+                    }
+                  }// li 3
+                }// ul 3
+              }// li 2
+            }// ul 2
+          }// li 1
+        }// ul 1
+      }//submenu
+
+
+// CONTENT ELEMENTS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// TEXT & IMAGES
+// ###########################################################################################################################
+
+      @include textpic;
+      .csc-textpic{
+        
+// CAPTION  ( CSC-TEXTPIC )
+// ---------------------------------------------------------------------------------------------------------------------------
+    
+        .csc-textpic-caption {
+          padding-bottom: $fs*0.5;
+          font-weight: bold;
+          color: $color_main_h6;
+          @include seperator(bottom, $color_main_seperator);
+        }
+
+
+      &.csc-textpic-border{
+        img{
+          @include image_border();
+          @include border-radius($border-radius_big);
+          @include box-shadow(rgba($color_99,0.15) 0px 2px 8px);
+        }    
+      }
+
+// IMAGE WRAP  ( CSC-TEXTPIC )
+// ---------------------------------------------------------------------------------------------------------------------------
+
+        .csc-textpic-imagewrap {
+          .csc-textpic-image {
+            margin-bottom: $fs*0.50;
+          }// .csc-textpic-image
+        }// .csc-textpic-imagewrap
+      }// .csc-textpic
+      
+
+// SITEMAP
+// ###########################################################################################################################
+
+      .csc-sitemap{
+        @include sitemap;
+      }// .csc-sitemap
+      
+
+// NEWS
+// ###########################################################################################################################
+
+// LIST VIEW
+// ---------------------------------------------------------------------------------------------------------------------------
+
+      .news-list-container{
+        @include news_list(list);
+        .news-list-item{
+          a{
+            img{
+              @include image_orientation(left);
+            }
+          }
+          .news-list-category{
+            display: none;
+          }
+        }
+      }// .news-list-container
+
+  
+// LATEST VIEW
+// ---------------------------------------------------------------------------------------------------------------------------
+
+      .news-latest-container{
+        @include news_list(latest);
+        .news-latest-item{
+          a{
+            img{
+              @include image_orientation(left);
+            }
+          }
+          .news-latest-category{
+            display: none;
+          }
+        }
+      }// .news-latest-container
+
+  
+// HEADER LIST VIEW
+// ---------------------------------------------------------------------------------------------------------------------------
+
+      .news-header-list-container{
+        @include news-header-list-container;
+
+        .news-header-list-categories{
+          display: none;
+        }
+      }// .news-header-list-container
+
+  
+// SINGLE ITEM
+// ---------------------------------------------------------------------------------------------------------------------------
+
+      .news-single-item{
+        @include news-single-item;
+        .news-single-img{
+          @include image_orientation(left);
+        }
+      }
+      
+
+// SLIDERELEMENT
+// ###########################################################################################################################
+
+      .sliderelement_slidetransition{
+        @include sliderelement_slidetransition($sliderelement_01);// set in _global.scss >> B E H A V I O U R S
+      }
+
+      .sliderelement_fadetransition{
+        @include sliderelement_fadetransition($sliderelement_01);// set in _global.scss >> B E H A V I O U R S
+      }
+      
+
+// MAILFORM
+// ###########################################################################################################################
+
+      form#mailform{
+        @include mailform($mailform_01);// set in _global.scss >> B E H A V I O U R S
+      }
+      
+
+// LOGIN
+// ###########################################################################################################################
+
+      .tx-felogin-pi1{
+        @include login($login_01);// set in _global.scss >> B E H A V I O U R S
+        margin: 0 auto;// center
+
+        form{
+          fieldset{
+            legend{
+              display: none;
+            }// legend
+          }// fieldset
+        }// form
+      }// .tx-felogin-pi1
+
+      
+// SEARCH
+// ###########################################################################################################################
+
+      .tx-indexedsearch{
+        @include search($search_01);// set in _global.scss >> B E H A V I O U R S
+
+        form{
+          fieldset{
+            legend{
+              display: none;
+            }// legend
+          }// fieldset
+        }// form
+      }
+
+    }// .main_innerwrap
+  }// .MAIN
+
+
+
+// F O O T E R   ( FOOTER ELEMENTS  )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .footer{
+    .footer_innerwrap{
+      overflow: hidden;
+      @include footer_elements;
+      @include background-image(linear-gradient(color-stops($color_03, $color_05)));
+      @include border-radius($border-radius_big);
+      @include border-all($color_footer_border);
+      padding: $bu*1.5 0;
+    
+      .gototop{
+        display: none;
+      }
+  
+      .footer_1{
+      }
+  
+      .footer_2{
+      }
+  
+      .footer_3{
+        #c687{
+          display: none;
+        }
+      }
+
+      .copyright{
+        display: none;
+      }
+    }// .footer_innerwrap
+  }// .footer
+  
+  //siteby
+  @include siteby;
+  
+}// body
+
+
+
+
+
+// S P E C I A L   P A G E S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+// S T A R T   P A G E
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+body.page-23{
+  .page_margins{
+    .page{
+      background: url(../../../../../fileadmin/app/static/img/customized/img_start-header.jpg) center 0 no-repeat $color_00;
+      min-height: 500px;
+      .header{
+        .header_innerwrap{
+          background-image: none;
+          @include border-radius(0);
+          .logolink_wrap{
+            position: absolute;
+            top: 300px;
+            right: 0;
+            width: 460px;
+            height: 196px;
+            margin: 0;
+          }
+          .nav_main{
+            ul{
+              li{
+              &.first, &:first-child, &.first.current{// li.first
+                a{
+                  background-color: $color_12;
+                  cursor: default!important;
+                }
+              }
+            }
+            } 
+          }
+        }
+      }
+      .main{
+        .main_innerwrap{
+          background: transparent;
+          min-height: 320px;
+          .col2{
+            .col2_content{
+              .pageheadline{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#c752{ // Google Maps Image
+  img{
+    @include image_border();
+    @include border-radius($border-radius_big);
+    @include box-shadow(rgba($color_99,0.15) 0px 2px 8px);
+  }
+}
+
+
+
+// ###########################################################################################################################
+// #####        #####   ########         #####################################################################################
+// ###    ####    ###   ########   ####    ###################################################################################
+// ###   ######   ###   ########   #####   ###################################################################################
+// ###   ######   ###   ########   #####   ###################################################################################
+// ###   ######   ###   ########   #####   ###################################################################################
+// ###   ######   ###   ########   #####   ###################################################################################
+// ###    ####    ###   ########   ####    ###################################################################################
+// #####        #####         ##         #####################################################################################
+// ###########################################################################################################################
+
+@mixin inactive{// !!! INACTIVE !!! 
+
+
+
+}

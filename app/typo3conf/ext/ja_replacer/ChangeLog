@@ -1,0 +1,11 @@
+2009-03-07 John Angel  <johnange@gmail.com>
+
+	Official release of 1.0.0
+
+	* Fixed an issue: "Warning: Invalid argument supplied for foreach()" (thanks to Christian Trabold <christian.trabold@dkd.de>)
+	* Optimizing the code according to the TYPO3-Coding-Guidelines (thanks to Christian Trabold <christian.trabold@dkd.de>)
+
+
+2009-01-18 John Angel  <johnange@gmail.com>
+
+	* Initial release

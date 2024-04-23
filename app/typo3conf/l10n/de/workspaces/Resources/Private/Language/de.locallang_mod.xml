@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="de" type="array">
+			<label index="mlang_tabs_tab">Arbeitsumgebungen</label>
+			<label index="autopublishTask.name">Automatische Veröffentlichung von Arbeitsumgebungen</label>
+			<label index="autopublishTask.description">Dieser Task nimmt eine Prüfung auf Arbeitsumgebung mit einem Veröffentlichungsdatum in der Vergangenheit vor und veröffentlicht diese automatisch.</label>
+			<label index="stage_ready_to_publish">Bereit zum Veröffentlichen</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="de" type="array">
+			<label index="mlang_tabs_tab" type="integer">224301664</label>
+			<label index="autopublishTask.name" type="integer">122351724</label>
+			<label index="autopublishTask.description" type="integer">204606781</label>
+			<label index="stage_ready_to_publish" type="integer">157401201</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="de" type="array">
+			<label index="mlang_tabs_tab">Workspaces</label>
+			<label index="autopublishTask.name">Workspaces auto-publication</label>
+			<label index="autopublishTask.description">This tasks checks any workspace that has a publication date set in the past and automatically publishes it.</label>
+			<label index="stage_ready_to_publish">Ready to publish</label>
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

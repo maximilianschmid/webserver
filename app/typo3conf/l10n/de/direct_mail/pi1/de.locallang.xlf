@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="Tue Jul 12 18:46:05 UTC 2011" product-name="direct_mail">
+    <header/>
+    <body>
+      <trans-unit id="header_date_prefix" approved="yes">
+        <source>Date:</source>
+        <target state="translated">Datum:</target>
+      </trans-unit>
+      <trans-unit id="header_link_prefix" approved="yes">
+        <source>- Headerlink:</source>
+        <target state="translated">- Link für Überschrift:</target>
+      </trans-unit>
+      <trans-unit id="uploads_header" approved="yes">
+        <source>DOWNLOADS:</source>
+        <target state="translated">Dateiquellen:</target>
+      </trans-unit>
+      <trans-unit id="images_header" approved="yes">
+        <source>IMAGES:</source>
+        <target state="translated">Bilder:</target>
+      </trans-unit>
+      <trans-unit id="image_link_prefix" approved="yes">
+        <source>- Imagelink:</source>
+        <target state="translated">- Link für Bilder:</target>
+      </trans-unit>
+      <trans-unit id="caption_header" approved="yes">
+        <source>CAPTION:</source>
+        <target state="translated">Beschreibung:</target>
+      </trans-unit>
+      <trans-unit id="unrendered_content" approved="yes">
+        <source>Unrendered Content Element:</source>
+        <target state="translated">Nicht angezeigte Inhaltselemente:</target>
+      </trans-unit>
+      <trans-unit id="link_prefix" approved="yes">
+        <source>Link:</source>
+        <target state="translated">Link:</target>
+      </trans-unit>
+      <trans-unit id="tt_news_author_prefix" approved="yes">
+        <source>AUTHOR:</source>
+        <target state="translated">Autor:</target>
+      </trans-unit>
+      <trans-unit id="tt_news_author_date_prefix" approved="yes">
+        <source>Date:</source>
+        <target state="translated">Datum:</target>
+      </trans-unit>
+      <trans-unit id="tt_news_author_email_prefix" approved="yes">
+        <source>- Email address:</source>
+        <target state="translated">- E-Mail-Adresse:</target>
+      </trans-unit>
+      <trans-unit id="tt_news_short_header" approved="yes">
+        <source>SUMMARY:</source>
+        <target state="translated">Zusammenfassung:</target>
+      </trans-unit>
+      <trans-unit id="tt_news_bodytext_header" approved="yes">
+        <source>FULL TEXT:</source>
+        <target state="translated">Langfassung:</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

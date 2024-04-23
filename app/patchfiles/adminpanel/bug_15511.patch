@@ -1,0 +1,73 @@
+Index: /typo3/sysext/cms/tslib/class.tslib_adminpanel.php
+===================================================================
+--- /typo3/sysext/cms/tslib/class.tslib_adminpanel.php	(revision 8950)
++++ /typo3/sysext/cms/tslib/class.tslib_adminpanel.php	(working copy)
+@@ -175,13 +175,13 @@
+ 	}
+ 
+ 	/**
+-	 * Returns the value for a Admin Panel setting. You must specify both the module-key and the internal setting key.
++	 * Returns the value for a Admin Panel setting. You can specify both module-key and internal setting key or the module-key, only.
+ 	 *
+ 	 * @param	string		Module key
+ 	 * @param	string		Setting key
+ 	 * @return	string		The setting value
+ 	 */
+-	public function extGetFeAdminValue($pre, $val='') {
++	public function extGetFeAdminValue($pre, $val= '') {
+ 			// Check if module is enabled.
+ 		if ($this->isAdminModuleEnabled($pre)) {
+ 				// Exceptions where the values can be overridden from backend:
+@@ -193,24 +193,35 @@
+ 				return true;
+ 			}
+ 
++				// preview module is enabled, so we want the preview.
++			if ($pre == 'preview' && !$val) {
++				return true;
++			}
++
+ 				// override all settings with user TSconfig
+-			if ($GLOBALS['BE_USER']->extAdminConfig['override.'][$pre . '.'][$val] && $val) {
++			if ($val && isset($GLOBALS['BE_USER']->extAdminConfig['override.'][$pre . '.'][$val])) {
+ 				return $GLOBALS['BE_USER']->extAdminConfig['override.'][$pre . '.'][$val];
+ 			}
++
++				// $GLOBALS['BE_USER']->extAdminConfig['override.'][$pre] contains the default value for all settings.
++				// if they are not explicitely overridden, this default value applies.
+ 			if ($GLOBALS['BE_USER']->extAdminConfig['override.'][$pre]) {
+ 				return $GLOBALS['BE_USER']->extAdminConfig['override.'][$pre];
+ 			}
+ 
+-			$retVal = $val ? $GLOBALS['BE_USER']->uc['TSFE_adminConfig'][$pre . '_' . $val] : 1;
++				// get value from adminPanel itself
++			if ($val) {
++				$retVal = $GLOBALS['BE_USER']->uc['TSFE_adminConfig'][$pre . '_' . $val];
++			} else {
++				$retVal= 1;
++			}
+ 
++				// return the value if the preview is forced even if the module is not open.
+ 			if ($pre=='preview' && $this->ext_forcePreview) {
+-				if (!$val) {
+-					return true;
+-				} else {
+-					return $retVal;
+-				}
++				return $retVal;
+ 			}
+-				// regular check:
++			
++				// only return the value if the module is open.
+ 			if ($this->isAdminModuleOpen($pre)) {	// See if the menu is expanded!
+ 				return $retVal;
+ 			}
+@@ -226,7 +237,7 @@
+ 			}
+ 		}
+ 	}
+-
++	
+ 	/**
+ 	 * Enables the force preview option.
+ 	 *

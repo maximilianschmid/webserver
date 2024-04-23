@@ -1,0 +1,247 @@
+
+#HTTPS or HTTP
+protocol = http:
+[globalString = IENV:TYPO3_SSL=1]
+  protocol = https:
+[global]
+
+
+###########################################################
+# enable/disable features systemwide
+###########################################################
+
+# turn HD version on/off
+# 1=on, 2=off
+HD_enabled = 2
+
+# turn mobile version on/off
+# 1=on, 2=off
+MOBILE_enabled = 2
+
+# languages to use, eg. languagemenu
+yamlTemplateUsesLanguages = 0
+
+# turn debugger on/off
+# 1=on, 2=off
+DEBUGGER_enabled = 2
+
+###################################################
+# baseURLs for production, local and staging server
+###################################################
+domain = physiotherapie-huber.at
+mittwaldaccountid = p145775
+
+
+###########################################################
+# pass constants to DS
+# check out http://wiki.typo3.org/index.php/TemplaVoila/FCE
+###########################################################
+pc{
+  containerWidth{
+    standardpage{
+      #col1
+      menucontent = 220
+      #col2
+      maincontent = 380
+      #col3
+      sidecontent = 140
+    }
+    standardpage_1col{
+      #col2
+      maincontent = 780
+    }
+    standardpage_2col{
+      #col1
+      menucontent = 220
+      #col2
+      maincontent = 540
+    }
+  }
+  # multiply col-width with image-width
+  maxImageWidthInText_Ratio = 0.4
+  maxImageWidthInText_Ratio2 = 0.2
+
+  # image-width = col-width * codaSliderImageText_Ratio
+  codaSliderImageText_Ratio = 1
+  # codaslider height = col-width * codaSliderFormat_Ratio
+  codaSliderAspect_Ratio = 0.3
+  # image-width = col-width * codaSliderImageText_Ratio
+
+  codaSliderImageText_Ratio1 = 0.5
+  # codaslider height = col-width * codaSliderFormat_Ratio
+  codaSliderAspect_Ratio1 = 0.5
+
+  # image-width = col-width * codaSliderImageText_Ratio
+  codaSliderImageText_Ratio2 = 0.5
+  # codaslider height = col-width * codaSliderFormat_Ratio
+  codaSliderAspect_Ratio2 = 0.25
+
+  # '$csc-textpic-colspace' in _global.scss / 2
+  standardPadding = 10
+
+  # spacing for subcolumn FCEs
+  subcolspacing = 10
+
+  # calculation constants for subcolumn elements
+  calc_constant_2 = 2
+  calc_constant_3 = 3
+  calc_constant_4 = 4
+
+  fancyboxMaxW = 1600
+  fancyboxMaxH = 1200
+}
+
+mobile{
+  containerWidth{
+    standardpage{
+      #col1
+      navcontent = 300
+      #col2
+      maincontent = 300
+      #col3
+      sidecontent = 300
+    }
+    standardpage_1col{
+      #col2
+      maincontent = 300
+    }
+    standardpage_2col{
+      #col1
+      menucontent = 300
+      #col2
+      maincontent = 300
+    }
+  }
+  # multiply col-width with image-width
+  maxImageWidthInText_Ratio = 1
+  maxImageWidthInText_Ratio2 = 1
+
+  # image-width = col-width * codaSliderImageText_Ratio
+  codaSliderImageText_Ratio = 1
+  # codaslider height = col-width * codaSliderFormat_Ratio
+  codaSliderAspect_Ratio = 0.5
+
+  # image-width = col-width * codaSliderImageText_Ratio
+  codaSliderImageText_Ratio1 = 0.5
+  # codaslider height = col-width * codaSliderFormat_Ratio
+  codaSliderAspect_Ratio1 = 0.5
+
+  # image-width = col-width * codaSliderImageText_Ratio
+  codaSliderImageText_Ratio2 = 0.5
+  # codaslider height = col-width * codaSliderFormat_Ratio
+  codaSliderAspect_Ratio2 = 0.25
+
+  standardPadding = 10
+
+  # spacing for subcolumn FCEs
+  subcolspacing = 0
+
+  # calculation constants for subcolumn elements
+  calc_constant_2 = 1
+  calc_constant_3 = 1
+  calc_constant_4 = 1
+
+  fancyboxMaxW = 320
+  fancyboxMaxH = 480
+}
+
+####################################################
+# Logo
+####################################################
+# Subseiten Logo
+logo_width = 280
+logo_height = 100
+logo_alt = Logo Physiotherapie Huber
+logo_title = Physiotherapie Huber – Aus eigener Hand.
+# logo_filename path /fileadmin/app/static/img/customized/
+logo_filename_png = logo_physiotherapie-huber.png
+logo_filename_svg = logo_physiotherapie-huber.svg
+logo_filename_print = logo_print
+
+# Startseiten Logo
+[globalVar = TSFE:id = 23, TSFE:id = 1]
+logo_width = 460
+logo_height = 196
+logo_filename_png = logo_physiotherapie-huber_start.png
+logo_filename_svg = logo_physiotherapie-huber_start.svg
+[global]
+
+
+###################################################
+# MetaTag Standard content
+# http://www.dawsoninteractive.com/articles/article/typo3-seo-part-3-metatags/
+###################################################
+Description = site by anorak.io - ideas that work.
+Keywords = anorak, strategy, web, design, technology
+
+
+####################################################
+# this should grow to the anorak.io config array
+####################################################
+websiteconfig{
+  # pid of news single item page // used eg. for title tag
+  tt_news_singlepageid = 8
+
+  # PageTitle -> name of page - Customer (eg. Leistungen - Max Mustermann GmbH)
+  TitleTagName = Physiotherapie Huber … mit Ihrer Kraft zu mehr Gesundheit.
+}
+
+
+
+###################################################
+# lib.versionswitcher Texte
+###################################################
+versionswitcherPCversionTEXT = Mobile-Version
+versionswitcherMOBILEversionTEXT = PC-Version
+# Language-specific settings first foreign language:
+[globalVar = GP:L = 1]
+versionswitcherPCversionTEXT = mobile version
+versionswitcherMOBILEversionTEXT = pc version
+[global]
+
+
+###################################################
+# RSS-Feed Config
+###################################################
+rss_pid = 57
+rss_tt_news_pid = 27
+rss_tt_news_single_pid = 8
+
+
+
+# Direct_Mail Subscription Config
+[PIDinRootline = 63]
+plugin.feadmin.dmailsubscription.pid = 61
+plugin.tx_sremailsubscribe.pid = 61
+plugin.tx_sremailsubscribe.registerPID = 64
+plugin.tx_sremailsubscribe.confirmPID = 68
+plugin.tx_sremailsubscribe.editPID = 65
+plugin.tx_sremailsubscribe.email = info@anorak.io
+plugin.tx_sremailsubscribe.siteName = Newsletter
+plugin.tx_sremailsubscribe.formFields = tx_aiosremailsubscribegender_gender,email,first_name,last_name,date_of_birth,zip,phone,module_sys_dmail_html,module_sys_dmail_category,hidden
+plugin.tx_sremailsubscribe.module_sys_dmail_category_PIDLIST = 61
+plugin.tx_sremailsubscribe.salutation = informal
+plugin.tx_sremailsubscribe.enableHTMLMail = 1
+plugin.tx_sremailsubscribe.enableEmailConfirmation = 1
+plugin.tx_sremailsubscribe.enablePreviewRegister = 0
+plugin.tx_sremailsubscribe.file.templateFile = fileadmin/app/templates/extensiontemplates/sremailsubscribe/tx_sremailsubscribe_pi1_css_tmpl.html
+plugin.tx_sremailsubscribe.useShortUrls = 1
+plugin.tx_sremailsubscribe.enableEmailOnUpdate = 1
+plugin.tx_sremailsubscribe.enablePreviewEdit = 0
+plugin.tx_sremailsubscribe.enableEmailOnDelete = 0
+plugin.tx_sremailsubscribe.requiredFields = email,first_name,last_name,date_of_birth
+[global]
+
+
+# Direct_Mail Constants defined here
+editpageuid = 64
+
+
+
+# csc-textpic border
+# borderThick = CSS padding+border-width
+styles.content.imgtext {
+  borderThick = 15
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/app/TS-Ressources/lib/constants_static.txt">

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de-DE" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HTML5 template Standardseite - to be mapped - create page-design in here</title>
+  <link rel="stylesheet" type="text/css" href="../../app/static/css/compiled/css_png.css" />
+   	<!--[if lte IE 6]>
+  	<link href="../../static/css/patches/patch_ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+   	<!--[if lte IE 7]>
+  	<link href="../../static/css/patches/patch_ie7.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+</head>
+
+<body>
+  
+<div class="firstonpage mapping_placeholder"> lib.firstonpage </div>
+
+<div class="page_margins">
+	<div class="page">
+	  
+		<div class="header mapping_placeholder"><header>...</header></div>
+		
+		
+		<div class="main"><section>
+		    
+			<div class="main_innerwrap">
+			  
+				<div class="teaser mapping_placeholder">...</div>
+				
+				<div class="col1">
+					<div class="col1_content">
+						<ul class="submenu"><li>...</li></ul>
+						<div class="mapping_placeholder"> content col 1</div>
+					</div>
+				</div>
+	
+				<div class="col2">
+				  <a id="content"></a>
+					<div class="col2_content field field_maincontent">
+							<span class="mapping_placeholder">lib.contentheader</span>
+							<span class="mapping_placeholder">main content</span>
+					</div>
+				</div>
+				
+			</div>
+			
+  	</section></div>
+  	
+  		
+		<div class="footer mapping_placeholder"><footer>...</footer></div>
+		
+	</div>
+</div>
+
+
+<div class="lastonpage">
+	lib.lastonpage
+	
+	<div id="versionswitcher">
+		lib.versionswitcher
+	</div>
+	<div id="javascript">
+		lib.javascript
+		<script type="text/javascript" src="../../static/js/js.all.js.ycomp.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function () {
+			
+			/**
+			 * createGridder()
+			 */
+			//createGridder();
+			});
+			
+		
+			/**
+			 * 960 gridder
+			 * http://gridder.andreehansson.se/
+			 */
+		
+			 var gOverride = {
+			  urlBase: 'http://gridder.andreehansson.se/releases/latest/',
+			  gColor: '#EEEEEE',
+			  gColumns: 12,
+			  gOpacity: 0.35,
+			  gWidth: 10,
+			  pColor: '#C0C0C0',
+			  pHeight: 24,
+			  pOffset: 0,
+			  pOpacity: 0.55,
+			  center: true,
+			  gEnabled: true,
+			  pEnabled: true,
+			  setupEnabled: true,
+			  fixFlash: true,
+			  size: 960
+			};
+			
+			createGridder = function() {
+			  document.body.appendChild(document.createElement('script')).src='../../static/js/960.gridder.js';
+			}
+		</script>
+	
+	</div>
+</div>
+
+
+</body>
+</html>

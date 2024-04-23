@@ -1,0 +1,1355 @@
+config {
+  doctype = html_5
+  htmlTag_setParams= class="no-js"
+  
+  # XML? No, thank you!
+  xmlprologue = none
+  
+  # Tries to clean up the output. Tries...
+  xhtml_cleaning = all
+
+	renderCharset = utf-8
+	metaCharset = utf-8
+	enableContentLengthHeader = 1
+	htmlTag_dir = {$userHtmlTagDir}
+	debug = 0
+
+	sword_standAlone = 0
+	sword_noMixedCase = 0
+
+	spamProtectEmailAddresses = 0
+	spamProtectEmailAddresses_atSubst = (at)
+	spamProtectEmailAddresses_lastDotSubst = (dot)
+
+  #Normally images are scaled to the size specified via TypoScript. This also forces small images to be scaled to a larger size. This is not always a good thing.
+	noScaleUp = 1
+	
+	no_cache = 0
+
+	content_from_pid_allowOutsideDomain = 1
+	
+	simulateStaticDocuments = 0
+	
+	admPanel = 1
+	
+	#######################
+	# indexed search config
+	#######################
+	index_enable = 1
+	index_externals = 0
+  index_metatags = 1
+
+	# http://www.hagenfragen.de/typo-3/typo3-noblur.html
+	# disable onBlur-JavaScript
+	noBlur = 1
+	# remove all default JavaScripts: 1 -> remove, external -> create separeat JS-file on server
+	removeDefaultJS = 1
+	removeDefaultCSS = 1
+  
+  # If set inline or externalized (see removeDefaultJS above) JavaScript will be minified. 
+  # Minification will remove all excess space and cause faster page loading.
+  minifyJS = 1
+	
+	# http://rimann.org/blog/article/2008/october/typo3_performance_optimization_with_cache_control_headers.htm
+	sendCacheHeaders = 1
+
+	#FE-Code cleanup
+	#http://www.typo3-addict.com/2009/02/updated-cleanup-your-fe-sourcecode/
+  disableImgBorderAttr = 1
+	
+  # Put inline css styles into a external css file
+  inlineStyle2TempFile = 1
+  
+  # Disable the comment which comes with every content element
+  disablePrefixComment = 1 
+    
+	# set up page title
+	# 0 = templatetitle: pagetitle
+	# 1 = pagetitle: templatetitle
+	# 2 = no <title> tag at all
+	noPageTitle = 0
+	pageTitleFirst = 1
+	
+	# define link targets
+	intTarget = _self
+	extTarget = _blank 
+
+	# use utf-8 charset on notification emails
+	notification_email_charset = utf-8
+
+	# set lifetime for cached pages (in secs) or wether to invalidate cached pages at midnight
+	cache_period = 86400
+	cache_clearAtMidnight = 0
+	
+	date_stdWrap.strftime = %d. %B %Y
+	time_stdWrap.strftime= %H:%M  	
+
+  # Sprechende Dateinamen für GIFBUILDER Dateien
+  # -> http://projekte.anorak.io.dyndns.info/issues/24
+  # DO NOT ENABLE - does'nt work with "Umlauts" in filenames
+  #meaningfulTempFilePrefix = 50  
+
+  # realurl
+  tx_realurl_enable = 1
+  prefixLocalAnchors = all
+
+
+  ### Multidomain setup
+  # If set, then every “typolink” is checked whether it's linking to a page within the current rootline of the site.
+  typolinkCheckRootline = 1
+    
+  # This option enables to create links across domains using current domain's linking scheme.
+  typolinkEnableLinksAcrossDomains = 1
+
+}
+
+
+###########################################
+# set config.baseURL
+###########################################
+config.baseURL = {$protocol}//{$baseURL_www}/
+[globalString = IENV:HTTP_HOST = pc.*]
+config.baseURL = {$protocol}//{$baseURL_pc}/
+[global]
+[globalString = IENV:HTTP_HOST = mobile.*]
+config.baseURL = {$protocol}//{$baseURL_mobile}/
+[global]
+
+
+###########################################
+# language settings
+###########################################
+config{
+  # for TV-Translation Info check {$protocol}//www.typo3-media.com/blog/article/mehrsprachigkeit-und-templavoila.html
+	# language settings
+	sys_language_mode=content_fallback
+	# sys_language_overlay=hideNonTranslated 
+  #show standard language if no translation is present
+  sys_language_overlay = 1
+	
+	linkVars = L, print
+	uniqueLinkVars = 1
+	language = de
+	locale_all = de_DE
+	htmlTag_langKey = de-DE
+	language = {$languageIsoCodeStandardLang}
+	sys_language_uid = {$standardLanguage}
+}
+	
+# Language-specific settings first foreign language:
+[globalVar = GP:L = {$firstForeignLanguage}]
+config.sys_language_uid = {$firstForeignLanguage}
+config.language = {$languageIsoCodeFirstLang}
+config.locale_all = {$languageLocaleFirstLang}
+config.htmlTag_langKey = {$languageIsoCodeFirstLang}
+[global]
+# Language-specific settings second foreign language:
+[globalVar = GP:L = {$secondForeignLanguage}]
+config.sys_language_uid = {$secondForeignLanguage}
+config.language = {$languageIsoCodeSecondLang}
+config.locale_all = {$languageLocaleSecondLang}
+config.htmlTag_langKey = {$languageIsoCodeSecondLang}
+[global]
+# Language-specific settings third foreign language:
+[globalVar = GP:L = {$thirdForeignLanguage}]
+config.sys_language_uid = {$thirdForeignLanguage}
+config.language = {$languageIsoCodeThirdLang}
+config.locale_all = {$languageLocaleThirdLang}
+config.htmlTag_langKey = {$languageIsoCodeThirdLang}
+[global]
+# Language-specific settings fourth foreign language:
+[globalVar = GP:L = {$fourthForeignLanguage}]
+config.sys_language_uid = {$fourthForeignLanguage}
+config.language = {$languageIsoCodeFourthLang}
+config.locale_all = {$languageLocaleFourthLang}
+config.htmlTag_langKey = {$languageIsoCodeFourthLang}
+[global]
+# Language-specific settings fifth foreign language:
+[globalVar = GP:L = {$fifthForeignLanguage}]
+config.sys_language_uid = {$fifthForeignLanguage}
+config.language = {$languageIsoCodeFifthLang}
+config.locale_all = {$languageLocaleFifthLang}
+config.htmlTag_langKey = {$languageIsoCodeFifthLang}
+[global]
+# Language-specific settings sixth foreign language:
+[globalVar = GP:L = {$sixthForeignLanguage}]
+config.sys_language_uid = {$sixthForeignLanguage}
+config.language = {$languageIsoCodeSixthLang}
+config.locale_all = {$languageLocaleSixthLang}
+config.htmlTag_langKey = {$languageIsoCodeSixthLang}
+[global]
+
+###########################################
+# alle Kommentare im HTML Code abschalten
+###########################################
+config.disablePrefixComment = 1
+lib.stdheader.5.prefixComment >
+lib.stdheader.stdWrap.prefixComment >
+tt_content.stdWrap.prefixComment >
+
+###########################################
+# canonical Tag - duplicate Content Problem
+###########################################
+
+# http://blog.marit.ag/2009/02/23/canonical-tag-fur-die-suchmaschinen/
+lib.canonical = TEXT
+lib.canonical {
+	typolink {
+		parameter = {page:uid}
+  	parameter.insertData = 1
+		useCacheHash = 0
+		# add all get parameters from the current URL
+		addQueryString = 1
+		addQueryString.method = GET
+		# remove the page id from the parameters so it is not inserted twice
+		addQueryString.exclude = id
+		returnLast = url
+	}
+}
+# force language-key into canonical-URL
+lib.canonical.typolink.additionalParams = &L=0
+[globalVar = GP:L = 1]
+lib.canonical.typolink.additionalParams = &L=1
+[global]
+[globalVar = GP:L = 2]
+lib.canonical.typolink.additionalParams = &L=2
+[global]
+[globalVar = GP:L = 3]
+lib.canonical.typolink.additionalParams = &L=3
+[global]
+[globalVar = GP:L = 4]
+lib.canonical.typolink.additionalParams = &L=4
+[global]
+[globalVar = GP:L = 5]
+lib.canonical.typolink.additionalParams = &L=5
+[global]
+[globalVar = GP:L = 6]
+lib.canonical.typolink.additionalParams = &L=6
+[global]
+
+lib.canonical.wrap = <link rel="canonical" href="{$protocol}//{$baseURL_www}/|" />
+
+
+
+
+##############################
+# iPhone/iPad Viewport Tags
+##############################
+#iPad
+lib.metatags_iphone = TEXT
+lib.metatags_iphone.value = <meta name="viewport" content="width=960; maximum-scale=2.5;" />
+
+#iPhone
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+lib.metatags_iphone = TEXT
+lib.metatags_iphone.value = <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=2.5;" />
+[end]
+
+
+##############################
+# lib.localizedrssfeedlink
+##############################
+lib.localizedrssfeedlink = TEXT
+lib.localizedrssfeedlink.value = ?L=0
+[globalVar = GP:L = 1]
+lib.localizedrssfeedlink.value = ?L=1
+[global]
+[globalVar = GP:L = 2]
+lib.localizedrssfeedlink.value = ?L=2
+[global]
+[globalVar = GP:L = 3]
+lib.localizedrssfeedlink.value = ?L=3
+[global]
+[globalVar = GP:L = 4]
+lib.localizedrssfeedlink.value = ?L=4
+[global]
+[globalVar = GP:L = 5]
+lib.localizedrssfeedlink.value = ?L=5
+[global]
+[globalVar = GP:L = 6]
+lib.localizedrssfeedlink.value = ?L=6
+[global]
+lib.localizedrssfeedlink.wrap = <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="{$protocol}//{$baseURL_www}/rss.xml|" />
+
+
+#################################################################
+## title-tag in control
+#################################################################
+lib.newstitle = RECORDS
+lib.newstitle {
+    dontCheckPid = 1
+    tables = tt_news
+    source.data = GPvar:tx_ttnews|tt_news
+    conf.tt_news = COA
+    conf.tt_news{
+      10 = TEXT
+      10.field = title
+      10.required = 1
+    }
+}
+
+################################
+#Customize pagetitle
+#http://www.typo3wizard.com/en/snippets/general-config/customize-pagetitle.html
+################################
+config.noPageTitle = 2
+lib.titletag = TEXT 
+lib.titletag.field = subtitle // title 
+
+#Read more: http://www.typo3wizard.com/en/snippets/general-config/customize-pagetitle.html#ixzz14vW4tD9d 
+#Under Creative Commons License: Attribution
+[PIDinRootline = {$websiteconfig.tt_news_spid}]
+lib.titletag < lib.newstitle
+[global]
+
+lib.titletag.wrap = <title>|&nbsp;-&nbsp;{$websiteconfig.TitleTagName}</title>
+
+#on startpage
+[globalVar = TSFE:id = 23, TSFE:id = 1]
+lib.titletag >
+lib.titletag = TEXT 
+lib.titletag.wrap = <title>|{$websiteconfig.TitleTagName}</title>
+[global]
+#################################################################
+## title-tag in control - end
+#################################################################
+
+
+
+
+###################################################
+## lib.buildHeaderData
+###################################################
+lib.buildHeaderData = COA
+lib.buildHeaderData {
+  5 < lib.titletag
+
+	20 = TEXT
+  20.value = <link href="{$protocol}//{$baseURL_static}/fileadmin/app/static/css/compiled/css_png.{$RevisionNumber}.css" rel="stylesheet"/>
+
+	# Always force latest IE rendering engine (even in intranet) & Chrome Frame
+  # moved to .htaccess file - so HTML stays valid
+	#50 = TEXT
+	#50.value = <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+	60 < lib.metatags_iphone
+	
+	#IE8 Patch (last CSS in Header)
+	9030 = TEXT
+	9030.value = <!--[if lte IE 8]>
+	9031 = TEXT
+	9031.value = <link href="{$protocol}//{$baseURL_static}/fileadmin/app/static/css/compiled/patch_ie8.{$RevisionNumber}.css" rel="stylesheet" />
+	9032 = TEXT
+	9032.value = <![endif]-->
+
+	#IE7 Patch (last CSS in Header)
+	9033 = TEXT
+	9033.value = <!--[if lte IE 7]>
+	9034 = TEXT
+	9034.value = <link href="{$protocol}//{$baseURL_static}/fileadmin/app/static/css/compiled/patch_ie7.{$RevisionNumber}.css" rel="stylesheet" />
+	9037 = TEXT
+	9037.value = <![endif]-->
+	
+	80 = TEXT
+	80.value = <link rel="apple-touch-icon" href="{$protocol}//{$baseURL_static}/fileadmin/app/favicon/apple-touch-icon.png"/>
+
+	500 < lib.localizedrssfeedlink
+		
+	900 = TEXT
+	900 < lib.canonical
+}
+[globalVar = LIT:1 = {$svg_browser}] && [globalVar = LIT:1 = {$hd}]
+lib.buildHeaderData {
+  20.value = <link href="{$protocol}//{$baseURL_static}/fileadmin/app/static/css/compiled/css_svg.{$RevisionNumber}.css" rel="stylesheet" />
+}
+[global]
+
+
+
+###################################################
+## Main Template
+###################################################
+page = PAGE
+page {
+	headerData.10 < lib.buildHeaderData
+	10 = HTML
+	10.value ={$pageBodyData}
+	20 = USER
+	20.userFunc = tx_templavoila_pi1->main_page
+	
+	# Favicon
+	shortcutIcon = /fileadmin/app/favicon/favicon.ico
+}
+
+
+###################################################
+# MetaTags
+# http://www.dawsoninteractive.com/articles/article/typo3-seo-part-3-metatags/
+###################################################
+page.meta.keywords = {$Keywords}
+page.meta.keywords.override.field = keywords
+page.meta.description = {$Description}
+page.meta.description.override.field = description
+
+page.meta.language = {$languageIsoCodeStandardLang}
+[globalVar = GP:L = {$firstForeignLanguage}]
+page.meta.language = {$languageIsoCodeFirstLang}
+[global]
+[globalVar = GP:L = {$secondForeignLanguage}]
+page.meta.language = {$languageIsoCodeSecondLang}
+[global]
+[globalVar = GP:L = {$thirdForeignLanguage}]
+page.meta.language = {$languageIsoCodeThirdLang}
+[global]
+[globalVar = GP:L = {$fourthForeignLanguage}]
+page.meta.language = {$languageIsoCodeFourthLang}
+[global]
+[globalVar = GP:L = {$fifthForeignLanguage}]
+page.meta.language = {$languageIsoCodeFifthLang}
+[global]
+[globalVar = GP:L = {$sixthForeignLanguage}]
+page.meta.language = {$languageIsoCodeSixthLang}
+[global]
+
+
+
+###################################################
+## lib.header
+###################################################
+# Search-Box Settings
+plugin.tx_macinasearchbox_pi1 {
+	pidSearchpage = {$searchPagePID}
+	templateFile = {$searchboxTmplFile}
+}
+# Language-specific settings first foreign language:
+[globalVar = GP:L = {$firstForeignLanguage}]
+plugin.tx_macinasearchbox_pi1.templateFile = {$searchboxTmplFileFirstLang}
+[global]
+# Language-specific settings second foreign language:
+[globalVar = GP:L = {$secondForeignLanguage}]
+plugin.tx_macinasearchbox_pi1.templateFile = {$searchboxTmplFileSecondLang}
+[global]
+# Language-specific settings third foreign language:
+[globalVar = GP:L = {$thirdForeignLanguage}]
+plugin.tx_macinasearchbox_pi1.templateFile = {$searchboxTmplFileThirdLang}
+[global]
+# Language-specific settings fourth foreign language:
+[globalVar = GP:L = {$fourthForeignLanguage}]
+plugin.tx_macinasearchbox_pi1.templateFile = {$searchboxTmplFileFourthLang}
+[global]
+# Language-specific settings fifth foreign language:
+[globalVar = GP:L = {$fifthForeignLanguage}]
+plugin.tx_macinasearchbox_pi1.templateFile = {$searchboxTmplFileFifthLang}
+[global]
+# Language-specific settings sixth foreign language:
+[globalVar = GP:L = {$sixthForeignLanguage}]
+plugin.tx_macinasearchbox_pi1.templateFile = {$searchboxTmplFileSixthLang}
+[global]
+
+
+###################################################
+## lib.teaser
+###################################################
+lib.teaser = COA
+lib.teaser {
+	wrap = <div class="teaser">|</div>
+	10 = COA
+	10 {
+		stdWrap.prefixComment = 2|Output of lib.teaser.10
+		wrap = <div class="rootline">|</div>
+		10 = TEXT
+		10.value = {$toolbarStandardLangClickPathPrefix}
+		10.stdWrap.prefixComment = 2|Output of lib.teaser.10.10
+		10.noTrimWrap = || |
+		20 = HMENU
+		20 {
+			stdWrap.prefixComment = 2|Output of lib.teaser.10.20
+			special = rootline
+			special.range = 1|-1
+			1 = TMENU
+			1 {
+				allWrap = |
+				noBlur = 1
+				NO.linkWrap = {$rootlineLinkWrap}
+				NO.doNotLinkIt = 0 |*| 0 |*| 1
+				NO.ATagTitle.field = abstract // description // subtitle
+				NO.stdWrap.htmlSpecialChars = 1
+			}
+		}
+	}
+	20 = COA
+	20 {
+		stdWrap.prefixComment = 2|Output of lib.teaser.20
+		wrap = <div class="langMenu">|</div>
+	}
+
+	40 = COA
+	40 {
+		stdWrap.prefixComment = 2|Output of lib.teaser.40
+		wrap = <div class="aktDatum">|</div>
+		10 = TEXT
+		10 {
+		  data = date:U
+			strftime = {$toolbarDateFormatStandardLang}
+		}
+	}
+}
+
+
+
+# Language-specific settings first foreign language:
+[globalVar = GP:L = {$firstForeignLanguage}]
+lib.teaser.10.10.value = {$toolbarFirstLangClickPathPrefix}
+lib.teaser.40.10.strftime = {$toolbarDateFormatFirstLang}
+[global]
+# Language-specific settings second foreign language:
+[globalVar = GP:L = {$secondForeignLanguage}]
+lib.teaser.10.10.value = {$toolbarSecondLangClickPathPrefix}
+lib.teaser.40.10.strftime = {$toolbarDateFormatSecondLang}
+[global]
+# Language-specific settings third foreign language:
+[globalVar = GP:L = {$thirdForeignLanguage}]
+lib.teaser.10.10.value = {$toolbarThirdLangClickPathPrefix}
+lib.teaser.40.10.strftime = {$toolbarDateFormatThirdLang}
+[global]
+# Language-specific settings fourth foreign language:
+[globalVar = GP:L = {$fourthForeignLanguage}]
+lib.teaser.10.10.value = {$toolbarFourthLangClickPathPrefix}
+lib.teaser.40.10.strftime = {$toolbarDateFormatFourthLang}
+[global]
+# Language-specific settings fifth foreign language:
+[globalVar = GP:L = {$fifthForeignLanguage}]
+lib.teaser.10.10.value = {$toolbarFifthLangClickPathPrefix}
+lib.teaser.40.10.strftime = {$toolbarDateFormatFifthLang}
+[global]
+# Language-specific settings sixth foreign language:
+[globalVar = GP:L = {$sixthForeignLanguage}]
+lib.teaser.10.10.value = {$toolbarSixthLangClickPathPrefix}
+lib.teaser.40.10.strftime = {$toolbarDateFormatSixthLang}
+[global]
+###################################################
+## lib.selectorBox
+###################################################
+# maybe the user wants to put anything else in here,
+# so make it a COA
+lib.selectorBox = COA
+lib.selectorBox {
+	stdWrap.prefixComment = 2|Output of lib.selectorBox
+}
+[globalVar = {$mainMenuJsMenuPage}]
+lib.selectorBox.100 = HMENU
+lib.selectorBox.100 {
+	stdWrap.prefixComment = 2|Output of lib.selectorBox.100
+	wrap = {$mainMenuJsMenuAllWrap}
+	special = updated
+	special.value = 1
+	special.maxAge = 3600*24*7
+	limit = 10
+	1 = JSMENU
+	1.target = _top
+	1.firstLabelGeneral = {$mainMenuJsMenuStandardLabel}
+}
+[global]
+# Delete selectorbox if user has set the appropriate option
+[globalVar = LIT:1 = {$selectorBoxOff}]
+lib.selectorBox.100 >
+[global]
+# Language-specific settings first foreign language:
+[globalVar = GP:L = {$firstForeignLanguage}]
+lib.selectorBox.100.1.firstLabelGeneral = {$mainMenuJsMenuFirstLangLabel}
+[global]
+# Language-specific settings second foreign language:
+[globalVar = GP:L = {$secondForeignLanguage}]
+lib.selectorBox.100.1.firstLabelGeneral = {$mainMenuJsMenuSecondLangLabel}
+[global]
+# Language-specific settings third foreign language:
+[globalVar = GP:L = {$thirdForeignLanguage}]
+lib.selectorBox.100.1.firstLabelGeneral = {$mainMenuJsMenuThirdLangLabel}
+[global]
+# Language-specific settings fourth foreign language:
+[globalVar = GP:L = {$fourthForeignLanguage}]
+lib.selectorBox.100.1.firstLabelGeneral = {$mainMenuJsMenuFourthLangLabel}
+[global]
+# Language-specific settings fifth foreign language:
+[globalVar = GP:L = {$fifthForeignLanguage}]
+lib.selectorBox.100.1.firstLabelGeneral = {$mainMenuJsMenuFifthLangLabel}
+[global]
+# Language-specific settings sixth foreign language:
+[globalVar = GP:L = {$sixthForeignLanguage}]
+lib.selectorBox.100.1.firstLabelGeneral = {$mainMenuJsMenuSixthLangLabel}
+[global]
+
+
+
+###################################################
+## Changes to CSS styled content
+## to fit the needs for YAML
+###################################################
+lib.parseFunc_RTE {
+	nonTypoTagStdWrap.encapsLines {
+# remove 'class=bodytext' in P-tags
+		addAttributes.P.class =
+	}
+}
+lib.stdheader {
+# remove the DIV-tag around headlines
+	stdWrap.dataWrap =
+	5.date = j.n.Y
+# remove 'csc-firstHeader' from Hx-tags
+	10.1.dataWrap = <h1{register:headerStyle}>|</h1>
+	10.2.dataWrap = <h2{register:headerStyle}>|</h2>
+	10.3.dataWrap = <h3{register:headerStyle}>|</h3>
+	10.4.dataWrap = <h4{register:headerStyle}>|</h4>
+	10.5.dataWrap = <h5{register:headerStyle}>|</h5>
+}
+tt_content.stdWrap {
+	innerWrap2 = {$pageLinkToTopStandardLang}
+}
+# Language-specific settings first foreign language:
+[globalVar = GP:L = {$firstForeignLanguage}]
+lib.stdheader.5.date = n/j/Y
+tt_content.stdWrap.innerWrap2 = {$pageLinkToTopFirstLang}
+[global]
+# Language-specific settings second foreign language:
+[globalVar = GP:L = {$secondForeignLanguage}]
+lib.stdheader.5.date = j.n.Y
+tt_content.stdWrap.innerWrap2 = {$pageLinkToTopSecondLang}
+[global]
+# Remove target for content element filelist
+tt_content.uploads.20.linkProc.target >
+
+
+###################################################
+# ie6 Warning
+###################################################
+[browser = msie] && [version =< 7]
+lib.ie6warning = COA
+lib.ie6warning.10 = HTML
+lib.ie6warning.10{
+  value(
+    <!--[if IE 6]>
+    <div class="ie6warning">
+      <div class="innerwrap">
+
+        <p class="p1">Sie haben diese Website mit Internet Explorer 6.x geöffnet. <br /> 
+          Dieser Browser wird von uns aus Sicherheitsgründen nicht mehr unterstützt!
+        </p>
+
+        <p class="p2">Um sicher und komfortabel im Web surfen zu können, empfehlen wir Ihnen einen aktuellen Webbrowser zu nutzen. Eine Liste der populärsten Gratis-Browser finden Sie hier:</p>
+
+        <a target="_blank" href="http://www.microsoft.com/windows/Internet-explorer/default.aspx"><img src="fileadmin/app/ie6upgrade/browser_ie.gif"/>
+        <span>Internet Explorer</span>
+        </a>
+        <a target="_blank" href="http://www.mozilla.com/firefox/"><img src="fileadmin/app/ie6upgrade/browser_firefox.gif"/>
+        <span>Firefox</span>
+        </a>
+        <a target="_blank" href="http://www.google.com/chrome"><img src="fileadmin/app/ie6upgrade/browser_chrome.gif"/>
+        <span>Chrome</span>
+        </a>
+        <a target="_blank" href="http://www.opera.com/download/"><img src="fileadmin/app/ie6upgrade/browser_opera.gif"/>
+        <span>Opera</span>
+        </a>
+        <a target="_blank" href="http://www.apple.com/safari/download/"><img src="fileadmin/app/ie6upgrade/browser_safari.gif"/>
+        <span>Safari</span>
+        </a>
+
+        <p class="downloadtext">Klicken Sie auf eines der Symbole um auf die Download-Seite zu gelangen</p> 
+  
+      </div>
+    </div>
+    <![endif]-->
+  )
+}
+[global]
+
+
+###################################################
+# Skip-Links
+###################################################
+lib.skiplinks = COA
+lib.skiplinks.5 < lib.ie6warning
+lib.skiplinks.10 = HTML
+lib.skiplinks.10{
+	value = {$headerSkiplinkHtmlCodeStandardLang}
+}
+# Language-specific settings first foreign language:
+[globalVar = GP:L = {$firstForeignLanguage}]
+lib.skiplinks.value = {$headerSkiplinkHtmlCodeFirstLang}
+[global]
+
+
+##########################################################
+# extend typo3conf/ext/css_styled_content/static/setup.txt
+# with second maxWInText option
+##########################################################
+tt_content.image.20 {
+  maxWInText2 = 200
+  maxWInText2.override.data = register:maxImageWidthInText2
+  maxWInText2_enabled.field = tx_aiomaximagewidthintext_maximagewidthintextratio
+}
+
+
+########################################################
+# JavaScript bottom include (before closing </body> tag)
+########################################################
+lib.javascript = COA
+lib.javascript.10 = HTML
+lib.javascript.10.value = <script src="{$protocol}//{$baseURL_static}/fileadmin/app/static/js/js.all.ycomp.{$RevisionNumber}.js"></script>
+[globalVar = LIT:1 = {$isDevelopmentServer}]
+lib.javascript.10.value = <script src="{$protocol}//{$baseURL_static}/fileadmin/app/static/js/js.all.{$RevisionNumber}.js"></script>
+[global]
+#########################
+# google analytics code - always copy entire code block
+# change cookie-domain !
+#########################
+
+lib.googleanalytics = HTML
+lib.googleanalytics.value (
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27910358-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+)
+
+lib.javascript.30 < lib.googleanalytics
+
+[globalVar = LIT:1 = {$isDevelopmentServer}]
+# disable google Analytics
+lib.javascript.30 >
+
+lib.javascript.40 = HTML
+lib.javascript.40.value (
+	<script src="{$protocol}//{$baseURL_static}/fileadmin/app/static/js/_dev_helpers/jquery.cookie.js"></script>
+  <script src="{$protocol}//{$baseURL_static}/fileadmin/app/static/js/_dev_helpers/jquery.gridder.js"></script>
+	<script src="{$protocol}//{$baseURL_static}/fileadmin/app/static/js/_dev_helpers/960.gridder.js"></script>
+)
+[global]
+
+#########################################################################
+# CDN - Content Delivery Network and cookie free domains for static files 
+# extension ja_replacer
+# http://blog.marit.ag/2009/11/17/typo3-und-content-delivery-networks/
+#########################################################################
+#Welche Links sollen ersetzt werden? (jeweils mit und ohne Slash am Anfang)
+config.tx_ja_replacer.search {
+	10="/typo3temp/
+	11="typo3temp/
+	12="/fileadmin/
+	13="fileadmin/
+	14="/typo3conf/
+	15="typo3conf/
+	16="/uploads/
+	17="uploads/
+	18="/typo3/
+	19="typo3/
+}
+
+#Mit was soll ersetzt werden, wenn im unsicheren Bereich (http)
+tx_ja_replacer.unsecure = COA
+tx_ja_replacer.unsecure {
+	10="{$protocol}//{$baseURL_static}/typo3temp/
+	11="{$protocol}//{$baseURL_static}/typo3temp/
+	12="{$protocol}//{$baseURL_static}/fileadmin/
+	13="{$protocol}//{$baseURL_static}/fileadmin/
+	14="{$protocol}//{$baseURL_static}/typo3conf/
+	15="{$protocol}//{$baseURL_static}/typo3conf/
+	16="{$protocol}//{$baseURL_static}/uploads/
+	17="{$protocol}//{$baseURL_static}/uploads/
+	18="{$protocol}//{$baseURL_static}/typo3/
+	19="{$protocol}//{$baseURL_static}/typo3/
+}
+
+#Mit was soll ersetzt werden, wenn im sicheren Bereich (https)
+tx_ja_replacer.secure = COA
+tx_ja_replacer.secure {
+	10="https://static.domain.com/typo3temp/
+	11="https://static.domain.com/typo3temp/
+
+	12="https://static.domain.com/fileadmin/
+	13="https://static.domain.com/fileadmin/
+
+	14="https://static.domain.com/typo3conf/
+	15="https://static.domain.com/typo3conf/
+}
+
+config.tx_ja_replacer.replace < tx_ja_replacer.unsecure
+
+# secure https deactivated
+#[globalString = ENV:HTTP_HOST = www.domain.com] && [globalString = _SERVER|HTTPS=on]
+#	page.config.baseURL = https://www.domain.com/
+#	config.tx_ja_replacer.replace < tx_ja_replacer.secure
+#[global]
+
+
+##################
+#Beim Arbeiten mit Workspaces und TemplaVoila werden bei der Anzeige der Vorschau Informationen von TemplaVoila eingeblendet. Je nach Layout "flackert" so das Design. Mit folgendem TS wir dies abgeschaltet.
+#http://www.rainer-grundel.de/wissensdb/typo3/allgemein/artikel/article/flackernde_preview_im_entwurfs_workspace_mit_templavoila_ausschalten.html
+##################
+page.20.disableExplosivePreview = 1
+plugin.tx_templavoila_pi1.disableExplosivePreview = 1
+
+
+
+#Header Comment put here due to empty lines
+config.headerComment (
+.
+
+
+		
+
+
+
+	
+	
+	                                                                                                      .iiiiii                                                    
+	                                                                                                      .8@@@@8.                                                   
+	                                                                                                      .8@@@@8.                                                   
+	       .;111:.                   ,;11i:             .:i11;,                 ,ii      ,;11i:           .8@@@@8.                                    .,;;;:,        
+	    t8@@@@@@@@@fL@@@@@1 ,@@@@@LL@@@@@@@@@t      .f@@@@@@@@@@@0;    .8@@@@CL@@@C   f@@@@@@@@@@fC@@@@@i .8@@@@8.   1@@@@@@L          iCCCCCi     1CCCCCCCCCCCL:    
+	  t@@@@@@@@@@@@@@@@@@@1 .8@@@@@@@@@@@@@@@@G    C@@@@@@@@@@@@@@@@;  .8@@@@@@@@@C f@@@@@@@@@@@@@@@@@@@; .8@@@@8. .0@@@@@0.           iCCCCCi   tCCCCCCCCCCCCCCCC:  
+	 L@@@@@@01:,;f8@@@@@@@1 .8@@@@@@L;:iG@@@@@@i .8@@@@@@Ci:;t8@@@@@@t .8@@@@@@@GL1C@@@@@@01:,;f@@@@@@@@; .8@@@@8 t@@@@@8;                     .LCCCCCCt;,,iLCCCCCCi 
+	i@@@@@8:       i@@@@@@1 .8@@@@@:     L@@@@@f C@@@@@L       :@@@@@@:.8@@@@@1   1@@@@@8,       1@@@@@@; .8@@@@88@@@@@t               iCCCCCi tCCCCCt       ,LCCCCC:
+	8@@@@@1         L@@@@@1 .8@@@@8.     1@@@@@t.8@@@@8.        t@@@@@t 8@@@@8.   C@@@@@i         C@@@@@; .8@@@@@@@@@@t                iCCCCCi LCCCCL.        ;CCCCC;
+	G@@@@@f         G@@@@@1 .8@@@@8.     1@@@@@f.8@@@@8,        L@@@@@1 8@@@@8.   L@@@@@1         0@@@@@; .8@@@@0f@@@@@G               iCCCCCi LCCCCC,        iCCCCC;
+	:@@@@@@f       C@@@@@@1 .8@@@@8.     1@@@@@f f@@@@@8:      L@@@@@8..8@@@@8.   ;@@@@@@1      .G@@@@@@; .8@@@@8 ;@@@@@8,             iCCCCCi iCCCCCL,      iCCCCCL.
+	 1@@@@@@@8CCG8@@@@@@@@1 .8@@@@8.     1@@@@@f  L@@@@@@@0GG8@@@@@@@: .8@@@@8.    t@@@@@@@8CCG@@@@@@@@@; .8@@@@8. ,8@@@@@1   ;CCCCCf  iCCCCCi  1CCCCCCCLffLCCCCCCC, 
+	  :8@@@@@@@@@@@@@@@@@@1 .8@@@@8.     1@@@@@f   ;8@@@@@@@@@@@@@@C   .8@@@@8.     ;8@@@@@@@@@@@@@@@@@@; .8@@@@8.  .0@@@@@C  ;CCCCCf  iCCCCCi   :LCCCCCCCCCCCCCCt   
+	    ,L@@@@@@@@G:f@@@@@1 .8@@@@8.     1@@@@@f     ,f8@@@@@@@@Gi     .8@@@@8.       ,C@@@@@@@@G,L@@@@@; .8@@@@8.    C@@@@@8,;CCCCCf  iCCCCCi     .1LCCCCCCCCf;     
+	
+				                
+	anorak.io 	                       
+	ideas that work 
+
+
+
+
+	Feel free to contact us!    
+	www.anorak.io 
+	info@anorak.io 
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	anorak.io - ideas that work.
+	www.anorak.io
+	info@anorak.io
+          
+)
+
+
+[globalVar = LIT:1 = {$isDevelopmentServer}]
+config.headerComment (
+	anorak.io development server
+)
+[global]
+
+
+
+
+
+###################################################
+# version switcher
+###################################################
+lib.versionswitcher = COA
+lib.versionswitcher.10 = HTML
+lib.versionswitcher.10.value = <div class="versionswitcher"><div class="versionswitcher_innerwrap"><a href="
+lib.versionswitcher.40 = TEXT
+lib.versionswitcher.50 = TEXT
+lib.versionswitcher.50.data = getIndpEnv:REQUEST_URI
+lib.versionswitcher.100 = HTML
+lib.versionswitcher.100.value = "><span>
+lib.versionswitcher.110 = TEXT
+#lib.versionswitcher.110.value = TEXT
+lib.versionswitcher.120 = HTML
+lib.versionswitcher.120.value = </span></a></div></div>
+
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+lib.versionswitcher.40.value = {$protocol}//{$baseURL_pc}
+lib.versionswitcher.110.value = {$versionswitcherMOBILEversionTEXT}
+[else]
+lib.versionswitcher.40.value = {$protocol}//{$baseURL_mobile}
+lib.versionswitcher.110.value = {$versionswitcherPCversionTEXT}
+[end]
+[globalVar = TSFE:beUserLogin = 1]&&[  globalVar = LIT:1 = {$isMobile}]
+lib.versionswitcher.40.value = {$protocol}//{$baseURL_www}
+lib.versionswitcher.110.value = {$versionswitcherMOBILEversionTEXT}
+[global]
+
+[globalVar = LIT:1 = {$MOBILE_enabled}]
+[else]
+lib.versionswitcher >
+[global]
+
+
+plugin.tx_felogin_pi1._CSS_DEFAULT_STYLE >
+plugin.tx_srlanguagemenu_pi1 {
+  _CSS_DEFAULT_STYLE >
+  languagesUidsList = {$yamlTemplateUsesLanguages}
+}
+lib.teaser.20.10 < plugin.tx_srlanguagemenu_pi1
+
+
+
+
+###########################################################
+# disable USER_INT 'rlmplanguagedetection' when GP:L exists
+# Problem: default Language has no GP:L
+###########################################################
+#[globalVar=GP:L=0,GP:L>0]
+#plugin.tx_rlmplanguagedetection_pi1 >
+#[global]
+
+
+###############################
+# Delete default styles of
+# Plugin dropdown sitemap
+###############################
+plugin.tx_dropdownsitemap_pi1._CSS_DEFAULT_STYLE >
+
+
+###############################
+# Delete default styles of
+# cssstyledcontent (Copied to content.css, in order to be able to modify them there.)
+###############################
+plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+
+
+###############################
+# Configuration of newloginbox
+###############################
+plugin.tx_newloginbox_pi1._CSS_DEFAULT_STYLE >
+plugin.tx_newloginbox_pi3._CSS_DEFAULT_STYLE >
+
+###############################
+# Configuration of tt_news
+###############################
+plugin.tt_news {
+  _CSS_DEFAULT_STYLE >
+  usePagesRelations = 1
+  usePiBasePagebrowser = 1
+  archiveTitleCObject {
+    10.strftime = %B - %Y
+  }
+  getRelatedCObject {
+    10.1.20.strftime = %d.%m.%y %H:%M
+    10.2.20.strftime = %d.%m.%y %H:%M
+    10.default.20.strftime = %d.%m.%y %H:%M
+  }
+  displaySingle {
+    date_stdWrap.strftime= %A, %d. %B %Y
+    time_stdWrap.strftime= %H:%M
+    age_stdWrap.age = &nbsp;Minuten | Stunden | Tage | Jahre
+  }
+  displayLatest {
+    date_stdWrap.strftime= %d. %B %Y
+    time_stdWrap.strftime= %H:%M
+  }
+  displayList {
+    date_stdWrap.strftime= %d. %B %Y
+    time_stdWrap.strftime= %d.%m.%y %H:%M
+  }
+}
+plugin.tt_news {
+  catOrderBy = title
+  displayCatMenu {
+    catmenuRootIconFile = EXT:tt_news/res/tt_news_cat.gif
+    catmenuNoRootIcon = 0
+    catmenuIconMode = -1
+  }
+}
+plugin.tt_news {
+  pageBrowser {
+    dontLinkActivePage = 1
+    maxPages = 10
+    showRange = 0
+    showPBrowserText = 1
+    showResultCount = 0
+    showFirstLast = 0
+  }
+}
+
+#### Change news-settings for first foreign language
+[globalVar = GP:L = {$firstForeignLanguage}]
+plugin.tt_news.getRelatedCObject.10.1.20{
+  strftime >
+  date =  F jS Y
+}
+plugin.tt_news.getRelatedCObject.10.2.20{
+  strftime >
+  date =  F jS Y
+}
+plugin.tt_news.getRelatedCObject.10.default.20{
+  strftime >
+  date =  F jS Y
+}
+plugin.tt_news.displaySingle.date_stdWrap{
+  strftime >
+  date =  l, F jS Y
+}
+plugin.tt_news.displaySingle.time_stdWrap.strftime= %H:%M
+plugin.tt_news.displaySingle.age_stdWrap.age = &nbsp;Minutes | Hours | Days | Years
+plugin.tt_news.displayLatest.date_stdWrap{
+  strftime >
+  date =  F jS Y
+}
+plugin.tt_news.displayLatest.time_stdWrap.strftime= %H:%M
+plugin.tt_news.displayList.date_stdWrap{
+  strftime >
+  date =  F jS Y
+}
+plugin.tt_news.displayList.time_stdWrap.strftime= %d.%m.%y %H:%M
+
+[global]
+
+
+
+
+###########################
+# Sitemap mit tt_news start
+###########################
+sitemap = PAGE
+sitemap {
+  typeNum = 200
+  10 >
+  10 < plugin.tx_weeaargooglesitemap_pi1
+  10.pid_list = 1
+  10.tt_news.single_page {
+  	#Einsätze
+    1 = 8
+    1.pid_list = 27
+    #1.cat_id_list = 2
+    
+  	#Uebungen
+  	# single view page id
+    #2 = 85
+    # news storage page id
+    #2.pid_list = 27 
+    # category id
+    #2.cat_id_list = 5
+
+  }
+  10.tt_news {
+    #disabledParameter = day,month,year
+  }
+  10.recursive = 0
+  10.allowedDoktypes = 2,1
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-type:text/xml
+    no_cache = 1
+    xhtml_cleaning = 0
+  }
+}
+sitemap.10.domain = {$protocol}//{$baseURL_www}/
+[globalString = IENV:HTTP_HOST = pc.*]
+sitemap.10.domain = {$protocol}//{$baseURL_pc}/
+[global]
+[globalString = IENV:HTTP_HOST = mobile.*]
+sitemap.10.domain = {$protocol}//{$baseURL_mobile}/
+[global]
+
+###########################
+# Sitemap mit tt_news end
+###########################
+
+
+
+#########################################################################################
+# Die Contenelement-Überschriften mit H-Tag wrappen, css-class bleibt aber csc-firstHeader
+# Achtung: in pageTSconfig.txt the numbering maps like this:
+# 10.1 -> 0 & 1
+# 10.2 -> 2
+# 10.3 -> 3
+#########################################################################################
+lib.stdheader.10.1.dataWrap = <h2{register:headerStyle}{register:headerClass}>|</h2>
+lib.stdheader.10.2.dataWrap = <h3{register:headerStyle}{register:headerClass}>|</h3>
+lib.stdheader.10.3.dataWrap = <h4{register:headerStyle}{register:headerClass}>|</h4>
+lib.stdheader.10.4.dataWrap = <h5{register:headerStyle}{register:headerClass}>|</h5>
+lib.stdheader.10.5.dataWrap = <h6{register:headerStyle}{register:headerClass}>|</h6>
+
+
+################################################################################################################
+#tt_news RTE Links Bug - http://typo3.sanseg.de/aktuelles/single/archive/2008/sep/article/ein-weiterer-test/
+################################################################################################################
+#parseFunc des RTE für tt_news nutzen
+plugin.tt_news.displaySingle.content_stdWrap.parseFunc < lib.parseFunc_RTE
+
+
+
+
+######################################################################################################
+# Sitemap Ausgangspunkt festlegen BugFix
+# http://www.typo3forum.net/forum/typo3-4-x-fragen-probleme/22433-sitemap-ausgangspunkt.html
+######################################################################################################
+tt_content.menu.20.2.special = directory
+tt_content.menu.20.2.special.value.field = pages
+
+
+#################
+# Letzte Änderung
+#################
+lib.lastchanged_year = TEXT
+# always show current year
+lib.lastchanged_year.data = date:U 
+lib.lastchanged_year.strftime = %Y
+# if you want the real change date
+# lib.lastchanged_year.data = register:SYS_LASTCHANGED
+# lib.lastchanged_year.strftime = %Y
+
+
+
+#################################################################
+## TypoScript Object Classes
+#################################################################
+<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/app/TS-Ressources/lib/setup_classes.txt">
+
+
+
+
+
+
+#############################################
+# fancybox (taken from extension pmkslimbox)
+#############################################
+tt_content.image.20.1 {
+  titleText.field = {$plugin.pmkslimbox.imgtext.captionField}
+  titleText.htmlSpecialChars = 1
+  
+  # Removing the default "imageLinkWrap" TS code, and add new one to enable Lightbox effect.
+  imageLinkWrap >
+  imageLinkWrap = 1
+  imageLinkWrap {
+    # Enable linkwrapping if either click-enlarge is selected or a link is defined.
+    enable.field = image_zoom
+    enable.ifEmpty.typolink.parameter.field = image_link
+    enable.ifEmpty.typolink.parameter.listNum.stdWrap.data = register : IMAGE_NUM_CURRENT
+    enable.ifEmpty.typolink.returnLast = url
+
+    # Add new typolink wrapping code
+    typolink {
+      wrap =  |<span class="imagezoom"></span>
+      ATagBeforeWrap = 1
+    
+      target = {$styles.content.links.target}
+      extTarget = {$styles.content.links.extTarget}
+
+      # This returns a link, pointing to the path + name of the original image.
+      # or to the path + name of the resized lightbox image (if maxH or maxW is reached.)
+      parameter.cObject = IMG_RESOURCE
+      parameter.cObject.file.import.data = TSFE:lastImageInfo|origFile
+      parameter.cObject.file.maxW = {$pc.fancyboxMaxW}
+      parameter.cObject.file.maxH = {$pc.fancyboxMaxH}
+      
+      parameter.cObject.file.resolution = {$resolution}
+      
+      # Except if the linkfield is not empty
+      parameter.override.field = image_link
+      parameter.override.listNum.stdWrap.data = register : IMAGE_NUM_CURRENT
+      parameter.override.if.isTrue.field = image_link
+    
+      # Add the "rel" attribute needed to activate the lightbox effect.
+      ATagParams = rel="lightbox" class="image_zoom" 
+      ATagParams.override = rel="group{field:uid}" class="image_zoom" 
+      ATagParams.override.if.isTrue = {$plugin.pmkslimbox.imgtext.navigable}
+      ATagParams.insertData = 1
+      ATagParams.if.isTrue.field = image_zoom
+    }
+  }
+}
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+tt_content.image.20.1 {
+  imageLinkWrap {
+    typolink {
+      parameter.cObject.file.maxW = {$mobile.fancyboxMaxW}
+      parameter.cObject.file.maxH = {$mobile.fancyboxMaxH}
+    }
+  }
+}
+[global]
+
+temp.imageLinkWrap = 1
+temp.imageLinkWrap {
+  enable = 1
+  
+  # Add new typolink wrapping code
+  typolink {
+    wrap =  |<span class="imagezoom"></span>
+    ATagBeforeWrap = 1
+      
+    # Set the title of the A tag, which is used as caption inside the Lightbox
+    title.field = {$plugin.pmkslimbox.tt_news.captionField}
+    title.split.token.char = 10
+    title.split.returnKey.data = register : IMAGE_NUM_CURRENT
+    title.htmlSpecialChars = 1
+    #title.if.isTrue = {$plugin.pmkslimbox.tt_news.enableSplit}
+        
+    # This returns a link, pointing to the path + name of the original image.
+    # or to the path + name of the resized lightbox image (if maxH or maxW is reached.)
+    parameter.cObject = IMG_RESOURCE
+    parameter.cObject.file.import.data = TSFE:lastImageInfo|origFile
+    parameter.cObject.file.maxW = {$pc.fancyboxMaxW}
+    parameter.cObject.file.maxH = {$pc.fancyboxMaxH}
+    
+    parameter.cObject.file.resolution = {$resolution}
+    
+  
+    # Add the "rel" attribute needed to activate the lightbox effect.
+    ATagParams = rel="lightbox"
+    ATagParams.override = rel="group{field:uid}" class="image_zoom"
+    ATagParams.override.if.isTrue = {$plugin.pmkslimbox.tt_news.navigable}
+    ATagParams.insertData = 1
+  }
+}
+[globalVar = LIT:1 = {$isMobile}] && [globalVar = LIT:1 = {$MOBILE_enabled}]
+temp.imageLinkWrap {
+  typolink {
+    parameter.cObject.file.maxW = {$mobile.fancyboxMaxW}
+    parameter.cObject.file.maxH = {$mobile.fancyboxMaxH}
+  }
+}
+[global]
+
+
+
+[globalVar = LIT:1 = {$plugin.pmkslimbox.tt_news.displaySingle.slimBoxEnable}]
+# Change "imageLinkWrap" for the "displaySingle" object of tt_news
+plugin.tt_news.displaySingle.image.imageLinkWrap >
+plugin.tt_news.displaySingle.image.imageLinkWrap < temp.imageLinkWrap
+[global]
+
+[globalVar = LIT:1 = {$plugin.pmkslimbox.tt_news.displayLatest.slimBoxEnable}]
+# Change "imageLinkWrap" for the "displayLatest" object of tt_news
+plugin.tt_news.displayLatest.image.imageLinkWrap >
+plugin.tt_news.displayLatest.image.imageLinkWrap < temp.imageLinkWrap
+[global]
+
+[globalVar = LIT:1 = {$plugin.pmkslimbox.tt_news.displayList.slimBoxEnable}]
+# Change "imageLinkWrap" for the "displayList" object of tt_news
+plugin.tt_news.displayList.image.imageLinkWrap >
+plugin.tt_news.displayList.image.imageLinkWrap < temp.imageLinkWrap
+[global]
+
+[globalVar = LIT:1 = {$plugin.pmkslimbox.tt_news.displayList.slimBoxSingleView}]
+# Enable displaying tt_news singleView inside the Lightbox
+plugin.tt_news.displayList.linkTitleField = title
+plugin.tt_news.displayList.linkTitleField.wrap = |" rel="lightbox" rev="width={$plugin.pmkslimbox.tt_news.displayList.slimboxWidth}, height={$plugin.pmkslimbox.tt_news.displayList.slimboxHeight}
+[global]
+
+
+
+
+##################################################
+# 404 - show not found url
+##################################################
+lib.pagerurl_404 = COA
+lib.pagerurl_404{
+  wrap = <h2 class="404_not_found_url">|</h2>
+  10 = TEXT
+  10.data = getindpenv:HTTP_REFERER
+}
+
+
+
+################################
+# Configuration of indexedsearch
+# Informationen für eine schlanke, performante Indexsuche
+# http://www.typo3.net/forum/list/list_post//63315/
+################################
+plugin.tx_indexedsearch {
+  # use CSS based template instead of table based
+  templateFile = EXT:indexed_search/pi/template_css.tmpl
+  
+  #_CSS_DEFAULT_STYLE >
+  _DEFAULT_PI_VARS.results = 25
+  forwardSearchWordsInResultLink = 1
+  blind {
+    type=-1
+    defOp=0
+    sections=0
+    media=1
+    order=-1
+    group=-1
+    extResume=-1
+    lang=-1
+    desc=-1
+    results=0
+  }
+  show {
+    rules=0
+    parsetimes=1
+    L2sections=1
+    L1sections=1
+    LxALLtypes=0
+    clearSearchBox = 0
+    clearSearchBox.enableSubSearchCheckBox=0
+  }
+  search {
+    rootPidList =
+  }
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/app/TS-Ressources/setup_customized.txt">

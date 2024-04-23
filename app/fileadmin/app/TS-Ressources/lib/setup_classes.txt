@@ -1,0 +1,181 @@
+#################################################################
+## lib.tmenu_class / vertical nav-list
+#################################################################
+lib.tmenu_class = COA
+lib.tmenu_class.20 = HMENU
+#lib.tmenu_class.20.excludeUidList  = 1,4,6
+lib.tmenu_class.20.entryLevel = 0
+lib.tmenu_class.20.1 = TMENU
+lib.tmenu_class.20.1 {
+  noBlur = 1 
+  wrap = <div class="tmenu_class"><ul>|</ul></div>
+  NO {
+    linkWrap = <li class="first">|</li> |*| <li>|</li> |*| <li class="last">|</li>
+    stdWrap.field = nav_title // title
+    stdWrap.wrap = <span>|</span>
+    stdWrap.htmlSpecialChars = 1 
+  }
+
+  IFSUB < .NO
+  IFSUB = 1
+  IFSUB {
+    linkWrap = <li class="first hassub">|</li>  |*| <li class="hassub">|</li>  |*| <li class="last hassub">|</li> 
+  }
+    
+  ACT < .NO
+  ACT = 1
+  ACT {
+    linkWrap = <li class="first active">|</li> |*| <li class="active">|</li> |*| <li class="last active">|</li>
+    ATagParams = class="activelink"
+  }
+  
+  ACTIFSUB < .NO
+  ACTIFSUB = 1
+  ACTIFSUB {
+    linkWrap = <li class="first activeandsub">|  |*| <li class="activeandsub">|  |*| <li class="last activeandsub">| 
+  }
+  
+  CUR < .NO
+  CUR = 1
+  CUR {
+    linkWrap = <li class="first current">|</li> |*| <li class="current">|</li> |*| <li class="last current">|</li>
+    ATagParams = class="currentlink"
+  }
+
+  CURIFSUB < .NO
+  CURIFSUB = 1
+  CURIFSUB {
+    linkWrap = <li class="first currentandsub">|  |*| <li class="currentandsub">|  |*| <li class="last currentandsub">| 
+    ATagParams = class="currentlink"
+  } 
+}
+
+lib.tmenu_class.20.2 = TMENU
+lib.tmenu_class.20.2.wrap = <ul>|</ul></li>
+lib.tmenu_class.20.2 {
+  noBlur = 1 
+  NO {
+    linkWrap = <li class="first">|</li> |*| <li>|</li> |*| <li class="last">|</li>
+    stdWrap.field = nav_title // title
+    stdWrap.wrap = <span>|</span>
+    stdWrap.htmlSpecialChars = 1 
+  }
+
+  IFSUB < .NO
+  IFSUB = 1
+  IFSUB {
+    linkWrap = <li class="first hassub">|</li>  |*| <li class="hassub">|</li>  |*| <li class="last hassub">|</li> 
+  }
+  
+  ACT < .NO
+  ACT = 1
+  ACT {
+    linkWrap = <li class="first active">|</li> |*| <li class="active">|</li> |*| <li class="last active">|</li>
+    ATagParams = class="activelink "
+  }
+
+  ACTIFSUB < .NO
+  ACTIFSUB = 1
+  ACTIFSUB {
+    linkWrap = <li class="first activeandsub">|  |*| <li class="activeandsub">|  |*| <li class="last activeandsub">| 
+  }
+    
+  CUR < .NO
+  CUR = 1
+  CUR {
+    linkWrap = <li class="first current">|</li> |*| <li class="current">|</li> |*| <li class="last current">|</li>
+    ATagParams = class="currentlink"
+  }
+
+  CURIFSUB < .NO
+  CURIFSUB = 1
+  CURIFSUB {
+    linkWrap = <li class="first currentandsub">|  |*| <li class="currentandsub">|  |*| <li class="last currentandsub">| 
+    ATagParams = class="currentlink"
+  } 
+}
+
+
+lib.tmenu_class.20.3 = TMENU
+lib.tmenu_class.20.3.wrap = <ul>|</ul></li>
+lib.tmenu_class.20.3 {
+  noBlur = 1 
+  NO {
+    linkWrap = <li class="first">|</li> |*| <li>|</li> |*| <li class="last">|</li>
+    stdWrap.field = nav_title // title
+    stdWrap.wrap = <span>|</span>
+    stdWrap.htmlSpecialChars = 1 
+  }
+
+  ACT < .NO
+  ACT = 1
+  ACT {
+    linkWrap = <li class="first active">|</li> |*| <li class="active">|</li> |*| <li class="last active">|</li>
+  }
+
+  CUR < .NO
+  CUR = 1
+  CUR {
+    linkWrap = <li class="first current">|</li> |*| <li class="current">|</li> |*| <li class="last current">|</li>
+    ATagParams = class="activelink currentlink"
+  }
+}
+
+
+
+#################################################################
+## lib.tmenu_class / vertical nav-list expAll
+#################################################################
+lib.tmenu_expAll_class < lib.tmenu_class
+lib.tmenu_expAll_class.20.1 {
+  expAll = 1
+  IFSUB {
+    linkWrap = <li class="first hassub">|  |*| <li class="hassub">|  |*| <li class="last hassub">| 
+  }
+}
+
+lib.tmenu_expAll_class.20.2 {
+  expAll = 1
+  IFSUB {
+    linkWrap = <li class="first hassub">|  |*| <li class="hassub">|  |*| <li class="last hassub">| 
+  }
+}
+
+lib.tmenu_expAll_class.20.3 {
+  expAll = 1
+}
+
+
+
+
+#################################################################
+## lib.tmenu_horizontal_class / TMENU eine Ebene horizontal (PC)
+#################################################################
+lib.tmenu_horizontal_class = COA
+lib.tmenu_horizontal_class.20 = HMENU
+#lib.tmenu_horizontal_class.20.excludeUidList  = 23,6,4,63,114
+lib.tmenu_horizontal_class.20.1 = TMENU
+#lib.tmenu_horizontal_class.20.1.wrap = <div class="tmenu_horizontal_class"><a id="navigation" name="navigation"></a><ul>|</ul></div>
+lib.tmenu_horizontal_class.20.1 {
+  noBlur = 1 
+  NO {
+    linkWrap =   <li class="first">|</li> |*| <li>|</li> |*| <li class="last">|</li>
+    stdWrap.wrap = <span>|</span>
+    stdWrap.field = nav_title // title  
+    stdWrap.htmlSpecialChars = 1 
+  }
+  
+  ACT < .NO
+  ACT = 1
+  ACT {
+    linkWrap =   <li class="active first">|</li> |*| <li class="active">|</li> |*| <li class="active last">|</li> 
+    ATagParams = class="activelink"
+  }
+  
+  CUR < .NO
+  CUR = 1
+  CUR {
+    linkWrap = <li class="first current">|</li> |*| <li class="current">|</li> |*| <li class="last current">|</li>
+    ATagParams = class="activelink currentlink"
+  }
+}

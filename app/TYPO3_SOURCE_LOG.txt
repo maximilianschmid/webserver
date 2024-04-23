@@ -1,0 +1,112 @@
+10. März 2016
+TYPO3 Source upgrade to 4.5.45 due to security issue
+-> patched hidden pagesbug
+
+20. März 2015
+TYPO3 Source upgrade to 4.5.40 due to security issue
+-> unpatched!!
+
+22. Oktober 2014
+TYPO3 Source upgrade to 4.5.37 due to security issue
+-> hiddenpagesbug patch noch immer notwendig
+
+22. Oktober 2014
+TYPO3 Source upgrade to 4.5.36 due to security issue
+-> hiddenpagesbug patch noch immer notwendig
+
+11. Juni 2014
+TYPO3 Source upgrade to 4.5.34 due to security issue
+-> hiddenpagesbug patch noch immer notwendig
+
+13. September 2013
+TYPO3 Source upgrade to 4.5.30 due to security issue
+-> hiddenpagesbug patch noch immer notwendig
+
+21. Mai 201321. August 2013
+TYPO3 Source upgrade to 4.5.29 due to security issue
+-> hiddenpagesbug patch noch immer notwendig21. Mai 2013
+
+TYPO3 Source upgrade to 4.5.26 due to security issue
+-> hiddenpagesbug patch noch immer notwendig
+
+7. März 2013
+TYPO3 Source upgrade to 4.5.25 due to security issue
+-> hiddenpagesbug patch noch immer notwendig
+
+15. Februar 2013
+TYPO3 Source upgrade to 4.5.23 unpatched
+-> hiddenpagesbug patch noch immer notwendig
+
+20. Oktober 2012
+TYPO3 Source upgrade to 4.5.20 unpatched
+-> hiddenpagesbug patch noch immer notwendig
+
+5. September 2012
+TYPO3 Source upgrade to 4.5.19 unpatched
+Patchfree source - NO PATCH applied!!!
+-> hiddenpagesbug scheint nicht mehr notwendig - weiter testen. Derzeit ist der Patch nicht eingespielt.
+-> jsfunc.tceforms_suggest.bug.patch deprecated (tested - nicht mehr notwendig ab Safari6 bei Seiteneigenschaften im aio_feedit Vollbildmodus) 
+
+30. Juli 2012
+TYPO3 Source upgrade to 4.5.17 unpatched
+-> hiddenpagesbug patch noch immer notwendig
+-> jsfunc.tceforms_suggest.bug.patch applied (tested - notwendig für Safari bei Seiteneigenschaften im aio_feedit Vollbildmodus) 
+
+22. Mai 2012
+TYPO3 Source upgrade to 4.5.16 unpatched
+-> hiddenpagesbug patch noch immer notwendig
+-> jsfunc.tceforms_suggest.bug.patch applied (tested - notwendig für Safari bei Seiteneigenschaften im aio_feedit Vollbildmodus) 
+
+4. Mai 2012
+TYPO3 Source upgrade to 4.5.15 unpatched
+-> hiddenpagesbug patch scheint nicht mehr notwendig - Testing am laufen
+-> jsfunc.tceforms_suggest.bug.patch applied (tested - notwendig für Safari bei Seiteneigenschaften im aio_feedit Vollbildmodus) 
+
+24. April 2012
+TYPO3 Source upgrade to 4.5.14 unpatched
+-> hiddenpagesbug patch immer noch notwendig
+-> htmlTag_ieconditionalcomments.patch deprecated
+
+2. April 2012
+TYPO3 Source upgrade to 4.5.13 unpatched
+-> hiddenpagesbug patch immer noch notwendig
+-> htmlTag_ieconditionalcomments.patch added
+
+13. März 2012
+TYPO3 Source upgrade to 4.5.13 unpatched
+-> hiddenpagesbug patch immer noch notwendig
+
+6. März 2012
+TYPO3 Source upgrade to 4.5.12 unpatched
+-> hiddenpagesbug patch immer noch notwendig
+
+9. Februar 2012
+TYPO3 Source upgrade to 4.5.11 unpatched
+-> hiddenpagesbug patch immer noch notwendig
+
+27. Dez. 2011
+-> resolution patch completely handeled by tk_cropthumbs extension, no more patching the source
+patches applied and tested: 
+-> /anorakio-typo3/patchfiles/4.5/hiddenpagesbug/10951_r7462.diff (tested, works with 4.5.10)
+-> /anorakio-typo3/patchfiles/typo3BEicon_patch (tested, works with 4.5.10)
+
+
+22. Nov. 2011
+-> 4.5.8 unpatched added
+patches applied and tested: 
+-> /anorakio-typo3/patchfiles/4.5/hiddenpagesbug/10951_r7462.diff (tested, works with 4.5.8)
+-> /anorakio-typo3/patchfiles/typo3BEicon_patch (tested, works with 4.5.8)
+-> /anorakio-typo3/patchfiles/resolution_patch (tested, works with 4.5.8)
+-> /anorakio-typo3/patchfiles/templavoila_1.5.5 (tested, works with 4.5.8)
+
+deprecated patches:
+-> /anorakio-typo3/patchfiles/4.5/workspace_listmod_hideshowbug
+-> /anorakio-typo3/patchfiles/adminpanel (http://lists.typo3.org/pipermail/typo3-team-core/2010-October/043813.html)
+
+
+30. Juli 2011 - 4.5.4 patched
+-> 4.5.3 patched upgraded to 4.5.4 patched
+
+
+4.5.2 patched:
+- patch: hiddenpagebug

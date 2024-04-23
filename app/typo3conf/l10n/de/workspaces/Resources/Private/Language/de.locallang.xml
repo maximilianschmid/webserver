@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="de" type="array">
+			<label index="legend.label">Legende:</label>
+			<label index="legend.edited">bearbeitet</label>
+			<label index="legend.moved">verschoben</label>
+			<label index="legend.deleted">gelöscht</label>
+			<label index="legend.new">erstellt</label>
+			<label index="legend.hidden">verborgen</label>
+			<label index="title">Arbeitsumgebungen</label>
+			<label index="ok">OK</label>
+			<label index="cancel">Abbrechen</label>
+			<label index="chooseMassAction">Massenaktionen auswählen</label>
+			<label index="chooseAction">Aktion auswählen</label>
+			<label index="item">Element</label>
+			<label index="items">Elemente</label>
+			<label index="recordsToDisplay">Anzuzeigende Datensätze</label>
+			<label index="reviewandpublish">Begutachten und veröffentlichen</label>
+			<label index="workspacelist">Liste der Arbeitsumgebungen</label>
+			<label index="editorInLive">Sie befinden sich in der LIVE-Arbeitsumgebung. Wenn Sie Änderungen begutachten und veröffentlichen möchten, müssen Sie erst eine Entwurfsarbeitsumgebung auswählen.</label>
+			<label index="actionSendToStage">Auf Stufe setzen</label>
+			<label index="publish_execute_action_option">Veröffentlichen</label>
+			<label index="close">Schließen</label>
+			<label index="runMassAction.done">Verarbeitung von %d Elementen abgeschlossen</label>
+			<label index="runMassAction.init">Initialisierung</label>
+			<label index="tooltip.publishAll">Tatsächlich gesamte Arbeitsumgebung veröffentlichen?</label>
+			<label index="tooltip.swapAll">Tatsächlich gesamte Arbeitsumgebung austauschen?</label>
+			<label index="tooltip.affectWholeWorkspace">Beachten Sie, dass sich dies auf sämtliche Änderungen in der aktuellen Arbeitsumgebung auswirkt, von denen Sie derzeit vielleicht nicht alle auf dem Bildschirm sehen.</label>
+			<label index="previewLink">Vorschau-Link</label>
+			<label index="error.noResponse">Der Server hat den Erfolg des Vorgangs nicht bestätigt.</label>
+			<label index="rowDetails">Zeilendetails…</label>
+			<label index="column.difference">Unterschiede</label>
+			<label index="column.changeDate">Modifikationen</label>
+			<label index="column.stage">Aktuelle Stufe</label>
+			<label index="column.actions">Aktionen</label>
+			<label index="column.wsPath">Pfad</label>
+			<label index="column.wsTitle">Verändert</label>
+			<label index="column.uid">WS-ID</label>
+			<label index="column.oid">Live-ID</label>
+			<label index="column.workspaceName">Arbeitsumgebung</label>
+			<label index="column.livePath">Live-Pfad</label>
+			<label index="column.liveTitle">Live-Titel</label>
+			<label index="column.wsSwapColumn">Arbeitsumgebung austauschen</label>
+			<label index="tooltip.viewElementAction">Vorschau für Element anzeigen</label>
+			<label index="tooltip.editElementAction">Element bearbeiten</label>
+			<label index="tooltip.openPage">Seitenversion öffnen</label>
+			<label index="tooltip.sendToPrevStage">Datensatz auf vorherige Stufe absenken</label>
+			<label index="tooltip.sendToNextStage">Datensatz auf nächste Stufe erhöhen</label>
+			<label index="tooltip.swap">Live- und Arbeitsumgebungsversion des Datensatzes tauschen</label>
+			<label index="window.swap.title">Versionen tauschen</label>
+			<label index="window.swap.message">Diese Version tatsächlich austauschen?</label>
+			<label index="window.massAction.title">Massenaktion vorbereiten</label>
+			<label index="error.stageId.integer">StageId muss ganzzahliger Wert sein</label>
+			<label index="error.stageId.invalid">Zu verwendende Stufe scheint ungültig zu sein. Evtl. mit dem Aktualisierungsassistenten des Installationsprogramms beheben.</label>
+			<label index="error.sendToNextStage.noRecordFound">Datensatzelement nicht gefunden.</label>
+			<label index="error.sendToPrevStage.noPreviousStage">Datensatzelement ist bereits auf Stufe Bearbeiten. Keine niedrigere Stufe vorhanden.</label>
+			<label index="window.sendToNextStageWindow.itemsWillBeSentTo">Das/die ausgewählte(n) Elemente(n) wird gesetzt auf Stufe</label>
+			<label index="window.sendToNextStageWindow.sendMailTo">E-Mail senden an</label>
+			<label index="window.sendToNextStageWindow.additionalRecipients">Weitere Empfänger</label>
+			<label index="window.sendToNextStageWindow.comments">Kommentare</label>
+			<label index="error.getStageTitle.stageNotFound">Stufe nicht gefunden</label>
+			<label index="warning.oldStyleWorkspaceInUser">Sie verwenden anscheinend noch Arbeitsumgebungen des alten Stils. Bitte mit den Aktualisierungsskripten im TYPO3-Installationsprogramm die notwendigen Aktualisierungen durchführen. Bei weiterer Verwendung dieses Moduls ohne Aktualisierung droht Datenverlust.</label>
+			<label index="info.newpage">Neue Seite!</label>
+			<label index="info.newpage.detail">Die in der Vorschau anzuzeigende Seite wurde in einer Arbeitsumgebung erstellt und besitzt noch kein Live-Pendant.</label>
+			<label index="preview.visualPreview">Visuelle Vorschau</label>
+			<label index="preview.listView">Listenansicht</label>
+			<label index="preview.livePreview">Live</label>
+			<label index="preview.workspacePreview">Arbeitsumgebung</label>
+			<label index="preview.modeVbox">Vertikal</label>
+			<label index="preview.modeHbox">Horizontal</label>
+			<label index="tooltip.releaseAll">Tatsächlich gesamte Arbeitsumgebung freigeben?</label>
+			<label index="tooltip.removeVersion">Version entfernen</label>
+			<label index="window.remove.title">Version aus Arbeitsumgebung entfernen</label>
+			<label index="window.remove.message">Diese Version tatsächlich aus der Arbeitsumgebung entfernen?</label>
+			<label index="preview.helpView">Hilfe</label>
+			<label index="runMassAction.elements">Elemente</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="de" type="array">
+			<label index="legend.label" type="integer">134507669</label>
+			<label index="ok" type="integer">71613619</label>
+			<label index="cancel" type="integer">17493045</label>
+			<label index="close" type="integer">222113377</label>
+			<label index="runMassAction.elements" type="integer">30591245</label>
+			<label index="runMassAction.init" type="integer">238546963</label>
+			<label index="column.actions" type="integer">7205680</label>
+			<label index="column.wsPath" type="integer">180814866</label>
+			<label index="column.wsTitle" type="integer">136371154</label>
+			<label index="window.sendToNextStageWindow.comments" type="integer">138493032</label>
+			<label index="title" type="integer">224301664</label>
+			<label index="workspacelist" type="integer">81058256</label>
+			<label index="column.workspaceName" type="integer">3809681</label>
+			<label index="legend.edited" type="integer">109304914</label>
+			<label index="legend.moved" type="integer">18742662</label>
+			<label index="legend.deleted" type="integer">228983536</label>
+			<label index="legend.new" type="integer">238003512</label>
+			<label index="legend.hidden" type="integer">107149063</label>
+			<label index="chooseMassAction" type="integer">44169179</label>
+			<label index="chooseAction" type="integer">242803026</label>
+			<label index="item" type="integer">71808788</label>
+			<label index="items" type="integer">110220546</label>
+			<label index="recordsToDisplay" type="integer">134247134</label>
+			<label index="reviewandpublish" type="integer">132995763</label>
+			<label index="editorInLive" type="integer">225997360</label>
+			<label index="actionSendToStage" type="integer">211912613</label>
+			<label index="publish_execute_action_option" type="integer">13097434</label>
+			<label index="runMassAction.done" type="integer">158585388</label>
+			<label index="tooltip.publishAll" type="integer">168196717</label>
+			<label index="tooltip.swapAll" type="integer">151392277</label>
+			<label index="tooltip.releaseAll" type="integer">170798284</label>
+			<label index="tooltip.affectWholeWorkspace" type="integer">195046921</label>
+			<label index="previewLink" type="integer">151754309</label>
+			<label index="error.noResponse" type="integer">138163982</label>
+			<label index="rowDetails" type="integer">20495899</label>
+			<label index="column.difference" type="integer">42914476</label>
+			<label index="column.changeDate" type="integer">145694492</label>
+			<label index="column.stage" type="integer">143006203</label>
+			<label index="column.uid" type="integer">86016326</label>
+			<label index="column.oid" type="integer">177155977</label>
+			<label index="column.livePath" type="integer">143063804</label>
+			<label index="column.liveTitle" type="integer">199888528</label>
+			<label index="column.wsSwapColumn" type="integer">67755524</label>
+			<label index="tooltip.viewElementAction" type="integer">144760457</label>
+			<label index="tooltip.editElementAction" type="integer">31852556</label>
+			<label index="tooltip.openPage" type="integer">50283392</label>
+			<label index="tooltip.sendToPrevStage" type="integer">19482009</label>
+			<label index="tooltip.sendToNextStage" type="integer">173842344</label>
+			<label index="tooltip.removeVersion" type="integer">179390076</label>
+			<label index="tooltip.swap" type="integer">259148581</label>
+			<label index="window.remove.title" type="integer">201243862</label>
+			<label index="window.remove.message" type="integer">84608047</label>
+			<label index="window.swap.title" type="integer">151570387</label>
+			<label index="window.swap.message" type="integer">11302774</label>
+			<label index="window.massAction.title" type="integer">63394156</label>
+			<label index="error.stageId.integer" type="integer">32118846</label>
+			<label index="error.stageId.invalid" type="integer">163777082</label>
+			<label index="error.sendToNextStage.noRecordFound" type="integer">252630422</label>
+			<label index="error.sendToPrevStage.noPreviousStage" type="integer">130228907</label>
+			<label index="window.sendToNextStageWindow.itemsWillBeSentTo" type="integer">45688354</label>
+			<label index="window.sendToNextStageWindow.sendMailTo" type="integer">24227422</label>
+			<label index="window.sendToNextStageWindow.additionalRecipients" type="integer">260007174</label>
+			<label index="error.getStageTitle.stageNotFound" type="integer">37683105</label>
+			<label index="warning.oldStyleWorkspaceInUser" type="integer">204133859</label>
+			<label index="info.newpage" type="integer">182130737</label>
+			<label index="info.newpage.detail" type="integer">261726780</label>
+			<label index="preview.visualPreview" type="integer">115215607</label>
+			<label index="preview.listView" type="integer">252903448</label>
+			<label index="preview.helpView" type="integer">111308628</label>
+			<label index="preview.livePreview" type="integer">156609842</label>
+			<label index="preview.workspacePreview" type="integer">3809681</label>
+			<label index="preview.modeVbox" type="integer">7135906</label>
+			<label index="preview.modeHbox" type="integer">203120544</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="de" type="array">
+			<label index="legend.label">Legend:</label>
+			<label index="ok">ok</label>
+			<label index="cancel">cancel</label>
+			<label index="close">Close</label>
+			<label index="runMassAction.elements"> elements</label>
+			<label index="runMassAction.init">init</label>
+			<label index="column.actions">Actions</label>
+			<label index="column.wsPath">Path</label>
+			<label index="column.wsTitle">Changed</label>
+			<label index="window.sendToNextStageWindow.comments">Comments</label>
+			<label index="title">Workspaces</label>
+			<label index="workspacelist">Workspace List</label>
+			<label index="column.workspaceName">Workspace</label>
+			<label index="legend.edited">edited</label>
+			<label index="legend.moved">moved</label>
+			<label index="legend.deleted">deleted</label>
+			<label index="legend.new">created</label>
+			<label index="legend.hidden">hidden</label>
+			<label index="chooseMassAction">choose Mass Action</label>
+			<label index="chooseAction">choose Action</label>
+			<label index="item">item</label>
+			<label index="items">items</label>
+			<label index="recordsToDisplay">Records to display</label>
+			<label index="reviewandpublish">review and publish</label>
+			<label index="editorInLive">You are in LIVE workspace. You have to select a draft workspace before you can review and publish changes.</label>
+			<label index="actionSendToStage">Send to stage </label>
+			<label index="publish_execute_action_option">Publish  to LIVE</label>
+			<label index="runMassAction.done">Done processing %d elements</label>
+			<label index="tooltip.publishAll">Really publish entire workspace?</label>
+			<label index="tooltip.swapAll">Really swap entire workspace?</label>
+			<label index="tooltip.releaseAll">Really release entire workspace?</label>
+			<label index="tooltip.affectWholeWorkspace">Please note that this will affect all changes in the current workspace, which may be more than you are currently seeing on your screen.</label>
+			<label index="previewLink">Preview Link</label>
+			<label index="error.noResponse">The server did not send any response whether the action was successful.</label>
+			<label index="rowDetails">Row details...</label>
+			<label index="column.difference">Difference</label>
+			<label index="column.changeDate">Modification</label>
+			<label index="column.stage">Current Stage</label>
+			<label index="column.uid">WS-Id</label>
+			<label index="column.oid">Live-Id</label>
+			<label index="column.livePath">Live-Path</label>
+			<label index="column.liveTitle">Live-Title</label>
+			<label index="column.wsSwapColumn">Swap workspace</label>
+			<label index="tooltip.viewElementAction">Preview element</label>
+			<label index="tooltip.editElementAction">Edit element</label>
+			<label index="tooltip.openPage">Open version of page</label>
+			<label index="tooltip.sendToPrevStage">Send record to previous Stage</label>
+			<label index="tooltip.sendToNextStage">Send record to next Stage</label>
+			<label index="tooltip.removeVersion">Remove version document</label>
+			<label index="tooltip.swap">Swap live and workspace versions of record</label>
+			<label index="window.remove.title">Remove version from workspace</label>
+			<label index="window.remove.message">Do you really want to remove this version from workspace?</label>
+			<label index="window.swap.title">Swap version</label>
+			<label index="window.swap.message">Do you really want to swap this version?</label>
+			<label index="window.massAction.title">Prepare to start mass action</label>
+			<label index="error.stageId.integer">StageId is supposed to be an integer</label>
+			<label index="error.stageId.invalid">The stage to be used seems to be invalid and cannot be used. Please consider to use the update wizard in the install tool to fix this.</label>
+			<label index="error.sendToNextStage.noRecordFound">The record element could not be found.</label>
+			<label index="error.sendToPrevStage.noPreviousStage">The record element is already in editing stage, there is no previous stage.</label>
+			<label index="window.sendToNextStageWindow.itemsWillBeSentTo">The selected element(s) will be sent to </label>
+			<label index="window.sendToNextStageWindow.sendMailTo">Send mail to</label>
+			<label index="window.sendToNextStageWindow.additionalRecipients">Additional recipients</label>
+			<label index="error.getStageTitle.stageNotFound">Stage not found</label>
+			<label index="warning.oldStyleWorkspaceInUser">It seems that you're still using old-style workspace. Please use the update scripts in the TYPO3 Install Tool to run the necessary updates. If you continue using this module without migrating your workspace you might loose data.</label>
+			<label index="info.newpage">New Page!</label>
+			<label index="info.newpage.detail">The previewed page has been created in a workspace and has no live counterpart.</label>
+			<label index="preview.visualPreview">Visual preview</label>
+			<label index="preview.listView">List view</label>
+			<label index="preview.helpView">Help</label>
+			<label index="preview.livePreview">Live</label>
+			<label index="preview.workspacePreview">Workspace</label>
+			<label index="preview.modeVbox">Vertical</label>
+			<label index="preview.modeHbox">Horizontal</label>
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

@@ -1,0 +1,7 @@
+  # cat=basic; type=boolean; label=Disable a listview link on standard pages.
+disable_listviewLink = 0
+
+  # cat=basic; type=boolean; label=Dont follow shortcuts, on pages of type Shortcut.
+dont_follow_shortcuts = 0
+
+

@@ -1,0 +1,33 @@
+a:2:{s:4:"meta";a:3:{s:5:"title";s:13:"KB Cleanfiles";s:5:"descr";s:66:"Cleans up the mess left behind in uploads/pics/ and uploads/media/";s:7:"options";a:2:{s:10:"usageCount";N;s:19:"includeCodeAbstract";N;}}s:5:"files";a:1:{s:14:"MD5_19aaeae789";a:4:{s:8:"filename";s:14:"mod1/index.php";s:8:"filesize";i:18142;s:6:"header";a:5:{s:4:"text";s:65:"
+
+Module 'KB Clean File' for the 'kb_cleanfile' extension.
+
+$Id$
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:3:{i:0;s:39:"@author	Kraft Bernhard <kraftb@gmx.net>";i:1;s:14:"@package TYPO3";i:2;s:27:"@subpackage tx_kbcleanfiles";}s:11:"other_index";a:3:{s:7:"@author";a:1:{i:0;s:31:"Kraft Bernhard <kraftb@gmx.net>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:16:"tx_kbcleanfiles ";}}}s:3:"DAT";a:11:{i:1;a:7:{s:6:"header";s:52:"class tx_kbcleanfiles_module1 extends t3lib_SCbase {";s:5:"class";i:1;s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:7:"content";s:0:"";s:12:"content_size";i:18;s:13:"content_lines";i:2;s:6:"atLine";i:66;}i:3;a:7:{s:6:"header";s:17:"function init()	{";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:42:"
+
+Returns nothing. Initializes the class.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:7:"nothing";}}s:7:"content";s:0:"";s:12:"content_size";i:135;s:13:"content_lines";i:4;s:6:"atLine";i:74;}i:5;a:7:{s:6:"header";s:23:"function menuConfig()	{";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:75:"
+
+Adds items to the ->MOD_MENU array. Used for the function menu selector.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:7:"nothing";}}s:7:"content";s:0:"";s:12:"content_size";i:263;s:13:"content_lines";i:12;s:6:"atLine";i:84;}i:7;a:7:{s:6:"header";s:17:"function main()	{";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:67:"
+
+Main function of the module. Write the content to $this->content
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:7:"nothing";}}s:7:"content";s:0:"";s:12:"content_size";i:431;s:13:"content_lines";i:7;s:6:"atLine";i:102;}i:9;a:6:{s:6:"header";s:25:"function jumpToUrl(URL)	{";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:7:"content";s:0:"";s:12:"content_size";i:1521;s:13:"content_lines";i:43;s:6:"atLine";i:121;}i:11;a:7:{s:6:"header";s:25:"function printContent()	{";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:29:"
+
+Prints out the module HTML
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:7:"nothing";}}s:7:"content";s:0:"";s:12:"content_size";i:126;s:13:"content_lines";i:7;s:6:"atLine";i:170;}i:13;a:7:{s:6:"header";s:36:"function getFiles($dirname, $exts) {";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:74:"
+
+Returns all filenames of specified extension from a specified directory
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"string";i:1;s:36:"path of the directory which to check";}i:1;a:2:{i:0;s:5:"array";i:1;s:37:"lowercase array of allowed extensions";}}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:17:"list of filenames";}}s:7:"content";s:0:"";s:12:"content_size";i:457;s:13:"content_lines";i:19;s:6:"atLine";i:185;}i:15;a:7:{s:6:"header";s:56:"function checkFileAgainstTable($file, $table, $fields) {";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:158:"
+
+Checks if a file is referenced from the specified table.The determination of image fields is done by the usage of the TCA array of the corresponding table.
+";s:5:"param";a:3:{i:0;a:2:{i:0;s:6:"string";i:1;s:27:"file to check against table";}i:1;a:2:{i:0;s:6:"string";i:1;s:20:"table which to check";}i:2;a:2:{i:0;s:5:"array";i:1;s:15:"fields to check";}}s:6:"return";a:2:{i:0;s:7:"integer";i:1;s:97:"wheter the file is referenced from a deleted entry (1), from a normal entry (2) or not at all (0)";}}s:7:"content";s:0:"";s:12:"content_size";i:1094;s:13:"content_lines";i:35;s:6:"atLine";i:213;}i:17;a:7:{s:6:"header";s:25:"function getAllTables() {";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:51:"
+
+Returns all active Typo3 Tables with a TCA array
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:53:"list of all table names for which TCA arrays do exist";}}s:7:"content";s:0:"";s:12:"content_size";i:124;s:13:"content_lines";i:7;s:6:"atLine";i:254;}i:19;a:4:{s:6:"header";s:40:"function getAllPathsAndFields($tables) {";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:49:"
+
+Returns all paths and fields from given tables
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:5:"array";i:1;s:19:"list of table names";}}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:28:"list of all paths and fields";}}s:6:"atLine";i:268;}i:21;a:7:{s:6:"header";s:25:"function moduleContent(){";s:11:"parentClass";s:23:"tx_kbcleanfiles_module1";s:4:"cDat";a:3:{s:4:"text";s:31:"
+
+Generates the module content
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:7:"nothing";}}s:7:"content";s:0:"";s:12:"content_size";i:8783;s:13:"content_lines";i:227;s:6:"atLine";i:301;}}}}}

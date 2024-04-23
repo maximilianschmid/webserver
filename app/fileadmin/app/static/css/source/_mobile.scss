@@ -1,0 +1,823 @@
+
+
+
+
+// M O B I L E   T E M P L A T E   S I Z E S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+$pagewidth_mobile: auto;
+
+// 1col layout – have to match col-widths in constants_customized.txt
+$col2width_1col_mobile: 100%;
+
+
+// 2col layout – have to match col-widths in constants_customized.txt
+$col1width_2col_mobile: auto;
+$col2width_2col_mobile: auto;
+
+// 3col layout (.col1, .col2, .col3) – have to match col-widths in constants_customized.txt
+$col1width_mobile: auto;
+$col2width_mobile: auto;
+$col3width_mobile: auto;
+
+// body.pagelayout_onecol
+$col2width_pagelayout_onecol_mobile: auto;
+
+// .csc-textpic col spacing
+// !! has to match settings in TypoScript !!
+$csc-textpic-colspace: $bu;
+
+
+
+
+// M O B I L E   C O L O R S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+$color_mobile_nav_background: $color_03;
+$color_mobile_nav_background_active: $color_00;
+$color_mobile_nav_background_current: $color_00;
+
+$color_mobile_nav_link: $color_09;
+$color_mobile_nav_link_hover: $color_09;
+
+$color_mobile_nav_seperator: $color_07;
+
+
+
+
+// M O B I L E   M I X I N S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// L A Y O U T   &   P A G E   T E M P L A T E S
+// ###########################################################################################################################
+// ###########################################################################################################################
+  
+@mixin pageblock_mobile(){
+  width: $pagewidth_mobile;
+  margin: 0 auto;
+  padding: 0 ($bu*1.0);
+}
+
+
+@mixin cols_mobile(){
+  clear: both;
+  float: none;
+  position: relative;
+  margin: 0;
+}
+   
+// default definitions for mobile layouting (1col sequential)
+@mixin layout_mobile(){
+  /*
+   * page layout
+   */
+  
+  //reset min-width and width on body.mobile
+  width: $pagewidth_mobile;
+  min-width: 0;
+
+  
+  .header {
+    .header_innerwrap{
+       @include pageblock_mobile;
+    }
+  }
+  
+  .main {
+    .main_innerwrap{
+      @include pageblock_mobile;
+    }
+  }
+  
+  .footer {
+    .footer_innerwrap{
+       @include pageblock_mobile;
+    }
+  }
+
+
+  .col1 {
+    width: $col1width_mobile;
+    @include cols_mobile;
+    
+    .col1_content {
+      min-height:1px;
+    }
+  }
+  
+  .col2 {
+    width: $col2width_mobile;
+    @include cols_mobile;
+    
+    .col2_content {
+      min-height:1px;
+    }
+  }
+  
+  .col3 {
+    width: $col3width_mobile;
+    @include cols_mobile;
+    
+    .col3_content {
+  
+    }
+  }
+  
+  .c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l, .c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r {
+    width: 100%;
+  }
+  
+  .subc, .subcl, .subcr{
+    padding: 0;
+  }
+
+
+}//.layout_mobile
+
+
+// F O R M S
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin form_standard($type){
+
+  @if $type == background{
+    padding: $bu*2.0;
+  } @else if $type == standard{
+  }
+  
+  fieldset{
+    div{
+ 
+      label{
+        margin: 0;
+        width: auto;
+      }
+
+      input, textarea{
+        @if $type == background{
+          min-width: 320px - ($bu*2.0) - ($bu*4.0) - ($fs*1.0) - ($border-width*2.0); // iphone width - page padding - form padding - input padding - border
+        } @else if $type == standard{
+          min-width: 320px - ($bu*2.0) - ($fs*1.0) - ($border-width*2.0); // iphone width - page padding - input padding - border
+        }
+      }
+
+      select{
+        @if $type == background{
+          min-width: 320px - ($bu*2.0) - ($bu*4.0) - ($fs*1.0) - ($border-width*2.0) + 20px; // iphone width - page padding - form padding - input padding - border + 20px (select)
+        } @else if $type == standard{
+          min-width: 320px - ($bu*2.0) - ($fs*1.0) - ($border-width*2.0) + 20px; // iphone width - page padding - input padding - border + 20px (select)
+        }
+      }
+      input[type = submit]{
+        width: auto;
+        min-width: 0;
+      }
+    }// div
+  }// fieldset
+}// mixin form_standard
+
+
+// I M A G E / T E X T   ( CSC-TEXTPIC )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin textpic_mobile{
+  .csc-textpic-text{
+     clear: both !important;
+  }
+  /* Positioning of images: */
+  /* Above */
+  .csc-textpic-above .csc-textpic-text {
+    clear: both !important;
+  }
+  /* Center (above or below) */
+  .csc-textpic-center {
+    text-align: left;
+    .csc-textpic-imagewrap {
+      margin: 0 !important;
+    }
+  }
+  /* Right (above or below) */
+  .csc-textpic-right {
+    .csc-textpic-imagewrap {
+      float: none !important;
+      clear: both !important;
+    }
+    .csc-textpic-text {
+      float: none !important;
+      clear: both !important;
+    }
+  }
+  /* Left (above or below) */
+  .csc-textpic-left {
+    .csc-textpic-imagewrap {
+      float: none !important;
+      clear: both !important;
+    }
+    .csc-textpic-text {
+      float: none !important; 
+      clear: both !important;
+    }
+  }
+  /* Left (in text) */
+  .csc-textpic-intext-left .csc-textpic-imagewrap {
+    float: none !important; 
+    clear: both !important;
+    margin-right: 0 !important;
+  }
+  /* Left (in text, no wrap around) */
+  .csc-textpic-intext-left-nowrap{
+    div{
+      margin-left: 0 !important;
+    }
+    .csc-textpic-imagewrap{
+      float: none !important; 
+      clear: both !important;
+      margin-right: 0 !important;
+    }
+  }
+  
+  /* Right (in text) */
+  .csc-textpic-intext-right .csc-textpic-imagewrap {
+    float: none !important; 
+    clear: both !important;
+    margin-left: 0 !important;
+  }
+  /* Right (in text, no wrap around) */
+  .csc-textpic-intext-right-nowrap{
+    div{
+      margin-right: 0 !important;
+    }
+    .csc-textpic-imagewrap{
+      float: none !important;
+      clear: both !important;
+      margin-left: 0 !important;
+    }
+  }
+  
+}// mixin textpic
+
+
+// T - M E N U  /  N A V I G A T I O N S   ( NAVIGATION - TMENU )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin tmenu_mobile{
+  margin: 0;
+  padding: 0;
+  
+  ul{
+    li{
+      clear: both;
+      display: block;
+      width: 100%;
+      border: none;
+      a{
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -moz-binding: url( 'bindings.xml#ellipsis' );
+        
+        span{
+          padding: 0;
+        }// span
+      }// a
+      
+/*      &.first, &:first-child{
+        a{
+          span{
+            padding-left: 0;
+          }
+        }
+      }
+*/      
+    }// li 1
+  }// ul 1
+}//.tmenu_mobile
+
+
+
+
+// I N C L U D E S
+// B O D Y . M O B I L E
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+body.mobile{
+  @include layout_mobile;
+  @include textpic_mobile;
+  
+  -webkit-text-size-adjust: none; // display small fonts in correct size
+
+
+
+// H E A D E R   ( LOGO / META NAVIGATION / MAIN NAVIGATION )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .header{
+    .header_innerwrap{
+      padding-top: $bu*1.0;
+
+
+// LOGO
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .logolink_wrap{
+        margin-bottom: $bu*1.0;
+      }
+
+
+// META NAVIGATION
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .nav_meta{
+      }
+
+
+// SEARCH BOX ( HEADER )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .tx-macinasearchbox-pi1{
+        display: none;// hidden
+      }// .tx-macinasearchbox-pi1
+
+
+// MAIN NAVIGATION
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .nav_main{
+        @include tmenu_mobile;
+        @include webfont_01(bold, normal, none);
+        margin: 0 (-$bu*1.0);
+        
+        .nav_main_togglebutton{
+
+          span{
+            display:block;
+          }
+        }
+        
+        .nav_main_togglebutton_bottom{
+          display:none;
+        }
+    
+// level 01
+// ---------------------------------------------------------------------------------------------------------------------------
+        .nav_main_ul_wrap{
+          height: 0px;
+          
+          @include transition-timing-function(ease-out);
+          @include transition-property(height);
+          @include transition-duration(0.5s);
+          
+          ul{
+            overflow:hidden;
+            
+            li{
+              background-color: $color_mobile_nav_background;
+              border-top: 2px solid $color_mobile_nav_seperator;
+              a{
+                color: $color_mobile_nav_link;
+                margin: 0 ($bu);
+                
+                &:hover{
+                  color: $color_mobile_nav_link_hover;
+                }
+                
+                span{
+                  margin: 0;
+                  padding: ($bu*0.75) ($bu*1.5);
+                }
+              }// a 1
+              
+            &.hassub{
+              a{
+                @include sprite_icons(right, -690px, no-repeat);
+              }
+  // no icon in standard-li on level 02 /////////////////
+              li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+            }
+      
+            &.activeandsub{
+              background-color: $color_mobile_nav_background_active;
+              a{
+                @include sprite_icons(right, -740px, no-repeat);
+              }
+  // no icon in standard-li on level 02 /////////////////
+              li{ a{ background-image: none; } 
+              &.currentandsub{ a{ @include sprite_icons(right, -740px, no-repeat); } li{ a{ background-image: none; } } } }
+  ///////////////////////////////////////////////////////
+            }
+      
+            &.current{
+              background-color: $color_mobile_nav_background_current;
+              a{
+                span{
+                  @include sprite_icons(left, -640px, no-repeat);
+                }
+              }
+  // no icon in standard-li on level 02 /////////////////
+              li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+            }
+      
+            &.currentandsub{
+              background-color: $color_mobile_nav_background_current;
+              a{
+                @include sprite_icons(right, -740px, no-repeat);
+                span{
+                  @include sprite_icons(left, -640px, no-repeat);
+                }
+              }
+  // no icon in standard-li on level 02 /////////////////
+              li{ background-color: $color_mobile_nav_background; a{ background-image: none; span{ background-image: none; } } }
+  ///////////////////////////////////////////////////////
+            }
+      
+      
+  // level 02
+  // ---------------------------------------------------------------------------------------------------------------------------
+              ul{
+                li{
+                  background-color: lighten($color_mobile_nav_background, 10%);
+                  border-top: 1px solid $color_mobile_nav_seperator;
+                  a{
+                    font-weight: normal;
+                    span{
+                      padding-left: $bu*1.5 * 2.0;
+                    }
+                  }// a 2
+      
+                &.hassub{
+                  a{
+                    @include sprite_icons(right, -690px, no-repeat);
+                  }
+  // no icon in standard-li on level 03 /////////////////
+                  li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                }
+      
+                &.activeandsub{
+                  background-color: $color_mobile_nav_background_active;
+                  a{
+                    @include sprite_icons(right, -740px, no-repeat);
+                  }
+  // no icon in standard-li on level 03 /////////////////
+                  li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                }
+      
+                &.current{
+                  background-color: $color_mobile_nav_background_current;
+                  a{
+                    span{
+                      @include sprite_icons($bu*1.5, -640px, no-repeat);
+                    }
+                  }
+  // no icon in standard-li on level 03 /////////////////
+                  li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                }
+      
+      
+  // level 03
+  // ---------------------------------------------------------------------------------------------------------------------------
+                  ul{
+                    li{
+                      background-color: lighten($color_mobile_nav_background, 20%);
+                      border-top: 1px dotted $color_mobile_nav_seperator;
+                      font-size: $fs;
+                      line-height: $fs*$lhf;
+                      a{
+                        span{
+                          padding-left: $bu*1.5 * 3.0;
+                        }
+                      }// a 3
+      
+                      &.hassub{
+                        a{
+                          @include sprite_icons(right, -692px, no-repeat);
+                        }
+  // no icon in standard-li on level 04 /////////////////
+                        li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                      }
+            
+                      &.activeandsub{
+                        background-color: $color_mobile_nav_background_active;
+                        a{
+                          @include sprite_icons(right, -742px, no-repeat);
+                        }
+  // no icon in standard-li on level 04 /////////////////
+                        li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                      }
+            
+                      &.current{
+                        background-color: $color_mobile_nav_background_current;
+                        a{
+                          span{
+                            @include sprite_icons($bu*1.5 *2.0, -642px, no-repeat);
+                          }
+                        }
+  // no icon in standard-li on level 04 /////////////////
+                        li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                      }
+      
+  // level 04
+  // ---------------------------------------------------------------------------------------------------------------------------
+                      ul{
+                        li{
+                          a{
+                            span{
+                              padding-left: $bu*1.5 * 4.0;
+                            }
+                          }// a 4
+      
+                          &.hassub{
+                            a{
+                              @include sprite_icons(right, -692px, no-repeat);
+                            }
+  // no icon in standard-li on level 02 /////////////////
+                            li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                          }
+                
+                          &.activeandsub{
+                            background-color: $color_mobile_nav_background_active;
+                            a{
+                              @include sprite_icons(right, -742px, no-repeat);
+                            }
+  // no icon in standard-li on level 02 /////////////////
+                            li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                          }
+                
+                          &.current{
+                            background-color: $color_mobile_nav_background_current;
+                            a{
+                              span{
+                                @include sprite_icons($bu*1.5 *3.0, -642px, no-repeat);
+                              }
+                            }
+  // no icon in standard-li on level 02 /////////////////
+                            li{ a{ background-image: none; } }
+  ///////////////////////////////////////////////////////
+                          }
+                        }// li 4
+                      }// ul 4
+                    }// li 3
+                  }// ul 3
+                }// li 2
+              }// ul 2
+            }// li 1
+          }// ul 1
+        }//.nav_main_ul_wrap
+      }//.nav_main
+      
+      .nav_main.nav_main_open{
+        .nav_main_ul_wrap{
+          @include transition-timing-function(ease-out);
+          @include transition-property(height);
+          @include transition-duration(0.5s);
+          ul{
+            
+          }
+        }
+        
+        .nav_main_togglebutton_bottom{
+          display:block;
+        }
+      }//.nav_main.nav_main_open
+      
+
+    }// .header_innerwrap
+  }// .header
+
+
+
+// M A I N   ( TEASER / SUBMENU /  )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .main{
+    .main_innerwrap{
+
+
+// T E A S E R   ( ROOTLINE, LANGUAGE, DATE )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .teaser{
+        .rootline, .aktDatum{
+          float: none;
+        }
+        .rootline{
+          display: block;
+          padding: $fs/2.0 0;
+        }
+        .langMenu{
+          margin-left: 0;
+        }
+        .aktDatum{
+        }
+      }
+
+
+// T A B L E S   ( CONTENT TABLE )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      .contenttable{
+        zoom: 75%;
+        line-height: $fs*$lhf*1.0;
+      }
+
+
+// M A I L F O R M S  &  I N P U T S
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+      input, textarea, select {
+        display: block;
+        height: auto;
+      }
+
+      input[type = radio], input[type = checkbox], 
+      input.radio, input.checkbox {
+        background-image: none;
+        min-width: 0;
+      }
+
+
+// LOGIN ( #TX-FELOGIN-PI1 )
+// ###########################################################################################################################
+      .tx-felogin-pi1{
+        width: auto;
+        form{
+          @include form_standard($login_01);
+          fieldset{
+            div{
+              padding: ($fs*0.5) 0 ($fs*1.0) 0;
+              label{
+                width: auto;
+                margin: 0;
+              }
+            }// div
+          }// fieldset
+        }// form
+      }// .tx-felogin-pi1
+
+
+// SEARCH ( #INDEXEDSEARCH )
+// ###########################################################################################################################
+      .tx-indexedsearch{
+        width: auto;
+        form{
+          @include form_standard($search_01);
+          fieldset{
+            div{
+              padding: ($fs*0.5) 0 ($fs*1.0) 0;
+              label{
+                width: auto;
+                margin: 0;
+              }
+            }// div
+          }// fieldset
+        }// form
+
+        .tx-indexedsearch-res{
+          .tx-indexedsearch-res{
+            .title{
+              display: block;
+              float: left;
+              width: 80%;
+            }// .title
+          }// .tx-indexedsearch-res
+        }// .tx-indexedsearch-res
+      }// .tx-indexedsearch
+
+
+// M A I L F O R M   ( #MAILFORM )
+// ###########################################################################################################################
+
+      #mailform{
+        @include form_standard($mailform_01);
+        width: auto;
+        
+        fieldset{
+          div.csc-mailform-field{
+            padding: ($fs*0.5) 0 ($fs*1.0) 0;
+
+
+// CHECKBOX ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+            input.csc-mailform-check{
+              width: auto;
+              min-width: 0;
+              display: inline-block;
+              vertical-align: middle;
+            }
+    
+// RADIO BUTTON ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+            span.csc-mailform-radio{
+              width: 100%;
+              margin-left: 0;
+              margin-top: 0;
+              
+              label{
+                position: relative;
+                margin-left: 25px;// radio button
+                margin-top: -$fs*1.6;
+                display: block;
+              }
+              
+              input.csc-mailform-radio{
+              }
+            }// span.csc-mailform-radio
+    
+// INPUT FILE ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+            input[type = file], input.file{
+              width: auto;
+              min-width: 230px;
+            }
+    
+// INPUT SUBMIT ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+            input.csc-mailform-submit{
+              width: auto;
+              min-width: 0;
+            }
+          }// div
+        }// fieldset
+      }//#mailform
+
+    }// .main_innerwrap
+  }// .main
+
+
+
+// F O O T E R   ( FOOTER ELEMENTS  )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  .footer{
+    .footer_innerwrap{
+      padding-top: $bu*1.0;
+      .versionswitcher{
+      }
+  
+      .adresse{
+      }
+
+      .copyright{
+      }
+    }// .footer_innerwrap
+  }// .footer
+
+  // lib.mobileheader
+  @include mobileheader();
+
+  //siteby
+  @include siteby;
+  
+
+}// body.mobile
+
+
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################

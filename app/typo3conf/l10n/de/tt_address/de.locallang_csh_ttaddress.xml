@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index=".description">Eingebaute Adressdatenbank</label>
+      <label index=".details">Kann zum Aufbau von Adresslisten unter TYPO3 verwendet werden. Tatsächlich ist Standard-TypoScript-Quelltext vorhanden, mit dem jede in der Liste befindliche Person ihre Adressinformationen selbst online verwalten kann. Diese Tabelle wird zudem vom Direct-Mail-System standardmäßig zur Verwaltung der Abonnements von Newslettern verwendet.</label>
+    </languageKey>
+  </data>
+</T3locallangExt>

@@ -1,0 +1,3076 @@
+@import "lib/_aio_t3_div";
+@import "_print";
+
+
+
+//mixin outline: outine block level elements
+@mixin outline(){
+  @if $outline == true {
+    outline: 1px solid blue;
+  } @else {
+    //render nothing
+  } 
+}
+//developer mixins end
+
+
+
+// R E S E T  -  M I X I N S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+@mixin li-reset{
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+@mixin ul-reset{
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+@mixin dl-reset {
+  margin-bottom: 0;
+  dt, dd {
+    margin: 0 0 0 0;
+  }
+} 
+
+
+
+
+// T R A N S I T I O N S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+@mixin animation-defaults{
+  @include transition-duration($transition-duration);
+  @include transition-timing-function($transition-function);
+  a{
+    text-decoration:none;
+  }
+}
+
+
+@mixin animation_all{
+  @include animation-defaults;
+  @include transition-property(all);
+}
+
+@mixin animation_background{
+  @include animation-defaults;
+  @include transition-property(background);
+}
+
+@mixin animation_border{
+  @include animation-defaults;
+  @include transition-property(border);
+}
+
+@mixin animation_textlink{
+  @include animation-defaults;
+  @include transition-property(color);
+  text-decoration:none;
+}
+
+
+// CONTAINER ELEMENTS  ( E.G. NEWS-LIST )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin animation_block_background{
+  @include animation-defaults;
+  @include transition-property(background);
+  a{
+    &:hover{
+      color:$color_main_link;
+    }
+  }
+}
+
+@mixin animation_block_link{
+  @include animation-defaults;
+  @include transition-property(color);
+  &:hover{
+    a{
+      color:$color_main_link_hover;
+    }
+  }
+}
+
+
+
+
+// F O N T S   ( E M B E D E D )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// Hello Web-Fonts :-)
+// Fonts-API
+// Simply use 
+// @include font; 
+// in your SCSS - that's it :-)
+// fonts generated with http://www.fontsquirrel.com/fontface/generator
+// font-embedding how-to: http://projekte.anorak.io.dyndns.info/projects/anorakio-typo3/wiki/FontEmbedding
+@mixin font-face($fontfile, $name, $font-weight, $font-style){
+  @font-face {
+   font-family: $name;
+   src: url('#{$fontfile}.eot?') format('eot'),
+        url('#{$fontfile}.woff') format('woff'),
+        url('#{$fontfile}.ttf') format('truetype'),
+        url('#{$fontfile}.svg#webfont6LOZSOGi') format('svg');
+   font-weight: $font-weight;
+   font-style: $font-style; 
+  }
+}
+@include font-face('/fileadmin/app/fonts/webfontkit/#{$font_01}', 'embeded-font_01', 'normal', 'normal');
+@include font-face('/fileadmin/app/fonts/webfontkit/#{$font_02}', 'embeded-font_02', 'normal', 'normal');
+
+// font embedding end
+
+
+// FONT-LIST
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin webfont_01($weight:normal, $style:normal, $transform:none){
+  font-family: #{$webfont_01};
+  font-weight: $weight;
+  font-style: $style;
+  text-transform: $transform;
+}
+
+@mixin webfont_02($weight:normal, $style:normal, $transform:none){
+  font-family: #{$webfont_02};
+  font-weight: $weight;
+  font-style: $style;
+  text-transform: $transform;
+}
+
+@mixin font_01($weight:normal, $style:normal, $transform:none){
+  font-family: embeded-font_01, Verdana, Arial, sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+  text-transform: $transform;
+}
+
+@mixin font_02($weight:normal, $style:normal, $transform:none){
+  font-family: embeded-font_02, Helvetica, sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+  text-transform: $transform;
+}
+
+
+
+
+// S E P E R A T O R S   /   B O R D E R S   /   I M A G E S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+@mixin seperator($type, $color){
+  border-#{$type}: $seperator-style $seperator-width #{$color};
+}
+
+@mixin border($type, $color){
+  border-#{$type}: $border-style $border-width #{$color};
+}
+
+@mixin border-all($color){
+  border: $border-style $border-width #{$color};
+}
+
+@mixin image_orientation($orientation){
+  float: #{$orientation};
+  @if $orientation == left {
+    margin: 0 $bu*2.0 $bu*2.0 0;}
+  @else if $orientation == right {
+    margin: 0 0 $bu*2.0 $bu*2.0;} 
+}
+
+@mixin image_border($padding:$image_border_padding){
+  padding: $padding; 
+  background-color: $color_main_image_background; 
+  @include border-all($color_main_border);
+}
+
+
+
+
+// T E X T  /  L I N K S  /  T A B L E S  /  L I S T S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// FONT-SIZES
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin font-size_header{ // min 11px
+  @if $fs*$ff_header < 11px {
+    font-size: 11px;
+    line-height: 11px*$lhf;
+  } @else {
+    font-size: $fs*$ff_header;
+    line-height: $fs*$ff_header*$lhf;
+  }
+}
+
+@mixin font-size_footer{ // min 11px
+  @if $fs*$ff_footer < 11px {
+    font-size: 11px;
+    line-height: 11px*$lhf;
+  } @else {
+    font-size: $fs*$ff_footer;
+    line-height: $fs*$ff_footer*$lhf;
+  }
+}
+
+@mixin font-size_nav_main{
+  font-size: $fs*$ff_nav_main;
+  line-height: $fs*$ff_nav_main*$lhf;
+}
+
+@mixin font-size_small{ // min 11px
+  @if $fs*$ff_small < 11px {
+    font-size: 11px;
+    line-height: 11px*$lhf;
+  } @else {
+    font-size: $fs*$ff_small;
+    line-height: $fs*$ff_small*$lhf;
+  }
+}
+
+
+// TEXT FORMAT FORMS ( INPUT, TEXT-AREA ETC. )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin textformat_form{
+  @include webfont_01;
+  font-size: $fs;
+  
+  input, textarea {
+    color: $color_input_text;
+  }
+
+}// TEXTFORMAT_FORM
+
+
+// TEXT FORMAT
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin p{
+  padding-bottom: $fs;
+}
+
+@mixin h1{
+  font-size:      $fs*$h1;
+  line-height:    $fs*$h1*$lhf;
+  margin:         $fs*$h1 0;
+  color:          $color_main_h1;
+  @include font_01;
+  @include seperator(bottom, $color_main_seperator);
+}
+
+@mixin h2{
+  font-size:      $fs*$h2;
+  line-height:    $fs*$h2*$lhf;
+  margin:         $fs*$h2 0;
+  color:          $color_main_h2;
+  @include font_02;
+}
+
+@mixin h3{
+  font-size:      $fs*$h3;
+  line-height:    $fs*$h3*$lhf;
+  margin:         $fs*$h3 0;
+  color:          $color_main_h3;
+  @include font_02;
+}
+
+@mixin h4{
+  font-size:      $fs*$h4;
+  line-height:    $fs*$h4*$lhf;
+  margin:         $fs*$h4 0;
+  color:          $color_main_h4;
+  @include font_02(normal, normal, uppercase);
+}
+
+@mixin h5{
+  font-size:      $fs*$h5;
+  line-height:    $fs*$h5*$lhf;
+  margin:         $fs*$h5 0;
+  color:          $color_main_h5;
+}
+
+@mixin h6{
+  font-size:      $fs*$h6;
+  line-height:    $fs*$h6*$lhf;
+  margin:         $fs*$h6 0;
+  color:          $color_main_h6;
+  font-weight:    bold;
+}
+
+
+// LINKS: ICON POSITION
+// ###########################################################################################################################
+
+@mixin link-with-icon-style_left{
+  padding: 0 0 0 $bu*2.0;
+}
+
+@mixin link-with-icon-style_right{
+  padding: 0 $bu*2.0 0 0;
+}
+
+
+// TEXT FORMAT / BODY (STANDARD FONT)
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin textformat_body{
+  @include webfont_01;
+  font-size: $fs;
+  line-height: $fs*$lhf;
+  color: $color_body_text;
+  
+  a{
+    color: $color_body_link;
+    &:hover{
+      color: $color_body_link_hover;
+    }
+    &:focus,&:active,&:visited{
+      color: $color_body_link;
+    }
+  }
+  ul{
+    .current, .currentandsub{
+      a{
+        cursor: default;
+      }
+      li{
+        a{
+          cursor: pointer;
+        }
+      }// li
+    }// li.current, li. currentandsub
+  }// ul
+}// mixin textformat_body
+
+
+
+// TEXT FORMAT / MAIN
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// TEXT FORMAT / MAIN ( P, H1, H2, H3, H4, H5, H6 )
+// ###########################################################################################################################
+
+@mixin textformat_main{
+  color: $color_main_text;
+  
+  p{
+    @include p;
+  }
+  
+  h1{
+    @include h1;
+  }
+  
+  h2{
+    @include h2;
+  }
+  
+  h3{
+    @include h3;
+  }
+  
+  h4{
+    @include h4;
+  }
+  
+  h5{
+    @include h5;
+  }
+  
+  h6{
+    @include h6;
+  }
+
+
+// TEXT FORMAT MAIN ( LINKS )
+// ###########################################################################################################################
+
+  a {
+    @if $animation_textlink == false{ // animated (true) or underlined (false) text links >> _global.scss
+      color:$color_main_link;
+      text-decoration:underline;
+    } @else {
+      @include animation_all;
+      text-decoration:none;
+    }
+      
+      &:link,&:focus,&:active,&:visited{
+        color:$color_main_link;
+      }
+      &:hover{
+        color:$color_main_link_hover;
+        text-decoration:none;
+      }
+  }
+
+  a.linkbutton:link, a.linkbutton:visited, a.linkbutton {
+    padding: ($fs*0.25) ($fs*0.5);
+    background: $color_button_background;
+    @include border-all($color_input_border);
+    @include border-radius(#{$border-radius_small});
+    @include animation_all;
+    color: $color_button_text;
+    border-color: $color_button_border;
+    
+  &:hover{
+    color: $color_button_background;
+    background: $color_button_text;
+  }// .button:hover
+  }// .linkbutton
+
+  a.internal-link{
+    &:hover{
+    }
+    &:focus,&:active,&:visited{
+    }
+  }
+  
+  //a.external-link, a.external-link-new-window, a[href^="http"]{
+  a.external-link, a.external-link-new-window{
+    @include link-with-icon-style_left;
+    @include sprite_icons(left, -402px - 50px, no-repeat);
+  
+    &:hover{
+      @include sprite_icons(left, -402px - 25px, no-repeat);
+    }
+    &:focus,&:active,&:visited{
+    }
+  }
+  
+  //a.mail, a[href*="mailto:"]{
+  a.mail{
+    @include link-with-icon-style_left;
+    @include sprite_icons(left, -202px - 50px, no-repeat);
+  
+    &:hover{
+      @include sprite_icons(left, -202px - 25px, no-repeat);
+    }
+    &:focus,&:active,&:visited{
+    }
+  }
+  
+  //a.download, a[href*="/fileadmin/"], a[href*="/uploads/"], a[href*="/typo3temp/"] {
+  a.download{
+    @include link-with-icon-style_left;
+    @include sprite_icons(left, -302px - 50px, no-repeat);
+  
+    &:hover{
+      @include sprite_icons(left, -302px - 25px, no-repeat);
+    }
+    &:focus,&:active,&:visited{
+    }
+  }// LINKS
+
+
+// TEXT FORMAT MAIN ( TABLES )
+// ###########################################################################################################################
+
+  .contenttable {
+    width: 100%; 
+    margin: 0 0 $fs*2 0; 
+    border-collapse: collapse; 
+    empty-cells: show;
+    @include seperator(bottom, $color_main_seperator);
+    
+    caption {
+      @include h5; 
+      text-align: left; 
+      margin-bottom: $fs/2;
+    }
+    
+    thead{
+      tr{
+        th{
+          @include border(bottom, $color_main_border);
+          border-top: none;
+          @include h6;
+          padding: $fs/2;
+          border-right: none;
+        }
+      }
+      
+      tr.tr-even{
+        background-color: transparent;
+      }
+      
+      tr.tr-odd{
+      } 
+    }
+  
+    tr{
+      background: none;
+      padding: $fs/4 0;
+      
+      td {
+        padding: $fs/2; 
+        @include seperator(top, $color_main_seperator);
+      }
+      
+      // if THeader is left col
+      th{
+        @include h6;
+        padding: $fs/2;
+        @include border(right, $color_main_border);
+        @include seperator(top, $color_main_seperator);
+      }
+    }
+    
+    tr.tr-odd {
+    }
+    
+    tr.tr-even {
+      background-color:$color_main_table_background;
+    }
+  }// TABLES
+
+
+// TEXT FORMAT MAIN ( CSC-UPLOADS )
+// ###########################################################################################################################
+
+  .csc-uploads {
+    width: 100%; 
+    margin: 0 0 $fs*2 0; 
+    border-collapse: collapse; 
+    empty-cells: show;
+    @include seperator(bottom, $color_main_seperator);
+  
+    tr{
+      background: none;
+      padding: $fs/4 0;
+      
+      td {
+        padding: $fs/2; 
+        @include seperator(top, $color_main_seperator);
+      }
+      td.csc-uploads-fileSize{
+        white-space: nowrap;
+        @include border(left, $color_main_border);
+      }
+      td.csc-uploads-fileName{
+        .csc-uploads-description{
+          padding-bottom: 0;
+        }
+      }
+    }
+    
+    tr.tr-odd {
+    }
+    
+    tr.tr-even {
+      background-color:$color_main_table_background;
+    }
+  }// TABLES
+
+
+// TEXT FORMAT MAIN ( LISTS, DEFINITIONS & MENUS )
+// ###########################################################################################################################
+  
+  
+// UNORDERED LIST
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  ul, ol, dl {
+    margin: 0;
+  }
+  
+  li {
+  }
+  
+  ul{
+    margin: 0 0 $fs*2 0;
+    padding: 0;
+    
+    li{
+      margin: 0 0 $fs*0.5 0;
+      padding: 0 0 0 $fs*1.0;
+      @include sprite_icons(-275px, -794px, no-repeat);
+      list-style: none;
+  
+      ul{
+        margin: $fs*0.3 0;
+  
+        li{
+          @include sprite_icons(-250px, -819px, no-repeat);
+        
+          ul{
+            margin: $fs*0.5 0;
+    
+            li{
+              @include sprite_icons(-225px, -844px, no-repeat);
+  
+              ul{
+                margin: $fs*0.7 0;
+        
+                li{
+                  margin: 0;
+                }// li 4
+              }// ul 4
+            }// li 3
+          }// ul 3
+        }// li 2
+      }// ul 2
+    }// li 1
+  }// ul 1
+  
+// ORDERED LIST
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  ol{
+    margin: 0 0 $fs*2.0 0;
+    list-style: decimal;
+    
+    li{
+      margin: 0 0 $fs*0.5 $fs*1.8;
+      padding: 0;
+     
+      ol{
+        margin: $fs*0.3 0;
+        
+        li{
+          margin: 0 0 $fs*0.5 $fs*0.7;
+        }// li 2
+      }// ol 2
+    }// li 1
+
+    ul{
+      margin: 0 0 $fs*2 0;
+      padding: 0;
+  
+      li{
+        margin: 0 0 $fs*0.5 $fs*2.0;
+        padding: 0 0 0 $fs*1.0;
+        @include sprite_icons(-250px, -519px, no-repeat);
+        list-style: none;
+      }// li 2
+    }// ul 2
+  }// ol 1
+  
+// DEFINITION TERMS
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  dl{
+    margin: 0 0 $fs*2.0 0;
+    
+    dt {
+      @include h6;
+    }
+    dd {
+      margin: 0 0 $fs*0.5 $fs*2;
+    }
+  }// dl
+  
+  
+// MENU ( CSC-MENU )
+// ---------------------------------------------------------------------------------------------------------------------------
+  
+  .csc-menu{//ul.csc-menu
+    @include ul-reset;
+    padding: $fs $bu 0 $bu;
+    @include border-all($color_main_border);
+    @include border-radius(#{$border-radius_big});
+    background: $color_main_background_highlight;
+    overflow: hidden;
+    text-align: center;
+    
+    li{
+      @include li-reset;
+      display: inline-block;
+      
+      a, a:link, a:visited{
+        @include seperator(left, $color_main_seperator);
+        display: block;
+        width: auto;
+        padding: 0 $fs*1.0;
+        margin-bottom: $fs*1.0;
+        color: $color_main_background_highlight_link;
+        font-weight: bold;
+      &:hover{
+        color: $color_main_background_highlight_link_hover;
+      }
+      }// a
+    
+    &:first-child{
+      a{
+        border: none;
+        padding-left: 0;
+      }
+    }// li:first-child
+    &:last-child{
+      a{
+        padding-right: 0;
+      }
+    }// li:last-child
+    }// li
+  }// ul.csc-menu
+}// textformat_main
+
+
+// TEXT FORMAT HEADER
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin textformat_header{
+  @include font-size_header;
+  color: $color_header_text;
+  
+  p{
+    padding-bottom: $fs*$ff_header;
+  }
+
+  a {
+    @if $animation_textlink == false{ // animated (true) or underlined (false) text links >> _global.scss
+      color: $color_header_link;
+      text-decoration: underline;
+    } @else {
+      @include animation_textlink;
+    }
+      
+      &:link,&:focus,&:active,&:visited{
+        color:$color_header_link;
+      }
+      &:hover{
+        color:$color_header_link_hover;
+        text-decoration:none;
+      }
+  }
+}// TEXTFORMAT_HEADER
+
+
+// TEXT FORMAT FOOTER
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin textformat_footer{
+  @include font-size_footer;
+  color: $color_footer_text;
+  
+  p{
+    padding-bottom: $fs*$ff_footer;
+  }
+
+  a {
+    @if $animation_textlink == false{ // animated (true) or underlined (false) text links >> _global.scss
+      color:$color_footer_link;
+      text-decoration:underline;
+    } @else {
+      @include animation_textlink;
+    }
+      
+      &:link,&:focus,&:active,&:visited{
+        color:$color_footer_link;
+      }
+      &:hover{
+        color:$color_footer_link_hover;
+        text-decoration:none;
+      }
+  }
+}// TEXTFORMAT_FOOTER
+
+
+
+
+// L A Y O U T
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// PAGEBLOCK USED IN .header, .main, .footer
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin pageblock(){
+  width: $pagewidth;
+
+  @if $pagealignment == center{ // set in _global.scss >> T E M P L A T E
+    margin: 0 auto;}
+  @else if $pagealignment == left{
+    margin: 0;}
+  
+  padding: 0 $pagepadding;
+  overflow: hidden;
+}
+
+
+// PAGE TEMPLATES  ( STANDARDSEITEN )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin cols(){
+  @include outline;
+  float: left;
+  position: relative;
+}
+
+
+@mixin page_templates(){
+
+
+// 1 COLUMN  ( COL2 )
+// ###########################################################################################################################
+
+  body.standardseite_1col{
+    .col2{
+      width: $col2width_1col;
+      margin-left: 0;
+    }
+  }
+
+
+// 2 COLUMNS  ( COL1 / COL2 )
+// ###########################################################################################################################
+
+  body.standardseite_2col{
+    .col2{
+      width:$col2width_2col;   
+      margin-left: $pagelayout-colspace;
+    }
+  }
+
+
+// 3 COLUMNS  ( COL1 / COL2 / COL3 ) !!! STANDARD !!!
+// ###########################################################################################################################
+
+  .col1 {
+    padding-right: $pagelayout-colspace;
+    width: $col1width - $pagelayout-colspace;
+    @include cols;
+    
+    .col1_content {
+      min-height: 1px;
+    }
+  }
+  
+  .col2 {
+    width: $col2width;
+    @include cols;
+    margin-left: $pagelayout-colspace;
+    
+    .col2_content {
+      min-height: 1px;
+    }
+  }
+  
+  .col3 {
+    width: $col3width;
+    @include cols;
+    margin-left: $pagelayout-colspace;
+    
+    .col3_content {
+  
+    }
+  }
+
+
+// SUB COLUMNS  ( YAML )
+// ###########################################################################################################################
+
+  //db_yaml extension subcolumns
+  .subcolumns{
+    width: auto;
+    margin: 0;
+  }
+  
+  .c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l {
+    float: left;
+  }
+  
+  .c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r {
+    float: right; margin-left: 0;
+  }
+  
+  .c25l, .c25r { width: 25% }
+  .c33l, .c33r { width: 33.333% }
+  .c50l, .c50r { width: 50% }
+  .c66l, .c66r { width: 66.666% }
+  .c75l, .c75r { width: 75% }
+  
+  // MIDDLE COLUMN
+  // ---------------------------------------------------------------------------------------------------------------------------
+  .subc{
+    padding: 0 $subcolspacing/2 0 $subcolspacing/2;
+  }
+  
+  // LEFT COLUMN
+  // ---------------------------------------------------------------------------------------------------------------------------
+  .subcl{
+    padding: 0 $subcolspacing 0 0;
+  }
+  
+  // RIGHT COLUMN - patched with $subcolspacing to get correct alignment via CSS - overruled in IE7patch
+  // ---------------------------------------------------------------------------------------------------------------------------
+  .subcr{
+    padding: 0 0 0 $subcolspacing;
+  }
+  
+  // subcolumn 33-33-33 patch
+  .subcolumns-33-33-33{
+    .c33r .subcr{
+      margin-left:($subcolspacing/10)*3;
+    }
+    .c33l .subc{
+      margin-left:($subcolspacing/10)*2;
+    }
+  }
+  
+}// mixin page_templates
+
+
+// PAGE LAYOUT
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin layout(){
+
+  html {
+    // Prevent Firefox Scrollbar Jump - http://davidwalsh.name/css-enhancements-user-experience
+    overflow-y:scroll;
+  }//html
+
+  body {
+    background: $color_body_background;
+    min-width: $pagewidth + $pagepadding*2;
+  }//body
+  
+// PAGE / PAGE MARGINS
+// ###########################################################################################################################
+
+  .page_margins {
+    position:relative;
+    @include outline;
+    @include pie-clearfix;
+  }
+  
+  .page {
+    //not used at all //extra wrapper for additional safety - could be removed
+  }
+
+  
+// HEADER / MAIN / FOOTER
+// ###########################################################################################################################
+  
+// HEADER
+// ---------------------------------------------------------------------------------------------------------------------------
+  .header {
+    @include outline;
+    @include pie-clearfix;
+    
+    @if $pagebackground == browser{
+      background: $color_header_background;}
+    @else {}
+      
+    .header_innerwrap{
+
+      @if $pagebackground == page{
+        background: $color_header_background;}
+      @else {}
+    }
+  }//.header
+  
+// MAIN
+// ---------------------------------------------------------------------------------------------------------------------------
+  .main {
+    @include outline;
+    @include pie-clearfix;
+    
+    @if $pagebackground == browser{
+      background: $color_main_background;}
+    @else {}
+      
+    .main_innerwrap{
+      @include pie-clearfix;
+
+      @if $pagebackground == page{
+        //background: $color_main_background;
+        }
+      @else {}
+    }
+    
+  }//.main
+  
+// FOOTER
+// ---------------------------------------------------------------------------------------------------------------------------
+  .footer {
+    @include outline;
+    @include pie-clearfix;
+    @include textformat_footer;
+    
+    @if $pagebackground == browser{
+      background: $color_footer_background;}
+    @else {}
+      
+    .footer_innerwrap{
+
+      @if $pagebackground == page{
+        background: $color_footer_background;}
+      @else {}
+    }
+  }//.footer
+}// mixin layout
+
+
+// LOGO
+// ###########################################################################################################################
+
+@mixin logolink_wrap{
+  width: $width_logo;
+  height: $height_logo;
+  @include outline;
+  
+  .logolink_automargin{
+
+    .logolink{
+      display: block;
+      width: $width_logo;
+      height: $height_logo;
+    
+      span{
+        display: none;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .print_logo{
+      display:none;
+    }
+  }//.logolink_automargin
+}// mixin logolink_wrap
+
+
+// TEASER  ( IN MAIN ON TOP )
+// ###########################################################################################################################
+
+@mixin teaser {
+  @include outline;
+  @include pie-clearfix;
+  div {
+    float: left;
+    width: auto;
+  }
+  
+// ROOTLINE  ( BREADCRUMB IN TEASER )
+// ---------------------------------------------------------------------------------------------------------------------------
+
+  .rootline {
+    @include outline;
+    @include font-size_header;
+    a {
+      &:hover{
+      }
+    }
+  }
+
+// LANGUAGE MENU  ( IN TEASER )
+// ---------------------------------------------------------------------------------------------------------------------------
+
+  .langMenu {
+    @include outline;
+    float: right;
+    margin-left:$bu;
+
+    a{
+      &:hover{
+        background: transparent;
+        img{
+          @include border-all($color_main_border_hover);
+        }
+      }
+    }
+    
+    img { // flags
+      @include border-all($color_main_border);
+      @include animation_border;
+      display: block;
+      padding: 1px;
+    }
+    
+    .tx-srlanguagemenu-pi1{
+      .CUR, .INACT, .NO{
+        margin-left: $fs*0.25;
+        &:first-child{
+          margin-left:0;
+        }
+      }
+
+      .CUR{
+        img{ // current arrow
+          display: none;
+          float: left;
+          padding: $bu*0.3 $fs*0.25 0 0;
+          border: none;
+        }
+        img.tx-srlanguagemenu-pi1-flag { // current flag
+          display: block;
+          width: auto;
+          height: auto;
+          padding: 1px;
+          @include border-all($color_main_link);
+        }
+      } 
+      form#sr_language_menu_form fieldset legend {
+        display: none;
+      }
+      
+      form#sr_language_menu_form fieldset label {
+        display: none;
+      }
+    }         
+  }
+
+// DATE  ( IN TEASER )
+// ---------------------------------------------------------------------------------------------------------------------------
+
+  .aktDatum {
+    @include outline;
+    float: right;
+    @include font-size_header;
+  }
+}// mixin teaser
+
+  
+// FOOTER ELEMENTS ( VERSION SWITCHER / ADRESS / SITE BY / COPYRIGHT )
+// ###########################################################################################################################
+
+@mixin footer_elements{
+  .versionswitcher{
+    @include outline;
+    @include textformat_footer;
+    float:right;
+    a {
+      span {
+      } 
+    }
+  }
+
+  .footer_1, .footer_2, .footer_3{
+    @include outline;
+    float: left;
+    width: ($pagewidth - $border-width*2)/3 - ($bu*3.0*2) - 1px;
+    padding: 0 ($bu*3.0);
+    @include border(right, $color_footer_border);
+    border-width: 1px;
+    min-height: $fs*4.0;
+
+    p{
+      padding-bottom: 0;
+    }
+  }
+  
+  .footer_3{
+    border: none;
+  }
+
+  .gototop{
+  }
+
+
+  .copyright{
+    @include outline;
+  }
+}// mixin footer_elements
+
+@mixin siteby{
+  .siteby{
+    @include outline;
+    position: absolute;
+    display: block;
+    margin-top: $bu*5.0;
+    padding-bottom: $bu*1.0;
+    width: $pagewidth + 20px;
+    @include font-size_small;
+    color: $color_11;
+    text-decoration: none;
+    text-align: right;
+    &:hover{
+      color: $color_11;
+    }
+    &:visited{
+      color: $color_11;
+    }
+  }
+}
+
+
+
+// T - M E N U  /  N A V I G A T I O N S   ( NAVIGATION - TMENU )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// mixins that apply directly to TypoScript-Objects
+// vertical/horizontal nav-list class
+@mixin tmenu{
+  @include outline;
+  overflow:hidden;
+
+  ul{
+    @include ul-reset;
+  
+    li{
+      @include li-reset;    
+      a{
+        display: block;
+        overflow: hidden;
+        text-decoration: none;
+        
+        span{
+          margin: 0;
+          padding: 0;
+          display: block;
+          text-decoration: none;
+        }
+        &:hover{
+        }
+      }
+      //second level
+      ul{
+        @include ul-reset;
+        li{
+          @include li-reset;
+          
+          //third level
+          ul{
+            @include ul-reset;
+            li{
+              @include li-reset;
+            }
+          }//ul
+        }
+      }//ul
+    }//li
+    
+    //current page selected
+    .current{
+      a{
+      }
+    }
+    .currentandsub{
+      //removes double borders at bottom
+      border-bottom: none;
+    }
+        
+    //only active in the navigation tree, not the current page (e.g. for highlighting the tree path in the navigation)
+    .active{
+      a{
+      }
+    }
+    .activeandsub{
+      a{
+      }
+    }
+    .hassub{
+      a{
+
+      }
+    }
+  }//ul
+}//.tmenu
+
+
+
+
+// S P E C I A L   E L E M E N T S   ( TT-NEWS, CODA-SLIDER, ... )
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+// I M A G E / T E X T   ( CSC-TEXTPIC )
+// ###########################################################################################################################
+// ###########################################################################################################################
+ 
+// deleted in setup and copied to here, to make it easier to edit
+// default styles for extension "tx_cssstyledcontent"
+
+@mixin textpic {
+
+  .csc-textpic{
+    @include pie-clearfix;
+    overflow: hidden;
+
+
+// CAPTION  ( CSC-TEXTPIC )
+// ###########################################################################################################################
+
+    .csc-textpic-caption {
+      @include font-size_small;
+      margin-bottom: $fs*0.50;
+    }
+    .csc-textpic-caption-c .csc-textpic-caption {
+      text-align: center;
+    }
+    .csc-textpic-caption-r .csc-textpic-caption {
+      text-align: right;
+    }
+    .csc-textpic-caption-l .csc-textpic-caption {
+      text-align: left;
+    }
+    
+    .csc-textpic-imagecolumn {// Needed for noRows setting
+      float: left; 
+      display: inline;
+    }
+    
+
+// BORDER  ( CSC-TEXTPIC )
+// ###########################################################################################################################
+
+    &.csc-textpic-border{
+      img{
+      }
+    }
+    
+
+// IMAGE WRAP  ( CSC-TEXTPIC )
+// ###########################################################################################################################
+
+    .csc-textpic-imagewrap {
+      overflow: hidden;
+      
+      .csc-textpic-image-single-widthwrap{
+        margin-bottom: $fs*0.50;
+      }
+
+      .csc-textpic-image{ // DL: This will place the images side by side
+        float: left;
+        @include dl-reset;
+        margin-bottom: $fs*0.50; // Space below each image (also in-between rows)
+        dt{
+          float: none;
+          display: inline;
+        }// dt
+        dd{
+          float: none;
+          img{
+            border: none;// FE-Editing Icons
+          }
+        }// dd
+      }// dl.csc-textpic-image
+
+      .csc-textpic-image {
+        float: left; // DIV: This will place the images side by side
+        margin-bottom: $fs*0.5;
+      }// .csc-textpic-image
+    }// .csc-textpic-imagewrap
+  }// .csc-textpic
+  
+    
+
+// MARGIN AROUND IMAGES  ( CSC-TEXTPIC )
+// ###########################################################################################################################
+
+// Pictures on left, add margin on right
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-left .csc-textpic-imagewrap .csc-textpic-image,
+  .csc-textpic-intext-left-nowrap .csc-textpic-imagewrap .csc-textpic-image,
+  .csc-textpic-intext-left .csc-textpic-imagewrap .csc-textpic-image {
+    display: inline; // IE fix for double-margin bug
+    margin-right: $csc-textpic-colspace;
+  }
+// Pictures on right, add margin on left
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-right .csc-textpic-imagewrap .csc-textpic-image,
+  .csc-textpic-intext-right-nowrap .csc-textpic-imagewrap .csc-textpic-image,
+  .csc-textpic-intext-right .csc-textpic-imagewrap .csc-textpic-image {
+    display: inline; // IE fix for double-margin bug
+    margin-left: $csc-textpic-colspace;
+  }
+// Pictures centered, add margin on left
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-center .csc-textpic-imagewrap .csc-textpic-image {
+    display:inline; // IE fix for double-margin bug
+    margin-left: $csc-textpic-colspace;
+  }
+
+// No margins around the whole image-block
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-firstcol {
+    margin-left: 0 !important;
+  }
+  .csc-textpic-lastcol {
+    margin-right: 0 !important;
+  }
+  
+// Add margin from image-block to text (in case of "Text w/ images")
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-intext-left .csc-textpic-imagewrap,
+  .csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+    margin-right: $csc-textpic-colspace;
+  }
+  .csc-textpic-intext-right .csc-textpic-imagewrap,
+  .csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+    margin-left: $csc-textpic-colspace;
+  }
+    
+
+// IMAGE POSITIONING  ( CSC-TEXTPIC )
+// ###########################################################################################################################
+
+// Above
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-above .csc-textpic-text {
+    clear: both;
+  }
+
+// Center (above or below)
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-center {
+    text-align: center; // IE-hack
+    .csc-textpic-text {
+      text-align: left; // Remove IE-hack
+    }
+    .csc-textpic-imagewrap {
+      margin: 0 auto;
+      .csc-textpic-image {
+        text-align: left; // Remove IE-hack
+      }
+    }
+  }
+  
+// Right (above or below)
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-right {
+    .csc-textpic-imagewrap {
+      float: right;
+    }
+    .csc-textpic-text {
+      clear: right;
+    }
+  }
+
+// Left (above or below)
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-left {
+    .csc-textpic-imagewrap {
+      float: left;
+    }
+    .csc-textpic-text {
+      clear: left;
+    }
+  }
+
+// Left (in text)
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-intext-left{
+    .csc-textpic-imagewrap {
+      float: left;
+    }
+    .csc-textpic-image-single-widthwrap{
+      margin-top: ($fs*$lhf - $fs) * 0.5; // text position up to image top
+    }
+  }
+
+// Right (in text)
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-intext-right{
+    .csc-textpic-imagewrap {
+      float: right;
+    }
+    .csc-textpic-image-single-widthwrap{
+      margin-top: ($fs*$lhf - $fs) * 0.5; // text position up to image top
+    }
+  }
+
+// Right (in text, no wrap around)
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-intext-right-nowrap{
+    .csc-textpic-imagewrap {
+      float: right;
+      clear: both;
+    }
+    .csc-textpic-image-single-widthwrap{
+      margin-top: ($fs*$lhf - $fs) * 0.5; // text position up to image top
+    }
+  }
+
+// Left (in text, no wrap around)
+// ---------------------------------------------------------------------------------------------------------------------------
+  .csc-textpic-intext-left-nowrap{
+    .csc-textpic-imagewrap {
+      float: left;
+      clear: both;
+    }
+    .csc-textpic-image-single-widthwrap{
+      margin-top: ($fs*$lhf - $fs) * 0.5; // text position up to image top
+    }
+  }
+    
+
+// IMAGE ROW  ( CSC-TEXTPIC )
+// ###########################################################################################################################
+
+  .csc-textpic-imagerow{
+    overflow: hidden;
+    margin-bottom: $fs*0.5;
+    
+  &.csc-textpic-imagerow-last{
+    margin-bottom: 0;
+  }
+
+    ul{
+      @include ul-reset;
+      li{
+        @include li-reset;
+      }
+    }
+  }// .csc-textpic-imagerow
+  
+  .csc-textpic-imagewrap{
+    margin-bottom: $fs*0.5;
+
+    ul{
+      @include ul-reset;
+      margin: 0 !important;
+      li{
+        @include li-reset;
+      }
+    }
+  }// .csc-textpic-imagewrap
+}// mixin csc-textpic
+
+
+// S I T E M A P   ( CSC-SITEMAP )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+@mixin sitemap{
+
+// level 01
+// ---------------------------------------------------------------------------------------------------------------------------
+  ul{
+    @include ul-reset;
+    li{
+      @include li-reset;
+      @include animation-all;
+      @include border-all($color_sitemap_level01_border);
+      @include border-radius($border-radius_big);
+      background-color: $color_sitemap_level01_background;
+      margin-bottom: $fs*1.0;
+      
+    &:hover{
+      background-color: $color_sitemap_level01_background_hover;
+      border-color: $color_sitemap_level01_border_hover;
+      a, a:link, a:visited{
+        color: $color_sitemap_level01_text_hover;
+      }
+      li{// level 02
+        a, a:link, a:visited{
+          color: $color_sitemap_level02_text;
+        }
+      }
+    }// li:hover
+
+      a{
+        display: block;
+        padding: ($fs*0.50) ($fs*0.75);
+        font-weight: bold;
+      }
+      a, a:link, a:visited{
+        color: $color_sitemap_level01_text;
+        &:hover{
+          color: $color_sitemap_level01_text_hover;
+        }
+      }
+
+// level 02
+// ---------------------------------------------------------------------------------------------------------------------------
+      ul{
+        @include border-bottom-radius($border-radius_small);
+        @include border-top-radius(0);
+        @include ul-reset;
+        li{
+          clear: left;
+          @include li-reset;
+          border: none;
+          @include border-radius(0);
+          @include seperator(top, $color_sitemap_level02_text);
+          background-color: $color_sitemap_level02_background;
+          
+          &:hover{
+            background-color: $color_sitemap_level02_background_hover;
+            border-color: $color_sitemap_level02_border;
+            li{// level 03
+              background-color: $color_sitemap_level03_background_hover;
+              li{// level 04
+                background-color: transparent;
+              }
+            }
+          }
+          
+          &:first-child{
+            border: none;
+          }
+          
+          &:last-child{
+            @include border-bottom-radius($border-radius_small);
+            @include border-top-radius(0);
+          }
+          
+          a{
+            padding: ($fs*0.5) ($fs*0.75);
+            font-size: $fs;
+            line-height: $fs*$lhf;
+            font-weight: normal;
+          }
+            a, a:link, a:visited{
+              color: $color_sitemap_level02_text;
+              &:hover{
+                color: $color_sitemap_level02_text_hover;
+              }
+            }
+
+// level 03
+// ---------------------------------------------------------------------------------------------------------------------------
+          ul{
+            @include ul-reset;
+            @include seperator(top, $color_sitemap_level03_border);
+            margin: 0 ($fs*0.75);
+            padding: ($fs*0.5) 0;
+
+            li{
+              @include li-reset;
+              @include border-radius(#{$border-radius_small});
+              display: inline-block;
+              margin: 0 ($fs*0.5) ($fs*0.5) 0;
+              background-color: $color_sitemap_level03_background;
+              vertical-align: top;
+              border: none;
+              
+            &:hover{
+              background-color: $color_sitemap_level03_background_hover2;
+              a, a:link, a:visited{
+                color: $color_sitemap_level03_text_hover;
+
+                &:hover{
+                  color: $color_sitemap_level03_text_hover2;
+                }
+              }
+            }// li:hover
+            
+            &:last-child{
+              @include border-radius(#{$border-radius_small});
+            }
+              
+              a{
+                width: auto;
+                padding: ($fs*0.5) ($fs*0.75);
+                @include font-size_small;
+                font-weight: bold;
+              }
+
+// level 04
+// ---------------------------------------------------------------------------------------------------------------------------
+              ul{
+                @include ul-reset;
+                border: none;
+
+                li{
+                  @include li-reset;
+                  @include border-radius(0);
+                  
+                &:hover{
+                  background: transparent;
+                }// li:hover
+                
+                &:first-child{
+                  @include seperator(top, $color_sitemap_level04_border);
+                }
+                
+                &:last-child{
+                  @include border-radius(0);
+                }
+                a{
+                  padding: ($fs*0.25) ($fs*0.75);
+                  font-weight: normal;
+                  font-style: italic;
+                }// li:first-child
+                }// li 4
+              }// ul 4
+            }// li 3
+          }// ul 3
+        }// li 2
+      }// ul 2
+    }// li 1
+  }// ul 1
+}// mixin sitemap
+
+
+// N E W S   ( TT-NEWS )
+// ###########################################################################################################################
+// ###########################################################################################################################
+ 
+  
+// LATEST VIEW / LIST VIEW
+// ###########################################################################################################################
+
+@mixin news_list($type){
+  margin:0 0 $fs*2.0 0;
+  @include seperator(top, $color_main_seperator);
+  
+  .news-#{$type}-item {
+    padding: $fs $bu; 
+    overflow: hidden;
+    @include seperator(bottom, $color_main_seperator);
+    
+    @if $news-list_hover == background{// set in _global.scss >> B E H A V I O U R S
+      @include animation_block_background;}
+    @else if $news-list_hover == link{
+      @include animation_block_link;}
+    @else{}
+  
+    span.news-#{$type}-date{
+      @include font-size_small;
+      vertical-align: top;
+    }
+    
+    h2{
+      @include h3;
+      margin: ($fs*$h3/2) 0;// half margin of h3
+      a {
+        &:hover{
+        }
+      }
+    }
+    
+    a{
+      img{
+      }
+      .content{
+        color: $color_main_text;
+      }
+      &:hover{
+      }
+    }
+    
+    .content{
+      display:block;
+      float:left;
+      padding-bottom:$fs;
+    }
+
+    .news-#{$type}-morelink{
+      clear:both;
+      display:block;
+      
+      a{
+        float:left;
+        text-decoration:none;
+        span{
+          float:left;
+          display:block;
+        }
+      }
+    }
+    
+    &:hover {
+      @if $news-list_hover == background{ // set in _global.scss >> BEHAVIOURS
+        background-color:$color_main_background_hover;}
+      @else {}
+    }
+    
+    .news-#{$type}-category{
+      clear:both;
+      @include font-size_small;
+      padding-top: $fs*0.5;
+    }
+  }//news-#{$type}-item
+}
+
+  
+// HEADER LIST VIEW
+// ###########################################################################################################################
+
+@mixin news-header-list-container{
+  @include seperator(top, $color_main_seperator);
+  padding: $fs*0.5 $bu*1.0;
+  
+  .news-header-list-title, .news-header-list-time, .news-header-list-categories{
+    display: inline-block;
+    line-height: $fs*$lhf;
+    vertical-align: middle;
+  }
+  
+  .news-header-list-title{
+    width: 75%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .news-header-list-time{
+    @include font-size_small;
+    width: 20%;
+    margin-left: 4%;
+    text-align: right;
+  }
+  .news-header-list-categories{
+    display: inline-block;
+  }
+}
+
+  
+@mixin news-header-list-container_singleline{
+
+  display: inline;
+  
+  a{
+    width: auto;
+    float: left;
+    margin-bottom: $fs*1.0;
+    padding: 0 $bu*1.5;
+    @include seperator(left, $color_main_seperator);
+
+  &:hover {
+  }
+  
+    .news-header-list-title, .news-header-list-time, .news-header-list-categories{
+      display: inline;
+      width: auto;
+      line-height: $fs*$lhf;
+      vertical-align: middle;
+    }
+    
+    .news-header-list-title{
+      margin-right: $bu*0.5;
+    }
+    .news-header-list-time{
+      padding-top: $fs - ($fs*$ff_small);
+      @include font-size_small;
+      line-height: $fs*$lhf;
+      color: $color_main_text;
+    }
+    .news-header-list-categories{
+      display: block;
+      color: $color_main_text;
+      @include font-size_small;
+      font-style: italic;
+    }
+  }// a
+}
+
+  
+// SINGLE VIEW
+// ###########################################################################################################################
+
+@mixin news-single-item{
+  @include pie-clearfix;
+  .date{
+    @include h6;
+  }
+  
+  .category{
+    @include font-size_small;
+    margin:0 0 $bu 0;
+  }
+
+  h1{
+    margin-bottom: 0;
+  }
+  
+  h3{
+  }
+
+  .text{
+    margin:0 0 $bu 0;
+  }
+
+  .news-single-img{
+    margin-top: ($fs*$lhf - $fs) * 0.5 !important;
+    a{
+      display:block;
+      line-height:0;
+      img{
+      }
+    }
+  }
+
+  .news-single-backlink{
+    @include seperator(top, $color_main_seperator);
+    @include font-size_small;
+    padding: $bu 0 0 0;
+    
+    a{
+      @include link-with-icon-style_left;
+      @include sprite_icons(left, -104px - 50px, no-repeat);
+      
+      &:hover{
+        @include sprite_icons(left, -104px - 25px, no-repeat);
+      }
+      
+      span{
+        padding:$bu $bu $bu 0;
+      }
+    }
+  }
+  
+  .news-single-pagination{
+    @include seperator(bottom, $color_main_seperator);
+    @include font-size_small;
+    padding:0 0 $bu 0;
+    overflow:hidden;
+
+    a{
+      display:block;
+    }
+
+    .prev{
+      float: left;
+      a{
+        @include link-with-icon-style_left;
+        @include sprite_icons(left, -4px - 50px, no-repeat);
+        
+        &:hover{
+          @include sprite_icons(left, -4px - 25px, no-repeat);
+        }
+        span{
+          padding:$bu $bu $bu 0;
+        }
+      }
+    }
+    .next{
+      float: right;
+      text-align: right;
+      a{
+        @include link-with-icon-style_right;
+        @include sprite_icons(right, -4px - 50px, no-repeat);
+        
+        &:hover{
+          @include sprite_icons(right, -4px - 25px, no-repeat);
+        }
+        span{
+          padding:$bu 0 $bu $bu;
+        }
+      }
+    }
+  }
+
+
+
+// CATEGORY MENU 
+// ###########################################################################################################################
+
+  .news-catmenu {
+    a {
+      display:inline; 
+      padding-left: $bu*0.25;
+      &:hover{
+      }
+      .news-catmenu-NO { }
+    }
+    
+    .news-catmenu-header{
+    }
+  }// .news-catmenu
+}// mixin news-single-item
+
+
+// F O R M S   ( #MAILFORM, INDEXED SEARCH, LOGIN )
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+// STANDARD FORM ( INPUT, TEXTAREA, SELECT )
+// ###########################################################################################################################
+
+$mailform_width: $col2width;
+
+@mixin form_standard($type){
+
+  @if $type == background{
+    @include border-radius(#{$border-radius_big});
+    background: $color_form_background;
+    padding: $bu*2.0;
+  } @else if $type == standard{
+  }
+  
+  fieldset{
+  
+    legend{
+      @include h4;
+      padding-bottom: $fs*0.5;
+    }
+  
+    div{
+      @include seperator(top, $color_form_seperator);
+      margin-bottom: 0;
+      padding: $fs $bu;
+      font-size: $fs; // overwrite font-size_small
+
+      &:last-child{
+        padding-bottom: 0;
+      }
+      
+      label{
+        display: inline-block;
+        font-weight: bold;
+        color: $color_form_text;
+        line-height: $fs * $lhf + $fs * 0.5; // calculated height from input field
+        vertical-align: top;
+        margin-right: $bu;
+        @if $type == background{
+          width: ($mailform_width*0.5) - ($bu*4.0); // 50% of formwidth - padding (50% of 6*$bu + label-padding 1*$bu)
+        } @else if $type == standard{
+          width: ($mailform_width*0.5) - ($bu*2.0); // 50% of formwidth - padding (50% of 2*$bu + label-padding 1*$bu)
+        }
+      }
+
+      input, textarea{
+        @if $type == background{
+          width: ($mailform_width*0.5) - ($bu*3.0) - $fs - ($border-width*2.0) - ($bu*0.75); // 50% of formwidth - padding (50% of 6*$bu + input-padding 1*$fs + 0.5 secure padding) - border-width
+        } @else if $type == standard{
+          width: ($mailform_width*0.5) - ($bu*1.0) - $fs - ($border-width*2.0) - ($bu*0.75); // 50% of formwidth - padding (50% of 2*$bu + input-padding 1*$fs + 0.5 secure padding) - border-width
+        }
+      }
+
+      select{
+        @if $type == background{
+          width: ($mailform_width*0.5) - ($bu*3.0) - $fs - ($border-width*2.0) - ($bu*0.75) + 20px; // +20px to correct select-width
+        } @else if $type == standard{
+          width: ($mailform_width*0.5) - ($bu*1.0) - $fs - ($border-width*2.0) - ($bu*0.75) + 20px; // +20px to correct select-width
+        }
+      }
+
+// SUBMIT BUTTON ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+      input[type = submit], input.submit{
+        width: auto;
+        float: right;
+        margin-top: $fs;
+      }// submit
+    }// div
+  }// fieldset
+}// mixin form_standard
+
+
+// MAILFORM ( #MAILFORM )
+// ###########################################################################################################################
+
+@mixin mailform($type){
+  @include form_standard(#{$type});
+  @if $type == background{
+    width: $mailform_width - ($bu*4.0);
+  } @else if $type == standard{
+    width: $mailform_width;
+  }
+  fieldset{
+    div.csc-mailform-field{
+
+// INPUT "FILE" ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+      input[type = file]{
+        width: auto;
+        margin-top: $fs*0.5 ;
+      }
+
+
+// CHECKBOX ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+      input.csc-mailform-check{
+        width: auto;
+      }
+
+// RADIO BUTTON ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+      span.csc-mailform-radio{
+        display: inline-block;
+        margin-top: -($fs * $lhf + $fs * 0.5); // calculated height from input field
+        @if $type == background{
+          margin-left: ($mailform_width*0.5) - ($bu*3.0);
+        } @else if $type == standard{
+          margin-left: ($mailform_width*0.5) - ($bu*1.0);
+        }
+        
+        label{
+          margin-right: 0;
+          font-weight: normal;
+          vertical-align: middle;
+          @if $type == background{
+            width: ($mailform_width*0.5) - ($bu*3.0) - ($bu*0.5) - 30px; // 50% of formwidth - padding (50% of 6*$bu) - radio-margin (0.5*$bu) - radio width (25px)
+          } @else if $type == standard{
+            width: ($mailform_width*0.5) - ($bu*1.0) - ($bu*0.5) - 30px; // 50% of formwidth - padding (50% of 2*$bu) - radio-margin (0.5*$bu) - radio width (25px)
+          }
+        }
+        
+        input.csc-mailform-radio{
+          width: auto;
+          margin-right: $bu*0.5;
+        }
+      }// span.csc-mailform-radio
+
+// SUBMIT BUTTON ( #MAILFORM )
+// ---------------------------------------------------------------------------------------------------------------------------
+      input.csc-mailform-submit{
+        width: auto;
+        float: right;
+        margin-top: $fs;
+      }
+
+    }// div.csc-mailform-field
+  }// fieldset
+}// mixin mailform
+
+
+// LOGIN FORM ( TX-FELOGIN-PI1 )
+// ###########################################################################################################################
+ 
+@mixin login($type){
+  width: $mailform_width;
+
+  div{
+    @include font-size_small;
+    margin-bottom: $fs*0.5;
+  }
+  
+  form{
+    @include form_standard(#{$type});
+
+    fieldset{
+      div.felogin-hidden{
+        border: none;
+      }// div
+    }// fieldset
+  }// form
+}// mixin login
+
+
+// SEARCH FORM ( TX-INDEXEDSEARCH )
+// ###########################################################################################################################
+ 
+@mixin search($type){
+  width: $mailform_width;
+  
+  .tx-indexedsearch-searchbox{
+  
+    form{
+      @include form_standard(#{$type});
+    }
+  
+  }// .tx-indexedsearch-searchbox
+
+
+// SEARCH OUTPUT ( TX-INDEXEDSEARCH )
+// ###########################################################################################################################
+
+
+// SEARCH FOR "XY"
+// ---------------------------------------------------------------------------------------------------------------------------
+  .tx-indexedsearch-whatis{
+    @include h3;
+  }
+
+// PAGINATION
+// ---------------------------------------------------------------------------------------------------------------------------
+  .tx-indexedsearch-browsebox{
+    p{// DISPLAYING RESULTS ( "X to Y out of Z" )
+      @include h4;
+    }
+    .browsebox{//ul.browsebox
+      overflow: hidden;
+      margin-bottom: $fs*0.5;
+      li{
+        @include li-reset;
+        @include font-size_small;
+        @include border(left, $color_main_border);
+        border-width: 1px;
+        float:left;
+
+        a{
+          padding: 0 ($fs*0.5);
+        }
+
+      &:first-child{
+        border: none;
+        a {
+          padding-left: 0;
+        }
+      }// li:first-child
+      }// li
+    }// .browsebox
+  }// .tx-indexedsearch-browsebox
+
+// SEARCH RESULT BOX ( HEADER ROW / DESCRIPTION / INFO )
+// ---------------------------------------------------------------------------------------------------------------------------
+  .tx-indexedsearch-res{
+    margin:0 0 $fs*0.5 0;
+    @include seperator(top, $color_main_seperator);
+
+// SEARCH RESULT ITEM ( HEADER ROW / DESCRIPTION / INFO )
+// ---------------------------------------------------------------------------------------------------------------------------
+    .tx-indexedsearch-res{ // ATTENTION: same class as parent element
+      border-top: none;
+      margin: 0 0 0 0;
+      padding: $fs $bu; 
+      overflow: hidden;
+      @include seperator(bottom, $color_main_seperator);
+      
+      @if $news-list_hover == background{ // set in _global.scss >> B E H A V I O U R S
+        @include animation_block_background;}
+      @else if $news-list_hover == link{
+        @include animation_block_link;}
+      @else{}
+
+      &:hover {
+        @if $news-list_hover == background{ // set in _global.scss >> BEHAVIOURS
+          background-color:$color_main_background_hover;}
+        @else {}
+      }
+
+  
+// HEADER ROW ( IMG / TITLE / PERCENTAGE )
+      .title{
+        display: block;
+        float: left;
+        width: $mailform_width*0.80;
+        height: $fs*$h3*$lhf;
+        margin-bottom: $fs*$h3;
+        overflow: hidden;
+      }
+      .result-number, .icon{
+        display: none; // was empty – no result number > hide it!
+      }
+      .percent-tmpl-css{
+        float: right;
+      }
+
+// DESCRIPTION ( TEXTBLOCK )
+      .descr{
+        clear: left;
+        .tx-indexedsearch-redMarkup{
+          font-weight: bold;
+          color: $color_main_text_highlight;
+        }
+      }
+
+// INFO ( SIZE: / CREATED: / MODIFIED: / PATH: )
+      dl.info{
+        margin-bottom: 0;
+        .item-size, .item-crdate, .item-mtime{
+          display: none;
+        }
+        dt, dd{
+          display: inline-block;
+          margin: 0;
+        }
+      }
+    }// .tx-indexedsearch-res
+  }// .tx-indexedsearch-res
+}// mixin search
+
+
+// S L I D E R   E L E M E N T   ( CODA-SLIDER )
+// ###########################################################################################################################
+// ###########################################################################################################################
+ 
+//  jQuery Coda-Slider v2.0 - http://www.ndoherty.biz/coda-slider
+//  Copyright (c) 2009 Niall Doherty
+//  This plugin available for use in all personal or commercial projects under both MIT and GPL licenses.
+  
+//  TYPO3 Object
+//  lib.contentslider
+
+
+//codavars
+$sliderelement_padding_hor: $bu;
+$sliderelement_padding_ver: $fs;
+$navheight: ($sliderelement_padding_ver*2.0) + ($border-width*2.0) + ($fs*1.25);
+
+@mixin coda-nav-left-right{
+  //display: none;// hidden
+  @include outline;
+  position:absolute;
+  top:0;
+  z-index:500;
+  a{
+    width:$fs*3.0;
+    height:$fs*3.0;
+    display:block;  
+  }
+}
+
+@mixin sliderelement_slidetransition($type){
+
+  position: relative;
+  margin: 0;
+  overflow:hidden;
+  
+  @if $type == background{
+  
+  } @else if $type == standard{
+    @include seperator(bottom, $color_main_seperator);
+  }
+
+  .main_link{
+    position: absolute;
+    bottom: 33px;
+    left: 65px;
+  }
+
+  .coda-slider-wrapper{
+    padding: 0;
+    clear: both; 
+    overflow: auto; 
+
+    .coda-slider { 
+      float: left; 
+      overflow: hidden; 
+      position: relative;
+       
+      .panel { 
+        display: block; 
+        float: left;
+        overflow: hidden;
+        padding: 0 0 $navheight 0;
+        @if $type == background{
+          @include animation_background;
+          padding: 0 0 0 0;
+          @include border-radius($border-radius_big);
+          background-color: $color_slider_background;
+        } @else if $type == standard{
+        
+        }
+
+        &:hover { 
+          .panel-wrapper{
+            .title, .morelink{
+              color: $color_main_link_hover;
+            }
+          }
+          @if $type == background{
+            background-color: $color_slider_background_hover;
+            .panel-wrapper{
+              .title, .morelink{
+                color: $color_main_link;
+              }
+            }
+          } @else if $type == standard{
+          }
+        }// &:hover
+
+        .panel-wrapper{
+          width: 100%;
+          float: left;
+          img{
+            float: right;
+          }
+          p{
+            width: 45%;
+            @if $type == background{
+              padding-left: $sliderelement_padding_hor;
+            }
+          }
+          
+          .morelink {
+            text-decoration:none;
+            span{ 
+              width: 45%;
+              @if $type == background{
+                padding-left: $sliderelement_padding_hor;
+              }
+              display:block;
+            }
+          }
+          
+          .title {
+            width: 45%;
+            @include animation_textlink;
+            margin: 0 0 $fs*0.75 0;
+            @if $type == background{
+              margin: $fs*0.75 0;
+              padding-left: $sliderelement_padding_hor;
+            }
+            color: $color_main_link;
+          }
+        } //.panel-wrapper
+        
+        .tab-nav-texte{
+          display:none;
+        }
+      }//.panel
+      
+      //gets constructed via JavaScript and width is set inline!!
+      .panel-container { 
+      }     
+        
+      /* Preloader */
+      .loading { 
+        padding: $bu*2.0;
+        text-align: center;
+      }
+    }//.codaslider
+
+    //if codaslider is called with transition: "fade"
+    .coda-slider.coda-slider-fade-transition{
+
+      .panel:first-child {
+        display:block;
+      } 
+      
+      .panel { 
+        display: none; 
+        position:absolute;
+      }
+    }//.coda-slider.coda-slider-fade-transition
+      
+    /* Tabbed nav */
+    .coda-nav{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width:200px;
+      
+      ul { 
+        overflow: hidden;
+        width:200px;
+        height:500px;
+      
+        li { 
+          display:block;
+          clear:both;
+          overflow:hidden;
+          
+          background: none; 
+          padding: 0; 
+          margin: 0 ($bu*0.75) 0 0;
+          
+          a { 
+            display: block;
+            
+            &:hover{
+              
+            }
+            
+            
+            .tab-nav-headline{
+              display:block;
+            }
+            
+            
+            .tab-nav-subheadline{
+              display:block;
+            }
+            
+          }
+  
+          .current { 
+            color:red;
+          }
+        }
+      }
+    }
+  
+    .coda-nav-left{
+      left:0;
+      @include coda-nav-left-right;
+    }
+    
+    .coda-nav-right { 
+      right:0;
+      @include coda-nav-left-right;
+    }
+  }//coda-slider-wrapper
+
+  //JavaScript nav alignment
+  .float_right{
+    float:right;
+  }
+}// mixin sliderelement
+
+
+// instanziert sliderlement
+@mixin sliderelement_fadetransition($type){
+  @include sliderelement_slidetransition($type);
+  
+  // CSS-Adaptionen für Fade-Transition werden im mixin "sliderelement_slidetransition"
+  // unter .coda-slider.coda-slider-fade-transition geregelt
+     
+}
+
+
+// KR-PANO  ( !!! NOT PROOFED !!! )
+// ###########################################################################################################################
+// ###########################################################################################################################
+ 
+@mixin krpano{
+
+  .krpano_wrap{
+    height:300px;
+  }
+  
+  /**
+   * pano-css
+   */
+  
+  /*
+   * jquery.panorama original styles
+   */
+  
+  .panorama-viewport {
+    position: relative;
+    width: 600px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  .panorama-container {
+    position: relative;
+    width: 100000px;
+    margin: 0;
+    padding: 0;
+  
+  }
+  .panorama-control {
+    position: absolute;
+    display: none;
+    padding: 0;
+    margin: 0;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: black;
+    filter: alpha(opacity=50);
+    opacity: .5;
+    text-align: left;
+  }
+  .panorama-control-left, .panorama-control-right, .panorama-control-pause { 
+    float: left;
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 30px;
+    width: 33%;
+    text-align: center;
+    font-family: 'Arial',sans-serif
+  }
+  .panorama-control-left:hover, .panorama-control-right:hover, .panorama-control-pause:hover { 
+    text-decoration: none;
+  }
+  .panorama-control-pause {
+    text-transform: uppercase;
+  }
+  .panorama-panel {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    background: #009cff;
+    filter: alpha(opacity=50);
+    opacity: .5;
+    color: white;
+    padding: 4px;
+  }
+  .panorama-panel h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    text-align: right;
+  }
+  .panorama-panel ul {
+    display: none;
+  }
+  .panorama {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  
+  /**
+   * anorak.panoramaplevel jquery.panorama overrides
+   */
+  
+  .panorama-viewport {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+  
+  .panorama-viewport .panorama-control a{
+    font-family:Helvetica, Arial, sans-serif;
+    display:block;
+    height:60px;
+    font-weight:bold;
+    padding-top:18px;
+    font-size:50px;
+    bottom:0;
+    border-right:1px solid #fff;
+  }
+  
+  .panorama-viewport .panorama-control .panorama-control-left, .panorama-viewport .panorama-control .panorama-control-right{
+    padding-top:10px;
+    font-size:80px; 
+  }
+  
+  .panorama-viewport .panorama-control .panorama-control-right{
+    border-right:none;
+  }
+  
+  .panorama-viewport .panorama-control{
+    bottom:0;
+    height:70px;
+  }
+  
+  /*
+   * krpano overrides
+   */
+  
+  .js #krpanoDIV{
+    width:100%;
+    height:375px;
+    overflow:hidden;
+  }
+  
+  .pano_1 img{
+    left:-1600px;
+  }
+}// mixin krpano
+
+
+
+
+// B A S I C S
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  
+@mixin csc-default(){
+  @include outline;
+  @include pie-clearfix;
+  margin-bottom: $fs*2.0;
+  padding: 0;
+}
+
+@mixin basics{
+
+
+// TEXT FORMAT
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  p {
+  } 
+  
+  cite, blockquote {
+    font-style: italic
+  }
+  
+  blockquote {
+    margin-left: $bu*2.0;
+    padding-bottom: $fs;
+    
+    blockquote {
+      margin-top: $fs;
+      padding-bottom: 0;
+    }
+  }
+  
+  strong,b {
+    font-weight: bold;
+  }
+  em,i {
+    font-style: italic;
+  }
+  
+  pre, code {
+    font-family: monospace;
+  }
+  
+  acronym, abbr {
+    letter-spacing:.07em;
+    border-bottom: 1px dotted $color_main_border;
+    cursor: help;
+  }
+
+  sup, sub{
+    font-size: 0.7em;
+    height: 0;
+    line-height: 1;
+    vertical-align: baseline;
+    _vertical-align: bottom;
+    position: relative;
+  }
+   
+  sup{
+    bottom: 1.0ex;
+  }
+   
+  sub{
+    top: 0.5ex;
+  }
+
+
+// MARGIN RESETS HEADLINES & TEXT
+// ###########################################################################################################################
+
+  // headline succeeds headline
+  h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6,
+  h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6,
+  h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6,
+  h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6,
+  h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6,
+  h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6,
+  
+  //first Headline in div container
+  .section_frame h1:first-child, 
+  .section_frame h2:first-child, 
+  .section_frame h3:first-child, 
+  .section_frame h4:first-child, 
+  .section_frame h5:first-child, 
+  .section_frame h6:first-child,
+  
+  //first Headline in csc-default element container
+  .csc-default h1:first-child, 
+  .csc-default h2:first-child, 
+  .csc-default h3:first-child, 
+  .csc-default h4:first-child, 
+  .csc-default h5:first-child, 
+  .csc-default h6:first-child,
+  
+  //other T3 default elements
+  .csc-firstHeader, .pageheadline, .currentpageheader {
+    margin-top: 0 !important;
+  }
+  
+  .pagesubheadline{
+  }
+  
+  p:last-child, ul:last-child {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .boxelement + *  {
+    padding-top: $fs;
+  }
+
+
+// CLASSES & MIXINS
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  p.smalltext {
+    @include font-size_small;
+  }
+  
+  p.boxelement{
+    padding: $fs !important;
+    @include border-all($color_main_border);
+    @include border-radius(#{$border-radius_big});
+    background: $color_main_background_highlight;
+  }
+
+  p.preface{
+    @include h3;
+    font-style: italic;
+  }
+  
+  ul.linklist{
+    @include seperator(bottom, $color_nav2_level02_border);
+    li{
+      @include seperator(top, $color_nav2_level02_border);
+      padding-left: 0 !important;
+      margin: 0 !important;
+      background-image: none !important;
+      overflow: hidden;
+      a, a:link, a:visited{
+        display: block;
+        padding: ($fs*0.5) ($bu*1.0);
+      &:hover{
+        color: $color_main_link;
+        background-color: $color_main_background_hover;
+      }
+      }// a
+    }// li
+  }// ul.linklist
+  
+  h1.nomargin, h2.nomargin, h3.nomargin, h4.nomargin, h5.nomargin, h6.nomargin{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  span.underline {
+    text-decoration: underline;
+  }
+
+  .align-right{
+    text-align: right;
+  }
+  
+  .align-left{
+    text-align: left;
+  }
+  
+  .align-center{
+    text-align: center;
+  }
+  
+  .hidden{ // helper for initial element hiding
+    display: none;
+  }
+
+  .section_frame_top{
+    @include seperator(top, $color_main_seperator);
+    padding: $fs*2.0 0 0 0 !important;
+  }
+  
+  .section_frame_bottom{
+    @include seperator(bottom, $color_main_seperator);
+    padding: 0 0 $fs*2.0 0 !important;
+    margin-bottom: $fs*2.0;
+  }
+  
+
+// CSC CONTENT ELEMENT STYLES (.csc-default)
+// ###########################################################################################################################
+
+  
+  //clearing all TYPO3-content elements
+  .csc-default { 
+    @include csc-default;
+  }
+
+
+// FORM ELEMENTS FORMAT
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+  input[type = submit],
+  input[type = checkbox],
+  input[type = radio],
+  input[type = button],
+  input[type = file],
+  button, label, select, option,
+  .pointer {
+    cursor: pointer !important;
+  }
+  
+  input, textarea, select{
+    @include textformat_form;
+    @include border-all($color_input_border);
+    @include border-radius(#{$border-radius_small});
+
+    &:focus{
+      @include box-shadow($color_00 0 0 0, $color_00 0 0 0 inset); //reset box-shadow
+      border-color: $color_input_border_active;
+      background: $color_input_background_active;
+    }
+  }
+  
+  input, textarea{
+    @include box-shadow(rgba($color_00,0.5) 0px 1px 0px, rgba($color_99,0.3) 0px 2px 4px inset); //box-shadow (highlight bottom) & inner-shadow (shadow top)
+    @include background-image(linear-gradient(color-stops($color_input_background, $color_00)));
+    padding: $fs*0.25 $fs*0.50;
+  }
+  
+  input[type = file], input.file{
+    @include box-shadow(rgba($color_00,0.0) 0 0 0, rgba($color_99,0.3) 0px 2px 4px inset);
+    padding: $fs*0.50;
+    background: none;
+    color: $color_form_text;
+    font-style: italic;
+  }
+  
+  input[type = radio], input[type = checkbox], input.radio, input.checkbox{
+    border: none;
+    padding: 0 $fs*0.50;
+    
+    &:focus{
+      background: none;
+    }
+  }
+  
+  select{
+    @include text-shadow(rgba($color_00,1.0) 0 1px 0);
+    padding: $fs*0.25;
+    font-weight: bold;
+
+    option{
+    }
+  }
+  
+  select[multiple = multiple]{
+    height: auto;
+    color: $color_input_text_inactive;
+    padding: $fs*0.25 $fs*0.5;
+  }
+
+
+// BUTTON (INPUT, BUTTON)
+// ###########################################################################################################################
+
+  input.button, input[type = submit], input[type = button], button {
+    background: $color_button_background;
+    @include box-shadow(rgba($color_99,0.5) 1px 1px 8px);
+    @include animation_all;
+    @include font_02;
+    color: $color_button_text;
+    border-color: $color_button_border;
+    
+    &:hover{
+      color: $color_button_background;
+      background: $color_button_text;
+    }
+  }
+
+
+}//mixin basics
+
+
+
+
+// T Y P O 3
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+@mixin styles_t3be{
+  // styles for TYPO3-Backend Editor
+  // eg. define background-color of page to render properly in the backend
+  .htmlarea-content-body {
+    min-width: 0;
+    background:$color_main_background;
+    @include textformat_body;
+    @include textformat_main;
+    @include basics;
+  }
+  //disable padding-top in TYPO3 RTE Editor
+  .htmlarea-content-body > h1:first-child,
+  .htmlarea-content-body > h2:first-child,
+  .htmlarea-content-body > h3:first-child,
+  .htmlarea-content-body > h4:first-child,
+  .htmlarea-content-body > h5:first-child,
+  .htmlarea-content-body > h6:first-child{
+    margin-top:0;
+  }
+}// mixin styles_t3be
+
+
+
+
+
+
+// lib.mobileheader
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+
+
+@mixin mobileheader{
+  .mobileheader{
+    overflow:hidden;
+     .nav_main_togglebutton{
+       span{
+         display:block;
+       }
+     }
+    
+     .mobileheader_togglebutton_bottom{
+       display:none;
+     }
+
+     .mobileheader_content_wrap{
+       height: 0px;
+      
+       @include transition-timing-function(ease-out);
+       @include transition-property(height);
+       @include transition-duration(0.5s);
+
+     }//.mobileheader_wrap
+   }//.mobileheader
+  
+   .mobileheader.mobileheader_open{
+     .mobileheader_content_wrap{
+       @include transition-timing-function(ease-out);
+       @include transition-property(height);
+       @include transition-duration(0.5s);
+       .mobileheader_content{
+         
+       }
+     }
+    
+     .mobileheader_togglebutton_bottom{
+       display:block;
+     }
+  }//.mobileheader.mobileheader_open
+
+}//mixin mobileheader
+
+
+// lib.debug
+@mixin debug{
+  .debug{
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    background-color:black;
+    font-family: Courier, sans-serif;
+  }
+}
+
+
+
+
+
+
+
+
+
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ###########################################################################################################################
+// ########################################################################################################################### 

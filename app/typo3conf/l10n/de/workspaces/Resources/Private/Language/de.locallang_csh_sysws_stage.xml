@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="de" type="array">
+			<label index=".description">Legt benutzerdefinierte Arbeitsumgebungsstufen unter TYPO3 fest, mit deren Hilfe Benutzer in einem definierten Ablauf zusammenarbeiten können. Weitere Informationen über Arbeitsumgebungen siehe &quot;Inside TYPO3&quot;.</label>
+			<label index="title.description">Bezeichnung der Arbeitsumgebungsstufe eingeben.</label>
+			<label index="responsible_persons.description">Legt fest, welcher BE-Benutzer für diese Arbeitsumgebungsstufe verantwortlich ist. Ausgewählte Benutzer sind mögliche Empfänger für Benachrichtigungen bei Stufenänderungen.</label>
+			<label index="default_mailcomment.description">Hier kann ein Standardkommentar festgelegt werden, der in Benachrichtungen bei Stufenänderungen per E-Mail verwendet wird. Ist kein Standardkommentar festgelegt, kann bei jeder Stufenänderung ein Kommentar eingegeben werden.</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="de" type="array">
+			<label index=".description" type="integer">646175</label>
+			<label index="title.description" type="integer">125871114</label>
+			<label index="responsible_persons.description" type="integer">48976185</label>
+			<label index="default_mailcomment.description" type="integer">186435487</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="de" type="array">
+			<label index=".description">Defines custom workspace stages in TYPO3 which allows for groups of people to work together in a defined process. More information about workspaces can be found in the document &quot;Inside TYPO3&quot;.</label>
+			<label index="title.description">Enter the name of the workspace stage.</label>
+			<label index="responsible_persons.description">Define which BE users are responsible for this workspace stage. This selected BE users are possible recipients for the stage change emails.</label>
+			<label index="default_mailcomment.description">Here its possible to define a standard mail comment which will be inserted into the stage change mail. When no standard mail comment was defined here its possible to write a comment for the mail on every stage change.</label>
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index="missing_invitation_name_informal">Bitte gib einen Namen an!</label>
+      <label index="first_name_informal">Vorname</label>
+      <label index="missing_invitation_first_name_informal">Bitte gib einen Vornamen an!</label>
+      <label index="last_name_informal">Nachname</label>
+      <label index="missing_invitation_last_name_informal">Bitte gib einen Nachnamen an!</label>
+      <label index="date_of_birth_informal">Geburtsdatum (tt-mm-jjjj)</label>
+      <label index="missing_invitation_date_of_birth_informal">Bitte gib dein Geburtsdatum ein!</label>
+      <label index="address_informal">Adresse</label>
+      <label index="missing_invitation_address_informal">Bitte gib eine Adresse an!</label>
+      <label index="city_informal">Stadt</label>
+      <label index="missing_invitation_city_informal">Bitte gib einen Ort an!</label>
+      <label index="zone_informal">Bundesland / Staat / Provinz</label>
+      <label index="tooltip_zone">Bitte wählen Sie Ihr Bundesland / Staat / Provinz aus der Liste aus.</label>
+      <label index="missing_invitation_zone_informal">Bitte gib ein Bundesland / Staat / Provinz an:</label>
+      <label index="zip_informal">PLZ</label>
+      <label index="missing_invitation_zip_informal">Bitte gib eine PLZ an!</label>
+      <label index="static_info_country_informal">Land</label>
+      <label index="missing_invitation_static_info_country_informal">Bitte wähle ein Land aus!</label>
+      <label index="mobile">Handy</label>
+      <label index="mobile_informal">Handy</label>
+      <label index="tooltip_mobile">Geben Sie bitte Ihre Handynummer ein.</label>
+      <label index="tooltip_mobile_informal">Gib bitte Deine Handynummer ein.</label>
+      <label index="tooltip_invitation_mobile">Geben Sie die Handynummer der eingeladenen Person ein.</label>
+      <label index="missing_mobile">Bitte geben Sie Ihre Handynummer ein!</label>
+      <label index="missing_mobile_informal">Bitte gib deine Handynummer ein!</label>
+      <label index="missing_invitation_mobile">Bitte geben Sie eine Handynummer ein!</label>
+      <label index="missing_invitation_mobile_informal">Bitte gib eine Handynummer ein!</label>
+      <label index="phone">Telefon</label>
+      <label index="phone_informal">Telefon</label>
+      <label index="tooltip_phone">Bitte geben Sie Ihre Telefonnummer ein!</label>
+      <label index="tooltip_phone_informal">Bitte gib deine Telefonnummer ein!</label>
+      <label index="tooltip_invitation_phone">Bitte geben Sie die Handynummer der eingeladenen Person ein.</label>
+      <label index="missing_phone">Bitte geben Sie Ihre Telefonnummer ein!</label>
+      <label index="missing_phone_informal">Bitte gib deine Telefonnummer ein!</label>
+      <label index="missing_invitation_phone">Bitte geben Sie eine Telefonnummer an!</label>
+      <label index="missing_invitation_phone_informal">Bitte gib eine Telefonnummer an!</label>
+      <label index="missing_invitation_fax_informal">Bitte gib eine Fax-Nummer an!</label>
+      <label index="email_informal">E-Mail</label>
+      <label index="missing_email_informal">Eine gültige E-Mail-Adresse ist erforderlich.</label>
+      <label index="evalErrors_uniqueLocal_email_informal">Unter dieser E-Mail-Adresse haben wir schon einen Benutzer registriert. Hast du vielleicht dein Kennwort vergessen?</label>
+      <label index="module_sys_dmail_html_informal">Möchtest Du HTML-E-Mails erhalten?</label>
+      <label index="yes">Ja</label>
+      <label index="no">Nein</label>
+      <label index="language_informal">Sprache</label>
+      <label index="missing_invitation_language_informal">Bitte wähle eine Sprache aus!</label>
+      <label index="missing_invitation_title_informal">Bitte gib einen Titel an!</label>
+      <label index="missing_invitation_company_informal">Bitte gib einen Firmennamen an!</label>
+      <label index="www_informal">Homepage</label>
+      <label index="missing_invitation_www_informal">Bitte gib eine Homepage-Adresse an!</label>
+      <label index="evalErrors_wwwURL_www_informal">Die von dir angegebene Web-Site-Adresse hat kein gültiges Format. Bitte überprüfe deine Angaben.</label>
+      <label index="missing_invitation_image_informal">Bitte gib ein Foto ein!</label>
+      <label index="comments">Kommentare?</label>
+      <label index="comments_informal">Kommentare?</label>
+      <label index="tooltip_comments">Bitte geben Sie Ihren Kommentar ein.</label>
+      <label index="tooltip_comments_informal">Bitte gib einen Kommentar ein!</label>
+      <label index="missing_comments">Bitte geben Sie Ihren Kommentar ein.</label>
+      <label index="missing_comments_informal">Bitte gib einen Kommentar ein!</label>
+      <label index="evalErrors_allowed_image_informal">%s-Dateien sind nicht erlaubt.</label>
+      <label index="evalErrors_max_size_image_informal">Die Dateigröße darf nicht größer als %s KB sein.</label>
+      <label index="button_register">Abonnieren</label>
+      <label index="button_register_informal">Abonnieren</label>
+      <label index="button_confirm_register">Jetzt abonnieren!</label>
+      <label index="button_confirm_register_informal">Jetzt abonnieren!</label>
+      <label index="button_send_invitation">Einladung senden</label>
+      <label index="button_send_invitation_informal">Einladung senden</label>
+      <label index="button_send_invitation_now">Jetzt eine Einladung senden!</label>
+      <label index="button_send_invitation_now_informal">Jetzt eine Einladung senden!</label>
+      <label index="button_send_link">Nachricht jetzt versenden!</label>
+      <label index="button_send_link_informal">Nachricht jetzt versenden!</label>
+      <label index="button_back_to_form">Zurück zum Formular</label>
+      <label index="button_back_to_form_informal">Zurück zum Formular</label>
+      <label index="button_update">Bearbeitete Benutzerdaten speichern</label>
+      <label index="button_update_informal">Bearbeitete Benutzerdaten speichern</label>
+      <label index="button_confirm_update">Benutzerdaten speichern!</label>
+      <label index="button_confirm_update_informal">Benutzerdaten speichern!</label>
+      <label index="button_enter">Eingeben</label>
+      <label index="button_enter_informal">Eingeben</label>
+      <label index="button_confirm_delete">Ja, Abonnement beenden</label>
+      <label index="button_confirm_delete_informal">Ja, Abonnement beenden</label>
+      <label index="button_cancel_delete">Nein, abbrechen</label>
+      <label index="button_cancel_delete_informal">Nein, abbrechen</label>
+      <label index="v_already_subscribed">Sie sind bereits bei &lt;b&gt;%1$s&lt;/b&gt; registriert. Möchten Sie Ihr Abonnement ändern oder kündigen?</label>
+      <label index="click_here_to_edit">Klicken Sie hier!</label>
+      <label index="click_here_to_edit_informal">Klicke hier!</label>
+      <label index="tooltip_click_here_to_edit">Es wird ein Dialog zum Ändern oder Löschen ihres Abonnements geöffnet.</label>
+      <label index="v_wish_to_update_or_delete">Möchten Sie Ihr Abonnement ändern oder kündigen?</label>
+      <label index="v_wish_to_update_or_delete_informal">Möchtest du Dein Abonnement ändern oder kündigen?</label>
+      <label index="v_enter_subscribed_email">Geben Sie die E-Mail-Adresse ein, mit der Sie sich für das Abonnement registriert haben. Wir senden Ihnen dann eine E-Mail mit den Links zum Ändern und Kündigen Ihres Abonnements:</label>
+      <label index="v_enter_subscribed_email_informal">Gib die E-Mail-Adresse ein, mit der du dich für das Abonnement registriert hast. Wir senden dir dann eine E-Mail mit den Links zum Ändern und Kündigen deines Abonnements:</label>
+      <label index="click_here_to_delete">Klicken Sie hier, um Ihr Abonnement zu beenden!</label>
+      <label index="click_here_to_delete_informal">Klicke hier, um dein Abonnement zu beenden!</label>
+      <label index="tooltip_click_here_to_delete">Es wird ein Dialog zum Löschen ihres Abonnements geöffnet.</label>
+      <label index="enter_account_info">Bitte füllen Sie das folgende Formular aus.</label>
+      <label index="enter_account_info_informal">Bitte fülle das folgende Formular aus.</label>
+      <label index="enter_invitation_account_info">Bitte füllen Sie das folgende Formular für die einzuladende Person aus.</label>
+      <label index="enter_invitation_account_info_informal">Bitte fülle das folgende Formular für die einzuladende Person aus.</label>
+      <label index="required_info_notice_informal">Hinweis: Felder mit * müssen ausgefüllt sein!</label>
+      <label index="excuse_us_invitation">Bitte entschuldigen Sie die Unannehmlichkeiten.</label>
+      <label index="registration_clicked_twice">Vielleicht haben Sie den Link zweimal angeklickt?</label>
+      <label index="v_really_wish_to_delete">Möchten Sie Ihr Abonnement wirklich beenden?</label>
+      <label index="v_really_wish_to_delete_informal">Möchtest du dein Abonnement wirklich beenden?</label>
+      <label index="v_verify_before_create">Bitte überprüfen Sie die Korrektheit der Daten.</label>
+      <label index="v_verify_before_create_informal">Bitte überprüfe deine Daten.</label>
+      <label index="v_verify_invitation_before_create">Bitte überprüfen Sie die Korrektheit der Daten von &lt;b&gt;%4$s&lt;/b&gt;.</label>
+      <label index="v_verify_invitation_before_create_informal">Bitte überprüfe die Korrektheit der Daten von &lt;b&gt;%4$s&lt;/b&gt;.</label>
+      <label index="v_edit_your_account">Bitte bearbeiten Sie die Daten Ihres Abonnements.</label>
+      <label index="v_edit_your_account_informal">Bitte bearbeite die Daten deines Abonnements.</label>
+      <label index="v_verify_before_update">Bitte überprüfen Sie die Korrektheit der Daten.</label>
+      <label index="v_verify_before_update_informal">Bitte überprüfe die Korrektheit der Daten.</label>
+      <label index="hello">Hallo,</label>
+      <label index="hello_informal">Hallo,</label>
+      <label index="v_registration_created_subject">Vielen Dank für Ihre Registrierung bei &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_created_subject_informal">Vielen Dank für deine Registrierung bei &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_created_message1">Ihr Abonnement wurde aufgenommen.</label>
+      <label index="v_registration_created_message1_informal">Dein Abonnement wurde aufgenommen.</label>
+      <label index="v_registration_created_informal">%2$s hat %1$s abonniert.</label>
+      <label index="v_registration_updated_subject">Ihr Abonnement &lt;b&gt;%1$s&lt;/b&gt; wurde aktualisiert.</label>
+      <label index="v_invitation_account_was_created">Das Abonnement wurde vorgemerkt. Eine E-Mail mit einem Link zur Bestätigung Ihrer Registrierung für &lt;b&gt;%1$s&lt;/b&gt; wurde an &lt;b&gt;%2$s&lt;/b&gt; (&lt;b&gt;%3$s&lt;/b&gt;) gesendet.</label>
+      <label index="v_invitation_account_was_created_informal">Das Abonnement wurde vorgemerkt. Eine E-Mail mit einem Link zur Bestätigung Deiner Registrierung für &lt;b&gt;%1$s&lt;/b&gt; wurde an &lt;b&gt;%2$s&lt;/b&gt; (&lt;b&gt;%3$s&lt;/b&gt;) gesendet.</label>
+      <label index="v_invitation_instructions1">Sie werden unseren Newsletter &lt;b&gt;%1$s&lt;/b&gt; erst nach der Bestätigung Ihrer Registrierung erhalten. Bitte folgen Sie den Anweisungen in der E-Mail, um die Registrierung abzuschießen.</label>
+      <label index="v_invitation_instructions1_informal">Du wirst unseren Newsletter &lt;b&gt;%1$s&lt;/b&gt; erst nach der Bestätigung deiner Registrierung erhalten. Bitte folge den Anweisungen in der E-Mail, um die Registrierung abzuschließen.</label>
+      <label index="v_your_account_was_created">Ihr Abonnement wurde aufgenommen. Wir werden Ihnen eine Nachricht an Ihre E-Mail-Adresse &lt;b&gt;%4$s&lt;/b&gt; senden, so dass Sie das Abonnement für &lt;b&gt;%1$s&lt;/b&gt; bestätigen können.</label>
+      <label index="v_your_account_was_created_informal">Dein Abonnement wurde aufgenommen. Wir werden dir eine Nachricht an deine E-Mail-Adresse &lt;b&gt;%4$s&lt;/b&gt; senden, so dass du das Abonnement für &lt;b&gt;%1$s&lt;/b&gt; bestätigen kannst.</label>
+      <label index="v_follow_instructions1">Um Ihr Abonnement für &lt;b&gt;%1$s&lt;/b&gt; zu bestätigen, folgen Sie bitte den Anweisungen in der E-Mail.</label>
+      <label index="v_follow_instructions1_informal">Um dein Abonnement für &lt;b&gt;%1$s&lt;/b&gt; zu bestätigen, folge bitte den Anweisungen in der E-Mail.</label>
+      <label index="v_follow_instructions_review1"/>
+      <label index="v_follow_instructions_review1_informal"/>
+      <label index="v_follow_instructions_review2"/>
+      <label index="v_follow_instructions_review2_informal"/>
+      <label index="v_registration_initiated_subject">Bitte bestätigen Sie Ihr Abonnement für &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_initiated_subject_informal">Bitte bestätige dein Abonnement für &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_initiated_message1">Wir senden Ihnen diese Nachricht, weil Sie sich für den Newsletter &lt;b&gt;%1$s&lt;/b&gt; registriert haben. Sie werden den Newsletter &lt;b&gt;%1$s&lt;/b&gt; erst nach Bestätigung Ihrer Registrierung erhalten. Folgen Sie bitte diesem Link, um die Registrierung zu bestätigen:</label>
+      <label index="v_registration_initiated_message1_informal">Wir senden dir diese Nachricht, weil du dich für den Newsletter &lt;b&gt;%1$s&lt;/b&gt; registriert hast. Du wirst den Newsletter &lt;b&gt;%1$s&lt;/b&gt; erst nach Bestätigung deiner Registrierung erhalten. Folge bitte diesem Link, um die Registrierung zu bestätigen:</label>
+      <label index="v_registration_initiated_message2">Sie erhalten diese E-Mail, weil wir sicher gehen möchten, dass Ihre E-Mail-Adresse korrekt ist und die Anmeldung tatsächlich von Ihnen stammt. Sollten Sie sich nicht selbst registriert haben, folgen Sie bitte diesem Link:</label>
+      <label index="v_registration_initiated_message2_informal">Du erhälst diese E-Mail, weil wir sicher gehen möchten, dass deine E-Mail-Adresse korrekt ist und die Anmeldung tatsächlich von dir stammt. Solltest du dich nicht selbst registriert haben, folge bitte diesem Link:</label>
+      <label index="v_registration_initiated">Das Abonnement von %1$s wurde für %2$s aufgenommen.</label>
+      <label index="v_registration_initiated_informal">Das Abonnement von %1$s wurde für %2$s aufgenommen.</label>
+      <label index="v_registration_invited_subject">Einladung zum Newsletter von &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_invited_subject_informal">Einladung zum Newsletter von &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_invited_message1">Wir glauben, dass der Newsletter &lt;b&gt;%1$s&lt;/b&gt; für Sie interessant sein könnte.&lt;br /&gt;&lt;br /&gt;
+
+Deshalb haben wir für Sie ein Abonnement vorbereitet.&lt;br /&gt;&lt;br /&gt;
+
+Wir senden Ihnen diese Nachricht, mit der Sie den Empfang des Newsletters &lt;b&gt;%1$s&lt;/b&gt; bestätigen können. Sie werden den Newsletter erst nach einer Betätigung empfangen können. Ausserdem können Sie den Empfang jederzeit wieder beenden.&lt;br /&gt;&lt;br /&gt;
+
+Wenn Sie unserer Einladung zum Kennenlernen des Newsletters &lt;b&gt;%1$s&lt;/b&gt; folgen möchten, dann klicken Sie bitte auf diesen Link:</label>
+      <label index="v_registration_invited_message1_informal">Wir glauben, dass der Newsletter &lt;b&gt;%1$s&lt;/b&gt; für dich interessant sein könnte.&lt;br /&gt;&lt;br /&gt;
+
+Deshalb haben wir für dich ein Abonnement vorbereitet.&lt;br /&gt;&lt;br /&gt;
+
+Wir senden dir diese Nachricht, mit der du den Empfang des Newsletters &lt;b&gt;%1$s&lt;/b&gt; bestätigen kannst. Du wirst den Newsletter erst nach einer Betätigung empfangen können. Außerdem kannst Du den Empfang jederzeit wieder beenden.&lt;br /&gt;&lt;br /&gt;
+
+Wenn Du unserer Einladung zum Kennenlernen des Newsletters &lt;b&gt;%1$s&lt;/b&gt; folgen möchtest, dann klicke bitte auf diesen Link:</label>
+      <label index="v_registration_invited_message2">Sie werden diese Nachricht nicht ein zweites Mal bekommen. Wenn Sie die Einladung nicht annehmen möchten und den Newsletter &lt;b&gt;%1$s&lt;/b&gt; nicht beziehen möchten, folgen Sie diesem Link oder ignorieren Sie diese Nachricht einfach:</label>
+      <label index="v_registration_invited_message2_informal">Du wirst diese Nachricht nicht ein zweites Mal bekommen. Wenn du die Einladung nicht annehmen möchtest und den Newsletter &lt;b&gt;%1$s&lt;/b&gt; nicht beziehen möchtest, folge diesem Link oder ignoriere diese Nachricht einfach:</label>
+      <label index="v_registration_invited">Eine Einladung zur Registrierung des Newsletters %1$s wurde an %2$s versendet.</label>
+      <label index="v_registration_invited_informal">Eine Einladung zur Registrierung des Newsletters %1$s wurde an %2$s versendet.</label>
+      <label index="v_registration_infomail_message1"/>
+      <label index="v_registration_infomail_message1_informal"/>
+      <label index="v_registration_confirmed_subject">Vielen Dank für Ihr Abonnement von &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_confirmed_subject_informal">Vielen Dank für dein Abonnement von &lt;b&gt;%1$s&lt;/b&gt;.</label>
+      <label index="v_registration_confirmed_message1">Ihre Registrierung wurde bestätigt.</label>
+      <label index="v_registration_confirmed_message1_informal">Deine Registrierung wurde bestätigt.</label>
+      <label index="v_registration_confirmed">Die Registrierung von %3$s für den Newsletter %1$s wurde bestätigt.</label>
+      <label index="v_registration_confirmed_informal">Die Registrierung von %3$s für den Newsletter %1$s wurde bestätigt.</label>
+      <label index="v_registration_cancelled_message1">Ihr Abonnement von &lt;b&gt;%1$s&lt;/b&gt; wurde beendet.</label>
+      <label index="v_registration_cancelled_message1_informal">Dein Abonnement von &lt;b&gt;%1$s&lt;/b&gt; wurde beendet.</label>
+      <label index="v_registration_cancelled_message2">Ihre Registrierung und Ihre E-Mail-Adresse &lt;b&gt;%4$s&lt;/b&gt; wurde aus unserer Liste entfernt.</label>
+      <label index="v_registration_cancelled_message2_informal">Deine Registrierung und deine E-Mail-Adresse &lt;b&gt;%4$s&lt;/b&gt; wurde aus unserer Liste entfernt.</label>
+      <label index="v_registration_cancelled">%2$s hat das Abonnement von %1$s beendet.</label>
+      <label index="v_registration_cancelled_informal">%2$s hat das Abonnement von %1$s beendet.</label>
+      <label index="v_sending_infomail">Wir senden Ihnen eine E-Mail an die Adresse: &lt;b&gt;%4$s&lt;/b&gt;.</label>
+      <label index="v_sending_infomail_informal">Wir senden dir eine E-Mail an die Adresse: &lt;b&gt;%4$s&lt;/b&gt;.</label>
+      <label index="v_sending_infomail_message1">Die Nachricht enthält zwei Links, mit denen Sie Ihr Abonnement von &lt;b&gt;%1$s&lt;/b&gt; ändern oder kündigen können.</label>
+      <label index="v_sending_infomail_message1_informal">Die Nachricht enthält zwei Links, mit denen du dein Abonnement von &lt;b&gt;%1$s&lt;/b&gt; ändern oder kündigen kannst.</label>
+      <label index="v_sending_infomail_message2">Bitte folgen Sie den Anweisungen in dieser E-Mail, um Ihr Abonnement zu ändern oder zu kündigen.</label>
+      <label index="v_sending_infomail_message2_informal">Bitte folge den Anweisungen in dieser E-Mail, um dein Abonnement zu ändern oder zu kündigen.</label>
+      <label index="v_infomail_subject">Die Daten zu Ihrem Abonnement für &lt;b&gt;%1$s&lt;/b&gt;</label>
+      <label index="v_infomail_subject_informal">Die Daten zu Deinem Abonnement für &lt;b&gt;%1$s&lt;/b&gt;</label>
+      <label index="v_infomail_reason">Sie erhalten diese Nachricht, weil Sie Ihr Abonnement von &amp;lt;b&amp;gt;%1$s&amp;lt;/b&amp;gt; bearbeiten oder löschen möchten.
+möchten.</label>
+      <label index="v_infomail_reason_informal">Du erhälst diese Nachricht, weil du dein Abonnement von &amp;lt;b&amp;gt;%1$s&amp;lt;/b&amp;gt; bearbeiten oder löschen möchtest.</label>
+      <label index="v_infomail_message1">Wenn Sie Ihr Abonnement ändern möchten, folgen Sie bitte diesem Link:</label>
+      <label index="v_infomail_message1_informal">Wenn du dein Abonnement ändern möchtest, folge bitte diesem Link:</label>
+      <label index="v_infomail_message2">Wenn Sie Ihr Abonnement kündigen möchten, folgen Sie bitte diesem Link:</label>
+      <label index="v_infomail_message2_informal">Wenn du dein Abonnement kündigen möchtest, folge bitte diesem Link:</label>
+      <label index="v_infomail_norecord_subject">Ihre E-Mail-Adresse ist nicht für den Newsletter &lt;b&gt;%1$s&lt;/b&gt; registriert.</label>
+      <label index="v_infomail_norecord_subject_informal">Deine E-Mail-Adresse ist nicht für den Newsletter &lt;b&gt;%1$s&lt;/b&gt; registriert.</label>
+      <label index="v_infomail_norecord_message1">Es scheint, als ob Ihre E-Mail-Adresse nicht für den Newsletter &lt;b&gt;%1$s&lt;/b&gt; registriert ist.</label>
+      <label index="v_infomail_norecord_message1_informal">Es scheint, als ob deine E-Mail-Adresse nicht für den Newsletter &lt;b&gt;%1$s&lt;/b&gt; registriert ist.</label>
+      <label index="v_infomail_norecord_message2">Sollten Sie Probleme mit Ihrem Abonnement haben, kontaktieren Sie uns bitte unter folgender Adresse:</label>
+      <label index="v_infomail_norecord_message2_informal">Solltest du Probleme mit deinem Abonnement haben, kontaktiere uns bitte unter folgender Adresse:</label>
+      <label index="v_registration_deleted_subject">Ihr Benutzerkonto bei &lt;b&gt;%1$s&lt;/b&gt; wurde erfolgreich gelöscht.</label>
+      <label index="v_registration_deleted_subject_informal">Dein Benutzerkonto bei &lt;b&gt;%1$s&lt;/b&gt; wurde erfolgreich gelöscht.</label>
+      <label index="v_registration_deleted_message1">Sie werden keine weiteren E-Mails von uns bekommen.</label>
+      <label index="v_registration_deleted_message1_informal">Du wirst keine weiteren E-Mails von uns bekommen.</label>
+      <label index="v_registration_deleted_message2">Ihre Registrierung und Ihre E-Mail-Adresse &lt;b&gt;%4$s&lt;/b&gt; wurden aus unserer Liste entfernt.</label>
+      <label index="v_registration_deleted_message2_informal">Deine Registrierung und deine E-Mail-Adresse &lt;b&gt;%4$s&lt;/b&gt; wurden aus unserer Liste entfernt.</label>
+      <label index="v_registration_deleted">%2$s hat das Abonnement von %1$s beendet.</label>
+      <label index="unsupported">nicht unterstützt</label>
+    </languageKey>
+  </data>
+</T3locallangExt>
