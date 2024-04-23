@@ -3,7 +3,7 @@ services:
   typo3-php56:
     build:
       context: .
-      dockerfile: ./docker-typo3/Dockerfile.php56
+      dockerfile: ./docker-typo3/Dockerfile.php56.anorak
     volumes:
       - ./app:/var/www/html
 #    depends_on:
