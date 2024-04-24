@@ -298,20 +298,53 @@ if ($_COOKIE['be_typo_user']) {		// If the backend cookie is set, we proceed and
 	$TT->pull();
 	$TYPO3_MISC['microtime_BE_USER_end'] = microtime(true);
 } elseif ($TSFE->ADMCMD_preview_BEUSER_uid)	{
+	// if there is a valid BE user, and the full workspace should be previewed, the workspacePreview option should be set
+	$workspaceUid = (int)t3lib_div::_GP('ADMCMD_previewWS');
 
-		// the value this->formfield_status is set to empty in order to disable login-attempts to the backend account through this script
-	$BE_USER = t3lib_div::makeInstance('t3lib_tsfeBeUserAuth');	// New backend user object
-	$BE_USER->userTS_dontGetCached = 1;
-	$BE_USER->OS = TYPO3_OS;
-	$BE_USER->setBeUserByUid($TSFE->ADMCMD_preview_BEUSER_uid);
-	$BE_USER->unpack_uc('');
-	if ($BE_USER->user['uid'])	{
-		$BE_USER->fetchGroupData();
+	// First initialize a temp user object and resolve usergroup information
+	/** @var t3lib_tsfeBeUserAuth $tempBackendUser */
+	$tempBackendUser = t3lib_div::makeInstance('t3lib_tsfeBeUserAuth');
+	$tempBackendUser->userTS_dontGetCached = 1;
+	$tempBackendUser->setBeUserByUid($TSFE->ADMCMD_preview_BEUSER_uid);
+
+	if ($tempBackendUser->user['uid']) {
+		$tempBackendUser->unpack_uc('');
+		$tempBackendUser->fetchGroupData();
+		// Handle degradation of admin users
+		if ($tempBackendUser->isAdmin() && t3lib_extMgm::isLoaded('workspaces')) {
+			$workspaceRecord = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow(
+				'uid, adminusers, reviewers, members, db_mountpoints',
+				'sys_workspace',
+				'pid=0 AND uid=' . (int)$workspaceUid . t3lib_BEfunc::deleteClause('sys_workspace')
+			);
+			// Either use configured workspace mount or current page id, if admin user does not have any page mounts
+			if (empty($tempBackendUser->groupData['webmounts'])) {
+				$tempBackendUser->groupData['webmounts'] = !empty($workspaceRecord['db_mountpoints']) ? $workspaceRecord['db_mountpoints'] : $TSFE->id;
+			}
+			// Force add degraded admin user as member of this workspace
+			$workspaceRecord['members'] = 'be_users_' . (int)$TSFE->ADMCMD_preview_BEUSER_uid;
+			// Force read permission for degraded admin user
+			tx_version_preview::getInstance()->setForceReadPermissions(TRUE);
+			tx_version_preview::getInstance()->setWorkspaceRecord($workspaceRecord);
+		}
+		// Store only needed information in the real simulate backend
+		/** @var t3lib_tsfeBeUserAuth $BE_USER */
+		$BE_USER = t3lib_div::makeInstance('t3lib_tsfeBeUserAuth');
+		$BE_USER->userTS_dontGetCached = 1;
+		$BE_USER->OS = TYPO3_OS;
+		$BE_USER->user = $tempBackendUser->user;
+		$BE_USER->user['admin'] = 0;
+		$BE_USER->groupData['webmounts'] = $tempBackendUser->groupData['webmounts'];
+		$BE_USER->groupList = $tempBackendUser->groupList;
+		$BE_USER->userGroups = $tempBackendUser->userGroups;
+		$BE_USER->userGroupsUID = $tempBackendUser->userGroupsUID;
 		$TSFE->beUserLogin = 1;
 	} else {
 		$BE_USER = NULL;
 		$TSFE->beUserLogin = 0;
 	}
+
+	unset($tempBackendUser);
 }
 
 // ********************

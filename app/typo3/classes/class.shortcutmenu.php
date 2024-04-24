@@ -332,7 +332,7 @@ class ShortcutMenu implements backend_toolbarItem {
 			$shortcut['group']     = $shortcutGroup;
 			$shortcut['icon']      = $this->getShortcutIcon($row, $shortcut);
 			$shortcut['iconTitle'] = $this->getShortcutIconTitle($shortcutLabel, $row['module_name'], $row['M_module_name']);
-			$shortcut['action']    = "jump('" . t3lib_div::quoteJSvalue($row['url']) . "','" . t3lib_div::quoteJSvalue(implode('_', $moduleParts)) . "','" . t3lib_div::quoteJSvalue($moduleParts[0]) . "');";
+			$shortcut['action']    = "jump(" . t3lib_div::quoteJSvalue($row['url']) . "," . t3lib_div::quoteJSvalue(implode('_', $moduleParts)) . "," . t3lib_div::quoteJSvalue($moduleParts[0]) . ")";
 
 			$lastGroup   = $row['sc_group'];
 			$shortcuts[] = $shortcut;

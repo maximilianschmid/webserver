@@ -4436,8 +4436,11 @@ final class t3lib_div {
 	 * @todo	Possible improvement: Should it rawurldecode the string first to check if any of these characters is encoded ?
 	 */
 	public static function validPathStr($theFile) {
-		return strpos($theFile, '//') === FALSE && strpos($theFile, '\\') === FALSE
-		&& preg_match('#(?:^\\.\\.|/\\.\\./|[[:cntrl:]])#u', $theFile) === 0;
+		if (strpos($theFile, '//') === FALSE && strpos($theFile, '\\') === FALSE && !preg_match('#(?:^\.\.|/\.\./|[[:cntrl:]])#u', $theFile)) {
+			return TRUE;
+		}
+
+		return FALSE;
 	}
 
 	/**

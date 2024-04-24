@@ -65,30 +65,23 @@ class Tx_Fluid_ViewHelpers_Link_EmailViewHelper extends Tx_Fluid_Core_ViewHelper
 	 * @author Bastian Waidelich <bastian@typo3.org>
 	 */
 	public function render($email) {
-		if ($this->isFrontendAvailable()) {
-			list($linkHref, $linkText) = $GLOBALS['TSFE']->cObj->getMailTo($email, '');
-			$escapeSpecialCharacters = !isset($GLOBALS['TSFE']->spamProtectEmailAddresses) || $GLOBALS['TSFE']->spamProtectEmailAddresses !== 'ascii';
+		if (TYPO3_MODE === 'FE') {
+			list($linkHref, $linkText) = $GLOBALS['TSFE']->cObj->getMailTo($email, $email);
 		} else {
 			$linkHref = 'mailto:' . $email;
-			$linkText = htmlspecialchars($email);
-			$escapeSpecialCharacters = TRUE;
+			$linkText = $email;
 		}
 		$tagContent = $this->renderChildren();
 		if ($tagContent !== NULL) {
 			$linkText = $tagContent;
 		}
 		$this->tag->setContent($linkText);
+		$escapeSpecialCharacters = !isset($GLOBALS['TSFE']->spamProtectEmailAddresses) || $GLOBALS['TSFE']->spamProtectEmailAddresses !== 'ascii';
 		$this->tag->addAttribute('href', $linkHref, $escapeSpecialCharacters);
 		$this->tag->forceClosingTag(TRUE);
 		return $this->tag->render();
 	}
-
-	/**
-	 * @return bool
-	 */
-	protected function isFrontendAvailable() {
-		return TYPO3_MODE === 'FE';
-	}
 }
+
 
 ?>

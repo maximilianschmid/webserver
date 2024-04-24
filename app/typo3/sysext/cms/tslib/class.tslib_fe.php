@@ -1716,7 +1716,7 @@
 		}
 
 			// If inputcode now, look up the settings:
-		if ($inputCode)	{
+		if ($inputCode && $inputCode !== 'IGNORE') {
 
 			if ($inputCode=='LOGOUT') {	// "log out":
 				SetCookie('ADMCMD_prev', '', 0, t3lib_div::getIndpEnv('TYPO3_SITE_PATH'));
@@ -4431,8 +4431,12 @@ if (version == "n3") {
 	 */
 	function workspacePreviewInit()	{
 		$previewWS = t3lib_div::_GP('ADMCMD_previewWS');
-		if ($this->beUserLogin && is_object($GLOBALS['BE_USER']) && t3lib_div::testInt($previewWS))	{
-			if ($previewWS==0 || ($previewWS>=-1 && $GLOBALS['BE_USER']->checkWorkspace($previewWS))) {	// Check Access to workspace. Live (0) is OK to preview for all.
+		if ($this->beUserLogin && is_object($GLOBALS['BE_USER']) && t3lib_div::testInt($previewWS) && t3lib_extMgm::isLoaded('version')) {
+			$workspaceRecord = tx_version_preview::getInstance()->getWorkspaceRecord();
+			// Use a modified workspace record for a degraded admin user (if any)
+			$previewWorkspace = (!empty($workspaceRecord) ? $workspaceRecord : $previewWS);
+			// Check Access to workspace. Live (0) is OK to preview for all.
+			if ($previewWS==0 || ($previewWS>=-1 && $GLOBALS['BE_USER']->checkWorkspace($previewWorkspace))) {
 				$this->workspacePreview = intval($previewWS);
 			} else {
 				$this->workspacePreview = -99;	// No preview, will default to "Live" at the moment

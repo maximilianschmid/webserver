@@ -8,7 +8,7 @@ $TYPO3_CONF_VARS['BE']['folderCreateMask'] = '0755';
 $TYPO3_CONF_VARS['BE']['maxFileSize']      = '20480';
 $TYPO3_CONF_VARS['BE']['forceCharset'] = 'utf-8';
 //Mittwald TYPO3 Cheatsheet - Security settings
-$TYPO3_CONF_VARS['BE']['fileDenyPattern'] = '\.php[3-6]?(\..*)?|^\.htaccess$';
+$TYPO3_CONF_VARS['BE']['fileDenyPattern'] = '\.(php[3-6]?|phpsh|phtml)(\..*)?$|^\.htaccess$';
 
 # http://answerpot.com/showthread.php?1517118-Probleme+mit+Flashuploader+unter+4.4.3%3C%3D
 # http://bugs.typo3.org/view.php?id=13659
@@ -66,6 +66,7 @@ $TYPO3_CONF_VARS['BE']['sessionTimeout'] = '36000'; // 10 Stunden
 	$typo_db_host = 'mysql-db';
 	$typo_db = 'typo3_physiotherapiehuber';
 
+
 	$TYPO3_CONF_VARS['GFX']['im_path']      = '/usr/bin/';
 	$TYPO3_CONF_VARS['GFX']['im_path_lzw']  = '/usr/bin/';
 
@@ -109,4 +110,7 @@ $TYPO3_CONF_VARS['EXT']['extConf']['css_styled_content'] = 'a:2:{s:15:"setPageTS
 // Updated by TYPO3 Extension Manager 23-11-11 15:46:12
 
 $TYPO3_CONF_VARS['SYS']['compat_version'] = '4.5';
+
+
+$TYPO3_CONF_VARS['BE']['loginSecurityLevel'] = 'normal';
 ?>

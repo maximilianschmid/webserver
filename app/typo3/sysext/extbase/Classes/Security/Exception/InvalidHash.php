@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2016 Steffen MÃ¼ller <typo3@t3node.com>
+*  (c) 2016 Steffen Müller <typo3@t3node.com>
 *  All rights reserved
 *
 *  This class is a backport of the corresponding class of FLOW3.

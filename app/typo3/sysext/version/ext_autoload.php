@@ -7,6 +7,7 @@ return array(
 	'tx_version_tcemain_commandmap' => $extensionPath . 'class.tx_version_tcemain_commandmap.php',
 	'tx_version_cm1' => $extensionPath . 'cm1/index.php',
 	'tx_version_gui' => $extensionPath . 'class.tx_version_gui.php',
+	'tx_version_preview' => $extensionPath . 'class.tx_version_preview.php',
 	'tx_version_tcemain' => $extensionPath . 'class.tx_version_tcemain.php',
 	'tx_version_tasks_autopublish' => $extensionPath . 'tasks/class.tx_version_tasks_autopublish.php',
 );

@@ -3096,7 +3096,7 @@ HTMLArea.Editor.prototype.scrollToCaret = function() {
  * Check if the client agent is supported
  */
 HTMLArea.checkSupportedBrowser = function() {
-	return Ext.isGecko || Ext.isWebKit || Ext.isOpera || Ext.isIE;
+	return Ext.isGecko || Ext.isWebKit || Ext.isOpera || Ext.isEdge || Ext.isIE;
 };
 /*
  * Remove a class name from the class attribute of an element

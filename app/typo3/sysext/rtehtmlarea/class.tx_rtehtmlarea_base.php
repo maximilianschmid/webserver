@@ -1440,7 +1440,7 @@ class tx_rtehtmlarea_base extends t3lib_rteapi {
 		}
 		$browserInfo = t3lib_utility_Client::getBrowserInfo($userAgent);
 			// Known engines: order is not irrelevant!
-		$knownEngines = array('opera', 'msie', 'gecko', 'webkit');
+		$knownEngines = array('opera', 'msie', 'edge', 'gecko', 'webkit');
 		if (is_array($browserInfo['all'])) {
 			foreach ($knownEngines as $engine) {
 				if ($browserInfo['all'][$engine]) {

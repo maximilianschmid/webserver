@@ -1,8 +1,8 @@
 <?php
-$host = 'mysql-db';
-$user = 'db_user';
-$pass = 'password';
-$db = 'test_database';
+$host = 'localhost';
+$user = 'root';
+$pass = '64zm2JNUq8rR97a';
+$db = 'typo3_physiotherapiehuber';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
