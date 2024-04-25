@@ -4,7 +4,7 @@ services:
     platform: linux/amd64
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./php-fpm/Dockerfile
     volumes:
       - ./wwwroot:/var/www/html
     depends_on:
