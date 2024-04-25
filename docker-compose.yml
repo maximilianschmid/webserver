@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./app:/var/www/html
+      - ./wwwroot:/var/www/html
     depends_on:
       - mysql-db
 
@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: ./apache/Dockerfile
     volumes:
-      - ./app:/var/www/html
+      - ./wwwroot:/var/www/html
     ports:
       - "80:80"
     depends_on:
