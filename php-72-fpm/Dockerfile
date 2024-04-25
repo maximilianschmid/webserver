@@ -1,8 +1,8 @@
 # Add PHP-FPM base image
-FROM php:5.6-fpm
+FROM php:7.2-fpm
 # Install your extensions
 # To connect to MySQL add mysqli
-RUN docker-php-ext-install mysqli pdo pdo_mysql mysql
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 
 # https://github.com/mlocati/docker-php-extension-installer
@@ -11,7 +11,8 @@ ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/relea
 # https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/SystemRequirements/Index.html
 
 # filter spl standard mbstring fileinfo zlib
-RUN install-php-extensions xml gd zip tokenizer intl openssl filter spl standard mbstring fileinfo zlib soap
+RUN install-php-extensions xml gd zip tokenizer intl openssl filter spl standard mbstring fileinfo zlib soap exif
 
 RUN apt-get update \
   && apt install -y graphicsmagick
+

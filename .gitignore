@@ -1,4 +1,5 @@
 .idea
 
-mysqld-57-data/data/
-wwwroot/
+db
+wwwroot
+log

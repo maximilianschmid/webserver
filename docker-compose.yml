@@ -1,12 +1,28 @@
+# checkout https://github.com/soft-industry/docker-compose-php/blob/master/php-fpm-5.6.yml
 version: '3.9'
 services:
-  php-fpm:
+  php-56-fpm:
     platform: linux/amd64
     build:
       context: .
       dockerfile: php-56-fpm/Dockerfile
     volumes:
       - ./wwwroot:/var/www/html
+      - ./php-56-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ./php-56-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./log/php-56-fpm:/var/log/php-fpm
+    depends_on:
+      - mysql-db
+  php-72-fpm:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: php-72-fpm/Dockerfile
+    volumes:
+      - ./wwwroot:/var/www/html
+      - ./php-72-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ./php-72-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./log/php-72-fpm:/var/log/php-fpm
     depends_on:
       - mysql-db
 
@@ -20,24 +36,28 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - php-fpm
+      - php-56-fpm
+      - php-72-fpm
       - mysql-db
-  # configure mysql volumes etc. https://hub.docker.com/r/cytopia/mysql-5.6
+  # MYSQL documentation: https://hub.docker.com/_/mysql
+  # alternative info: https://hub.docker.com/r/cytopia/mysql-5.6
   mysql-db:
     platform: linux/amd64
+    restart: always
     build:
       context: .
-      dockerfile: mysqld-57/Dockerfile
+      dockerfile: mysqld/Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: test_database
       MYSQL_USER: db_user
       MYSQL_PASSWORD: password
-    volumes:
-      - ./mysqld-57-data/data/:/var/lib/mysql
     ports:
       - "3306:3306"
-
+    user: mysql
+    volumes:
+      - ./db:/var/lib/mysql
+  # http://localhost:8889
   phpmyadmin:
     platform: linux/amd64
     image: phpmyadmin/phpmyadmin
@@ -48,3 +68,4 @@ services:
     environment:
       PMA_HOST: mysql-db
       MYSQL_ROOT_PASSWORD: password
+
