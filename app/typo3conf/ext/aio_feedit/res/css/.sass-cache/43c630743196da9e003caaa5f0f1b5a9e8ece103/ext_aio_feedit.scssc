@@ -1,641 +1,0 @@
-3.1.1 (Brainy Betty)
-b8eef0f7dfdeabd541d1c66d6bbbc4bbf2a97c91
-o:Sass::Tree::RootNode
-:@template"S @import 'compass/css3';
-
-.tpm-new{
-  border:1px solid blue;
-  display:block;
-  width:16px;
-  height:16px;
-}
-
-
-$base_color: #cc0000;
-$base_color_enabled: #00cc00;
-$button_size: 30px;
-
-$editbar_color:#fff;
-$editbar_backgroundcolor:#000;
-$editbar_backgroundcolor_hover:#555;
-
-$outline:#666;
-$outline-hidden:#f00;
-
-
-//feedit_bar
-$color:#BFBFBF;
-$background-color:#000;
-$color_border:#666;
-
-$font-family:Verdana, Arial;
-
-$color_buttonbackground:#4c4c4c;
-$color_gradient1:#666;
-$color_gradient2:#333;
-
-@mixin typo3icon($x, $y){
-  background:url("../../img/t3-icon-actions.png") no-repeat $x $y;
-}
-
-
-
-/**************************************************
- * FE edit styles - for plugin jquery.feedit.js
- **************************************************/
-
-@mixin resetimgtag{
-  img{
-    margin:0;
-    padding:0;
-    background:none;
-    background-color:transparent;
-    border:none;
-  }
-}
-
-//disable all buttons by default
-a.frontEndEditIconLinks{
-  display:none;
-  background:none;
-}
-
-//entire content element editable
-.feedit-form{
-  display:none;
-}
-
-
-@mixin typo3-editPanel_button_hover{
-  background-color:#666;
-  @include border-radius(5px);
-}
-
-.typo3-editPanel{
-  width:auto;
-  
-  @include resetimgtag;
-  
-  .typo3-editPanel-label{
-    //display:none;
-  }
-  
-  .typo3-editPanel-controls{
-    overflow:hidden;
-    @include linear-gradient(color-stops($color_gradient2, $color_gradient1) );
-    @include border-radius(5px);
-    background-color:$color_buttonbackground;
-
-    a{
-      float:left;
-      
-      width:30px;
-      height:30px;
-      
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      }
-      
-      img{
-        display:none;
-      }
-    }
-    
-    a.edit{
-      display:block;
-      @include typo3icon(9px, -1482px);
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      }
-    }
-    
-    a.new{
-      display:block;
-      @include typo3icon(7px, -666px);
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      } 
-    }
-    
-    a.up{
-      display:none;
-//      @include typo3icon(10px, -1482px);
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      }
-    }
-    
-    a.down{
-      display:none;
-//      @include typo3icon(10px, -1482px);
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      }
-    }
-    
-    a.delete{
-      display:block;
-      @include typo3icon(7px, -2178px);
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      }
-    }
-    
-    a.hide{
-//      display:none;
-        @include typo3icon(7px, -2058px);
-      
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      }
-    }
-    
-    a.unhide{
-//      display:none;
-      @include typo3icon(7px, -642px); 
-      &:hover{
-        @include typo3-editPanel_button_hover;
-      }
-    }
-
-    // nice patch - if a.edit appears after a.delete - it has to disappear
-    a.delete + a.edit,  a.new + a.edit{
-      display:none;
-    }  
-    
-  }
-}
-
-.feedit-border{
-  display:none;
-}
-
-.news-latest-container .typo3-editPanel a, .news-list-container .typo3-editPanel a{
-  @include resetimgtag;
-}
-
-.frontEndEditIconLinks, .csc-textpic .csc-textpic-imagewrap .csc-textpic-image .frontEndEditIconLinks{
-  @include resetimgtag;
-}
-
-.csc-textpic-caption{
-  .frontEndEditIconLinks{
-    display:none;
-  }
-}
-
-
-
-
-
-/*
- * styles when in backend/frontend
- */
-
-// .typo3backendlink and .logout hidden by default
-a.button.typo3backendlink{
-  display:none;
-}
-a.button.logout{
-  display:none;
-}
-
-body.feedit_in_frontend{
-  a.button.new_page{
-    display:none;
-  }
-  
-  a.button.preview_page{
-    display:none;
-  }
-  
-  a.button.typo3backendlink{
-    display:block;
-  }
-  a.button.logout{
-    display:block;
-  }
-}
-
-
-
-//bar on top of webpage
-.feedit_bar{
-  overflow:hidden;
-  padding:10px 20px 10px 20px;
-  background-color:#000;
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100000;
-  
-  border-bottom:2px solid white;
-  
-  
-  .innerwrap{
-    background:url('../../img/anorak_logo.png') no-repeat right 5px;
-    overflow:hidden;
-    padding:0 100px 0 0;
-
-    //standard button
-    .button{
-      border:1px solid $color_border;
-      font-size:11px;
-      display:block;
-      float:left;
-      text-decoration:none;
-      color:$color;
-      font-family:$font-family;
-      background-color:$color_buttonbackground;
-      margin:5px 10px 5px 0;
-      
-      @include linear-gradient(color-stops($color_gradient2, $color_gradient1) );
-      
-      @include border-radius(5px);
-      
-      &:hover{
-        @include linear-gradient(color-stops($color_gradient1, $color_gradient2) );
-      }
-      &:active{
-        @include linear-gradient(color-stops($color_gradient2, $color_gradient1) );
-      }
-      
-      span{
-        display:block;
-        float:left;
-        padding:4px 10px 3px 10px;
-        color:$color; 
-        line-height:1.6em;
-      }
-    }
-    
-    
-    // preview page button
-    a.preview_page{
-      span.title{
-        padding-left:30px;
-        @include typo3icon(10px, -2083px);
-      }
-    }
-        
-    // edit page button
-    a.edit_page{
-      span.title{
-        padding-left:30px;
-        @include typo3icon(10px, -426px);
-      }
-    }
-    
-    // new page button
-    a.new_page{
-      display:none;
-      span.title{
-        padding-left:30px;
-        @include typo3icon(10px, -666px);
-      }
-    }
-    
-    //move content elements
-    a.content_move{
-      span.title{
-        padding-left:30px;
-        //remove move icon
-        //@include typo3icon(10px, -66px );
-        @include typo3icon(10px, -666px);
-      }
-    }
-
-    a.showhiddenpages{
-
-    }   
-
-    a.showhiddencontent{
-    
-    }    
-    
-    
-    // new page button
-    a.logout{
-      float:right;
-      span{
-      }
-    }
-    
-    a.typo3backendlink{
-      float:right;
-      span.title{
-        padding-left:30px;
-        @include typo3icon(10px, -2034px);
-      }
-    }
-    
-    a.feedit_on_off{
-      float:right;
-      span.title{
-        padding-left:30px;
-        padding-right:0;
-        @include typo3icon(10px, -1482px);
-      }
-      .on_off{
-        padding-left:5px;
-        text-transform:uppercase;
-      }
-    }
-    
-    a.feedit_on_off.enabled{
-      .on_off{
-        color:#0f0;
-      }
-    }
-    
-    a.feedit_on_off.disabled{
-      .on_off{
-        color:#f00;
-      }
-    }
-    
-    .systembuttons{
-      float:right;
-    }
-    
-    .editbuttons{
-      float:left;
-    }
-
-
-  }//.innerwrap
-}//.feedit_bar
-
-
-
-.contact_data{ 
-  .contact_edit_link{
-    display:none;
-  }
-}
-
-
-//feedit is turned on 
-body.feedit-enabled{
-  
-  //add margin-top to body to get space for feedit-bar
-  margin-top:60px;
-
-  
-  .feedit-element-wrap{
-    outline:1px dotted $outline;
-    position:relative;
-  }
-
-  .feedit-element-wrap.feedit-element-wrap-hidden{
-    display:block;
-    outline:1px dotted $outline-hidden;
-    @include opacity(0.5);
-  }
-    
-  .feedit-element-wrap-hover{
-    outline:1px solid $outline;
-    
-    .feedit-form{
-      display:block;
-      position:absolute;
-      top:0px;
-      right:0px;
-      z-index:100;
-    }
-  }
-
-  .news-latest-item{
-    position:relative;
-  }
-  .news-list-item{
-    position:relative;
-  }
-  .news-single-item{
-    position:relative;
-  }
-  
-  .pagepropertieslink{
-    background-color:$editbar_backgroundcolor;
-    overflow:hidden;
-    display:block;
-    position:absolute;
-    top:10px;
-    left:10px;
-    z-index:9000;
-    height:20px;
-    padding:5px 10px 5px 10px;
-    
-    img{
-      float:left;
-      padding-top:3px;
-    }
-    span{
-      float:left;
-      display:block;
-      margin-left:15px;
-      color:$editbar_color;
-    }
-  }
-  
-  .contact_data{ 
-    .contact_edit_link{
-      display:block;
-    }
-  }
-}//feedit-enabled
-
-//if feedit is disabled
-//hide hidden elements
-.feedit-element-wrap.feedit-element-wrap-hidden{
-  display:none;
-}
-    
-
-
-//new element position marker
-.csc-default-newmarker{
-  background-color:#E62800;
-  outline:1px solid white;
-  color:white;
-  font-weight:bold;
-  padding:10px;
-  margin-bottom:30px;
-}
-
-
-
-#footer, .footer{
-  .typo3-editPanel{
-    .typo3-editPanel-controls{
-      
-      a.delete, a.new{
-        display:none;
-      }
-
-    }
-  }
-}
-
-
-.feedit-hideme{
-  display:none;
-}
-
-
-//workspace info patch
-#typo3-previewInfo{
-  display:none;
-  top:70px;
-  right:3px !important;
-}
-
-
-#TSFE_ADMIN_PANEL_FORM{
-  display:none;
-}
-:
-@linei:@options{:importero: Sass::Importers::Filesystem:
-@root"X/extendedbrain/wwwroot/physiotherapie-huber/typo3conf/ext/aio_feedit/res/css/source:@has_childrenT:@children[9o:Sass::Tree::ImportNode
-;0;i;@;[ :@imported_filename"compass/css3o:Sass::Tree::RuleNode:@parsed_ruleso:"Sass::Selector::CommaSequence;i:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence;i;[o:Sass::Selector::Class;i:
-@name["tpm-new:@filename" ;@;@;i;@;T;[	o:Sass::Tree::PropNode:@prop_syntax:new:@valueo:Sass::Script::String;"1px solid blue:
-@type:identifier;i	;["border;@;[ :
-@tabsi o;;;;o;;"
-block;;;i
-;["display;@;[ ; i o;;;;o;;"	16px;;;i;["
-width;@;[ ; i o;;;;o;;"	16px;;;i;["height;@;[ ; i ; i :
-@rule[".tpm-newo:Sass::Tree::VariableNode:
-@expro:Sass::Script::Color	;0;i;{ :@attrs{	:rediÃ:
-alphai:
-greeni :	bluei ;i;"base_color;@;[ :@guarded0o;";#o;$	;0;i;{ ;%{	;&i ;'i;(iÃ;)i ;i;"base_color_enabled;@;[ ;*0o;";#o:Sass::Script::Number:@numerator_units["px;i#;i;{ :@original"	30px:@denominator_units[ ;i;"button_size;@;[ ;*0o;";#o;$	;0;i;{ ;%{	;&iˇ;'i;(iˇ;)iˇ;i;"editbar_color;@;[ ;*0o;";#o;$	;0;i;{ ;%{	;&i ;'i;(i ;)i ;i;"editbar_backgroundcolor;@;[ ;*0o;";#o;$	;0;i;{ ;%{	;&iZ;'i;(iZ;)iZ;i;""editbar_backgroundcolor_hover;@;[ ;*0o;";#o;$	;0;i;{ ;%{	;&ik;'i;(ik;)ik;i;"outline;@;[ ;*0o;";#o;$	;0;i;{ ;%{	;&iˇ;'i;(i ;)i ;i;"outline-hidden;@;[ ;*0o:Sass::Tree::CommentNode;"/*feedit_bar */;i:@silenti ;@:@lines[ ;[ :
-@loud0o;";#o;$	;0;i;{ ;%{	;&iø;'i;(iø;)iø;i;"
-color;@;[ ;*0o;";#o;$	;0;i;{ ;%{	;&i ;'i;(i ;)i ;i;"background-color;@;[ ;*0o;";#o;$	;0;i;{ ;%{	;&ik;'i;(ik;)ik;i;"color_border;@;[ ;*0o;";#o:Sass::Script::List	:@separator:
-comma;[o;	;"Verdana;i!;;;{ o;	;"
-Arial;i!;;;@};i!;@};i!;"font-family;@;[ ;*0o;";#o;$	;0;i#;{ ;%{	;&iQ;'i;(iQ;)iQ;i#;"color_buttonbackground;@;[ ;*0o;";#o;$	;0;i$;{ ;%{	;&ik;'i;(ik;)ik;i$;"color_gradient1;@;[ ;*0o;";#o;$	;0;i%;{ ;%{	;&i8;'i;(i8;)i8;i%;"color_gradient2;@;[ ;*0o:Sass::Tree::MixinDefNode;i';"typo3icon;@;T;[o;;;;o;3	;4:
-space;[	o:Sass::Script::Funcall
-;i(;"url;{ :@keywords{ :
-@args[o;	;""../../img/t3-icon-actions.png;i(;:string;@úo;	;"no-repeat;i(;;;@úo:Sass::Script::Variable	;i(;"x;@ú:@underscored_name"xo;<	;i(;"y;@ú;="y;i(;@ú;i(;["background;@;[ ; i ;:[[o;<;"x;{ ;="x0[o;<;"y;@∞;="y0o;/;"ò/**************************************************
- * FE edit styles - for plugin jquery.feedit.js
- **************************************************/;i-;00;@;1[ ;[ ;20o;6;i1;"resetimgtag;@;T;[o;;o;;i2;[o;;[o;;i2;[o:Sass::Selector::Element	:@namespace0;i2;["img;" ;@«;@«;i2;@;T;[
-o;;;;o;;"0;;;i3;["margin;@;[ ; i o;;;;o;;"0;;;i4;["padding;@;[ ; i o;;;;o;;"	none;;;i5;["background;@;[ ; i o;;;;o;;"transparent;;;i6;["background-color;@;[ ; i o;;;;o;;"	none;;;i7;["border;@;[ ; i ; i ;!["img;:[ o;/;"(/*disable all buttons by default */;i;;0i ;@;1[ ;[ ;20o;;o;;i<;[o;;[o;;i<;[o;>	;?0;i<;["a;" o;;i<;["frontEndEditIconLinks;@¯;@¯;@¯;i<;@;T;[o;;;;o;;"	none;;;i=;["display;@;[ ; i o;;;;o;;"	none;;;i>;["background;@;[ ; i ; i ;!["a.frontEndEditIconLinkso;/;")/*entire content element editable */;iA;0i ;@;1[ ;[ ;20o;;o;;iB;[o;;[o;;iB;[o;;iB;["feedit-form;" ;@;@;iB;@;T;[o;;;;o;;"	none;;;iC;["display;@;[ ; i ; i ;![".feedit-formo;6;iG;"!typo3-editPanel_button_hover;@;T;[o;;;;o;;"	#666;;;iH;["background-color;@;[ ; i o:Sass::Tree::MixinNode;iI;"border-radius;@;9{ ;[ ;:[o;+;,["px;i
-;iI;{ ;-"5px;.[ ;:[ o;;o;;iL;[o;;[o;;iL;[o;;iL;["typo3-editPanel;" ;@B;@B;iL;@;T;[	o;;;;o;;"	auto;;;iM;["
-width;@;[ ; i o;@;iO;"resetimgtag;@;9{ ;[ ;:[ o;;o;;iQ;[o;;[o;;iQ;[o;;iQ;["typo3-editPanel-label;" ;@Y;@Y;iQ;@;T;[o;/;"/*display:none; */;iR;0i ;@;1[ ;[ ;20; i ;![".typo3-editPanel-labelo;;o;;iU;[o;;[o;;iU;[o;;iU;["typo3-editPanel-controls;" ;@k;@k;iU;@;T;[o;;;;o;;"hidden;;;iV;["overflow;@;[ ; i o;@;iW;"linear-gradient;@;9{ ;[ ;:[o;8
-;iW;"color-stops;{ ;9{ ;:[o;<	;iW;"color_gradient2;@z;="color_gradient2o;<	;iW;"color_gradient1;@z;="color_gradient1o;@;iX;"border-radius;@;9{ ;[ ;:[o;+;,["px;i
-;iX;{ ;-"5px;.[ o;;;;o;<	;iY;"color_buttonbackground;{ ;="color_buttonbackground;iY;["background-color;@;[ ; i o;;o;;i[;[o;;[o;;i[;[o;>	;?0;i[;["a;" ;@†;@†;i[;@;T;[
-o;;;;o;;"	left;;;i\;["
-float;@;[ ; i o;;;;o;;"	30px;;;i^;["
-width;@;[ ; i o;;;;o;;"	30px;;;i_;["height;@;[ ; i o;;o;;ia;[o;;[o;;ia;[o:Sass::Selector::Parent;ia;" o:Sass::Selector::Pseudo
-;ia;["
-hover;:
-class:	@arg0;@º;@º;@º;ia;@;T;[o;@;ib;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hovero;;o;;ie;[o;;[o;;ie;[o;>	;?0;ie;["img;" ;@“;@“;ie;@;T;[o;;;;o;;"	none;;;if;["display;@;[ ; i ; i ;!["img; i ;!["ao;;o;;ij;[o;;[o;;ij;[o;>	;?0;ij;["a;" o;;ij;["	edit;@Ë;@Ë;@Ë;ij;@;T;[o;;;;o;;"
-block;;;ik;["display;@;[ ; i o;@;il;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;il;{ ;-"9px;.[ o;+;,["px;i˛6˙;il;@˚;-"-1482px;.[ o;;o;;im;[o;;[o;;im;[o;A;im;" o;B
-;im;["
-hover;;C;D0;@;@;@;im;@;T;[o;@;in;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hover; i ;!["a.edito;;o;;ir;[o;;[o;;ir;[o;>	;?0;ir;["a;" o;;ir;["new;@#;@#;@#;ir;@;T;[o;;;;o;;"
-block;;;is;["display;@;[ ; i o;@;it;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;it;{ ;-"7px;.[ o;+;,["px;i˛f˝;it;@6;-"-666px;.[ o;;o;;iu;[o;;[o;;iu;[o;A;iu;" o;B
-;iu;["
-hover;;C;D0;@F;@F;@F;iu;@;T;[o;@;iv;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hover; i ;!["
-a.newo;;o;;iz;[o;;[o;;iz;[o;>	;?0;iz;["a;" o;;iz;["up;@^;@^;@^;iz;@;T;[o;;;;o;;"	none;;;i{;["display;@;[ ; i o;/;"2/*      @include typo3icon(10px, -1482px); */;i|;0i ;@;1[ ;[ ;20o;;o;;i};[o;;[o;;i};[o;A;i};" o;B
-;i};["
-hover;;C;D0;@u;@u;@u;i};@;T;[o;@;i~;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hover; i ;!["	a.upo;;o;;i};[o;;[o;;i};[o;>	;?0;i};["a;" o;;i};["	down;@ç;@ç;@ç;i};@;T;[o;;;;o;;"	none;;;i~;["display;@;[ ; i o;/;"2/*      @include typo3icon(10px, -1482px); */;i;0i ;@;1[ ;[ ;20o;;o;;iÄ;[o;;[o;;iÄ;[o;A;iÄ;" o;B
-;iÄ;["
-hover;;C;D0;@§;@§;@§;iÄ;@;T;[o;@;iÅ;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hover; i ;!["a.downo;;o;;iÖ;[o;;[o;;iÖ;[o;>	;?0;iÖ;["a;" o;;iÖ;["delete;@º;@º;@º;iÖ;@;T;[o;;;;o;;"
-block;;;iÜ;["display;@;[ ; i o;@;iá;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;iá;{ ;-"7px;.[ o;+;,["px;i˛~˜;iá;@œ;-"-2178px;.[ o;;o;;ià;[o;;[o;;ià;[o;A;ià;" o;B
-;ià;["
-hover;;C;D0;@ﬂ;@ﬂ;@ﬂ;ià;@;T;[o;@;iâ;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hover; i ;!["a.deleteo;;o;;iç;[o;;[o;;iç;[o;>	;?0;iç;["a;" o;;iç;["	hide;@˜;@˜;@˜;iç;@;T;[o;/;"/*      display:none; */;ié;0i ;@;1[ ;[ ;20o;@;iè;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;iè;{ ;-"7px;.[ o;+;,["px;i˛ˆ˜;iè;@;-"-2058px;.[ o;;o;;ië;[o;;[o;;ië;[o;A;ië;" o;B
-;ië;["
-hover;;C;D0;@;@;@;ië;@;T;[o;@;ií;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hover; i ;!["a.hideo;;o;;iñ;[o;;[o;;iñ;[o;>	;?0;iñ;["a;" o;;iñ;["unhide;@0;@0;@0;iñ;@;T;[o;/;"/*      display:none; */;ió;0i ;@;1[ ;[ ;20o;@;iò;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;iò;{ ;-"7px;.[ o;+;,["px;i˛~˝;iò;@A;-"-642px;.[ o;;o;;iô;[o;;[o;;iô;[o;A;iô;" o;B
-;iô;["
-hover;;C;D0;@Q;@Q;@Q;iô;@;T;[o;@;iö;"!typo3-editPanel_button_hover;@;9{ ;[ ;:[ ; i ;!["&:hover; i ;!["a.unhideo;/;"N/* nice patch - if a.edit appears after a.delete - it has to disappear */;iû;0i ;@;1[ ;[ ;20o;;o;;iü;[o;;[o;;iü;[o;>	;?0;iü;["a;" o;;iü;["delete;@m;@m"+o;;iü;[o;>	;?0;iü;["a;@mo;;iü;["	edit;@m;@mo;;[o;;iü;[o;>	;?0;iü;["a;@mo;;iü;["new;@m;@m"+o;;iü;[o;>	;?0;iü;["a;@mo;;iü;["	edit;@m;@m;@m;iü;@;T;[o;;;;o;;"	none;;;i†;["display;@;[ ; i ; i ;!["'a.delete + a.edit,  a.new + a.edit; i ;![".typo3-editPanel-controls; i ;![".typo3-editPanelo;;o;;i¶;[o;;[o;;i¶;[o;;i¶;["feedit-border;" ;@§;@§;i¶;@;T;[o;;;;o;;"	none;;;iß;["display;@;[ ; i ; i ;![".feedit-bordero;;o;;i™;[o;;[o;;i™;[o;;i™;["news-latest-container;" ;@∏o;;i™;[o;;i™;["typo3-editPanel;@∏;@∏o;;i™;[o;>	;?0;i™;["a;@∏;@∏o;;[o;;i™;[o;;i™;["news-list-container;@∏;@∏o;;i™;[o;;i™;["typo3-editPanel;@∏;@∏o;;i™;[o;>	;?0;i™;["a;@∏;@∏;@∏;i™;@;T;[o;@;i´;"resetimgtag;@;9{ ;[ ;:[ ; i ;!["W.news-latest-container .typo3-editPanel a, .news-list-container .typo3-editPanel ao;;o;;iÆ;[o;;[o;;iÆ;[o;;iÆ;["frontEndEditIconLinks;" ;@Êo;;[	o;;iÆ;[o;;iÆ;["csc-textpic;@Ê;@Êo;;iÆ;[o;;iÆ;["csc-textpic-imagewrap;@Ê;@Êo;;iÆ;[o;;iÆ;["csc-textpic-image;@Ê;@Êo;;iÆ;[o;;iÆ;["frontEndEditIconLinks;@Ê;@Ê;@Ê;iÆ;@;T;[o;@;iØ;"resetimgtag;@;9{ ;[ ;:[ ; i ;!["j.frontEndEditIconLinks, .csc-textpic .csc-textpic-imagewrap .csc-textpic-image .frontEndEditIconLinkso;;o;;i≤;[o;;[o;;i≤;[o;;i≤;["csc-textpic-caption;" ;@;@;i≤;@;T;[o;;o;;i≥;[o;;[o;;i≥;[o;;i≥;["frontEndEditIconLinks;" ;@;@;i≥;@;T;[o;;;;o;;"	none;;;i¥;["display;@;[ ; i ; i ;![".frontEndEditIconLinks; i ;![".csc-textpic-captiono;/;"./*
- * styles when in backend/frontend
- */;iº;00;@;1[ ;[ ;20o;/;":/* .typo3backendlink and .logout hidden by default */;i¿;0i ;@;1[ ;[ ;20o;;o;;i¡;[o;;[o;;i¡;[o;>	;?0;i¡;["a;" o;;i¡;["button;@9o;;i¡;["typo3backendlink;@9;@9;@9;i¡;@;T;[o;;;;o;;"	none;;;i¬;["display;@;[ ; i ; i ;!["a.button.typo3backendlinko;;o;;iƒ;[o;;[o;;iƒ;[o;>	;?0;iƒ;["a;" o;;iƒ;["button;@So;;iƒ;["logout;@S;@S;@S;iƒ;@;T;[o;;;;o;;"	none;;;i≈;["display;@;[ ; i ; i ;!["a.button.logouto;;o;;i»;[o;;[o;;i»;[o;>	;?0;i»;["	body;" o;;i»;["feedit_in_frontend;@m;@m;@m;i»;@;T;[	o;;o;;i…;[o;;[o;;i…;[o;>	;?0;i…;["a;" o;;i…;["button;@|o;;i…;["new_page;@|;@|;@|;i…;@;T;[o;;;;o;;"	none;;;i ;["display;@;[ ; i ; i ;!["a.button.new_pageo;;o;;iÕ;[o;;[o;;iÕ;[o;>	;?0;iÕ;["a;" o;;iÕ;["button;@ño;;iÕ;["preview_page;@ñ;@ñ;@ñ;iÕ;@;T;[o;;;;o;;"	none;;;iŒ;["display;@;[ ; i ; i ;!["a.button.preview_pageo;;o;;i—;[o;;[o;;i—;[o;>	;?0;i—;["a;" o;;i—;["button;@∞o;;i—;["typo3backendlink;@∞;@∞;@∞;i—;@;T;[o;;;;o;;"
-block;;;i“;["display;@;[ ; i ; i ;!["a.button.typo3backendlinko;;o;;i‘;[o;;[o;;i‘;[o;>	;?0;i‘;["a;" o;;i‘;["button;@ o;;i‘;["logout;@ ;@ ;@ ;i‘;@;T;[o;;;;o;;"
-block;;;i’;["display;@;[ ; i ; i ;!["a.button.logout; i ;!["body.feedit_in_frontendo;/;"/*bar on top of webpage */;i€;0i ;@;1[ ;[ ;20o;;o;;i‹;[o;;[o;;i‹;[o;;i‹;["feedit_bar;" ;@Í;@Í;i‹;@;T;[o;;;;o;;"hidden;;;i›;["overflow;@;[ ; i o;;;;o;;"10px 20px 10px 20px;;;iﬁ;["padding;@;[ ; i o;;;;o;;"	#000;;;iﬂ;["background-color;@;[ ; i o;;;;o;;"
-fixed;;;i‡;["position;@;[ ; i o;;;;o;;"0;;;i·;["top;@;[ ; i o;;;;o;;"0;;;i‚;["	left;@;[ ; i o;;;;o;;"0;;;i„;["
-right;@;[ ; i o;;;;o;;"100000;;;i‰;["z-index;@;[ ; i o;;;;o;;"2px solid white;;;iÊ;["border-bottom;@;[ ; i o;;o;;iÈ;[o;;[o;;iÈ;[o;;iÈ;["innerwrap;" ;@,;@,;iÈ;@;T;[o;;;;o;3	;4;7;[	o;8
-;iÍ;"url;{ ;9{ ;:[o;	;"../../img/anorak_logo.png;iÍ;;;;@3o;	;"no-repeat;iÍ;;;@3o;	;"
-right;iÍ;;;@3o;+;,["px;i
-;iÍ;@3;-"5px;.[ ;iÍ;@3;iÍ;["background;@;[ ; i o;;;;o;;"hidden;;;iÎ;["overflow;@;[ ; i o;;;;o;;"0 100px 0 0;;;iÏ;["padding;@;[ ; i o;/;"/*standard button */;iÓ;0i ;@;1[ ;[ ;20o;;o;;iÔ;[o;;[o;;iÔ;[o;;iÔ;["button;" ;@^;@^;iÔ;@;T;[o;;;;o;3	;4;7;[o;+;,["px;i;i;{ ;-"1px;.[ o;	;"
-solid;i;;;@fo;<	;i;"color_border;@f;="color_border;i;@f;i;["border;@;[ ; i o;;;;o;;"	11px;;;iÒ;["font-size;@;[ ; i o;;;;o;;"
-block;;;iÚ;["display;@;[ ; i o;;;;o;;"	left;;;iÛ;["
-float;@;[ ; i o;;;;o;;"	none;;;iÙ;["text-decoration;@;[ ; i o;;;;o;<	;iı;"
-color;{ ;="
-color;iı;["
-color;@;[ ; i o;;;;o;<	;iˆ;"font-family;{ ;="font_family;iˆ;["font-family;@;[ ; i o;;;;o;<	;i˜;"color_buttonbackground;{ ;="color_buttonbackground;i˜;["background-color;@;[ ; i o;;;;o;;"5px 10px 5px 0;;;i¯;["margin;@;[ ; i o;@;i˙;"linear-gradient;@;9{ ;[ ;:[o;8
-;i˙;"color-stops;{ ;9{ ;:[o;<	;i˙;"color_gradient2;@Æ;="color_gradient2o;<	;i˙;"color_gradient1;@Æ;="color_gradient1o;@;i¸;"border-radius;@;9{ ;[ ;:[o;+;,["px;i
-;i¸;{ ;-"5px;.[ o;;o;;i˛;[o;;[o;;i˛;[o;A;i˛;" o;B
-;i˛;["
-hover;;C;D0;@ ;@ ;@ ;i˛;@;T;[o;@;iˇ;"linear-gradient;@;9{ ;[ ;:[o;8
-;iˇ;"color-stops;{ ;9{ ;:[o;<	;iˇ;"color_gradient1;@÷;="color_gradient1o;<	;iˇ;"color_gradient2;@÷;="color_gradient2; i ;!["&:hovero;;o;;i;[o;;[o;;i;[o;A;i;" o;B
-;i;["active;;C;D0;@È;@È;@È;i;@;T;[o;@;i;"linear-gradient;@;9{ ;[ ;:[o;8
-;i;"color-stops;{ ;9{ ;:[o;<	;i;"color_gradient2;@ı;="color_gradient2o;<	;i;"color_gradient1;@ı;="color_gradient1; i ;!["&:activeo;;o;;i;[o;;[o;;i;[o;>	;?0;i;["	span;" ;@
-;@
-;i;@;T;[
-o;;;;o;;"
-block;;;i;["display;@;[ ; i o;;;;o;;"	left;;;i;["
-float;@;[ ; i o;;;;o;;"4px 10px 3px 10px;;;i;["padding;@;[ ; i o;;;;o;<	;i	;"
-color;{ ;="
-color;i	;["
-color;@;[ ; i o;;;;o;;"
-1.6em;;;i
-;["line-height;@;[ ; i ; i ;!["	span; i ;![".buttono;/;"/* preview page button */;i;0i ;@;1[ ;[ ;20o;;o;;i;[o;;[o;;i;[o;>	;?0;i;["a;" o;;i;["preview_page;@>;@>;@>;i;@;T;[o;;o;;i;[o;;[o;;i;[o;>	;?0;i;["	span;" o;;i;["
-title;@M;@M;@M;i;@;T;[o;;;;o;;"	30px;;;i;["padding-left;@;[ ; i o;@;i;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;i;{ ;-"	10px;.[ o;+;,["px;i˛›˜;i;@`;-"-2083px;.[ ; i ;!["span.title; i ;!["a.preview_pageo;/;"/* edit page button */;i;0i ;@;1[ ;[ ;20o;;o;;i;[o;;[o;;i;[o;>	;?0;i;["a;" o;;i;["edit_page;@z;@z;@z;i;@;T;[o;;o;;i;[o;;[o;;i;[o;>	;?0;i;["	span;" o;;i;["
-title;@â;@â;@â;i;@;T;[o;;;;o;;"	30px;;;i;["padding-left;@;[ ; i o;@;i;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;i;{ ;-"	10px;.[ o;+;,["px;i˛V˛;i;@ú;-"-426px;.[ ; i ;!["span.title; i ;!["a.edit_pageo;/;"/* new page button */;i;0i ;@;1[ ;[ ;20o;;o;;i ;[o;;[o;;i ;[o;>	;?0;i ;["a;" o;;i ;["new_page;@∂;@∂;@∂;i ;@;T;[o;;;;o;;"	none;;;i!;["display;@;[ ; i o;;o;;i";[o;;[o;;i";[o;>	;?0;i";["	span;" o;;i";["
-title;@À;@À;@À;i";@;T;[o;;;;o;;"	30px;;;i#;["padding-left;@;[ ; i o;@;i$;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;i$;{ ;-"	10px;.[ o;+;,["px;i˛f˝;i$;@ﬁ;-"-666px;.[ ; i ;!["span.title; i ;!["a.new_pageo;/;"/*move content elements */;i(;0i ;@;1[ ;[ ;20o;;o;;i);[o;;[o;;i);[o;>	;?0;i);["a;" o;;i);["content_move;@¯;@¯;@¯;i);@;T;[o;;o;;i*;[o;;[o;;i*;[o;>	;?0;i*;["	span;" o;;i*;["
-title;@;@;@;i*;@;T;[o;;;;o;;"	30px;;;i+;["padding-left;@;[ ; i o;/;">/*remove move icon
- *@include typo3icon(10px, -66px ); */;i,;0i ;@;1[ ;[ ;20o;@;i.;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;i.;{ ;-"	10px;.[ o;+;,["px;i˛f˝;i.;@;-"-666px;.[ ; i ;!["span.title; i ;!["a.content_moveo;;o;;i2;[o;;[o;;i2;[o;>	;?0;i2;["a;" o;;i2;["showhiddenpages;@4;@4;@4;i2;@;T;[ ; i ;!["a.showhiddenpageso;;o;;i6;[o;;[o;;i6;[o;>	;?0;i6;["a;" o;;i6;["showhiddencontent;@E;@E;@E;i6;@;T;[ ; i ;!["a.showhiddencontento;/;"/* new page button */;i;;0i ;@;1[ ;[ ;20o;;o;;i<;[o;;[o;;i<;[o;>	;?0;i<;["a;" o;;i<;["logout;@Z;@Z;@Z;i<;@;T;[o;;;;o;;"
-right;;;i=;["
-float;@;[ ; i o;;o;;i>;[o;;[o;;i>;[o;>	;?0;i>;["	span;" ;@o;@o;i>;@;T;[ ; i ;!["	span; i ;!["a.logouto;;o;;iB;[o;;[o;;iB;[o;>	;?0;iB;["a;" o;;iB;["typo3backendlink;@;@;@;iB;@;T;[o;;;;o;;"
-right;;;iC;["
-float;@;[ ; i o;;o;;iD;[o;;[o;;iD;[o;>	;?0;iD;["	span;" o;;iD;["
-title;@î;@î;@î;iD;@;T;[o;;;;o;;"	30px;;;iE;["padding-left;@;[ ; i o;@;iF;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;iF;{ ;-"	10px;.[ o;+;,["px;i˛¯;iF;@ß;-"-2034px;.[ ; i ;!["span.title; i ;!["a.typo3backendlinko;;o;;iJ;[o;;[o;;iJ;[o;>	;?0;iJ;["a;" o;;iJ;["feedit_on_off;@Ω;@Ω;@Ω;iJ;@;T;[o;;;;o;;"
-right;;;iK;["
-float;@;[ ; i o;;o;;iL;[o;;[o;;iL;[o;>	;?0;iL;["	span;" o;;iL;["
-title;@“;@“;@“;iL;@;T;[o;;;;o;;"	30px;;;iM;["padding-left;@;[ ; i o;;;;o;;"0;;;iN;["padding-right;@;[ ; i o;@;iO;"typo3icon;@;9{ ;[ ;:[o;+;,["px;i;iO;{ ;-"	10px;.[ o;+;,["px;i˛6˙;iO;@Î;-"-1482px;.[ ; i ;!["span.titleo;;o;;iQ;[o;;[o;;iQ;[o;;iQ;["on_off;" ;@ˇ;@ˇ;iQ;@;T;[o;;;;o;;"5px;;;iR;["padding-left;@;[ ; i o;;;;o;;"uppercase;;;iS;["text-transform;@;[ ; i ; i ;![".on_off; i ;!["a.feedit_on_offo;;o;;iW;[o;;[o;;iW;[o;>	;?0;iW;["a;" o;;iW;["feedit_on_off;@o;;iW;["enabled;@;@;@;iW;@;T;[o;;o;;iX;[o;;[o;;iX;[o;;iX;["on_off;" ;@-;@-;iX;@;T;[o;;;;o;;"	#0f0;;;iY;["
-color;@;[ ; i ; i ;![".on_off; i ;!["a.feedit_on_off.enabledo;;o;;i];[o;;[o;;i];[o;>	;?0;i];["a;" o;;i];["feedit_on_off;@Co;;i];["disabled;@C;@C;@C;i];@;T;[o;;o;;i^;[o;;[o;;i^;[o;;i^;["on_off;" ;@U;@U;i^;@;T;[o;;;;o;;"	#f00;;;i_;["
-color;@;[ ; i ; i ;![".on_off; i ;!["a.feedit_on_off.disabledo;;o;;ic;[o;;[o;;ic;[o;;ic;["systembuttons;" ;@k;@k;ic;@;T;[o;;;;o;;"
-right;;;id;["
-float;@;[ ; i ; i ;![".systembuttonso;;o;;ig;[o;;[o;;ig;[o;;ig;["editbuttons;" ;@;@;ig;@;T;[o;;;;o;;"	left;;;ih;["
-float;@;[ ; i ; i ;![".editbuttons; i ;![".innerwrapo;/;"/*.innerwrap */;il;0i ;@;1[ ;[ ;20; i ;![".feedit_baro;/;"/*.feedit_bar */;im;0i ;@;1[ ;[ ;20o;;o;;iq;[o;;[o;;iq;[o;;iq;["contact_data;" ;@ü;@ü;iq;@;T;[o;;o;;ir;[o;;[o;;ir;[o;;ir;["contact_edit_link;" ;@´;@´;ir;@;T;[o;;;;o;;"	none;;;is;["display;@;[ ; i ; i ;![".contact_edit_link; i ;![".contact_datao;/;"/*feedit is turned on  */;ix;0i ;@;1[ ;[ ;20o;;o;;iy;[o;;[o;;iy;[o;>	;?0;iy;["	body;" o;;iy;["feedit-enabled;@≈;@≈;@≈;iy;@;T;[o;/;"</*add margin-top to body to get space for feedit-bar */;i{;0i ;@;1[ ;[ ;20o;;;;o;;"	60px;;;i|;["margin-top;@;[ ; i o;;o;;i;[o;;[o;;i;[o;;i;["feedit-element-wrap;" ;@ﬁ;@ﬁ;i;@;T;[o;;;;o;3	;4;7;[o;+;,["px;i;iÄ;{ ;-"1px;.[ o;	;"dotted;iÄ;;;@Êo;<	;iÄ;"outline;@Ê;="outline;iÄ;@Ê;iÄ;["outline;@;[ ; i o;;;;o;;"relative;;;iÅ;["position;@;[ ; i ; i ;![".feedit-element-wrapo;;o;;iÑ;[o;;[o;;iÑ;[o;;iÑ;["feedit-element-wrap;" o;;iÑ;["feedit-element-wrap-hidden;@	;@	;@	;iÑ;@;T;[o;;;;o;;"
-block;;;iÖ;["display;@;[ ; i o;;;;o;3	;4;7;[o;+;,["px;i;iÜ;{ ;-"1px;.[ o;	;"dotted;iÜ;;;@	o;<	;iÜ;"outline-hidden;@	;="outline_hidden;iÜ;@	;iÜ;["outline;@;[ ; i o;@;iá;"opacity;@;9{ ;[ ;:[o;+;,[ ;f0.5;iá;{ ;-"0.5;.[ ; i ;!["4.feedit-element-wrap.feedit-element-wrap-hiddeno;;o;;iä;[o;;[o;;iä;[o;;iä;["feedit-element-wrap-hover;" ;@6	;@6	;iä;@;T;[o;;;;o;3	;4;7;[o;+;,["px;i;iã;{ ;-"1px;.[ o;	;"
-solid;iã;;;@>	o;<	;iã;"outline;@>	;="outline;iã;@>	;iã;["outline;@;[ ; i o;;o;;iç;[o;;[o;;iç;[o;;iç;["feedit-form;" ;@S	;@S	;iç;@;T;[
-o;;;;o;;"
-block;;;ié;["display;@;[ ; i o;;;;o;;"absolute;;;iè;["position;@;[ ; i o;;;;o;;"0px;;;iê;["top;@;[ ; i o;;;;o;;"0px;;;ië;["
-right;@;[ ; i o;;;;o;;"100;;;ií;["z-index;@;[ ; i ; i ;![".feedit-form; i ;![".feedit-element-wrap-hovero;;o;;iñ;[o;;[o;;iñ;[o;;iñ;["news-latest-item;" ;@Å	;@Å	;iñ;@;T;[o;;;;o;;"relative;;;ió;["position;@;[ ; i ; i ;![".news-latest-itemo;;o;;iô;[o;;[o;;iô;[o;;iô;["news-list-item;" ;@ï	;@ï	;iô;@;T;[o;;;;o;;"relative;;;iö;["position;@;[ ; i ; i ;![".news-list-itemo;;o;;iú;[o;;[o;;iú;[o;;iú;["news-single-item;" ;@©	;@©	;iú;@;T;[o;;;;o;;"relative;;;iù;["position;@;[ ; i ; i ;![".news-single-itemo;;o;;i†;[o;;[o;;i†;[o;;i†;["pagepropertieslink;" ;@Ω	;@Ω	;i†;@;T;[o;;;;o;<	;i°;"editbar_backgroundcolor;{ ;="editbar_backgroundcolor;i°;["background-color;@;[ ; i o;;;;o;;"hidden;;;i¢;["overflow;@;[ ; i o;;;;o;;"
-block;;;i£;["display;@;[ ; i o;;;;o;;"absolute;;;i§;["position;@;[ ; i o;;;;o;;"	10px;;;i•;["top;@;[ ; i o;;;;o;;"	10px;;;i¶;["	left;@;[ ; i o;;;;o;;"	9000;;;iß;["z-index;@;[ ; i o;;;;o;;"	20px;;;i®;["height;@;[ ; i o;;;;o;;"5px 10px 5px 10px;;;i©;["padding;@;[ ; i o;;o;;i´;[o;;[o;;i´;[o;>	;?0;i´;["img;" ;@
-;@
-;i´;@;T;[o;;;;o;;"	left;;;i¨;["
-float;@;[ ; i o;;;;o;;"3px;;;i≠;["padding-top;@;[ ; i ; i ;!["imgo;;o;;iØ;[o;;[o;;iØ;[o;>	;?0;iØ;["	span;" ;@
-;@
-;iØ;@;T;[	o;;;;o;;"	left;;;i∞;["
-float;@;[ ; i o;;;;o;;"
-block;;;i±;["display;@;[ ; i o;;;;o;;"	15px;;;i≤;["margin-left;@;[ ; i o;;;;o;<	;i≥;"editbar_color;{ ;="editbar_color;i≥;["
-color;@;[ ; i ; i ;!["	span; i ;![".pagepropertieslinko;;o;;i∑;[o;;[o;;i∑;[o;;i∑;["contact_data;" ;@E
-;@E
-;i∑;@;T;[o;;o;;i∏;[o;;[o;;i∏;[o;;i∏;["contact_edit_link;" ;@Q
-;@Q
-;i∏;@;T;[o;;;;o;;"
-block;;;iπ;["display;@;[ ; i ; i ;![".contact_edit_link; i ;![".contact_data; i ;!["body.feedit-enabledo;/;"/*feedit-enabled */;iº;0i ;@;1[ ;[ ;20o;/;"6/*if feedit is disabled
- *hide hidden elements */;iæ;0i ;@;1[ ;[ ;20o;;o;;i¿;[o;;[o;;i¿;[o;;i¿;["feedit-element-wrap;" o;;i¿;["feedit-element-wrap-hidden;@q
-;@q
-;@q
-;i¿;@;T;[o;;;;o;;"	none;;;i¡;["display;@;[ ; i ; i ;!["4.feedit-element-wrap.feedit-element-wrap-hiddeno;/;"%/*new element position marker */;i∆;0i ;@;1[ ;[ ;20o;;o;;i«;[o;;[o;;i«;[o;;i«;["csc-default-newmarker;" ;@å
-;@å
-;i«;@;T;[o;;;;o;;"#E62800;;;i»;["background-color;@;[ ; i o;;;;o;;"1px solid white;;;i…;["outline;@;[ ; i o;;;;o;;"
-white;;;i ;["
-color;@;[ ; i o;;;;o;;"	bold;;;iÀ;["font-weight;@;[ ; i o;;;;o;;"	10px;;;iÃ;["padding;@;[ ; i o;;;;o;;"	30px;;;iÕ;["margin-bottom;@;[ ; i ; i ;![".csc-default-newmarkero;;o;;i“;[o;;[o;;i“;[o:Sass::Selector::Id;i“;["footer;" ;@æ
-o;;[o;;i“;[o;;i“;["footer;@æ
-;@æ
-;@æ
-;i“;@;T;[o;;o;;i”;[o;;[o;;i”;[o;;i”;["typo3-editPanel;" ;@—
-;@—
-;i”;@;T;[o;;o;;i‘;[o;;[o;;i‘;[o;;i‘;["typo3-editPanel-controls;" ;@›
-;@›
-;i‘;@;T;[o;;o;;i÷;[o;;[o;;i÷;[o;>	;?0;i÷;["a;" o;;i÷;["delete;@È
-;@È
-o;;[o;;i÷;[o;>	;?0;i÷;["a;@È
-o;;i÷;["new;@È
-;@È
-;@È
-;i÷;@;T;[o;;;;o;;"	none;;;i◊;["display;@;[ ; i ; i ;!["a.delete, a.new; i ;![".typo3-editPanel-controls; i ;![".typo3-editPanel; i ;!["#footer, .footero;;o;;iﬂ;[o;;[o;;iﬂ;[o;;iﬂ;["feedit-hideme;" ;@;@;iﬂ;@;T;[o;;;;o;;"	none;;;i‡;["display;@;[ ; i ; i ;![".feedit-hidemeo;/;"/*workspace info patch */;i‰;0i ;@;1[ ;[ ;20o;;o;;iÂ;[o;;[o;;iÂ;[o;E;iÂ;["typo3-previewInfo;" ;@(;@(;iÂ;@;T;[o;;;;o;;"	none;;;iÊ;["display;@;[ ; i o;;;;o;;"	70px;;;iÁ;["top;@;[ ; i o;;;;o;;"3px !important;;;iË;["
-right;@;[ ; i ; i ;!["#typo3-previewInfoo;;o;;iÏ;[o;;[o;;iÏ;[o;E;iÏ;["TSFE_ADMIN_PANEL_FORM;" ;@H;@H;iÏ;@;T;[o;;;;o;;"	none;;;iÌ;["display;@;[ ; i ; i ;!["#TSFE_ADMIN_PANEL_FORM
