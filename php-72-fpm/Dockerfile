@@ -1,6 +1,10 @@
 # Add PHP-FPM base image
 FROM php:7.2-fpm
 
+# Copy php.ini and php-fpm.conf
+COPY ./php-72-fpm/php-fpm.conf /usr/local/etc/php-fpm.conf
+COPY ./php-72-fpm/php.ini /usr/local/etc/php/php.ini
+
 # Install your extensions
 # TYPO3 requirements:
 # https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/SystemRequirements/Index.html
