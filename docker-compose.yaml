@@ -33,7 +33,7 @@ services:
     volumes:
       - ./wwwroot:/var/www/html
     ports:
-      - "8888:80"
+      - "8890:80"
     depends_on:
       - php-56-fpm
       - php-72-fpm
@@ -61,7 +61,7 @@ services:
     links:
       - mysql-db
     ports:
-      - "8889:80"
+      - "8891:80"
     environment:
       PMA_HOST: mysql-db
       MYSQL_ROOT_PASSWORD: password
