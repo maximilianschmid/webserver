@@ -1,9 +1,0 @@
-# news folder
-
-###########################
-# clear cache on changes to content or ts / 
-# Cache löschen wenn User Änderungen macht
-# http://buzz.typo3.org/people/ron-hall/article/dont-wear-out-the-clear-cache-button/
-###########################
-#TCEMAIN.clearCacheCmd = all
-#TCEMAIN.clearCacheCmd = 47,52
