@@ -1,0 +1,1 @@
+a:2:{s:8:"origFile";s:80:"typo3conf/ext/sr_language_menu/pi1/locallang.xml|23-11-2011 14:36:19|version=2.3";s:10:"LOCAL_LANG";a:2:{s:7:"default";a:3:{s:15:"select_language";s:17:"Choose a language";s:20:"form_fieldset_legend";s:17:"Choose a language";s:17:"form_select_label";s:17:"Choose a language";}s:2:"de";s:55:"typo3conf/l10n/de/sr_language_menu/pi1/de.locallang.xml";}}
