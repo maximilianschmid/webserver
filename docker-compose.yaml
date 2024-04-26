@@ -6,10 +6,10 @@ services:
       context: .
       dockerfile: php-56-fpm/Dockerfile
     volumes:
-      - wwwroot:/var/www/html
-#      - php-56-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
-#      - php-56-fpm/php.ini:/usr/local/etc/php/php.ini
-      - log/php-56-fpm:/var/log/php-fpm
+      - ./wwwroot:/var/www/html
+#      - ./php-56-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
+#      - ./php-56-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./log/php-56-fpm:/var/log/php-fpm
     depends_on:
       - mysql-db
   php-72-fpm:
@@ -18,10 +18,10 @@ services:
       context: .
       dockerfile: php-72-fpm/Dockerfile
     volumes:
-      - wwwroot:/var/www/html
-#      - php-72-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
-#      - php-72-fpm/php.ini:/usr/local/etc/php/php.ini
-      - log/php-72-fpm:/var/log/php-fpm
+      - ./wwwroot:/var/www/html
+#      - ./php-72-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
+#      - ./php-72-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./log/php-72-fpm:/var/log/php-fpm
     depends_on:
       - mysql-db
 
@@ -31,7 +31,7 @@ services:
       context: .
       dockerfile: ./apache/Dockerfile
     volumes:
-      - wwwroot:/var/www/html
+      - ./wwwroot:/var/www/html
     ports:
       - "80:80"
     depends_on:
@@ -53,7 +53,7 @@ services:
       - "3306:3306"
     user: mysql
     volumes:
-      - db:/var/lib/mysql
+      - ./db:/var/lib/mysql
   # http://localhost:8889
   phpmyadmin:
     platform: linux/amd64
