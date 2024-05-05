@@ -1,5 +1,8 @@
 ### Basic template taken from
 https://thriveread.com/docker-apache-httpd-with-php-fpm-and-mysql/
+            
+### TYPO3 requirements
+https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/SystemRequirements/Index.html
 
 ### PHP FPM 
 Inspiration taken from
