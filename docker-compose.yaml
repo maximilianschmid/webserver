@@ -1,10 +1,10 @@
-version: '3.9'
 services:
   php-56-fpm:
     platform: linux/amd64
     build:
       context: .
       dockerfile: php-56-fpm/Dockerfile
+    restart: always
     volumes:
       - ./wwwroot:/var/www/html
 #      - ./php-56-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
@@ -12,11 +12,13 @@ services:
       - ./log/php-56-fpm:/var/log/php-fpm
     depends_on:
       - mysql-db
+
   php-72-fpm:
     platform: linux/amd64
     build:
       context: .
       dockerfile: php-72-fpm/Dockerfile
+    restart: always
     volumes:
       - ./wwwroot:/var/www/html
 #      - ./php-72-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
@@ -30,39 +32,42 @@ services:
     build:
       context: .
       dockerfile: ./apache/Dockerfile
+    restart: always
     volumes:
       - ./wwwroot:/var/www/html
     ports:
-      - "8890:80"
+      - "80:80"
     depends_on:
       - php-56-fpm
       - php-72-fpm
       - mysql-db
+
   mysql-db:
     platform: linux/amd64
     restart: always
     build:
       context: .
       dockerfile: mysqld/Dockerfile
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: test_database
-      MYSQL_USER: db_user
-      MYSQL_PASSWORD: password
-    ports:
-      - "3306:3306"
+    env_file:
+      - .env
     user: mysql
     volumes:
       - ./db:/var/lib/mysql
-  # http://localhost:8889
+    # MySQL port not exposed externally for security
+    # Access via phpMyAdmin or docker exec instead
+
+  # phpMyAdmin - PRODUCTION WARNING:
+  # Consider disabling or restricting access in production
+  # Only accessible via localhost or internal network
   phpmyadmin:
     platform: linux/amd64
     image: phpmyadmin/phpmyadmin
+    restart: always
     links:
       - mysql-db
     ports:
-      - "8891:80"
+      - "127.0.0.1:8891:80"  # Only accessible from localhost
+    env_file:
+      - .env
     environment:
       PMA_HOST: mysql-db
-      MYSQL_ROOT_PASSWORD: password
-
