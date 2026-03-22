@@ -1,4 +1,17 @@
 services:
+  traefik:
+    image: traefik:v3.3
+    restart: always
+    command:
+      - "--entrypoints.websecure.address=:8080"
+      - "--providers.file.filename=/etc/traefik/dynamic.yaml"
+      - "--providers.file.watch=true"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./certs:/certs:ro
+      - ./traefik/dynamic.yaml:/etc/traefik/dynamic.yaml:ro
+
   php-56-fpm:
     platform: linux/amd64
     build:
@@ -35,8 +48,6 @@ services:
     restart: always
     volumes:
       - ./wwwroot:/var/www/html
-    ports:
-      - "80:80"
     depends_on:
       - php-56-fpm
       - php-72-fpm

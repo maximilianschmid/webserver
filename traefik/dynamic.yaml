@@ -1,0 +1,19 @@
+tls:
+  certificates:
+    - certFile: /certs/ff-sicking.at.test+2.pem
+      keyFile: /certs/ff-sicking.at.test+2-key.pem
+
+http:
+  routers:
+    ff-sicking:
+      rule: "Host(`ff-sicking.at.test`) || Host(`www.ff-sicking.at.test`)"
+      entryPoints:
+        - websecure
+      tls: {}
+      service: apache
+
+  services:
+    apache:
+      loadBalancer:
+        servers:
+          - url: "http://apache-httpd:80"
