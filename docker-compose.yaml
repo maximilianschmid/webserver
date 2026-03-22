@@ -1,0 +1,82 @@
+services:
+  traefik:
+    image: traefik:v3.3
+    restart: always
+    command:
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--providers.file.filename=/etc/traefik/dynamic.yaml"
+      - "--providers.file.watch=true"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./certs:/certs:ro
+      - ./traefik/dynamic.yaml:/etc/traefik/dynamic.yaml:ro
+
+  php-56-fpm:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: php-56-fpm/Dockerfile
+    restart: always
+    volumes:
+      - ./wwwroot:/var/www/html
+#      - ./php-56-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
+#      - ./php-56-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./log/php-56-fpm:/var/log/php-fpm
+    depends_on:
+      - mysql-db
+
+  php-72-fpm:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: php-72-fpm/Dockerfile
+    restart: always
+    volumes:
+      - ./wwwroot:/var/www/html
+#      - ./php-72-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
+#      - ./php-72-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./log/php-72-fpm:/var/log/php-fpm
+    depends_on:
+      - mysql-db
+
+  apache-httpd:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./apache/Dockerfile
+    restart: always
+    volumes:
+      - ./wwwroot:/var/www/html
+    depends_on:
+      - php-56-fpm
+      - php-72-fpm
+      - mysql-db
+
+  mysql-db:
+    platform: linux/amd64
+    restart: always
+    build:
+      context: .
+      dockerfile: mysqld/Dockerfile
+    env_file:
+      - .env
+    user: mysql
+    ports:
+      - "127.0.0.1:3307:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+
+  # phpMyAdmin - accessible via https://phpmyadmin.test (basic auth + HTTPS via Traefik)
+  phpmyadmin:
+    platform: linux/amd64
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    links:
+      - mysql-db
+    env_file:
+      - .env
+    environment:
+      PMA_HOST: mysql-db
