@@ -3,11 +3,13 @@ services:
     image: traefik:v3.3
     restart: always
     command:
-      - "--entrypoints.websecure.address=:8080"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
       - "--providers.file.filename=/etc/traefik/dynamic.yaml"
       - "--providers.file.watch=true"
     ports:
-      - "8080:8080"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./certs:/certs:ro
       - ./traefik/dynamic.yaml:/etc/traefik/dynamic.yaml:ro
@@ -62,22 +64,18 @@ services:
     env_file:
       - .env
     user: mysql
+    ports:
+      - "127.0.0.1:3307:3306"
     volumes:
       - ./db:/var/lib/mysql
-    # MySQL port not exposed externally for security
-    # Access via phpMyAdmin or docker exec instead
 
-  # phpMyAdmin - PRODUCTION WARNING:
-  # Consider disabling or restricting access in production
-  # Only accessible via localhost or internal network
+  # phpMyAdmin - accessible via https://phpmyadmin.test (basic auth + HTTPS via Traefik)
   phpmyadmin:
     platform: linux/amd64
     image: phpmyadmin/phpmyadmin
     restart: always
     links:
       - mysql-db
-    ports:
-      - "127.0.0.1:8891:80"  # Only accessible from localhost
     env_file:
       - .env
     environment:

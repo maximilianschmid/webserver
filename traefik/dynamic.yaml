@@ -2,6 +2,12 @@ tls:
   certificates:
     - certFile: /certs/ff-sicking.at.test+2.pem
       keyFile: /certs/ff-sicking.at.test+2-key.pem
+    - certFile: /certs/physiotherapie-huber.at.test+2.pem
+      keyFile: /certs/physiotherapie-huber.at.test+2-key.pem
+    - certFile: /certs/hittmayr.at.test+2.pem
+      keyFile: /certs/hittmayr.at.test+2-key.pem
+    - certFile: /certs/phpmyadmin.test+2.pem
+      keyFile: /certs/phpmyadmin.test+2-key.pem
 
 http:
   routers:
@@ -12,8 +18,77 @@ http:
       tls: {}
       service: apache
 
+    ff-sicking-http:
+      rule: "Host(`ff-sicking.at.test`) || Host(`www.ff-sicking.at.test`)"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect-to-https
+      service: apache
+
+    physiotherapie-huber:
+      rule: "Host(`physiotherapie-huber.at.test`) || Host(`www.physiotherapie-huber.at.test`)"
+      entryPoints:
+        - websecure
+      tls: {}
+      service: apache
+
+    physiotherapie-huber-http:
+      rule: "Host(`physiotherapie-huber.at.test`) || Host(`www.physiotherapie-huber.at.test`)"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect-to-https
+      service: apache
+
+    hittmayr:
+      rule: "Host(`hittmayr.at.test`) || Host(`www.hittmayr.at.test`)"
+      entryPoints:
+        - websecure
+      tls: {}
+      service: apache
+
+    hittmayr-http:
+      rule: "Host(`hittmayr.at.test`) || Host(`www.hittmayr.at.test`)"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect-to-https
+      service: apache
+
+    phpmyadmin:
+      rule: "Host(`phpmyadmin.test`)"
+      entryPoints:
+        - websecure
+      tls: {}
+      middlewares:
+        - phpmyadmin-auth
+      service: phpmyadmin
+
+    phpmyadmin-http:
+      rule: "Host(`phpmyadmin.test`)"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect-to-https
+      service: phpmyadmin
+
+  middlewares:
+    redirect-to-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
+    phpmyadmin-auth:
+      basicAuth:
+        users:
+          - 'root:$2a$05$CKwyk3AYxpLsTUyIMW2fp./pJbWBOS2jrORz88xlAkEqY2Pv8QgAS'
+
   services:
     apache:
       loadBalancer:
         servers:
           - url: "http://apache-httpd:80"
+    phpmyadmin:
+      loadBalancer:
+        servers:
+          - url: "http://phpmyadmin:80"
