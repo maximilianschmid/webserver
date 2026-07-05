@@ -1,0 +1,43 @@
+# Production overrides for Hetzner.
+#
+# Recommended: put this line into .env on the server so plain `docker compose`
+# commands pick up the right files (and NOT the dev override):
+#   COMPOSE_FILE=docker-compose.yaml:docker-compose.prod.yaml
+#
+# Explicit alternative:
+#   docker compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d
+
+services:
+  traefik:
+    # `command` replaces the base list entirely, so all flags are repeated here.
+    command:
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
+      - "--entrypoints.websecure.address=:443"
+      - "--providers.file.filename=/etc/traefik/dynamic.yaml"
+      - "--providers.file.watch=true"
+      # Let's Encrypt (ACME HTTP-01). The challenge is answered internally by
+      # Traefik on the web entrypoint, before the HTTPS redirect applies.
+      - "--certificatesresolvers.le.acme.email=ms@planfred.com"
+      - "--certificatesresolvers.le.acme.storage=/acme/acme.json"
+      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
+      # For the FIRST deploy, uncomment to use the LE staging CA (untrusted
+      # certs, but no rate limits). Once routing works, comment it out again,
+      # delete traefik/acme/acme.json and restart traefik to get real certs.
+      # - "--certificatesresolvers.le.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+    volumes:
+      - ./traefik/acme:/acme
+      - ./traefik/dynamic-prod.yaml:/etc/traefik/dynamic.yaml:ro
+      - ./traefik/typo3.htpasswd:/etc/traefik/typo3.htpasswd:ro
+
+  # No public route in prod — reach via SSH tunnel:
+  #   ssh -L 8081:127.0.0.1:8081 <server>  ->  http://localhost:8081
+  phpmyadmin:
+    ports:
+      - "127.0.0.1:8081:80"
+
+  mysql-db:
+    # 8 GB VPS: raise the buffer pool without forking my.cnf (dev keeps 256M)
+    command: "--innodb-buffer-pool-size=1G"

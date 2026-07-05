@@ -1,0 +1,92 @@
+# Production dynamic config — real domains, Let's Encrypt via the `le` resolver.
+# Mounted to /etc/traefik/dynamic.yaml by docker-compose.prod.yaml.
+# HTTP -> HTTPS redirect is handled globally on the web entrypoint (compose file).
+#
+# The *-typo3 routers add basic auth in front of the TYPO3 backend (EOL
+# TYPO3/PHP versions). They match only `/typo3` and `/typo3/...` — NOT
+# /typo3temp or /typo3conf, which serve frontend assets. Longer rules win
+# automatically in Traefik, no explicit priority needed.
+# Credentials: traefik/typo3.htpasswd (see typo3.htpasswd.example).
+
+http:
+  routers:
+    ff-sicking:
+      rule: "Host(`ff-sicking.at`) || Host(`www.ff-sicking.at`)"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: le
+      middlewares:
+        - security-headers
+      service: apache
+
+    ff-sicking-typo3:
+      rule: "(Host(`ff-sicking.at`) || Host(`www.ff-sicking.at`)) && (Path(`/typo3`) || PathPrefix(`/typo3/`))"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: le
+      middlewares:
+        - typo3-auth
+        - security-headers
+      service: apache
+
+    physiotherapie-huber:
+      rule: "Host(`physiotherapie-huber.at`) || Host(`www.physiotherapie-huber.at`)"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: le
+      middlewares:
+        - security-headers
+      service: apache
+
+    physiotherapie-huber-typo3:
+      rule: "(Host(`physiotherapie-huber.at`) || Host(`www.physiotherapie-huber.at`)) && (Path(`/typo3`) || PathPrefix(`/typo3/`))"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: le
+      middlewares:
+        - typo3-auth
+        - security-headers
+      service: apache
+
+    hittmayr:
+      rule: "Host(`hittmayr.at`) || Host(`www.hittmayr.at`)"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: le
+      middlewares:
+        - security-headers
+      service: apache
+
+    hittmayr-typo3:
+      rule: "(Host(`hittmayr.at`) || Host(`www.hittmayr.at`)) && (Path(`/typo3`) || PathPrefix(`/typo3/`))"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: le
+      middlewares:
+        - typo3-auth
+        - security-headers
+      service: apache
+
+  middlewares:
+    typo3-auth:
+      basicAuth:
+        usersFile: /etc/traefik/typo3.htpasswd
+
+    security-headers:
+      headers:
+        stsSeconds: 31536000
+        stsIncludeSubdomains: false
+        browserXssFilter: true
+        contentTypeNosniff: true
+
+  services:
+    apache:
+      loadBalancer:
+        servers:
+          - url: "http://apache-httpd:80"

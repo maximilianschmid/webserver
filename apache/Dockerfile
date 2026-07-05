@@ -20,6 +20,8 @@ RUN sed -i \
     -e '/#LoadModule headers_module/s/^#//g' \
     -e '/#LoadModule rewrite_module/s/^#//g' \
     -e '/#LoadModule setenvif_module/s/^#//g' \
+    # Uncomment mod_remoteip to restore real client IPs behind Traefik
+    -e '/#LoadModule remoteip_module/s/^#//g' \
 #    -e '/#LoadModule access_compat_module/s/^#//g' \
 #    -e '/#LoadModule auth_basic_module/s/^#//g' \
 #    -e '/#LoadModule reqtimeout_module/s/^#//g' \
@@ -34,3 +36,6 @@ RUN sed -i \
 
 # Include the virtual host configuration file in the main Apache configuration
 RUN echo "Include /usr/local/apache2/conf/extra/apache.vhost.conf" >> /usr/local/apache2/conf/httpd.conf
+
+# Empty docroot for the default catch-all vhost (unmatched Host headers)
+RUN mkdir -p /var/www/default

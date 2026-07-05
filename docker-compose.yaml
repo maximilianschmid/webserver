@@ -1,18 +1,34 @@
+# Base compose file — shared between dev and prod.
+#
+# Dev:  docker compose up            (auto-merges docker-compose.override.yaml)
+# Prod: set COMPOSE_FILE=docker-compose.yaml:docker-compose.prod.yaml in .env,
+#       then docker compose up -d    (see README "Deploy to Hetzner")
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
 services:
   traefik:
     image: traefik:v3.3
     restart: always
+    logging: *default-logging
     command:
       - "--entrypoints.web.address=:80"
+      # Global HTTP -> HTTPS redirect (replaces per-site *-http routers)
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
       - "--entrypoints.websecure.address=:443"
       - "--providers.file.filename=/etc/traefik/dynamic.yaml"
       - "--providers.file.watch=true"
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - ./certs:/certs:ro
-      - ./traefik/dynamic.yaml:/etc/traefik/dynamic.yaml:ro
+    # /etc/traefik/dynamic.yaml is mounted by docker-compose.override.yaml (dev)
+    # or docker-compose.prod.yaml (prod)
 
   php-56-fpm:
     platform: linux/amd64
@@ -20,13 +36,13 @@ services:
       context: .
       dockerfile: php-56-fpm/Dockerfile
     restart: always
+    logging: *default-logging
     volumes:
       - ./wwwroot:/var/www/html
-#      - ./php-56-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
-#      - ./php-56-fpm/php.ini:/usr/local/etc/php/php.ini
       - ./log/php-56-fpm:/var/log/php-fpm
     depends_on:
-      - mysql-db
+      mysql-db:
+        condition: service_healthy
 
   php-72-fpm:
     platform: linux/amd64
@@ -34,13 +50,13 @@ services:
       context: .
       dockerfile: php-72-fpm/Dockerfile
     restart: always
+    logging: *default-logging
     volumes:
       - ./wwwroot:/var/www/html
-#      - ./php-72-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
-#      - ./php-72-fpm/php.ini:/usr/local/etc/php/php.ini
       - ./log/php-72-fpm:/var/log/php-fpm
     depends_on:
-      - mysql-db
+      mysql-db:
+        condition: service_healthy
 
   apache-httpd:
     platform: linux/amd64
@@ -48,16 +64,21 @@ services:
       context: .
       dockerfile: ./apache/Dockerfile
     restart: always
+    logging: *default-logging
     volumes:
       - ./wwwroot:/var/www/html
     depends_on:
-      - php-56-fpm
-      - php-72-fpm
-      - mysql-db
+      php-56-fpm:
+        condition: service_started
+      php-72-fpm:
+        condition: service_started
+      mysql-db:
+        condition: service_healthy
 
   mysql-db:
     platform: linux/amd64
     restart: always
+    logging: *default-logging
     build:
       context: .
       dockerfile: mysqld/Dockerfile
@@ -68,15 +89,23 @@ services:
       - "127.0.0.1:3307:3306"
     volumes:
       - ./db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$$MYSQL_ROOT_PASSWORD\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
 
-  # phpMyAdmin - accessible via https://phpmyadmin.test (basic auth + HTTPS via Traefik)
+  # phpMyAdmin
+  # dev:  routed publicly via Traefik (https://phpmyadmin.test, basic auth)
+  # prod: no public route; bound to 127.0.0.1:8081, reach via SSH tunnel
   phpmyadmin:
     platform: linux/amd64
     image: phpmyadmin/phpmyadmin
     restart: always
-    links:
-      - mysql-db
+    logging: *default-logging
     env_file:
       - .env
-    environment:
-      PMA_HOST: mysql-db
+    depends_on:
+      mysql-db:
+        condition: service_healthy

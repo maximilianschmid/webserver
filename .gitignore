@@ -7,3 +7,13 @@ log
 
 # Environment secrets (use .env.example as template)
 .env
+
+# Let's Encrypt state + TYPO3 backend basic-auth credentials (prod)
+traefik/acme/
+traefik/typo3.htpasswd
+
+# Real DB init scripts contain passwords (use *.sql.example as template)
+mysqld/initdb.d/*.sql
+
+# Local MySQL dumps
+backup/dumps/
