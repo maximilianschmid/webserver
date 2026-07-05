@@ -1,0 +1,8 @@
+# Dev overrides — automatically merged by `docker compose up`.
+# Uses mkcert certificates and .test hostnames (see traefik/dynamic-dev.yaml).
+
+services:
+  traefik:
+    volumes:
+      - ./certs:/certs:ro
+      - ./traefik/dynamic-dev.yaml:/etc/traefik/dynamic.yaml:ro
